@@ -17,9 +17,11 @@
     <a href="/">
         <img src="images/beyondstart_logo_sm.png" alt="BeyondStart Solutions logó">
     </a>
-    <div class="relative">
-        <select id="language" aria-label="Language selection" onchange="setLanguage(this.value)"
-                class="appearance-none block w-full bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+
+    <div class="flex items-center gap-2 relative">
+        <label for="language" class="sr-only">Nyelvválasztás</label>
+        <select id="language" aria-label="Language selection"
+                class="appearance-none block bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
             <option value="hu">🇭🇺 HU</option>
             <option value="en">🇬🇧 EN</option>
             <option value="de">🇩🇪 DE</option>
@@ -27,7 +29,13 @@
             <option value="nl">🇳🇱 NL</option>
             <option value="es">🇪🇸 ES</option>
         </select>
-        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+
+        <button onclick="setLanguage(document.getElementById('language').value)"
+                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-semibold rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition">
+            OK
+        </button>
+
+        <div class="pointer-events-none absolute inset-y-0 right-24 flex items-center px-2 text-gray-800">
             <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M7 7l3-3 3 3m0 6l-3 3-3-3"/>
             </svg>
@@ -217,7 +225,7 @@
             </ul>
         </div>
     </div>
-    <div class="text-center text-xs mt-10 text-gray-400" data-i18n="footerCopyright">
+    <div class="text-center text-xs mt-10 text-gray-800" data-i18n="footerCopyright">
         &copy; 2025 BeyondStart Solutions. Minden jog fenntartva.
     </div>
 </footer>
