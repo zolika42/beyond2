@@ -1,0 +1,66 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Hoveres emelés szekciókra */
+.animate-section {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.animate-section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Hoveres logó-nagyítás */
+.animate-logo {
+    transition: transform 0.3s ease;
+}
+.animate-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Scroll-on belépő animáció (fade + translate) */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+.reference-card {
+    min-height: 260px;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+}
+.reference-card:hover {
+    transform: translateY(-4px);
+    transition: all 0.3s ease;
+}
+
+img.techsoup {
+    background-color: black;
+    padding: 10px 5px 0 5px;
+}
+
+/* extra osztály scroll utáni állapothoz */
+.header-shrink {
+    padding-top: 0.25rem !important; /* Tailwind: pt-1 */
+    padding-bottom: 0.25rem !important; /* Tailwind: pb-1 */
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}

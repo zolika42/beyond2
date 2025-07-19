@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeyondStart Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-gray-900">
+
+<!-- Logó -->
+<header id="site-header" class="sticky top-0 z-50 py-8 px-6 flex justify-between items-center bg-white shadow transition-all duration-300">
+    <a href="">
+        <img src="images/beyondstart_logo_sm.png" alt="BeyondStart Solutions logó">
+    </a>
+    <div class="relative">
+        <select id="language" onchange="setLanguage(this.value)"
+                class="appearance-none block w-full bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <option value="hu">🇭🇺 HU</option>
+            <option value="en">🇬🇧 EN</option>
+            <option value="de">🇩🇪 DE</option>
+            <option value="fr">🇫🇷 FR</option>
+            <option value="nl">🇳🇱 NL</option>
+            <option value="es">🇪🇸 ES</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M7 7l3-3 3 3m0 6l-3 3-3-3"/>
+            </svg>
+        </div>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="text-center py-20 px-4 bg-gray-50 animate-section scroll-reveal">
+    <h1 class="text-3xl md:text-3xl font-bold mb-3" data-i18n="heroTitle">Drupal, Laravel vagy Shopify projekted
+        káoszban van?</h1>
+    <p class="text-lg md:text-xl mb-6 max-w-3xl mx-auto text-gray-700" data-i18n="heroSubtitle">A BeyondStart Solutions
+        segít rendbe tenni, optimalizálni vagy újraindítani digitális projekted. 20 év tapasztalat, nagyvállalati
+        háttérrel és startup-gyorsasággal.</p>
+    <a href="#contact" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+       data-i18n="bookButton">Időpontfoglalás</a>
+</section>
+
+<!-- Probléma leírás -->
+<section class="py-20 px-6 mx-auto text-center animate-section scroll-reveal">
+    <h2 class="text-3xl font-semibold mb-6" data-i18n="problemTitle">Milyen problémát oldunk meg?</h2>
+    <p class="mb-6 max-w-3xl mx-auto text-gray-700 text-lg" data-i18n="problemText">Drupal oldalad régi és sebezhető?
+        Laravel alapú rendszered
+        lassú vagy hibás? Shopify boltod konverziója alacsony? Az ilyen típusú gondok nem várhatnak – mi pontosan erre
+        specializálódtunk.</p>
+</section>
+
+<!-- Szolgáltatások -->
+<section id="services" class="py-20 px-6 mx-auto animate-section scroll-reveal">
+    <h2 class="text-3xl font-semibold mb-10 text-center" data-i18n="servicesTitle">Szolgáltatásaink</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+        <a href="https://calendly.com/zoltan-beyondstart/fixdrupal-1-hour-consulting" target="_blank">
+            <div class="p-6 border rounded-xl shadow-sm animate-section">
+                <h3 class="text-xl font-bold mb-2" data-i18n="service1Title">FixDrupal™ – 149 EUR</h3>
+                <ul class="list-disc pl-5 text-sm text-gray-700">
+                    <li data-i18n="service1Item1">Teljes Drupal audit és frissítés</li>
+                    <li data-i18n="service1Item2">Biztonsági hibák javítása</li>
+                    <li data-i18n="service1Item3">Modulok ellenőrzése</li>
+                    <li data-i18n="service1Item4">1 órás konzultáció</li>
+                </ul>
+            </div>
+        </a>
+        <a href="https://calendly.com/zoltan-beyondstart/laravelboost" target="_blank">
+            <div class="p-6 border rounded-xl shadow-sm relative animate-section">
+                <span class="absolute top-0 right-0 bg-yellow-400 text-black text-xs font-semibold px-2 py-1 rounded-bl"
+                      data-i18n="mostPopular">Legnépszerűbb</span>
+                <h3 class="text-xl font-bold mb-2" data-i18n="service2Title">LaravelBoost – 299 EUR</h3>
+                <ul class="list-disc pl-5 text-sm text-gray-700">
+                    <li data-i18n="service2Item1">Verziófrissítés és refaktorálás</li>
+                    <li data-i18n="service2Item2">Composer és dependency audit</li>
+                    <li data-i18n="service2Item3">CI/CD pipeline javaslat</li>
+                    <li data-i18n="service2Item4">Performance tuning</li>
+                </ul>
+            </div>
+        </a>
+        <a href="https://calendly.com/zoltan-beyondstart/shopifyproaudit-1-hour-consulting" target="_blank">
+            <div class="p-6 border rounded-xl shadow-sm animate-section">
+                <h3 class="text-xl font-bold mb-2" data-i18n="service3Title">ShopifyProAudit – 199 EUR</h3>
+                <ul class="list-disc pl-5 text-sm text-gray-700">
+                    <li data-i18n="service3Item1">Gyorsaságmérés és optimalizálás</li>
+                    <li data-i18n="service3Item2">SEO audit</li>
+                    <li data-i18n="service3Item3">Theme és App karbantartás</li>
+                    <li data-i18n="service3Item4">+10% konverzió garancia vagy pénzvissza</li>
+                </ul>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- Referenciák -->
+<section id="references" class="bg-gray-50 py-20 px-6 animate-section scroll-reveal">
+    <h2 class="text-3xl font-semibold text-center mb-10" data-i18n="referencesTitle">Akikkel már dolgoztunk</h2>
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3 text-center text-sm text-gray-700">
+        <a href="https://www.kinepolis.com/" target="_blank" class="animate-section reference-card">
+            <img src="https://raw.githubusercontent.com/zolika42/beyondsolutions/refs/heads/main/public/images/logos/kinepolis_logo.webp"
+                 alt="Kinepolis logo" class="h-12 mx-auto">
+            <div>
+                <p data-i18n="ref1">Drupal modulfejlesztés, karbantartás, migráció egy nemzetközi mozimultiplex
+                    rendszerhez.</p>
+            </div>
+        </a>
+        <a href="https://www.techsoupeurope.org/" target="_blank" class="animate-section reference-card">
+            <img src="https://raw.githubusercontent.com/zolika42/beyondsolutions/refs/heads/main/public/images/logos/techsoup_logo.webp"
+                 alt="TechSoup logo" class="h-12 mx-auto techsoup">
+            <div>
+                <p data-i18n="ref2">Drupal alapú admin felületek és jogosultságkezelés fejlesztése a nonprofit
+                    szektorban.</p>
+            </div>
+        </a>
+        <a href="https://www.aceg.be/" target="_blank" class="animate-section reference-card">
+            <img src="https://raw.githubusercontent.com/zolika42/beyondsolutions/refs/heads/main/public/images/logos/aceg_logo.webp"
+                 alt="ACEG logo" class="h-12 mx-auto">
+            <div>
+                <p data-i18n="ref3">Belső ERP rendszer újraírása Laravelben: jogosultságkezelés, nyilvántartás, PDF
+                    generálás.</p>
+            </div>
+        </a>
+        <a href="https://companyapp.co.uk/" target="_blank" class="animate-section reference-card">
+            <img src="https://raw.githubusercontent.com/zolika42/beyondsolutions/refs/heads/main/public/images/logos/companyapp_logo.webp"
+                 alt="CompanyApp logo" class="h-12 mx-auto">
+            <div>
+                <p data-i18n="ref4">Mobilos belső kommunikációs platform egyedi moduljaival és
+                    teljesítményoptimalizálással.</p>
+            </div>
+        </a>
+        <a href="https://judynatale.com/" target="_blank" class="animate-section reference-card">
+            <img src="https://judynatale.com/cdn/shop/files/logo.png?v=1740056888&width=360"
+                 alt="JudyNatale Handmade logo" class="h-12 mx-auto">
+            <div>
+                <p data-i18n="ref5">Shopify rendszer kézműves termékeket készítő vállalkozásnak. Teljes
+                    rendszerfejlesztés, dizájn, optmializálás. Továbbá Facebook és Google Merchant Center kezelése.</p>
+            </div>
+        </a>
+        <a href="https://columbiagames.com/" target="_blank" class="animate-section reference-card">
+            <img src="https://raw.githubusercontent.com/zolika42/beyondsolutions/refs/heads/main/public/images/logos/columbia_games_logo.webp"
+                 alt="Columbia Games logo" class="h-12 mx-auto">
+            <div>
+                <p data-i18n="ref6">Amerikai játékipari kiadó. Python-alapú e-kereskedelmi rendszer fejlesztése és
+                    technikai tanácsadás.</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- Rólam -->
+<section id="about" class="py-20 px-6 mx-auto text-center animate-section scroll-reveal">
+    <h2 class="text-3xl font-semibold mb-6" data-i18n="aboutTitle">A BeyondStart mögött</h2>
+    <p class="mb-6 max-w-3xl mx-auto text-lg text-gray-700" data-i18n="aboutText">A BeyondStart Solutions alapítója
+        Horváth Zoltán, aki közel
+        20 éve épít digitális rendszereket. Tapasztalatát olyan projektek során szerezte, mint a Kinepolis mozihálózat
+        rendszerei, a TechSoup nonprofit platform, vagy az ACEG belső ERP megoldásai. Céged biztonságban van nálunk –
+        nem próbálkozunk, hanem megoldunk.</p>
+</section>
+
+<!-- Kapcsolat / Calendly -->
+<section id="contact" class="bg-blue-50 py-20 px-6 text-center animate-section scroll-reveal">
+    <h2 class="text-3xl font-semibold mb-6" data-i18n="contactTitle">Foglalj időpontot</h2>
+    <p class="text-gray-700 mb-6" data-i18n="contactSubtitle">Beszéljük át projekted – az első konzultáció ingyenes és
+        kötelezettségmentes.</p>
+    <div class="max-w-3xl mx-auto">
+        <iframe src="https://calendly.com/zoltan-beyondstart" width="100%" height="600" frameborder="0"
+                scrolling="no"></iframe>
+    </div>
+</section>
+
+<footer class="bg-gray-100 text-sm text-gray-600 py-10 px-6 mt-20">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
+        <div>
+            <h3 class="font-semibold mb-2" data-i18n="footerCompanyName">BeyondStart Solutions</h3>
+            <p data-i18n="footerCompanyDetails">
+                Cégvezető: Horváth Zoltán<br>
+                Székhely: Str. Parângului 10, Ap. 2, 440031, Satu Mare, Romania.<br>
+                Adószám: RO43923085<br>
+                Cégjegyzékszám: J30/291/2021
+            </p>
+        </div>
+        <div>
+            <h3 class="font-semibold mb-2" data-i18n="footerLegal">Jogi dokumentumok</h3>
+            <ul class="space-y-1">
+                <li><a href="impresszum.html" class="hover:underline" data-i18n="footerImprint">Impresszum</a></li>
+                <li><a href="adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy">Adatvédelmi irányelvek</a></li>
+                <li><a href="cookie.html" class="hover:underline" data-i18n="footerCookies">Cookie tájékoztató</a></li>
+                <li><a href="aszf.html" class="hover:underline" data-i18n="footerTerms">ÁSZF</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="font-semibold mb-2" data-i18n="footerContact">Kapcsolat</h3>
+            <ul>
+                <li>
+                    <span data-i18n="footerEmail">E-mail:</span>
+                    <a href="mailto:zoltan@beyondstart.solutions" class="hover:underline">zoltan@beyondstart.solutions</a>
+                </li>
+                <li>
+                    <span data-i18n="footerPhone">Telefon:</span>
+                    <a href="tel:+36301234567" class="hover:underline">+36 70 508 4100</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="font-semibold mb-2" data-i18n="footerNav">Navigáció</h3>
+            <ul class="space-y-1">
+                <li><a href="" class="hover:underline" data-i18n="footerNavHome">Főoldal</a></li>
+                <li><a href="#services" class="hover:underline" data-i18n="footerNavServices">Szolgáltatások</a></li>
+                <li><a href="#references" class="hover:underline" data-i18n="footerNavReferences">Referenciák</a></li>
+                <li><a href="#about" class="hover:underline" data-i18n="footerNavAbout">Rólunk</a></li>
+                <li><a href="#contact" class="hover:underline" data-i18n="footerNavContact">Kapcsolat</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="text-center text-xs mt-10 text-gray-400" data-i18n="footerCopyright">
+        &copy; 2025 BeyondStart Solutions. Minden jog fenntartva.
+    </div>
+</footer>
+
+<script src="translations.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="cookieTitle">Cookie tájékoztató – BeyondStart Solutions</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+<header id="site-header" class="sticky top-0 z-50 py-8 px-6 flex justify-between items-center bg-white shadow transition-all duration-300">
+  <a href="index.html">
+    <img src="images/beyondstart_logo_sm.png" alt="BeyondStart Solutions logó">
+  </a>
+  <div class="relative">
+    <select id="language" onchange="setLanguage(this.value)"
+            class="appearance-none block w-full bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+      <option value="hu">🇭🇺 HU</option>
+      <option value="en">🇬🇧 EN</option>
+      <option value="de">🇩🇪 DE</option>
+      <option value="fr">🇫🇷 FR</option>
+      <option value="nl">🇳🇱 NL</option>
+      <option value="es">🇪🇸 ES</option>
+    </select>
+    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+      <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M7 7l3-3 3 3m0 6l-3 3-3-3"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-3xl mx-auto py-16 px-6">
+  <h1 class="text-4xl font-bold mb-6" data-i18n="cookieTitle">Cookie tájékoztató</h1>
+
+  <p class="mb-4" data-i18n="cookieIntro">
+    Weboldalunk cookie-kat használ a felhasználói élmény javítása érdekében. A cookie-k kis adatfájlok, amelyeket a böngésző ment el a számítógépére.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-8 mb-4" data-i18n="cookieTypes">Milyen típusú cookie-kat használunk?</h2>
+  <ul class="list-disc list-inside space-y-2">
+    <li data-i18n="cookieEssential">Szükséges cookie-k – ezek elengedhetetlenek a weboldal működéséhez.</li>
+    <li data-i18n="cookieAnalytics">Analitikai cookie-k – segítenek megérteni, hogyan használják a látogatók az oldalt.</li>
+    <li data-i18n="cookiePreference">Beállítási cookie-k – megjegyzik a felhasználói választásokat, például a nyelvet.</li>
+  </ul>
+
+  <h2 class="text-2xl font-semibold mt-8 mb-4" data-i18n="cookieDisable">Hogyan lehet letiltani a cookie-kat?</h2>
+  <p class="mb-4" data-i18n="cookieDisableText">
+    A legtöbb böngésző lehetőséget kínál a cookie-k kezelésére, letiltására vagy törlésére. Ezeket a beállításokat a böngésző „Beállítások” vagy „Adatvédelem” menüpontjában találja.
+  </p>
+
+  <p class="text-sm text-gray-600" data-i18n="cookieNote">
+    Felhívjuk figyelmét, hogy a cookie-k letiltása esetén a weboldal egyes funkciói nem működhetnek megfelelően.
+  </p>
+</main>
+
+<footer class="bg-gray-100 text-sm text-gray-600 py-10 px-6 mt-20">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
+    <div>
+      <h3 class="font-semibold mb-2" data-i18n="footerCompanyName">BeyondStart Solutions</h3>
+      <p data-i18n="footerCompanyDetails">
+        Cégvezető: Horváth Zoltán<br>
+        Székhely: Str. Parângului 10, Ap. 2, 440031, Satu Mare, Romania.<br>
+        Adószám: RO43923085<br>
+        Cégjegyzékszám: J30/291/2021
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold mb-2" data-i18n="footerLegal">Jogi dokumentumok</h3>
+      <ul class="space-y-1">
+        <li><a href="impresszum.html" class="hover:underline" data-i18n="footerImprint">Impresszum</a></li>
+        <li><a href="adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy">Adatvédelmi irányelvek</a></li>
+        <li><a href="cookie.html" class="hover:underline" data-i18n="footerCookies">Cookie tájékoztató</a></li>
+        <li><a href="aszf.html" class="hover:underline" data-i18n="footerTerms">ÁSZF</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold mb-2" data-i18n="footerContact">Kapcsolat</h3>
+      <ul>
+        <li>
+          <span data-i18n="footerEmail">E-mail:</span>
+          <a href="mailto:zoltan@beyondstart.solutions" class="hover:underline">zoltan@beyondstart.solutions</a>
+        </li>
+        <li>
+          <span data-i18n="footerPhone">Telefon:</span>
+          <a href="tel:+36301234567" class="hover:underline">+36 70 508 4100</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold mb-2" data-i18n="footerNav">Navigáció</h3>
+      <ul class="space-y-1">
+        <li><a href="index.html" class="hover:underline" data-i18n="footerNavHome">Főoldal</a></li>
+        <li><a href="#services" class="hover:underline" data-i18n="footerNavServices">Szolgáltatások</a></li>
+        <li><a href="#references" class="hover:underline" data-i18n="footerNavReferences">Referenciák</a></li>
+        <li><a href="#about" class="hover:underline" data-i18n="footerNavAbout">Rólunk</a></li>
+        <li><a href="#contact" class="hover:underline" data-i18n="footerNavContact">Kapcsolat</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="text-center text-xs mt-10 text-gray-400" data-i18n="footerCopyright">
+    &copy; 2025 BeyondStart Solutions. Minden jog fenntartva.
+  </div>
+</footer>
+
+<script src="translations.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
