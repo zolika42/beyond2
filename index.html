@@ -6,7 +6,8 @@
     <title>BeyondStart Solutions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
     <link href="tailwind.min.css" rel="stylesheet" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="style.css"></noscript>
@@ -27,7 +28,7 @@
 
     <div class="flex items-center gap-2 relative">
         <label for="language" class="sr-only">Nyelvválasztás</label>
-        <select id="language" aria-label="Language selection"
+        <select id="language" class="w-[140px]" aria-label="Language selection"
                 class="appearance-none block bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
             <option value="hu">🇭🇺 HU</option>
             <option value="en">🇬🇧 EN</option>
@@ -41,18 +42,12 @@
                 class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-semibold rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition">
             OK
         </button>
-
-        <div class="pointer-events-none absolute inset-y-0 right-24 flex items-center px-2 text-gray-800">
-            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M7 7l3-3 3 3m0 6l-3 3-3-3"/>
-            </svg>
-        </div>
     </div>
 </header>
 
 <!-- Hero -->
-<section class="text-center py-20 px-4 bg-gray-50 animate-section" aria-label="BeyondStart Solutions">
-    <h1 class="text-3xl md:text-3xl font-bold mb-3" data-i18n="heroTitle">Drupal, Laravel vagy Shopify projekted
+<section class="text-center py-20 px-4 bg-gray-50" aria-label="BeyondStart Solutions">
+    <h1 class="text-3xl md:text-3xl text-[32px] font-bold mb-3" data-i18n="heroTitle">Drupal, Laravel vagy Shopify projekted
         káoszban van?</h1>
     <p class="text-lg md:text-xl mb-6 max-w-3xl mx-auto text-gray-700" data-i18n="heroSubtitle">A BeyondStart Solutions
         segít rendbe tenni, optimalizálni vagy újraindítani digitális projekted. 20 év tapasztalat, nagyvállalati
@@ -71,7 +66,7 @@
 </section>
 
 <!-- Szolgáltatások -->
-<section id="services" class="py-20 px-6 mx-auto animate-section scroll-reveal" aria-label="Szolgáltatások">
+<section id="services" class="py-20 px-6 mx-auto scroll-reveal" aria-label="Szolgáltatások">
     <h2 class="text-3xl font-semibold mb-10 text-center" data-i18n="servicesTitle">Szolgáltatásaink</h2>
     <div class="grid md:grid-cols-3 gap-10">
         <a href="https://calendly.com/zoltan-beyondstart/fixdrupal-1-hour-consulting" target="_blank">
@@ -113,10 +108,10 @@
 </section>
 
 <!-- Referenciák -->
-<section id="references" class="bg-gray-50 py-20 px-6 animate-section scroll-reveal" aria-label="Referenciák">
+<section id="references" class="bg-gray-50 py-20 px-6 scroll-reveal" aria-label="Referenciák">
     <h2 class="text-3xl font-semibold text-center mb-10" data-i18n="referencesTitle">Akikkel már dolgoztunk</h2>
     <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3 text-center text-sm text-gray-700">
-        <a href="https://www.kinepolis.com/" target="_blank" class="animate-section reference-card">
+        <a href="https://www.kinepolis.com/" target="_blank" class="reference-card">
             <img src="https://raw.githubusercontent.com/zolika42/beyondsolutions/refs/heads/main/public/images/logos/kinepolis_logo.webp"
                  loading="lazy" alt="Kinepolis logo" class="h-12 mx-auto" width="50" height="48">
             <div>
@@ -124,7 +119,7 @@
                     rendszerhez.</p>
             </div>
         </a>
-        <a href="https://www.techsoupeurope.org/" target="_blank" class="animate-section reference-card">
+        <a href="https://www.techsoupeurope.org/" target="_blank" class="reference-card">
             <img src="https://raw.githubusercontent.com/zolika42/beyondsolutions/refs/heads/main/public/images/logos/techsoup_logo.webp"
                  loading="lazy" alt="TechSoup logo" class="h-12 mx-auto techsoup" width="180" height="48">
             <div>
@@ -132,7 +127,7 @@
                     szektorban.</p>
             </div>
         </a>
-        <a href="https://www.aceg.be/" target="_blank" class="animate-section reference-card">
+        <a href="https://www.aceg.be/" target="_blank" class="reference-card">
             <img src="https://raw.githubusercontent.com/zolika42/beyondsolutions/refs/heads/main/public/images/logos/aceg_logo.webp"
                  loading="lazy" alt="ACEG logo" class="h-12 mx-auto" width="220" height="48">
             <div>
@@ -140,7 +135,7 @@
                     generálás.</p>
             </div>
         </a>
-        <a href="https://companyapp.co.uk/" target="_blank" class="animate-section reference-card">
+        <a href="https://companyapp.co.uk/" target="_blank" class="reference-card">
             <img src="https://raw.githubusercontent.com/zolika42/beyondsolutions/refs/heads/main/public/images/logos/companyapp_logo.webp"
                  loading="lazy" alt="CompanyApp logo" class="h-12 mx-auto" width="300" height="48">
             <div>
@@ -148,7 +143,7 @@
                     teljesítményoptimalizálással.</p>
             </div>
         </a>
-        <a href="https://judynatale.com/" target="_blank" class="animate-section reference-card">
+        <a href="https://judynatale.com/" target="_blank" class="reference-card">
             <img src="https://judynatale.com/cdn/shop/files/logo.png?v=1740056888&width=360"
                  loading="lazy" alt="JudyNatale Handmade logo" class="h-12 mx-auto" width="50" height="48">
             <div>
@@ -156,7 +151,7 @@
                     rendszerfejlesztés, dizájn, optmializálás. Továbbá Facebook és Google Merchant Center kezelése.</p>
             </div>
         </a>
-        <a href="https://columbiagames.com/" target="_blank" class="animate-section reference-card">
+        <a href="https://columbiagames.com/" target="_blank" class="reference-card">
             <img src="https://raw.githubusercontent.com/zolika42/beyondsolutions/refs/heads/main/public/images/logos/columbia_games_logo.webp"
                  loading="lazy" alt="Columbia Games logo" class="h-12 mx-auto" width="50" height="48">
             <div>
@@ -168,7 +163,7 @@
 </section>
 
 <!-- Rólam -->
-<section id="about" class="py-20 px-6 mx-auto text-center animate-section scroll-reveal" aria-label="Rólunk">
+<section id="about" class="py-20 px-6 mx-auto text-center scroll-reveal" aria-label="Rólunk">
     <h2 class="text-3xl font-semibold mb-6" data-i18n="aboutTitle">A BeyondStart mögött</h2>
     <p class="mb-6 max-w-3xl mx-auto text-lg text-gray-700" data-i18n="aboutText">A BeyondStart Solutions alapítója
         Horváth Zoltán, aki közel
@@ -178,12 +173,12 @@
 </section>
 
 <!-- Kapcsolat / Calendly -->
-<section id="contact" class="bg-blue-50 py-20 px-6 text-center animate-section scroll-reveal" aria-label="Kapcsolat">
+<section id="contact" class="bg-blue-50 py-20 px-6 text-center scroll-reveal" aria-label="Kapcsolat">
     <h2 class="text-3xl font-semibold mb-6" data-i18n="contactTitle">Foglalj időpontot</h2>
     <p class="text-gray-700 mb-6" data-i18n="contactSubtitle">Beszéljük át projekted – az első konzultáció ingyenes és
         kötelezettségmentes.</p>
-    <div class="w-full max-w-[768px] mx-auto">
-        <iframe src="https://calendly.com/zoltan-beyondstart" width="768" height="600"></iframe>
+    <div class="w-full max-w-[768px] mx-auto min-h-[600px]">
+        <iframe src="https://calendly.com/zoltan-beyondstart" width="768" height="600" title="Időpontfoglalás - Calendly"></iframe>
     </div>
 </section>
 
