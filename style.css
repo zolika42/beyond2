@@ -7,9 +7,6 @@ body {
 }
 
 /* Hoveres emelés szekciókra */
-.animate-section {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 .animate-section:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
