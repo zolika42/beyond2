@@ -54,6 +54,10 @@ img.techsoup {
     padding: 10px 5px 0 5px;
 }
 
+#references img {
+    height: 48px;
+}
+
 /* extra osztály scroll utáni állapothoz */
 .header-shrink {
     padding-top: 0.25rem !important; /* Tailwind: pt-1 */
