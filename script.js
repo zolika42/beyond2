@@ -1,15 +1,3 @@
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-});
-
-document.querySelectorAll('.scroll-reveal').forEach(section => {
-    observer.observe(section);
-});
-
 function setLanguage(lang) {
     localStorage.setItem('lang', lang);
     translatePage(lang);
