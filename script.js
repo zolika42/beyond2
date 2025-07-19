@@ -51,12 +51,3 @@ document.addEventListener("DOMContentLoaded", () => {
         selector.value = initialLang;
     }
 });
-
-window.addEventListener("scroll", function () {
-    const header = document.getElementById("site-header");
-    if (window.scrollY > 50) {
-        header.classList.add("header-shrink");
-    } else {
-        header.classList.remove("header-shrink");
-    }
-});
