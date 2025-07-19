@@ -70,3 +70,8 @@ iframe {
     border: none;
     overflow: hidden;
 }
+
+button:focus, a:focus {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
