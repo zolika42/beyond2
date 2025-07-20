@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BeyondStart Solutions</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link href="style.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="description" content="Drupal, Laravel és Shopify problémák gyors megoldása - BeyondStart Solutions.">
+  <meta property="og:title" content="BeyondStart Solutions">
+  <meta property="og:description" content="Drupal, Laravel, Shopify problémákra célzott megoldások.">
+  <meta property="og:image" content="/img/og-image.jpg">
+  <meta property="og:url" content="https://beyondstart.solutions">
+  <meta property="og:type" content="website">
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+<header id="site-header" class="sticky top-0 z-50 py-4 px-6 flex justify-between items-center bg-white shadow duration-300">
+  <a href="/">
+    <img src="images/beyondstart_logo_sm.webp" alt="BeyondStart Solutions logó" width="200" height="56" loading="eager" decoding="async" fetchpriority="high">
+  </a>
+
+  <div class="flex items-center gap-2 relative">
+    <label for="language" class="sr-only">Nyelvválasztás</label>
+    <select id="language" aria-label="Language selection" class="w-[140px] appearance-none block bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+      <option value="hu">🇭🇺 HU</option>
+      <option value="en">🇬🇧 EN</option>
+      <option value="de">🇩🇪 DE</option>
+      <option value="fr">🇫🇷 FR</option>
+      <option value="nl">🇳🇱 NL</option>
+      <option value="es">🇪🇸 ES</option>
+    </select>
+
+    <button onclick="setLanguage(document.getElementById('language').value)" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-semibold rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+      OK
+    </button>
+  </div>
+</header>
+
+<main class="max-w-3xl mx-auto py-16 px-6">
+  <h1 class="text-4xl font-bold mb-6" data-i18n="privacyTitle">Adatvédelmi irányelvek</h1>
+
+  <p class="mb-4" data-i18n="privacyIntro">
+    A BeyondStart Solutions elkötelezett az Ön személyes adatainak védelme iránt. Az alábbiakban ismertetjük, milyen adatokat gyűjtünk, hogyan használjuk fel azokat, és hogyan biztosítjuk védelmüket.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-8 mb-2" data-i18n="privacySection1">1. Adatkezelő</h2>
+  <p data-i18n="privacyDataController">
+    Drupal IT Development S.R.L<br>
+    Székhely: Str. Parângului 10, Ap. 2, 440031, Satu Mare, Romania<br>
+    E-mail: <a href="mailto:zoltan@beyondstart.solutions" class="text-blue-600 hover:underline">zoltan[at]beyondstart[dot]solutions</a>
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-8 mb-2" data-i18n="privacySection2">2. Gyűjtött adatok</h2>
+  <ul class="list-disc pl-5 text-gray-700">
+    <li data-i18n="privacyItem1">Kapcsolati adatok (név, e-mail, telefonszám)</li>
+    <li data-i18n="privacyItem2">Weboldal használati adatok (cookie-k, IP-cím, böngésző típusa)</li>
+  </ul>
+
+  <h2 class="text-2xl font-semibold mt-8 mb-2" data-i18n="privacySection3">3. Adatkezelés célja</h2>
+  <ul class="list-disc pl-5 text-gray-700">
+    <li data-i18n="privacyItem3">Kapcsolattartás és ügyfélszolgálat</li>
+    <li data-i18n="privacyItem4">Szolgáltatásaink nyújtása és fejlesztése</li>
+    <li data-i18n="privacyItem5">Jogszabályi kötelezettségek teljesítése</li>
+  </ul>
+
+  <h2 class="text-2xl font-semibold mt-8 mb-2" data-i18n="privacySection4">4. Adatok tárolása</h2>
+  <p data-i18n="privacyStorage">
+    Az adatokat biztonságos szervereken tároljuk, és csak a szükséges ideig őrizzük meg őket, az adatkezelés céljához igazodva.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-8 mb-2" data-i18n="privacySection5">5. Az Ön jogai</h2>
+  <ul class="list-disc pl-5 text-gray-700">
+    <li data-i18n="privacyRight1">Tájékoztatás kéréséhez való jog</li>
+    <li data-i18n="privacyRight2">Adatainak helyesbítéséhez való jog</li>
+    <li data-i18n="privacyRight3">Adatok törléséhez való jog</li>
+    <li data-i18n="privacyRight4">Adathordozhatósághoz való jog</li>
+  </ul>
+
+  <p class="mt-8 text-sm text-gray-600" data-i18n="privacyContactNote">
+    További információért kérjük, vegye fel velünk a kapcsolatot e-mailben.
+  </p>
+</main>
+
+<footer class="bg-gray-100 text-sm text-gray-600 py-10 px-6 mt-20">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
+    <div>
+      <h3 class="font-semibold mb-2" data-i18n="footerCompanyName">BeyondStart Solutions</h3>
+      <p data-i18n="footerCompanyDetails">CEO: Zoltán Horváth <br> Dirección: Str. Parângului 10, Ap. 2, 440031, Satu Mare, Rumanía <br> IVA: RO43923085 <br> Registro: J30/291/2021</p>
+    </div>
+    <div>
+      <h3 class="font-semibold mb-2" data-i18n="footerLegal">Documentos legales</h3>
+      <ul class="space-y-1">
+        <li><a href="/impresszum.html" class="hover:underline" data-i18n="footerImprint">Aviso legal</a></li>
+        <li><a href="/adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy">Política de privacidad</a></li>
+        <li><a href="/cookie.html" class="hover:underline" data-i18n="footerCookies">Política de cookies</a></li>
+        <li><a href="/aszf.html" class="hover:underline" data-i18n="footerTerms">Términos y condiciones</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold mb-2" data-i18n="footerContact">Contacto</h3>
+      <ul>
+        <li>
+          <span data-i18n="footerEmail">Correo electrónico:</span>
+          <a href="mailto:zoltan@beyondstart.solutions" class="hover:underline">zoltan[at]beyondstart[dot]solutions</a>
+        </li>
+        <li>
+          <span data-i18n="footerPhone">Teléfono:</span>
+          <a href="tel:+36705084100" class="hover:underline">+36 70 508 4100</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold mb-2" data-i18n="footerNav">Navegación</h3>
+      <ul class="space-y-1">
+        <li><a href="/" class="hover:underline" data-i18n="footerNavHome">Inicio</a></li>
+        <li><a href="/#services" class="hover:underline" data-i18n="footerNavServices">Servicios</a></li>
+        <li><a href="/#references" class="hover:underline" data-i18n="footerNavReferences">Referencias</a></li>
+        <li><a href="/#about" class="hover:underline" data-i18n="footerNavAbout">Sobre nosotros</a></li>
+        <li><a href="/#contact" class="hover:underline" data-i18n="footerNavContact">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="text-center text-xs mt-10 text-gray-800" data-i18n="footerCopyright">© 2025 BeyondStart Solutions. Todos los derechos reservados.</div>
+</footer>
+
+<script src="translations.js"></script>
+<script src="script.js"></script>
+
+
+</body></html>

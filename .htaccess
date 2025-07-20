@@ -1,0 +1,36 @@
+RewriteEngine On
+RewriteBase /
+
+# Csak akkor fut le, ha nincs megadott nyelvi aloldal
+RewriteCond %{REQUEST_URI} ^/$
+
+# Magyar
+RewriteCond %{HTTP:Accept-Language} ^hu [NC]
+RewriteRule ^$ hu/index.html [R=302,L]
+
+# Német
+RewriteCond %{HTTP:Accept-Language} ^de [NC]
+RewriteRule ^$ de/index.html [R=302,L]
+
+# Francia
+RewriteCond %{HTTP:Accept-Language} ^fr [NC]
+RewriteRule ^$ fr/index.html [R=302,L]
+
+# Holland
+RewriteCond %{HTTP:Accept-Language} ^nl [NC]
+RewriteRule ^$ nl/index.html [R=302,L]
+
+# Spanyol
+RewriteCond %{HTTP:Accept-Language} ^es [NC]
+RewriteRule ^$ es/index.html [R=302,L]
+
+# Fallback: Angol
+RewriteRule ^$ en/index.html [R=302,L]
+
+# Engedélyezd a .html fájlok elérését
+<FilesMatch "\.html$">
+  Header set Content-Type "text/html; charset=UTF-8"
+</FilesMatch>
+
+# Engedélyezd CORS-t ha kell (opcionális)
+# Header set Access-Control-Allow-Origin "*"

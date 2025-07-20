@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeyondStart Solutions – Drupal, Laravel és Shopify hibák javítása 72 órán belül</title>
+    <meta name="description" content="Biztonságos Drupal frissítés, gyors Laravel optimalizálás, konverziót növelő Shopify audit. 72 órán belüli megoldás garanciával.">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link href="/style.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="/style.min.css">
+    </noscript>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Drupal, Laravel és Shopify megoldások – BeyondStart Solutions">
+    <meta property="og:description" content="Több mint 20 év tapasztalat. Gyors hibajavítás és teljesítményoptimalizálás 72 órán belül, pénzvisszafizetési garanciával.">
+    <meta property="og:image" content="/images/beyondstart_logo_sm.webp">
+    <meta property="og:url" content="https://beyondstart.solutions">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://beyondstart.solutions/es/index.html">
+</head>
+<body>
+
+<!-- Logó -->
+<header id="site-header" class="sticky top-0 z-50 py-4 px-6 flex justify-between items-center bg-white shadow duration-300">
+    <a href="/">
+        <img src="/images/beyondstart_logo_sm.webp" alt="BeyondStart Solutions logó" width="200" height="56" loading="eager" decoding="async" fetchpriority="high">
+    </a>
+
+    <div class="flex items-center gap-2 relative">
+        <label for="language" class="sr-only">Nyelvválasztás</label>
+        <select id="language" aria-label="Language selection" class="w-[140px] appearance-none block bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <option value="hu">🇭🇺 HU</option>
+            <option value="en">🇬🇧 EN</option>
+            <option value="de">🇩🇪 DE</option>
+            <option value="fr">🇫🇷 FR</option>
+            <option value="nl">🇳🇱 NL</option>
+            <option value="es">🇪🇸 ES</option>
+        </select>
+
+        <button onclick="setLanguage(document.getElementById('language').value)" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-semibold rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            OK
+        </button>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="scroll-mt-24 text-center py-20 px-4 bg-gray-50" aria-label="BeyondStart Solutions">
+    <h1 class="text-3xl md:text-3xl text-[32px] font-bold mb-3" data-i18n="heroTitle">¿Tu proyecto en Drupal, Laravel o Shopify está en caos?</h1>
+    <p class="text-lg md:text-xl mb-6 max-w-3xl mx-auto text-gray-700" data-i18n="heroSubtitle">BeyondStart Solutions te ayuda a reparar, optimizar o relanzar tu proyecto digital. 20 años de experiencia con respaldo empresarial y agilidad de startup.</p>
+    <p class="text-lg md:text-xl mb-6 max-w-3xl mx-auto text-gray-700" data-i18n="heroSubtitle2">Lo resolvemos en 72 horas – o te devolvemos el dinero.</p>
+    <a href="#contact" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700" data-i18n="bookButton">Reservar cita</a>
+</section>
+
+<!-- Probléma leírás -->
+<section class="scroll-mt-24 py-20 px-6 mx-auto text-center" aria-label="Miben segíthetünk?">
+    <h2 class="text-3xl font-semibold mb-6" data-i18n="problemTitle">¿Qué problemas resolvemos?</h2>
+    <p class="mb-6 max-w-3xl mx-auto text-gray-700 text-lg" data-i18n="problemText">¿Tu sitio Drupal está desactualizado y vulnerable? ¿Laravel lento o con errores? ¿Tu tienda Shopify no convierte? Estos problemas no pueden esperar – y nosotros somos expertos en solucionarlos.</p>
+    <p class="mb-6 max-w-3xl mx-auto text-gray-700 text-lg" data-i18n="serviceIntro1">Sin tarifas por hora ni proyectos poco claros. Nuestros paquetes están diseñados para resolver problemas comunes de Drupal, Laravel y Shopify con rapidez y a precio fijo.</p>
+</section>
+
+<!-- Szolgáltatások -->
+<section id="services" class="scroll-mt-24 py-20 px-6 mx-auto" aria-label="Szolgáltatások">
+    <h2 class="text-3xl font-semibold mb-10 text-center" data-i18n="servicesTitle">Nuestros Servicios</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+        <div class="relative p-6 border rounded-2xl shadow-md bg-white">
+            <!-- Badge -->
+            <span class="absolute top-0 right-0 bg-yellow-400 text-black text-xs font-semibold px-3 py-1 rounded-bl-xl shadow" data-i18n="mostPopular">Más popular</span>
+
+            <h3 class="text-xl font-bold mb-4 text-center text-gray-900" data-i18n="service1Title">FixDrupal™ – Seguridad y Actualizaciones<br>€149</h3>
+
+            <ul class="space-y-2 mb-6 text-left max-w-max mx-auto">
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">🧪</span>
+                    <span data-i18n="service1Item1">Auditoría y actualización completa de Drupal</span>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">🔒</span>
+                    <span data-i18n="service1Item2">Corrección de vulnerabilidades de seguridad</span>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">🧩</span>
+                    <span data-i18n="service1Item3">Revisión de compatibilidad de módulos</span>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">👨‍💻</span>
+                    <span data-i18n="service1Item4">Consulta técnica de 1 hora</span>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">⏱️</span>
+                    <span data-i18n="service1Item5">Empezamos en 48 horas</span>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">💯</span>
+                    <span data-i18n="service1Item6">Garantía de satisfacción</span>
+                </li>
+            </ul>
+
+            <div class="text-center">
+                <a href="https://calendly.com/zoltan-beyondstart/fixdrupal-1-hour-consulting" target="_blank" class="block text-center bg-blue-600 text-white px-12 py-3 rounded-lg hover:bg-blue-700 font-semibold shadow transition w-full max-w-max mx-auto" data-i18n="bookButton">Reservar cita</a>
+            </div>
+        </div>
+        <div class="p-6 border rounded-2xl shadow-md bg-white">
+            <h3 class="text-xl font-bold mb-4 text-center text-gray-900" data-i18n="service2Title">LaravelBoost™ – Velocidad y Estabilidad<br>€299</h3>
+
+            <ul class="space-y-2 mb-6 text-left max-w-max mx-auto">
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">🛠️</span>
+                    <span data-i18n="service2Item1">Refactorización de código y actualización de versión</span>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">📦</span>
+                    <span data-i18n="service2Item2">Auditoría de seguridad y dependencias (Composer)</span>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">🚀</span>
+                    <span data-i18n="service2Item3">Configuración de CI/CD y recomendaciones</span>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">⚙️</span>
+                    <span data-i18n="service2Item4">Optimización de rendimiento (cache, BD, colas)</span>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">⏱️</span>
+                    <span data-i18n="service2Item5">Empezamos en 48 horas</span>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">💯</span>
+                    <span data-i18n="service2Item6">Garantía de satisfacción</span>
+                </li>
+            </ul>
+
+            <div class="text-center">
+                <a href="https://calendly.com/zoltan-beyondstart/laravelboost" target="_blank" class="block text-center bg-blue-600 text-white px-12 py-3 rounded-lg hover:bg-blue-700 font-semibold shadow transition w-full max-w-max mx-auto" data-i18n="bookButton">Reservar cita</a>
+            </div>
+        </div>
+        <div class="p-6 border rounded-2xl shadow-md bg-white">
+            <h3 class="text-xl font-bold mb-4 text-center text-gray-900" data-i18n="service3Title">ShopifyProAudit™ – Aumento de Conversión<br>€199</h3>
+
+            <ul class="space-y-2 mb-6 text-left max-w-max mx-auto">
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">⚡</span>
+                    <span data-i18n="service3Item1">Auditoría de velocidad y optimización (LCP, CLS, TTI)</span>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">🔍</span>
+                    <span data-i18n="service3Item2">Auditoría SEO – estructura, meta, alt, sitemap</span>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">🎨</span>
+                    <span data-i18n="service3Item3">Mantenimiento del tema, revisión de apps, sugerencias UX</span>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">📈</span>
+                    <span data-i18n="service3Item4">+10% de conversión o reembolso</span>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">⏱️</span>
+                    <span data-i18n="service3Item5">Empezamos en 48 horas</span>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <span class="text-blue-600">💯</span>
+                    <span data-i18n="service3Item6">Garantía de satisfacción</span>
+                </li>
+            </ul>
+
+            <div class="text-center">
+                <a href="https://calendly.com/zoltan-beyondstart/shopifyproaudit-1-hour-consulting" target="_blank" class="block text-center bg-blue-600 text-white px-12 py-3 rounded-lg hover:bg-blue-700 font-semibold shadow transition w-full max-w-max mx-auto" data-i18n="bookButton">Reservar cita</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Referenciák -->
+<section id="references" class="scroll-mt-24 bg-gray-50 py-20 px-6" aria-label="Referenciák">
+    <h2 class="text-3xl font-semibold text-center mb-10" data-i18n="referencesTitle">Nuestros Clientes y Proyectos</h2>
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3 text-center text-sm text-gray-700">
+        <a href="https://www.kinepolis.com/" target="_blank" class="reference-card">
+            <img src="https://raw.githubusercontent.com/zolika42/beyondsolutions/refs/heads/main/public/images/logos/kinepolis_logo.webp" loading="eager" alt="Kinepolis logo" class="h-12 mx-auto" width="50" height="48">
+            <div>
+                <p data-i18n="ref1">Desarrollo de módulos Drupal, mantenimiento y migración para una red de cines internacional.</p>
+            </div>
+        </a>
+        <a href="https://www.techsoupeurope.org/" target="_blank" class="reference-card">
+            <img src="https://raw.githubusercontent.com/zolika42/beyondsolutions/refs/heads/main/public/images/logos/techsoup_logo.webp" loading="lazy" alt="TechSoup logo" class="h-12 mx-auto techsoup" width="180" height="48">
+            <div>
+                <p data-i18n="ref2">Interfaces administrativas basadas en Laravel y gestión de permisos para ONGs.</p>
+            </div>
+        </a>
+        <a href="https://www.aceg.be/" target="_blank" class="reference-card">
+            <img src="https://raw.githubusercontent.com/zolika42/beyondsolutions/refs/heads/main/public/images/logos/aceg_logo.webp" loading="lazy" alt="ACEG logo" class="h-12 mx-auto" width="220" height="48">
+            <div>
+                <p data-i18n="ref3">Reescritura de ERP en Laravel: accesos, registros, generación de PDF.</p>
+            </div>
+        </a>
+        <a href="https://companyapp.co.uk/" target="_blank" class="reference-card">
+            <img src="https://raw.githubusercontent.com/zolika42/beyondsolutions/refs/heads/main/public/images/logos/companyapp_logo.webp" loading="lazy" alt="CompanyApp logo" class="h-12 mx-auto" width="300" height="48">
+            <div>
+                <p data-i18n="ref4">Plataforma móvil de comunicación interna con módulos personalizados y optimización.</p>
+            </div>
+        </a>
+        <a href="https://judynatale.com/" target="_blank" class="reference-card">
+            <img src="https://judynatale.com/cdn/shop/files/logo.png?v=1740056888&amp;width=50" loading="lazy" alt="JudyNatale Handmade logo" class="h-12 mx-auto" width="50" height="48">
+            <div>
+                <p data-i18n="ref5">Solución Shopify para tienda de productos artesanales. Desarrollo, diseño, optimización e integración con Google y Facebook Merchant Center.</p>
+            </div>
+        </a>
+        <a href="https://columbiagames.com/" target="_blank" class="reference-card">
+            <img src="https://raw.githubusercontent.com/zolika42/beyondsolutions/refs/heads/main/public/images/logos/columbia_games_logo.webp" loading="lazy" alt="Columbia Games logo" class="h-12 mx-auto" width="50" height="48">
+            <div>
+                <p data-i18n="ref6">Editorial de juegos en EE. UU. Desarrollo de e-commerce con Laravel y asesoramiento técnico.</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- Rólam -->
+<section id="about" class="scroll-mt-24 py-20 px-6 mx-auto text-center" aria-label="Rólunk">
+    <h2 class="text-3xl font-semibold mb-6" data-i18n="aboutTitle">Quiénes somos</h2>
+    <p class="mb-6 max-w-3xl mx-auto text-lg text-gray-700" data-i18n="aboutText">BeyondStart Solutions fue fundada por Zoltán Horváth, desarrollador senior con casi 20 años de experiencia. Ha trabajado con Kinepolis, TechSoup, ACEG y más. Con nosotros, tu proyecto está en buenas manos – no probamos, entregamos.</p>
+</section>
+
+<!-- Kapcsolat / Calendly -->
+<section id="contact" class="scroll-mt-24 bg-blue-50 py-20 px-6 text-center" aria-label="Kapcsolat">
+    <h2 class="text-3xl font-semibold mb-6" data-i18n="contactTitle">Reserva una consulta</h2>
+    <p class="text-gray-700 mb-6" data-i18n="contactSubtitle">Hablemos de tu proyecto – la primera sesión es gratuita y sin compromiso.</p>
+    <div class="w-full max-w-[768px] mx-auto min-h-[600px]">
+        <iframe src="https://calendly.com/zoltan-beyondstart" width="768" height="600" title="Időpontfoglalás - Calendly" loading="lazy"></iframe>
+    </div>
+</section>
+
+<section class="scroll-mt-24 bg-blue-50 py-12 px-4 text-center rounded-t-2xl shadow-inner" aria-label="Záró CTA">
+    <h2 class="text-2xl font-semibold mb-2 text-gray-900" data-i18n="ctaBlockTitle">¿No sabes qué paquete elegir?</h2>
+    <p class="text-gray-700 mb-6" data-i18n="ctaBlockText">Hablemos de tu situación. Reserva una consulta gratuita – comentarios honestos y sin compromiso.</p>
+    <a href="#contact" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition" data-i18n="ctaBlockButton">Reservar consulta gratuita</a>
+</section>
+<footer class="bg-gray-100 text-sm text-gray-600 py-10 px-6 mt-20">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
+        <div>
+            <h3 class="font-semibold mb-2" data-i18n="footerCompanyName">BeyondStart Solutions</h3>
+            <p data-i18n="footerCompanyDetails">CEO: Zoltán Horváth <br> Dirección: Str. Parângului 10, Ap. 2, 440031, Satu Mare, Rumanía <br> IVA: RO43923085 <br> Registro: J30/291/2021</p>
+        </div>
+        <div>
+            <h3 class="font-semibold mb-2" data-i18n="footerLegal">Documentos legales</h3>
+            <ul class="space-y-1">
+                <li><a href="/impresszum.html" class="hover:underline" data-i18n="footerImprint">Aviso legal</a></li>
+                <li><a href="/adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy">Política de privacidad</a></li>
+                <li><a href="/cookie.html" class="hover:underline" data-i18n="footerCookies">Política de cookies</a></li>
+                <li><a href="/aszf.html" class="hover:underline" data-i18n="footerTerms">Términos y condiciones</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="font-semibold mb-2" data-i18n="footerContact">Contacto</h3>
+            <ul>
+                <li>
+                    <span data-i18n="footerEmail">Correo electrónico:</span>
+                    <a href="mailto:zoltan@beyondstart.solutions" class="hover:underline">zoltan[at]beyondstart[dot]solutions</a>
+                </li>
+                <li>
+                    <span data-i18n="footerPhone">Teléfono:</span>
+                    <a href="tel:+36705084100" class="hover:underline">+36 70 508 4100</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="font-semibold mb-2" data-i18n="footerNav">Navegación</h3>
+            <ul class="space-y-1">
+                <li><a href="/" class="hover:underline" data-i18n="footerNavHome">Inicio</a></li>
+                <li><a href="/#services" class="hover:underline" data-i18n="footerNavServices">Servicios</a></li>
+                <li><a href="/#references" class="hover:underline" data-i18n="footerNavReferences">Referencias</a></li>
+                <li><a href="/#about" class="hover:underline" data-i18n="footerNavAbout">Sobre nosotros</a></li>
+                <li><a href="/#contact" class="hover:underline" data-i18n="footerNavContact">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="text-center text-xs mt-10 text-gray-800" data-i18n="footerCopyright">© 2025 BeyondStart Solutions. Todos los derechos reservados.</div>
+</footer>
+
+<a href="#contact" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg z-50 hover:bg-blue-700 transition md:hidden" data-i18n="stickyCTA">
+    💬 Ajánlatkérés
+</a>
+<script src="/translations.min.js" defer=""></script>
+<script src="/script.min.js" defer=""></script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "BeyondStart Solutions",
+        "url": "https://beyondstart.solutions",
+        "logo": "https://beyondstart.solutions/images/beyondstart_logo_sm.webp",
+        "sameAs": [],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+36 70 508 4100",
+            "contactType": "customer service",
+            "areaServed": "HU",
+            "availableLanguage": ["Hungarian", "English"]
+        }
+    }
+</script>
+
+
+</body></html>

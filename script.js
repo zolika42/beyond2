@@ -1,16 +1,9 @@
 function setLanguage(lang) {
-    localStorage.setItem('lang', lang);
-    translatePage(lang);
-
-    const selector = document.getElementById('language');
-    if (selector && selector.value !== lang) {
-        selector.value = lang;
+    const supportedLangs = ['en', 'hu', 'de', 'fr', 'nl', 'es'];
+    if (!supportedLangs.includes(lang)) {
+        lang = 'en'; // fallback
     }
-
-    // Force retranslation of dynamically added content
-    requestAnimationFrame(() => {
-        translatePage(lang);
-    });
+    window.location.href = `/dist/${lang}/index.html`;
 }
 
 function translatePage(lang) {
@@ -30,12 +23,16 @@ function detectBrowserLanguage() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const savedLang = localStorage.getItem('lang');
-    const initialLang = savedLang || detectBrowserLanguage();
-    translatePage(initialLang);
+    const currentLang = window.location.pathname.split('/')[2] || 'en';
+    const langSelect = document.getElementById('language');
 
-    const selector = document.getElementById('language');
-    if (selector) {
-        selector.value = initialLang;
+    if (langSelect) {
+        langSelect.value = currentLang;
+
+        langSelect.addEventListener('change', (e) => {
+            const selectedLang = e.target.value;
+            localStorage.setItem('lang', selectedLang);
+            setLanguage(selectedLang);
+        });
     }
 });
