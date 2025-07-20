@@ -3,7 +3,7 @@ function setLanguage(lang) {
     if (!supportedLangs.includes(lang)) {
         lang = 'en'; // fallback
     }
-    window.location.href = `/dist/${lang}/index.html`;
+    window.location.href = `/${lang}/index.html`;
 }
 
 function translatePage(lang) {
@@ -21,18 +21,3 @@ function detectBrowserLanguage() {
     const browserLang = navigator.language.slice(0, 2).toLowerCase();
     return supported.includes(browserLang) ? browserLang : 'en';
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    const currentLang = window.location.pathname.split('/')[2] || 'en';
-    const langSelect = document.getElementById('language');
-
-    if (langSelect) {
-        langSelect.value = currentLang;
-
-        langSelect.addEventListener('change', (e) => {
-            const selectedLang = e.target.value;
-            localStorage.setItem('lang', selectedLang);
-            setLanguage(selectedLang);
-        });
-    }
-});
