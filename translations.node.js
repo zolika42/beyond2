@@ -173,7 +173,16 @@ module.exports = {
         ogDescription: "Több mint 20 év tapasztalat. Gyors hibajavítás és teljesítményoptimalizálás 72 órán belül, pénzvisszafizetési garanciával.",
         auto_label_4: "Nyelvválasztás",
         auto_a_5: "zoltan[at]beyondstart[dot]solutions",
-        auto_a_6: "+36 70 508 4100"
+        auto_a_6: "+36 70 508 4100",
+
+        testimonialTitle: "Ügyfeleink mondták",
+        testimonial1Text: "\"Zoltán kiváló szakmai tudással és gyors, megbízható munkával támogatta a vállalati portál fejlesztését. Igazi csapatjátékos.\"",
+        testimonial1Author: "– Eligio F., terméktulajdonos",
+        testimonial2Text: "\"Technikai tudása és problémamegoldó képessége miatt kulcsszereplővé vált a csapatunkban. Jó vele dolgozni!\"",
+        testimonial2Author: "– Arsen H., üzleti elemző",
+        testimonial3Text: "\"Ha kreatív és beszédes csapattagot keresel, ő az embered! Nyitott, tanulékony és nem ijed meg a kihívásoktól.\"",
+        testimonial3Author: "– Tamás M., mérnöki vezető",
+
     },
     en: {
         // Header / navigation
@@ -351,7 +360,15 @@ module.exports = {
         ogDescription: "Over 20 years of experience. Fast bug fixing and performance optimization within 72 hours, with a satisfaction guarantee.",
         auto_label_4: "Language selection",
         auto_a_5: "zoltan[at]beyondstart[dot]solutions",
-        auto_a_6: "+36 70 508 4100"
+        auto_a_6: "+36 70 508 4100",
+
+        testimonialTitle: "What our clients say",
+        testimonial1Text: "\"Zoltán brought strong expertise and reliable, fast work to our enterprise portal project. A true team player.\"",
+        testimonial1Author: "– Eligio F., Product Owner",
+        testimonial2Text: "\"His technical skills and problem-solving made him a key contributor to our team. A pleasure to work with.\"",
+        testimonial2Author: "– Arsen H., Business Analyst",
+        testimonial3Text: "\"If you're looking for a creative, talkative teammate, he's your guy. Always open to learning and fearless in solving tough challenges.\"",
+        testimonial3Author: "– Tamás M., Engineering Lead",
     },
     de: {
         // Header / navigation
@@ -529,7 +546,15 @@ module.exports = {
         ogDescription: "Über 20 Jahre Erfahrung. Schnelle Fehlerbehebung und Performance-Optimierung in 72 Stunden mit Zufriedenheitsgarantie.",
         auto_label_4: "Sprachauswahl",
         auto_a_5: "zoltan[at]beyondstart[dot]solutions",
-        auto_a_6: "+36 70 508 4100"
+        auto_a_6: "+36 70 508 4100",
+
+        testimonialTitle: "Was unsere Kunden sagen",
+        testimonial1Text: "\"Zoltán brachte fundiertes Fachwissen und zuverlässige, schnelle Arbeit in unser Portalprojekt ein. Ein echter Teamplayer.\"",
+        testimonial1Author: "– Eligio F., Produktverantwortlicher",
+        testimonial2Text: "\"Seine technischen Fähigkeiten und seine Lösungsorientierung machten ihn zu einem wertvollen Teammitglied. Die Zusammenarbeit war großartig.\"",
+        testimonial2Author: "– Arsen H., Business Analyst",
+        testimonial3Text: "\"Wenn du einen kreativen, kommunikativen Kollegen suchst, ist er die perfekte Wahl. Lernbereit und unerschrocken bei Herausforderungen.\"",
+        testimonial3Author: "– Tamás M., Technischer Leiter",
     },
     fr: {
         // Header / navigation
@@ -707,7 +732,15 @@ module.exports = {
         ogDescription: "Plus de 20 ans d'expérience. Correction de bugs et optimisation des performances en 72 heures, avec garantie de satisfaction.",
         auto_label_4: "Choix de la langue",
         auto_a_5: "zoltan[at]beyondstart[dot]solutions",
-        auto_a_6: "+36 70 508 4100"
+        auto_a_6: "+36 70 508 4100",
+
+        testimonialTitle: "Ce que disent nos clients",
+        testimonial1Text: "\"Zoltán a apporté son expertise et un travail rapide et fiable à notre projet de portail d'entreprise. Un vrai joueur d’équipe.\"",
+        testimonial1Author: "– Eligio F., Chef de produit",
+        testimonial2Text: "\"Ses compétences techniques et sa capacité à résoudre des problèmes en ont fait un élément clé de notre équipe. Agréable à travailler avec lui.\"",
+        testimonial2Author: "– Arsen H., Analyste métier",
+        testimonial3Text: "\"Si vous cherchez un collègue créatif et bavard, c'est lui. Toujours prêt à apprendre et à relever les défis.\"",
+        testimonial3Author: "– Tamás M., Responsable technique",
     },
     nl: {
         // Header / navigation
@@ -885,7 +918,15 @@ module.exports = {
         ogDescription: "Meer dan 20 jaar ervaring. Snelle bugfixes en prestatieoptimalisatie binnen 72 uur, met tevredenheidsgarantie.",
         auto_label_4: "Taalkeuze",
         auto_a_5: "zoltan[at]beyondstart[dot]solutions",
-        auto_a_6: "+36 70 508 4100"
+        auto_a_6: "+36 70 508 4100",
+
+        testimonialTitle: "Wat onze klanten zeggen",
+        testimonial1Text: "\"Zoltán bracht sterke expertise en betrouwbaar, snel werk naar ons portalproject. Een echte teamspeler.\"",
+        testimonial1Author: "– Eligio F., Product Owner",
+        testimonial2Text: "\"Zijn technische vaardigheden en probleemoplossend vermogen maakten hem tot een waardevolle kracht in het team. Zeer prettig om mee te werken.\"",
+        testimonial2Author: "– Arsen H., Businessanalist",
+        testimonial3Text: "\"Zoek je een creatieve en spraakzame collega? Dan is hij jouw man. Altijd leergierig en niet bang voor lastige uitdagingen.\"",
+        testimonial3Author: "– Tamás M., Technisch leider",
     },
     es: {
         // Header / navigation
@@ -1063,6 +1104,14 @@ module.exports = {
         ogDescription: "Más de 20 años de experiencia. Corrección rápida de errores y optimización del rendimiento en 72 horas, con garantía de satisfacción.",
         auto_label_4: "Selección de idioma",
         auto_a_5: "zoltan[at]beyondstart[dot]solutions",
-        auto_a_6: "+36 70 508 4100"
+        auto_a_6: "+36 70 508 4100",
+
+        testimonialTitle: "Lo que dicen nuestros clientes",
+        testimonial1Text: "\"Zoltán aportó experiencia y un trabajo rápido y fiable a nuestro proyecto de portal empresarial. Un verdadero jugador de equipo.\"",
+        testimonial1Author: "– Eligio F., Responsable de producto",
+        testimonial2Text: "\"Sus habilidades técnicas y su capacidad para resolver problemas lo convirtieron en un pilar en el equipo. Un placer trabajar con él.\"",
+        testimonial2Author: "– Arsen H., Analista de negocios",
+        testimonial3Text: "\"Si buscas a alguien creativo y comunicativo, él es tu mejor opción. Siempre abierto a aprender y enfrentarse a retos difíciles.\"",
+        testimonial3Author: "– Tamás M., Líder técnico",
     }
 };
