@@ -221,6 +221,31 @@ if (missingTranslationTable.length > 0) {
     console.log(green("🎉 Minden fordítás megvan az összes nyelven!"));
 }
 
+// 11. sitemap.xml generálása
+const siteBase = "https://beyondstart.solutions";
+const sitemapEntries = [];
+
+for (const htmlFile of htmlFiles) {
+    const filename = path.basename(htmlFile);
+    for (const lang of Object.keys(translations)) {
+        const url = `${siteBase}${lang === "en" ? "" : `/${lang}`}/${filename}`;
+        sitemapEntries.push(`<url><loc>${url}</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>`);
+    }
+}
+
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n` +
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+    sitemapEntries.join("\n") +
+    `\n</urlset>`;
+
+fs.writeFileSync(path.join(targetDir, "sitemap.xml"), sitemapXml, "utf-8");
+console.log(green("✔ sitemap.xml létrehozva."));
+
+// 12. robots.txt generálása
+const robotsTxt = `User-agent: *\nAllow: /\nSitemap: ${siteBase}/sitemap.xml`;
+fs.writeFileSync(path.join(targetDir, "robots.txt"), robotsTxt, "utf-8");
+console.log(green("✔ robots.txt létrehozva."));
+
 // Nyelvválasztó dropdown frissítése adott nyelvre
 function updateLanguageSelect(doc, currentLang) {
     const select = doc.querySelector("select#language");
