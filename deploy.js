@@ -115,14 +115,39 @@ for (const htmlFile of htmlFiles) {
         });
 
         doc.documentElement.lang = lang;
-        // <select id="language"> selected attribútum frissítése
-        updateLanguageSelect(doc, lang);
 
+        // Frissítjük a canonical URL-t
         const canonical = doc.querySelector('link[rel="canonical"]');
         if (canonical) {
             const langPath = lang === "en" ? "" : `${lang}/`;
             canonical.href = `https://beyondstart.solutions/${langPath}${htmlFile}`;
         }
+
+        // Nyelvválasztó dropdown frissítése
+        updateLanguageSelect(doc, lang);
+
+        // Linkek átírása
+        doc.querySelectorAll("a[href]").forEach((a) => {
+            const href = a.getAttribute("href");
+            if (
+                href.startsWith("/") &&
+                !href.startsWith(`/${lang}/`) &&
+                !href.startsWith("/images") &&
+                !href.startsWith("/style") &&
+                !href.startsWith("/script") &&
+                !href.startsWith("/translations") &&
+                !href.startsWith("http") &&
+                !href.startsWith("#")
+            ) {
+                const newHref = `/${lang}${href}`;
+                a.setAttribute("href", newHref);
+            } else if (
+                href.startsWith("/#") &&
+                !href.startsWith(`/${lang}/`)
+            ) {
+                a.setAttribute("href", `/${lang}/${href.substring(2)}`);
+            }
+        });
 
         const langDir = path.join(targetDir, lang);
         if (!fs.existsSync(langDir)) fs.mkdirSync(langDir);
@@ -136,7 +161,6 @@ for (const htmlFile of htmlFiles) {
         }
     }
 }
-
 // 10. Táblázatos jelentés hiányzó fordításokról
 function pad(str, len) {
     return str + " ".repeat(Math.max(0, len - str.length));
