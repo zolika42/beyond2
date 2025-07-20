@@ -1,9 +1,5 @@
 function setLanguage(lang) {
-    const supportedLangs = ['en', 'hu', 'de', 'fr', 'nl', 'es'];
-    if (!supportedLangs.includes(lang)) {
-        lang = 'en'; // fallback
-    }
-    window.location.href = `/${lang}/index.html`;
+    localStorage.setItem('lang', lang);
 }
 
 function translatePage(lang) {
@@ -21,3 +17,16 @@ function detectBrowserLanguage() {
     const browserLang = navigator.language.slice(0, 2).toLowerCase();
     return supported.includes(browserLang) ? browserLang : 'en';
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const supported = ['en', 'hu', 'de', 'fr', 'nl', 'es'];
+    const savedLang = localStorage.getItem('lang');
+    const currentLang = window.location.pathname.split('/')[1]; // pl. "de"
+    if (!savedLang && currentLang) {
+        setLanguage(currentLang);
+    }
+
+    if (savedLang && supported.includes(savedLang) && savedLang !== currentLang) {
+        window.location.href = `/${savedLang}${window.location.pathname.replace(/^\/[^/]+/, '')}`;
+    }
+});
