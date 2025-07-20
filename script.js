@@ -25,9 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentLang = window.location.pathname.split('/')[1]; // pl. "de"
     if (!savedLang && currentLang) {
         setLanguage(currentLang);
-    }
-
-    if (savedLang && supported.includes(savedLang) && savedLang !== currentLang) {
+    } else if (savedLang && supported.includes(savedLang) && savedLang !== currentLang) {
         window.location.href = `/${savedLang}${window.location.pathname.replace(/^\/[^/]+/, '')}`;
     }
 });
