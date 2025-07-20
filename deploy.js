@@ -174,7 +174,9 @@ function updateLanguageSelect(doc, currentLang) {
 
     const options = select.querySelectorAll("option");
     options.forEach((opt) => {
-        if (opt.value === currentLang) {
+        // Kivonjuk a nyelvi kódot a value értékből pl. "/de/index.html" → "de"
+        const langFromValue = (opt.value.match(/^\/([a-z]{2})\//) || [])[1];
+        if (langFromValue === currentLang) {
             opt.setAttribute("selected", "selected");
         } else {
             opt.removeAttribute("selected");
