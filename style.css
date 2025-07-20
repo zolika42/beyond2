@@ -19,10 +19,6 @@ body {
     text-align: center;
     gap: 1rem;
 }
-.reference-card:hover {
-    transform: translateY(-4px);
-    transition: all 0.3s ease;
-}
 
 img.techsoup {
     background-color: black;
