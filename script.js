@@ -1,7 +1,8 @@
 function setLanguage(lang) {
     localStorage.setItem('lang', lang);
-    const path = window.location.pathname.replace(/^\/[^/]+/, ''); // pl. /index.html vagy /aszf.html
-    window.location.href = `/${lang}${path}`;
+    const currentParts = window.location.pathname.split('/').slice(2);
+    const restPath = currentParts.join('/') || 'index.html';
+    window.location.href = `/${lang}/${restPath}`;
 }
 
 function translatePage(lang) {
@@ -23,27 +24,25 @@ function detectBrowserLanguage() {
 document.addEventListener("DOMContentLoaded", () => {
     const supported = ['en', 'hu', 'de', 'fr', 'nl', 'es'];
     const savedLang = localStorage.getItem('lang');
-    const currentLang = window.location.pathname.split('/')[1]; // pl. "de"
+    const parts = window.location.pathname.split('/');
+    const currentLang = parts[1];
+    const restPath = parts.slice(2).join('/') || 'index.html';
 
-    // Ha nincs még mentett nyelv, elmentjük amit most látunk
     if (!savedLang && supported.includes(currentLang)) {
         localStorage.setItem('lang', currentLang);
     }
 
-    // Ha a mentett nyelv más, mint az aktuális, átirányítás
     if (savedLang && supported.includes(savedLang) && savedLang !== currentLang) {
-        const path = window.location.pathname.replace(/^\/[^/]+/, ''); // az /hu/index.html -> /index.html
-        window.location.href = `/${savedLang}${path}`;
+        window.location.href = `/${savedLang}/${restPath}`;
         return;
     }
 
-    // Nyelvválasztó select értékének beállítása
+    // Set <select> dropdown value
     const select = document.querySelector('#language');
     if (select) {
-        const url = window.location.pathname;
-        select.value = url;
+        select.value = currentLang;
     }
 
-    // Fordítás
+    // Translate
     translatePage(currentLang || savedLang || detectBrowserLanguage());
 });
