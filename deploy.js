@@ -115,6 +115,8 @@ for (const htmlFile of htmlFiles) {
         });
 
         doc.documentElement.lang = lang;
+        // <select id="language"> selected attribútum frissítése
+        updateLanguageSelect(doc, lang);
 
         const canonical = doc.querySelector('link[rel="canonical"]');
         if (canonical) {
@@ -163,4 +165,19 @@ if (missingTranslationTable.length > 0) {
     console.log(end);
 } else {
     console.log(green("🎉 Minden fordítás megvan az összes nyelven!"));
+}
+
+// Nyelvválasztó dropdown frissítése adott nyelvre
+function updateLanguageSelect(doc, currentLang) {
+    const select = doc.querySelector("select#language");
+    if (!select) return;
+
+    const options = select.querySelectorAll("option");
+    options.forEach((opt) => {
+        if (opt.value === currentLang) {
+            opt.setAttribute("selected", "selected");
+        } else {
+            opt.removeAttribute("selected");
+        }
+    });
 }
