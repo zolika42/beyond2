@@ -39,14 +39,6 @@ img {
     height: auto;
 }
 
-/* extra osztály scroll utáni állapothoz */
-.header-shrink {
-    padding-top: 0.25rem !important; /* Tailwind: pt-1 */
-    padding-bottom: 0.25rem !important; /* Tailwind: pb-1 */
-    background-color: rgba(255, 255, 255, 0.95) !important;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
-}
-
 iframe {
     width: 100%;
     border: none;
