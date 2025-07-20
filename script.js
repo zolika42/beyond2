@@ -1,5 +1,6 @@
 function setLanguage(lang) {
     localStorage.setItem('lang', lang);
+    window.location.href = `/${lang}/index.html`;
 }
 
 function translatePage(lang) {
