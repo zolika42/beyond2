@@ -166,6 +166,14 @@ const translations = {
         ctaBlockTitle: "Készen állsz a kezdésre?",
         ctaBlockText: "Foglalj időpontot most, és kezdjük el még ma!",
         ctaBlockButton: "Kérek ajánlatot",
+
+        pageTitle: "BeyondStart Solutions – Drupal, Laravel és Shopify hibák javítása 72 órán belül",
+        metaDescription: "Biztonságos Drupal frissítés, gyors Laravel optimalizálás, konverziót növelő Shopify audit. 72 órán belüli megoldás garanciával.",
+        ogTitle: "Drupal, Laravel és Shopify megoldások – BeyondStart Solutions",
+        ogDescription: "Több mint 20 év tapasztalat. Gyors hibajavítás és teljesítményoptimalizálás 72 órán belül, pénzvisszafizetési garanciával.",
+        auto_label_4: "Nyelvválasztás",
+        auto_a_5: "zoltan[at]beyondstart[dot]solutions",
+        auto_a_6: "+36 70 508 4100"
     },
     en: {
         // Header / navigation
@@ -336,6 +344,14 @@ const translations = {
         ctaBlockTitle: "Ready to start?",
         ctaBlockText: "Book a time now and let’s get started today!",
         ctaBlockButton: "Get a Quote",
+
+        pageTitle: "BeyondStart Solutions – Fix Drupal, Laravel and Shopify issues within 72 hours",
+        metaDescription: "Secure Drupal updates, fast Laravel optimization, and conversion-boosting Shopify audits. Resolved within 72 hours with a money-back guarantee.",
+        ogTitle: "Drupal, Laravel and Shopify Solutions – BeyondStart Solutions",
+        ogDescription: "Over 20 years of experience. Fast bug fixing and performance optimization within 72 hours, with a satisfaction guarantee.",
+        auto_label_4: "Language selection",
+        auto_a_5: "zoltan[at]beyondstart[dot]solutions",
+        auto_a_6: "+36 70 508 4100"
     },
     de: {
         // Header / navigation
@@ -506,6 +522,14 @@ const translations = {
         ctaBlockTitle: "Bereit für den Start?",
         ctaBlockText: "Buchen Sie jetzt einen Termin und starten wir noch heute!",
         ctaBlockButton: "Angebot einholen",
+
+        pageTitle: "BeyondStart Solutions – Drupal-, Laravel- und Shopify-Probleme in 72 Stunden lösen",
+        metaDescription: "Sichere Drupal-Updates, schnelle Laravel-Optimierung und conversion-starke Shopify-Audits. Lösungen innerhalb von 72 Stunden mit Geld-zurück-Garantie.",
+        ogTitle: "Drupal, Laravel und Shopify Lösungen – BeyondStart Solutions",
+        ogDescription: "Über 20 Jahre Erfahrung. Schnelle Fehlerbehebung und Performance-Optimierung in 72 Stunden mit Zufriedenheitsgarantie.",
+        auto_label_4: "Sprachauswahl",
+        auto_a_5: "zoltan[at]beyondstart[dot]solutions",
+        auto_a_6: "+36 70 508 4100"
     },
     fr: {
         // Header / navigation
@@ -676,6 +700,14 @@ const translations = {
         ctaBlockTitle: "Prêt à commencer ?",
         ctaBlockText: "Réservez un créneau dès maintenant, et lançons-nous aujourd’hui !",
         ctaBlockButton: "Obtenir un devis",
+
+        pageTitle: "BeyondStart Solutions – Résolvez vos problèmes Drupal, Laravel et Shopify en 72 heures",
+        metaDescription: "Mises à jour Drupal sécurisées, optimisation rapide de Laravel et audits Shopify axés sur la conversion. Résolu sous 72 heures, garantie de remboursement incluse.",
+        ogTitle: "Solutions Drupal, Laravel et Shopify – BeyondStart Solutions",
+        ogDescription: "Plus de 20 ans d'expérience. Correction de bugs et optimisation des performances en 72 heures, avec garantie de satisfaction.",
+        auto_label_4: "Choix de la langue",
+        auto_a_5: "zoltan[at]beyondstart[dot]solutions",
+        auto_a_6: "+36 70 508 4100"
     },
     nl: {
         // Header / navigation
@@ -846,6 +878,14 @@ const translations = {
         ctaBlockTitle: "Klaar om te starten?",
         ctaBlockText: "Plan nu een afspraak en laten we vandaag nog beginnen!",
         ctaBlockButton: "Vraag offerte aan",
+
+        pageTitle: "BeyondStart Solutions – Los Drupal-, Laravel- en Shopify-problemen op binnen 72 uur",
+        metaDescription: "Veilige Drupal-updates, snelle Laravel-optimalisatie en conversieverhogende Shopify-audits. Opgelost binnen 72 uur met geld-terug-garantie.",
+        ogTitle: "Drupal, Laravel en Shopify Oplossingen – BeyondStart Solutions",
+        ogDescription: "Meer dan 20 jaar ervaring. Snelle bugfixes en prestatieoptimalisatie binnen 72 uur, met tevredenheidsgarantie.",
+        auto_label_4: "Taalkeuze",
+        auto_a_5: "zoltan[at]beyondstart[dot]solutions",
+        auto_a_6: "+36 70 508 4100"
     },
     es: {
         // Header / navigation
@@ -1016,5 +1056,13 @@ const translations = {
         ctaBlockTitle: "¿Listo para comenzar?",
         ctaBlockText: "Reserva ahora una cita y ¡empezamos hoy mismo!",
         ctaBlockButton: "Solicitar presupuesto",
+
+        pageTitle: "BeyondStart Solutions – Resuelve problemas de Drupal, Laravel y Shopify en 72 horas",
+        metaDescription: "Actualizaciones seguras de Drupal, optimización rápida de Laravel y auditorías de Shopify centradas en la conversión. Soluciones en 72 horas con garantía de devolución de dinero.",
+        ogTitle: "Soluciones para Drupal, Laravel y Shopify – BeyondStart Solutions",
+        ogDescription: "Más de 20 años de experiencia. Corrección rápida de errores y optimización del rendimiento en 72 horas, con garantía de satisfacción.",
+        auto_label_4: "Selección de idioma",
+        auto_a_5: "zoltan[at]beyondstart[dot]solutions",
+        auto_a_6: "+36 70 508 4100"
     }
 };

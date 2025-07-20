@@ -123,6 +123,35 @@ for (const htmlFile of htmlFiles) {
             canonical.href = `https://beyondstart.solutions/${langPath}${htmlFile}`;
         }
 
+        // 🔁 Extra i18n csere nem data-i18n elemekhez
+        const skipTags = ["option", "button", "span", "li"];
+        const specialMap = {
+            title: "pageTitle",
+            "meta[name='description']": "metaDescription",
+            "meta[property='og:title']": "ogTitle",
+            "meta[property='og:description']": "ogDescription"
+        };
+
+        for (const [selector, key] of Object.entries(specialMap)) {
+            const el = doc.querySelector(selector);
+            if (el && langDict[key]) {
+                if (el.tagName === "TITLE") el.textContent = langDict[key];
+                else el.setAttribute("content", langDict[key]);
+            }
+        }
+
+        doc.querySelectorAll("body *:not([data-i18n])").forEach(el => {
+            if (skipTags.includes(el.tagName.toLowerCase())) return;
+            if (el.children.length > 0) return;
+            const text = el.textContent.trim();
+            if (!text || text.length < 2) return;
+
+            const autoKey = Object.keys(langDict).find(k => langDict["hu"]?.[k] === text || langDict[k] === text);
+            if (autoKey && langDict[autoKey]) {
+                el.textContent = langDict[autoKey];
+            }
+        });
+
         // Nyelvválasztó dropdown frissítése
         updateLanguageSelect(doc, lang);
 
@@ -161,6 +190,7 @@ for (const htmlFile of htmlFiles) {
         }
     }
 }
+
 // 10. Táblázatos jelentés hiányzó fordításokról
 function pad(str, len) {
     return str + " ".repeat(Math.max(0, len - str.length));
