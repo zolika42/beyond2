@@ -2,44 +2,52 @@
 <html lang="nl"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BeyondStart Solutions</title>
+  <title>BeyondStart Solutions – Drupal, Laravel és Shopify hibák javítása 72 órán belül</title>
+  <meta name="description" content="Biztonságos Drupal frissítés, gyors Laravel optimalizálás, konverziót növelő Shopify audit. 72 órán belüli megoldás garanciával.">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-  <link href="style.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="style.css"></noscript>
+  <link href="/style.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/style.min.css">
+  </noscript>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-  <meta name="description" content="Drupal, Laravel és Shopify problémák gyors megoldása - BeyondStart Solutions.">
-  <meta property="og:title" content="BeyondStart Solutions">
-  <meta property="og:description" content="Drupal, Laravel, Shopify problémákra célzott megoldások.">
-  <meta property="og:image" content="/img/og-image.jpg">
+  <meta property="og:title" content="Drupal, Laravel és Shopify megoldások – BeyondStart Solutions">
+  <meta property="og:description" content="Több mint 20 év tapasztalat. Gyors hibajavítás és teljesítményoptimalizálás 72 órán belül, pénzvisszafizetési garanciával.">
+  <meta property="og:image" content="/images/beyondstart_logo_sm.webp">
   <meta property="og:url" content="https://beyondstart.solutions">
   <meta property="og:type" content="website">
+  <link rel="canonical" href="https://beyondstart.solutions/nl/cookie.html">
 </head>
 <body class="bg-white text-gray-900 font-sans">
 
 <header id="site-header" class="sticky top-0 z-50 py-4 px-6 flex justify-between items-center bg-white shadow duration-300">
   <a href="/">
-    <img src="images/beyondstart_logo_sm.webp" alt="BeyondStart Solutions logó" width="200" height="56" loading="eager" decoding="async" fetchpriority="high">
+    <img src="/images/beyondstart_logo_sm.webp" alt="BeyondStart Solutions logó" width="200" height="56" loading="eager" decoding="async" fetchpriority="high">
   </a>
 
-  <div class="flex items-center gap-2 relative">
-    <label for="language" class="sr-only">Nyelvválasztás</label>
-    <select id="language" aria-label="Language selection" class="w-[140px] appearance-none block bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-      <option value="hu">🇭🇺 HU</option>
-      <option value="en">🇬🇧 EN</option>
-      <option value="de">🇩🇪 DE</option>
-      <option value="fr">🇫🇷 FR</option>
-      <option value="nl">🇳🇱 NL</option>
-      <option value="es">🇪🇸 ES</option>
-    </select>
-
-    <button onclick="setLanguage(document.getElementById('language').value)" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-semibold rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-      OK
-    </button>
-  </div>
+  <form action="" method="get" onsubmit="event.preventDefault(); location.href=this.language.value;">
+    <div class="flex items-center gap-2 relative">
+      <label for="language" class="sr-only">Nyelvválasztás</label>
+      <select id="language" name="language" aria-label="Language selection" class="w-[140px] appearance-none block bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10
+                    text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500
+                    focus:border-blue-500">
+        <option value="/hu/index.html">🇭🇺 HU</option>
+        <option value="/en/index.html">🇬🇧 EN</option>
+        <option value="/de/index.html">🇩🇪 DE</option>
+        <option value="/fr/index.html">🇫🇷 FR</option>
+        <option value="/nl/index.html" selected="selected">🇳🇱 NL</option>
+        <option value="/es/index.html">🇪🇸 ES</option>
+      </select>
+      <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-semibold rounded-md
+                    shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2
+                     focus:ring-offset-2 focus:ring-blue-500" onclick="setLanguage(document.getElementById('language').value.split('/')[1])">
+        OK
+      </button>
+    </div>
+  </form>
 </header>
 
 <main class="max-w-3xl mx-auto py-16 px-6">
@@ -108,8 +116,25 @@
   <div class="text-center text-xs mt-10 text-gray-800" data-i18n="footerCopyright">© 2025 BeyondStart Solutions. Alle rechten voorbehouden.</div>
 </footer>
 
-<script src="translations.js"></script>
-<script src="script.js"></script>
+<script src="translations.min.js"></script>
+<script src="script.min.js"></script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BeyondStart Solutions",
+    "url": "https://beyondstart.solutions",
+    "logo": "https://beyondstart.solutions/images/beyondstart_logo_sm.webp",
+    "sameAs": [],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+36 70 508 4100",
+      "contactType": "customer service",
+      "areaServed": "HU",
+      "availableLanguage": ["Hungarian", "English"]
+    }
+  }
+</script>
 
 
 </body></html>
