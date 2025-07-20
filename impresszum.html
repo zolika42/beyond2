@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="imprintTitle">Impresszum – BeyondStart Solutions</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>BeyondStart Solutions</title>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.gstatic.com/s/inter/v7/UcC73FwrK...woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <link href="style.min.css" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="style.css"></noscript>
@@ -20,15 +17,15 @@
 </head>
 <body class="bg-white text-gray-900 font-sans">
 
-<header id="site-header" class="sticky top-0 z-50 py-8 px-6 flex justify-between items-center bg-white shadow transition-all duration-300">
+<header id="site-header" class="sticky top-0 z-50 py-4 px-6 flex justify-between items-center bg-white shadow duration-300">
   <a href="/">
-    <img src="images/beyondstart_logo_sm.png" alt="BeyondStart Solutions logó">
+    <img src="images/beyondstart_logo_sm.webp" alt="BeyondStart Solutions logó" width="200" height="56" loading="eager" decoding="async" fetchpriority="high">
   </a>
 
   <div class="flex items-center gap-2 relative">
     <label for="language" class="sr-only">Nyelvválasztás</label>
     <select id="language" aria-label="Language selection"
-            class="appearance-none block bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            class="w-[140px] appearance-none block bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
       <option value="hu">🇭🇺 HU</option>
       <option value="en">🇬🇧 EN</option>
       <option value="de">🇩🇪 DE</option>
@@ -38,15 +35,9 @@
     </select>
 
     <button onclick="setLanguage(document.getElementById('language').value)"
-            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-semibold rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition">
+            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-semibold rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
       OK
     </button>
-
-    <div class="pointer-events-none absolute inset-y-0 right-24 flex items-center px-2 text-gray-800">
-      <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M7 7l3-3 3 3m0 6l-3 3-3-3"/>
-      </svg>
-    </div>
   </div>
 </header>
 
