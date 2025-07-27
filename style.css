@@ -6,6 +6,8 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+
+
 .reference-card {
     min-height: 260px;
     padding: 1.5rem;
@@ -20,13 +22,99 @@ body {
     gap: 1rem;
 }
 
+.reference-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 1.5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* ez teszi középre függőlegesen */
+    text-align: center;
+    font-weight: bolder;
+}
+
+.reference-card:hover {
+    transform: scale(1.02);
+}
+
+.reference-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+            linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), repeating-linear-gradient( 45deg, rgba(255, 255, 255, 0.05) 0, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 8px );
+    pointer-events: none;
+}
+
+.reference-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.reference-card p {
+    font-size: 1.25rem; /* vagy 1.5rem, ha még nagyobb kell */
+    font-weight: bold;
+    text-shadow: 4px 4px 8px black;
+    color: white;
+    line-height: 1.6;
+    padding: 0 1rem;
+}
+
+.reference-card.has-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.reference-card .reference-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.5; /* vagy akár 0.3, ízlés szerint */
+}
+
+.reference-card > div {
+    position: relative;
+    z-index: 1;
+}
+
+
 img.techsoup {
     background-color: black;
     padding: 10px 5px 0 5px;
 }
 
 #references img {
-    height: 48px;
+    height: 100%;
+}
+
+
+.reference-link {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    text-indent: -9999px; /* képernyőolvasóknak hasznos, vizuálisan nem látszik */
+}
+
+.reference-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    color: white;
+    text-shadow: 4px 4px 8px black;
+    z-index: 1;
+    position: relative;
+}
+
+#references .grid {
+    justify-content: center;
 }
 
 img {
@@ -45,4 +133,37 @@ iframe {
 button:focus, a:focus {
     outline: 2px solid #000;
     outline-offset: 2px;
+}
+
+.hero-section {
+    position: relative;
+    background-image: url('/images/hero_bg.webp'); /* töltsd fel saját képed ide */
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* sötét overlay, hogy olvasható maradjon a szöveg */
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 1;
+}
+
+#testimonials blockquote {
+    transition: transform 0.2s ease;
+}
+#testimonials blockquote:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+#testimonials .text-yellow-400 {
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
 }
