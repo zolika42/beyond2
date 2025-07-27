@@ -364,8 +364,7 @@ const output = "const translations = " + JSON.stringify(cleanedTranslations, nul
 fs.writeFileSync("translations.js", output, "utf-8");
 console.log(green("🧹 translations.js cleaned from unused keys."));
 
-// Frissítsük a translations.node.js fájlt is újra
+// Update translations.node.js again.
 const reexported = output.replace(/^const translations =/, "module.exports =");
 fs.writeFileSync("translations.node.js", reexported, "utf-8");
 console.log(green("🔁 translations.node.js regenerated from cleaned source."));
-
