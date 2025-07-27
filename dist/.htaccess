@@ -24,3 +24,10 @@ RewriteRule ^(.*\.html)$ %{ENV:lang}/$1 [R=302,L]
 <FilesMatch "\.html$">
   Header set Content-Type "text/html; charset=UTF-8"
 </FilesMatch>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 year"
+</IfModule>
