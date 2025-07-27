@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
     <link rel="preconnect" href="https://assets.calendly.com" crossorigin="">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
+    <link rel="preload" as="image" href="/images/hero_bg.webp" fetchpriority="high">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link href="/style.min.css" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript>
@@ -64,6 +65,7 @@
 
 <!-- Hero -->
 <section class="hero-section scroll-mt-24 text-center py-20 px-4" aria-label="BeyondStart Solutions">
+    <img src="/images/hero_bg.webp" fetchpriority="high" alt="hero background" style="display: none;" loading="eager">
     <div class="hero-overlay">
         <h1 class="text-3xl md:text-3xl text-[32px] font-bold mb-3" data-i18n="heroTitle">Is jouw Drupal-, Laravel- of Shopify-project een puinhoop?</h1>
         <p class="text-lg md:text-xl mb-6 max-w-3xl mx-auto text-gray-200" data-i18n="heroSubtitle">BeyondStart Solutions helpt je project op te lossen, te optimaliseren of opnieuw te starten. 20 jaar ervaring, met een corporate achtergrond en startup-mentaliteit.</p>
