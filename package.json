@@ -1,8 +1,28 @@
 {
+  "name": "beyondstart",
+  "version": "1.0.0",
+  "main": "deploy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zolika42/beyond2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zolika42/beyond2/issues"
+  },
+  "homepage": "https://github.com/zolika42/beyond2#readme",
+  "description": "",
   "dependencies": {
     "chalk": "^5.4.1",
+    "chokidar": "^4.0.3",
     "csso": "^5.0.5",
     "jsdom": "^26.1.0",
+    "puppeteer": "^24.15.0",
     "table": "^6.9.0",
     "terser": "^5.43.1"
   }
