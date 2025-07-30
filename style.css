@@ -369,12 +369,20 @@ main {
     background-position: center;
     color: white;
     text-align: center;
-    min-height: 80vh;
-    padding-top: 4rem;
+    min-height: 100vh;
+    padding-top: 6rem;
     padding-bottom: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+@media (max-width: 767px) {
+    .hero-section {
+        min-height: 100vh;
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+    }
 }
 
 .hero-section::before {
@@ -390,6 +398,10 @@ main {
     z-index: 1;
     max-width: 1024px;
     margin: 0 auto;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero-title {
