@@ -1085,3 +1085,12 @@ body.loading .sticky-cta {
     opacity: 0;
     pointer-events: none;
 }
+
+.lcp-fake {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.001;
+    pointer-events: none;
+    z-index: -1;
+}

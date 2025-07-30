@@ -121,9 +121,13 @@
 <main id="main">
     <!-- Hero -->
     <section class="hero-section" aria-label="BeyondStart Solutions">
-            <img src="/images/hero_bg.webp" alt="" width="1319" height="522"
-                 loading="eager" fetchpriority="high"
-                 style="opacity: 0; position: absolute; z-index: -1;">
+        <img src="/images/hero_bg.webp" alt="hero"
+             width="1319" height="522"
+             fetchpriority="high"
+             loading="eager"
+             decoding="async"
+             class="lcp-fake"
+             aria-hidden="true">
         <div class="hero-overlay">
             <h1 class="hero-title" data-i18n="heroTitle">Drupal, Laravel vagy Shopify projekted káoszban van?</h1>
             <p class="hero-subtitle" data-i18n="heroSubtitle">
