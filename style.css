@@ -375,6 +375,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    aspect-ratio: 16 / 9;
 }
 
 @media (max-width: 767px) {
