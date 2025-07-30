@@ -1091,7 +1091,6 @@ body.loading .sticky-cta {
     width: 100%;
     height: auto;
     object-fit: cover;
-    opacity: 0.001; /* de ne 0 */
     pointer-events: none;
 }
 
