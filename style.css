@@ -364,7 +364,8 @@ main {
 
 .hero-section {
     position: relative;
-    background-image: none !important;
+    background-image: url('/images/hero_bg.webp');
+    background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
