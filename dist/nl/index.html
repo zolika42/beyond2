@@ -13,6 +13,22 @@
 
         gtag('config', 'AW-16882358510');
     </script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loading');
+
+            window.addEventListener('load', () => {
+                const loader = document.getElementById('site-loader');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.remove();
+                        document.body.classList.remove('loading');
+                    }, 300);
+                }
+            });
+        });
+    </script>
     <style>
         .hero-title {
             font-size: 2rem;
@@ -50,6 +66,9 @@
 </head>
 <body>
 <a href="#main" class="skip-link" data-i18n="jumpToMainContent">Spring naar de hoofdinhoud</a>
+<div id="site-loader" class="site-loader">
+    <div class="loader-circle"></div>
+</div>
 <header id="site-header" class="site-header">
     <!-- Logo -->
     <a href="/nl/">
