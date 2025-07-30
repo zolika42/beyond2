@@ -107,6 +107,7 @@ main {
 
 .main-nav a {
     font-weight: 100;
+    font-size: var(--font-size-xsm);
     color: var(--color-text-dark);
     text-decoration: none;
     padding: 0.5rem 1rem;
