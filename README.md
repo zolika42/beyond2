@@ -139,6 +139,55 @@ RewriteRule ^([a-z]{2})/(.*)$ /$1/$2 [L]
 </VirtualHost>
 ```
 
+## 🔄 Automatic Git Deployment (Staging & Production)
+
+This project uses a Git `post-receive` hook on the server to automatically deploy updates whenever a push is made to a specific branch.
+
+How it works:
+
+- When you push to the `main` branch, the latest version is automatically deployed to:
+  `/var/www/beyondsolutions`
+
+- When you push to the `dev` branch, it gets deployed to:
+  `/var/www/dev`
+
+Commands to deploy:
+
+```
+git push deploy main   # → production
+git push deploy dev    # → staging / dev
+```
+
+Server-side setup:
+
+There is a **bare Git repository** at:
+`/var/repo/beyondstart.git`
+
+Inside that repo, the `hooks/post-receive` file looks like this:
+
+```bash
+#!/bin/bash
+while read oldrev newrev ref
+do
+  branch=$(echo $ref | cut -d/ -f3)
+
+  if [ "$branch" = "main" ]; then
+    echo "==> Deploying to PRODUCTION"
+    git --work-tree=/var/www/beyondsolutions --git-dir=/var/repo/beyondstart.git checkout -f main
+  elif [ "$branch" = "dev" ]; then
+    echo "==> Deploying to DEV"
+    git --work-tree=/var/www/dev --git-dir=/var/repo/beyondstart.git checkout -f dev
+  fi
+done
+```
+
+Notes:
+
+- You must have SSH access as `[The right user]@[server address]`, or update the path accordingly.
+- Make sure the `post-receive` script is executable:  
+  `chmod +x hooks/post-receive`
+
+
 ## 🌐 Multilingual Support
 
 - `translations.js` stores all language strings.
