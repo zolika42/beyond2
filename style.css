@@ -96,6 +96,13 @@ main {
     padding: 0;
     background-color: var(--color-bg-white);
     box-shadow: var(--shadow-sm);
+    min-height: 56px;
+}
+
+.site-header img {
+    display: block;
+    width: 200px;
+    height: 56px;
 }
 
 /* NAVIGATION MENU */
