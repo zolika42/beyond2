@@ -3,22 +3,62 @@
   <!-- Google tag (gtag.js) -->
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16882358510"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
+    window.addEventListener('load', function () {
+      setTimeout(() => {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-16882358510');
+      }, 3000);
+    });
+  </script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('loading');
 
-    function gtag() {
-      dataLayer.push(arguments);
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('site-loader');
+        if (loader) {
+          loader.style.opacity = '0';
+          setTimeout(() => {
+            loader.remove();
+            document.body.classList.remove('loading');
+          }, 300);
+        }
+      });
+    });
+  </script>
+  <style>
+    .hero-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
     }
 
-    gtag('js', new Date());
+    .hero-subtitle {
+      font-size: 1.625rem;
+      margin-bottom: 2rem;
+      color: #d1d5db;
+    }
 
-    gtag('config', 'AW-16882358510');
-  </script>
+    .lcp-fake {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.001;
+      pointer-events: none;
+      z-index: -1;
+    }
+  </style>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drupal, Laravel &amp; Shopify Hilfe – BeyondStart</title>
   <meta name="description" content="Sichere Drupal-Updates, schnelle Laravel-Optimierung und conversion-starke Shopify-Audits. Lösungen innerhalb von 72 Stunden mit Geld-zurück-Garantie.">
   <link rel="preconnect" href="https://assets.calendly.com" crossorigin="">
-  <link href="/style.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="preload" href="/style.min.css" as="style">
+  <link rel="preload" as="image" href="/images/hero_bg.webp" type="image/webp">
+  <link href="/style.min.css" rel="stylesheet" media="print" onload="this.onload=null;this.media='all';">
   <noscript>
     <link rel="stylesheet" href="/style.min.css">
   </noscript>
@@ -34,8 +74,10 @@
   <link rel="canonical" href="https://godisittes.hu/de/aszf.html">
 </head>
 <body>
-
 <a href="#main" class="skip-link" data-i18n="jumpToMainContent">Zum Hauptinhalt springen</a>
+<div id="site-loader" class="site-loader">
+  <div class="loader-circle"></div>
+</div>
 <header id="site-header" class="site-header">
   <!-- Logo -->
   <a href="/de/">
@@ -79,7 +121,6 @@
     </form>
   </div>
 </header>
-
 <main id="main" class="terms-main">
   <h1 class="terms-title" data-i18n="termsTitle">Allgemeine Geschäftsbedingungen</h1>
 
