@@ -14,13 +14,89 @@
 
         gtag('config', 'AW-16882358510');
     </script>
+    <style>
+        .header-right {
+            flex-direction: column;
+            align-items: flex-end;
+            width: 100%;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: var(--color-bg-white);
+            box-shadow: var(--shadow-lg);
+            padding: 1rem;
+            transition: transform 0.3s ease;
+            z-index: 99;
+        }
+
+        .header-right {
+            transform: translateY(-200%);
+        }
+
+        .header-right {
+            will-change: transform;
+            transform: translateY(0);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hero-section {
+            background-image: url('/images/digital-transformation.webp');
+        }
+
+        .hero-section {
+            position: relative;
+            background-image: url('/images/hero_bg.webp');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 1rem;
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--font-size-xl);
+            color: var(--border-color);
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .language-switcher {
+            width: 100%;
+            justify-content: flex-end;
+        }
+
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: var(--border-radius);
+            position: relative;
+        }
+
+        .main-nav a {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-text-dark);
+            text-decoration: none;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeyondStart Solutions – Drupal, Laravel és Shopify hibák javítása 72 órán belül</title>
     <meta name="description"
           content="Biztonságos Drupal frissítés, gyors Laravel optimalizálás, konverziót növelő Shopify audit. 72 órán belüli megoldás garanciával.">
     <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
-    <link href="/style.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="preload" href="/style.min.css" as="style">
+    <link href="/style.min.css" rel="stylesheet" media="print" onload="this.onload=null;this.media='all';">
     <noscript>
         <link rel="stylesheet" href="/style.min.css">
     </noscript>
