@@ -13,51 +13,6 @@
 
         gtag('config', 'AW-16882358510');
     </script>
-    <style>
-        .header-right {
-            display: flex !important;
-            align-items: center !important;
-            gap: 1rem !important;
-        }
-
-        .hero-section {
-            position: relative !important;
-            background-image: url('/images/hero_bg.webp') !important;
-            background-size: cover !important;
-            background-position: center !important;
-            color: white !important;
-            padding: 5rem 1rem !important;
-            text-align: center !important;
-        }
-
-        .hero-subtitle {
-            font-size: var(--font-size-lg) !important;
-            margin-bottom: var(--font-size-xl) !important;
-            color: var(--border-color) !important;
-        }
-
-        .hero-title {
-            font-size: 2rem !important;
-            font-weight: bold !important;
-            margin-bottom: 1rem !important;
-        }
-
-        .language-switcher {
-            display: flex !important;
-            align-items: center !important;
-            gap: var(--border-radius) !important;
-            position: relative !important;
-            width: 100% !important;
-            justify-content: flex-end !important;
-        }
-
-        .main-nav a {
-            color: var(--color-text-dark) !important;
-            text-decoration: none !important;
-            padding: 10px !important;
-            border-radius: 10px !important;
-        }
-    </style>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -128,7 +83,6 @@
 <main id="main">
     <!-- Hero -->
     <section class="hero-section" aria-label="BeyondStart Solutions">
-        <img src="/images/hero_bg.webp" fetchpriority="high" alt="hero background" style="display: none;" loading="eager">
         <div class="hero-overlay">
             <h1 class="hero-title" data-i18n="heroTitle">Drupal, Laravel vagy Shopify projekted káoszban van?</h1>
             <p class="hero-subtitle" data-i18n="heroSubtitle">A BeyondStart Solutions segít rendbe tenni, optimalizálni vagy újraindítani digitális projektedet. 20 év tapasztalat, nagyvállalati háttérrel és startup lendülettel.</p>
@@ -254,7 +208,7 @@
         <h2 class="section-title" data-i18n="referencesTitle">Kikkel dolgoztunk együtt</h2>
         <div class="reference-cards">
             <div class="reference-card has-bg">
-                <img src="/images/kinepolis_bg.webp" alt="Kinepolis weboldal háttér" class="reference-bg" loading="eager" width="657" height="260">
+                <img src="/images/kinepolis_bg.webp" alt="Kinepolis weboldal háttér" class="reference-bg" loading="lazy" width="657" height="260">
                 <div class="reference-content">
                     <h3 class="reference-title">Kinepolis</h3>
                     <p data-i18n="ref1">Drupal modulfejlesztés, karbantartás és migráció nemzetközi mozimultiplex rendszerhez.</p>
@@ -320,7 +274,7 @@
     <!-- Testimonials -->
     <section id="testimonials" class="testimonials-section">
         <div class="testimonials-bg">
-            <img src="/images/testimonials_bg.webp" alt="Testimonials Background">
+            <img src="/images/testimonials_bg.webp" alt="Testimonials Background" width="1024" height="1536" loading="lazy">
             <div class="testimonials-overlay"></div>
         </div>
 
