@@ -44,7 +44,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Lefordítjuk az oldalt
     translatePage(currentLang || savedLang || detectBrowserLanguage());
-
-    const lcpImg = document.querySelector('.hero-lcp-image');
-    if (lcpImg) lcpImg.style.display = 'none';
 });

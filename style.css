@@ -364,9 +364,6 @@ main {
 
 .hero-section {
     position: relative;
-    background-image: url('/images/hero_bg.webp');
-    background-size: cover;
-    background-position: center;
     color: white;
     text-align: center;
     height: 100vh;
@@ -1087,12 +1084,11 @@ body.loading .sticky-cta {
 }
 
 .hero-lcp-image {
-    position: relative;
+    position: absolute;
     z-index: 0;
-    width: 100%;
-    height: auto;
     object-fit: cover;
     pointer-events: none;
+    top: 0;
 }
 
 .hero-section::before {
