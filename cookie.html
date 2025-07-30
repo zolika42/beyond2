@@ -5,7 +5,11 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16882358510"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
     gtag('config', 'AW-16882358510');
@@ -13,11 +17,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BeyondStart Solutions – Drupal, Laravel és Shopify hibák javítása 72 órán belül</title>
-  <meta name="description" content="Biztonságos Drupal frissítés, gyors Laravel optimalizálás, konverziót növelő Shopify audit. 72 órán belüli megoldás garanciával.">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <meta name="description"
+        content="Biztonságos Drupal frissítés, gyors Laravel optimalizálás, konverziót növelő Shopify audit. 72 órán belüli megoldás garanciával.">
   <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <link href="/style.min.css" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript>
     <link rel="stylesheet" href="/style.min.css">
@@ -27,74 +29,90 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta property="og:title" content="Drupal, Laravel és Shopify megoldások – BeyondStart Solutions">
-  <meta property="og:description" content="Több mint 20 év tapasztalat. Gyors hibajavítás és teljesítményoptimalizálás 72 órán belül, pénzvisszafizetési garanciával.">
+  <meta property="og:description"
+        content="Több mint 20 év tapasztalat. Gyors hibajavítás és teljesítményoptimalizálás 72 órán belül, pénzvisszafizetési garanciával.">
   <meta property="og:image" content="/images/beyondstart_logo_sm.webp">
   <meta property="og:url" content="https://beyondstart.solutions">
   <meta property="og:type" content="website">
-  <link rel="canonical" href="https://beyondstart.solutions/" />
+  <link rel="canonical" href="https://beyondstart.solutions/"/>
 </head>
-<body class="bg-white text-gray-900 font-sans">
+<body>
 
-<header id="site-header"
-        class="sticky top-0 z-50 py-4 px-6 flex justify-between items-center bg-white shadow duration-300">
+<a href="#main" class="skip-link" data-i18n="jumpToMainContent">Ugrás a fő tartalomra</a>
+<header id="site-header" class="site-header">
+  <!-- Logo -->
   <a href="/">
     <img src="/images/beyondstart_logo_sm.webp" alt="BeyondStart Solutions logó" width="200" height="56"
          loading="eager" decoding="async" fetchpriority="high">
   </a>
 
-  <form action="" method="get" onsubmit="event.preventDefault(); location.href=this.language.value;">
-    <div class="flex items-center gap-2 relative">
-      <label for="language" class="sr-only">Nyelvválasztás</label>
-      <select id="language" name="language" aria-label="Language selection"
-              class="w-[140px] appearance-none block bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10
-                    text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500
-                    focus:border-blue-500">
-        <option value="/hu/index.html">🇭🇺 HU</option>
-        <option value="/en/index.html">🇬🇧 EN</option>
-        <option value="/de/index.html">🇩🇪 DE</option>
-        <option value="/fr/index.html">🇫🇷 FR</option>
-        <option value="/nl/index.html">🇳🇱 NL</option>
-        <option value="/es/index.html">🇪🇸 ES</option>
-      </select>
-      <button type="submit"
-              class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-semibold rounded-md
-                    shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2
-                     focus:ring-offset-2 focus:ring-blue-500"
-              onclick="setLanguage(document.getElementById('language').value.split('/')[1])">
-        OK
-      </button>
-    </div>
-  </form>
+  <!-- Mobile navigation -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü megnyitása">
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+
+  <!-- Navigation -->
+  <div class="header-right">
+    <nav class="main-nav" aria-label="Fő navigáció">
+      <ul>
+        <li><a href="/#services" data-i18n="servicesTitle">Szolgáltatások</a></li>
+        <li><a href="/#references" data-i18n="referencesTitle">Referenciák</a></li>
+        <li><a href="/#testimonials" data-i18n="testimonialTitle">Vélemények</a></li>
+        <li><a href="/#about" data-i18n="aboutTitle">Rólunk</a></li>
+        <li><a href="/#contact" data-i18n="ctaBlockButton">Kapcsolat</a></li>
+      </ul>
+    </nav>
+
+    <!-- Language Selector -->
+    <form action="" method="get" onsubmit="event.preventDefault(); location.href=this.language.value;">
+      <div class="language-switcher">
+        <label for="language" class="sr-only">Nyelvválasztás</label>
+        <select id="language" name="language" aria-label="Language selection" class="language-select">
+          <option value="/hu/index.html">🇭🇺 HU</option>
+          <option value="/en/index.html">🇬🇧 EN</option>
+          <option value="/de/index.html">🇩🇪 DE</option>
+          <option value="/fr/index.html">🇫🇷 FR</option>
+          <option value="/nl/index.html">🇳🇱 NL</option>
+          <option value="/es/index.html">🇪🇸 ES</option>
+        </select>
+        <button type="submit" class="language-button"
+                onclick="setLanguage(document.getElementById('language').value.split('/')[1])">
+          OK
+        </button>
+      </div>
+    </form>
+  </div>
 </header>
 
-<main class="max-w-3xl mx-auto py-16 px-6">
-  <h1 class="text-4xl font-bold mb-6" data-i18n="cookieTitle">Cookie tájékoztató</h1>
+<main id="main" class="cookie-main">
+  <h1 class="cookie-title" data-i18n="cookieTitle">Cookie tájékoztató</h1>
 
-  <p class="mb-4" data-i18n="cookieIntro">
+  <p class="cookie-paragraph" data-i18n="cookieIntro">
     Weboldalunk cookie-kat használ a felhasználói élmény javítása érdekében. A cookie-k kis adatfájlok, amelyeket a böngésző ment el a számítógépére.
   </p>
 
-  <h2 class="text-2xl font-semibold mt-8 mb-4" data-i18n="cookieTypes">Milyen típusú cookie-kat használunk?</h2>
-  <ul class="list-disc list-inside space-y-2">
+  <h2 class="cookie-subtitle" data-i18n="cookieTypes">Milyen típusú cookie-kat használunk?</h2>
+  <ul class="cookie-list">
     <li data-i18n="cookieEssential">Szükséges cookie-k – ezek elengedhetetlenek a weboldal működéséhez.</li>
     <li data-i18n="cookieAnalytics">Analitikai cookie-k – segítenek megérteni, hogyan használják a látogatók az oldalt.</li>
     <li data-i18n="cookiePreference">Beállítási cookie-k – megjegyzik a felhasználói választásokat, például a nyelvet.</li>
   </ul>
 
-  <h2 class="text-2xl font-semibold mt-8 mb-4" data-i18n="cookieDisable">Hogyan lehet letiltani a cookie-kat?</h2>
-  <p class="mb-4" data-i18n="cookieDisableText">
+  <h2 class="cookie-subtitle" data-i18n="cookieDisable">Hogyan lehet letiltani a cookie-kat?</h2>
+  <p class="cookie-paragraph" data-i18n="cookieDisableText">
     A legtöbb böngésző lehetőséget kínál a cookie-k kezelésére, letiltására vagy törlésére. Ezeket a beállításokat a böngésző „Beállítások” vagy „Adatvédelem” menüpontjában találja.
   </p>
 
-  <p class="text-sm text-gray-600" data-i18n="cookieNote">
+  <p class="cookie-note" data-i18n="cookieNote">
     Felhívjuk figyelmét, hogy a cookie-k letiltása esetén a weboldal egyes funkciói nem működhetnek megfelelően.
   </p>
 </main>
 
-<footer class="bg-gray-100 text-sm text-gray-600 py-10 px-6 mt-20">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
+<footer class="footer">
+  <div class="footer-content">
     <div>
-      <h3 class="font-semibold mb-2" data-i18n="footerCompanyName">BeyondStart Solutions</h3>
+      <h3 data-i18n="footerCompanyName">BeyondStart Solutions</h3>
       <p data-i18n="footerCompanyDetails">
         Cégvezető: Horváth Zoltán<br>
         Székhely: Str. Parângului 10, Ap. 2, 440031, Satu Mare, Romania.<br>
@@ -103,16 +121,17 @@
       </p>
     </div>
     <div>
-      <h3 class="font-semibold mb-2" data-i18n="footerLegal">Jogi dokumentumok</h3>
-      <ul class="space-y-1">
+      <h3 data-i18n="footerLegal">Jogi dokumentumok</h3>
+      <ul>
         <li><a href="/impresszum.html" class="hover:underline" data-i18n="footerImprint">Impresszum</a></li>
-        <li><a href="/adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy">Adatvédelmi irányelvek</a></li>
+        <li><a href="/adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy">Adatvédelmi
+          irányelvek</a></li>
         <li><a href="/cookie.html" class="hover:underline" data-i18n="footerCookies">Cookie tájékoztató</a></li>
         <li><a href="/aszf.html" class="hover:underline" data-i18n="footerTerms">ÁSZF</a></li>
       </ul>
     </div>
     <div>
-      <h3 class="font-semibold mb-2" data-i18n="footerContact">Kapcsolat</h3>
+      <h3 data-i18n="footerContact">Kapcsolat</h3>
       <ul>
         <li>
           <span data-i18n="footerEmail">E-mail:</span>
@@ -125,8 +144,8 @@
       </ul>
     </div>
     <div>
-      <h3 class="font-semibold mb-2" data-i18n="footerNav">Navigáció</h3>
-      <ul class="space-y-1">
+      <h3 data-i18n="footerNav">Navigáció</h3>
+      <ul>
         <li><a href="/" class="hover:underline" data-i18n="footerNavHome">Főoldal</a></li>
         <li><a href="/#services" class="hover:underline" data-i18n="footerNavServices">Szolgáltatások</a></li>
         <li><a href="/#references" class="hover:underline" data-i18n="footerNavReferences">Referenciák</a></li>
@@ -135,10 +154,12 @@
       </ul>
     </div>
   </div>
-  <div class="text-center text-xs mt-10 text-gray-800" data-i18n="footerCopyright">
+  <div class="footer-bottom" data-i18n="footerCopyright">
     &copy; 2025 BeyondStart Solutions. Minden jog fenntartva.
   </div>
 </footer>
+<!-- Sticky CTA -->
+<a href="#contact" class="sticky-cta" data-i18n="stickyCTA">💬 Ajánlatkérés</a>
 
 <script src="/translations.min.js"></script>
 <script src="/script.min.js"></script>

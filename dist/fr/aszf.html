@@ -4,7 +4,11 @@
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16882358510"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
     gtag('config', 'AW-16882358510');
@@ -13,10 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Assistance Drupal, Laravel &amp; Shopify – BeyondStart</title>
   <meta name="description" content="Mises à jour Drupal sécurisées, optimisation rapide de Laravel et audits Shopify axés sur la conversion. Résolu sous 72 heures, garantie de remboursement incluse.">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
   <link rel="preconnect" href="https://assets.calendly.com" crossorigin="">
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <link href="/style.min.css" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript>
     <link rel="stylesheet" href="/style.min.css">
@@ -32,64 +33,82 @@
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://godisittes.hu/fr/aszf.html">
 </head>
-<body class="bg-white text-gray-900 font-sans">
+<body>
 
-<header id="site-header" class="sticky top-0 z-50 py-4 px-6 flex justify-between items-center bg-white shadow duration-300">
+<a href="#main" class="skip-link" data-i18n="jumpToMainContent">Sauter au contenu principal</a>
+<header id="site-header" class="site-header">
+  <!-- Logo -->
   <a href="/fr/">
     <img src="/images/beyondstart_logo_sm.webp" alt="BeyondStart Solutions logó" width="200" height="56" loading="eager" decoding="async" fetchpriority="high">
   </a>
 
-  <form action="" method="get" onsubmit="event.preventDefault(); location.href=this.language.value;">
-    <div class="flex items-center gap-2 relative">
-      <label for="language" class="sr-only">Nyelvválasztás</label>
-      <select id="language" name="language" aria-label="Language selection" class="w-[140px] appearance-none block bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10
-                    text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500
-                    focus:border-blue-500">
-        <option value="/hu/index.html">🇭🇺 HU</option>
-        <option value="/en/index.html">🇬🇧 EN</option>
-        <option value="/de/index.html">🇩🇪 DE</option>
-        <option value="/fr/index.html" selected="selected">🇫🇷 FR</option>
-        <option value="/nl/index.html">🇳🇱 NL</option>
-        <option value="/es/index.html">🇪🇸 ES</option>
-      </select>
-      <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-semibold rounded-md
-                    shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2
-                     focus:ring-offset-2 focus:ring-blue-500" onclick="setLanguage(document.getElementById('language').value.split('/')[1])">
-        OK
-      </button>
-    </div>
-  </form>
+  <!-- Mobile navigation -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü megnyitása">
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+
+  <!-- Navigation -->
+  <div class="header-right">
+    <nav class="main-nav" aria-label="Fő navigáció">
+      <ul>
+        <li><a href="/fr/#services" data-i18n="servicesTitle">Nos services</a></li>
+        <li><a href="/fr/#references" data-i18n="referencesTitle">Nos collaborations</a></li>
+        <li><a href="/fr/#testimonials" data-i18n="testimonialTitle">Ce que disent nos clients</a></li>
+        <li><a href="/fr/#about" data-i18n="aboutTitle">À propos de BeyondStart</a></li>
+        <li><a href="/fr/#contact" data-i18n="ctaBlockButton">Obtenir un devis</a></li>
+      </ul>
+    </nav>
+
+    <!-- Language Selector -->
+    <form action="" method="get" onsubmit="event.preventDefault(); location.href=this.language.value;">
+      <div class="language-switcher">
+        <label for="language" class="sr-only">Nyelvválasztás</label>
+        <select id="language" name="language" aria-label="Language selection" class="language-select">
+          <option value="/hu/index.html">🇭🇺 HU</option>
+          <option value="/en/index.html">🇬🇧 EN</option>
+          <option value="/de/index.html">🇩🇪 DE</option>
+          <option value="/fr/index.html" selected="selected">🇫🇷 FR</option>
+          <option value="/nl/index.html">🇳🇱 NL</option>
+          <option value="/es/index.html">🇪🇸 ES</option>
+        </select>
+        <button type="submit" class="language-button" onclick="setLanguage(document.getElementById('language').value.split('/')[1])">
+          OK
+        </button>
+      </div>
+    </form>
+  </div>
 </header>
 
-<main class="max-w-3xl mx-auto py-16 px-6">
-  <h1 class="text-4xl font-bold mb-6" data-i18n="termsTitle">Conditions Générales de Vente</h1>
+<main id="main" class="terms-main">
+  <h1 class="terms-title" data-i18n="termsTitle">Conditions Générales de Vente</h1>
 
-  <p class="mb-4" data-i18n="termsIntro">Veuillez lire attentivement les conditions suivantes avant d’utiliser le site.</p>
+  <p class="terms-paragraph" data-i18n="termsIntro">Veuillez lire attentivement les conditions suivantes avant d’utiliser le site.</p>
 
-  <h2 class="text-2xl font-semibold mt-8 mb-4" data-i18n="termsServices">Prestations de service</h2>
-  <p class="mb-4" data-i18n="termsServicesText">Nos prestations incluent le développement sur Drupal, Laravel et Shopify, le conseil, la conception et la maintenance de systèmes.</p>
+  <h2 class="terms-subtitle" data-i18n="termsServices">Prestations de service</h2>
+  <p class="terms-paragraph" data-i18n="termsServicesText">Nos prestations incluent le développement sur Drupal, Laravel et Shopify, le conseil, la conception et la maintenance de systèmes.</p>
 
-  <h2 class="text-2xl font-semibold mt-8 mb-4" data-i18n="termsPayment">Tarification et paiement</h2>
-  <p class="mb-4" data-i18n="termsPaymentText">Les tarifs sont définis sur devis préalable. Paiement par virement bancaire sous 8 jours après émission de la facture.</p>
+  <h2 class="terms-subtitle" data-i18n="termsPayment">Tarification et paiement</h2>
+  <p class="terms-paragraph" data-i18n="termsPaymentText">Les tarifs sont définis sur devis préalable. Paiement par virement bancaire sous 8 jours après émission de la facture.</p>
 
-  <h2 class="text-2xl font-semibold mt-8 mb-4" data-i18n="termsCancellation">Conditions d’annulation</h2>
-  <p class="mb-4" data-i18n="termsCancellationText">Toute annulation doit être faite au moins 48h avant l’exécution. Au-delà, des frais d’annulation de 50% s’appliquent.</p>
+  <h2 class="terms-subtitle" data-i18n="termsCancellation">Conditions d’annulation</h2>
+  <p class="terms-paragraph" data-i18n="termsCancellationText">Toute annulation doit être faite au moins 48h avant l’exécution. Au-delà, des frais d’annulation de 50% s’appliquent.</p>
 
-  <h2 class="text-2xl font-semibold mt-8 mb-4" data-i18n="termsLiability">Limitation de responsabilité :</h2>
-  <p class="mb-4" data-i18n="termsLiabilityText">Nous déclinons toute responsabilité pour les dommages liés à l’utilisation du site.</p>
+  <h2 class="terms-subtitle" data-i18n="termsLiability">Limitation de responsabilité :</h2>
+  <p class="terms-paragraph" data-i18n="termsLiabilityText">Nous déclinons toute responsabilité pour les dommages liés à l’utilisation du site.</p>
 
-  <p class="text-sm text-gray-600" data-i18n="termsGoverningLaw">Les présentes CGV sont soumises au droit roumain.</p>
+  <p class="terms-note" data-i18n="termsGoverningLaw">Les présentes CGV sont soumises au droit roumain.</p>
 </main>
 
-<footer class="bg-gray-100 text-sm text-gray-600 py-10 px-6 mt-20">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
+<footer class="footer">
+  <div class="footer-content">
     <div>
-      <h3 class="font-semibold mb-2" data-i18n="footerCompanyName">BeyondStart Solutions</h3>
+      <h3 data-i18n="footerCompanyName">BeyondStart Solutions</h3>
       <p data-i18n="footerCompanyDetails">Directeur général : Zoltán Horváth <br> Siège social : Str. Parângului 10, Ap. 2, 440031, Satu Mare, Roumanie <br> Numéro de TVA : RO43923085 <br> Numéro d'immatriculation : J30/291/2021</p>
     </div>
     <div>
-      <h3 class="font-semibold mb-2" data-i18n="footerLegal">Documents juridiques</h3>
-      <ul class="space-y-1">
+      <h3 data-i18n="footerLegal">Documents juridiques</h3>
+      <ul>
         <li><a href="/fr/impresszum.html" class="hover:underline" data-i18n="footerImprint">Mentions légales</a></li>
         <li><a href="/fr/adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy">Politique de confidentialité</a></li>
         <li><a href="/fr/cookie.html" class="hover:underline" data-i18n="footerCookies">Politique de cookies</a></li>
@@ -97,7 +116,7 @@
       </ul>
     </div>
     <div>
-      <h3 class="font-semibold mb-2" data-i18n="footerContact">Contact</h3>
+      <h3 data-i18n="footerContact">Contact</h3>
       <ul>
         <li>
           <span data-i18n="footerEmail">E-mail :</span>
@@ -110,8 +129,8 @@
       </ul>
     </div>
     <div>
-      <h3 class="font-semibold mb-2" data-i18n="footerNav">Navigation</h3>
-      <ul class="space-y-1">
+      <h3 data-i18n="footerNav">Navigation</h3>
+      <ul>
         <li><a href="/fr/" class="hover:underline" data-i18n="footerNavHome">Accueil</a></li>
         <li><a href="/fr/#services" class="hover:underline" data-i18n="footerNavServices">Services</a></li>
         <li><a href="/fr/#references" class="hover:underline" data-i18n="footerNavReferences">Références</a></li>
@@ -120,8 +139,10 @@
       </ul>
     </div>
   </div>
-  <div class="text-center text-xs mt-10 text-gray-800" data-i18n="footerCopyright">© 2025 BeyondStart Solutions. Tous droits réservés.</div>
+  <div class="footer-bottom" data-i18n="footerCopyright">© 2025 BeyondStart Solutions. Tous droits réservés.</div>
 </footer>
+<!-- Sticky CTA -->
+<a href="#contact" class="sticky-cta" data-i18n="stickyCTA">Demander un devis</a>
 
 <script src="/translations.min.js"></script>
 <script src="/script.min.js"></script>
