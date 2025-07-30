@@ -1082,5 +1082,6 @@ body.loading main,
 body.loading header,
 body.loading footer,
 body.loading .sticky-cta {
-    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
