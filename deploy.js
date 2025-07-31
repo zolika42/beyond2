@@ -130,7 +130,7 @@ for (const htmlFile of htmlFiles) {
         const canonical = doc.querySelector('link[rel="canonical"]');
         if (canonical) {
             const langPath = lang === "en" ? "" : `${lang}/`;
-            canonical.href = `https://godisittes.hu/${langPath}${htmlFile}`;
+            canonical.href = `https://beyondstart.solutions/${langPath}${htmlFile}`;
         }
 
         // 🔁 Replace non-data-i18n elements based on known selectors
@@ -235,7 +235,7 @@ if (missingTranslationTable.length > 0) {
 }
 
 // 11. Generate sitemap.xml
-const siteBase = "https://godisittes.hu";
+const siteBase = "https://beyondstart.solutions";
 const sitemapEntries = [];
 
 for (const htmlFile of htmlFiles) {
