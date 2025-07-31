@@ -1361,7 +1361,7 @@ body.landing .consultation-section h2 {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 2.5rem;
-    color: #111827;
+    color: #000000;
 }
 
 body.landing .consultation-list {
@@ -1394,7 +1394,7 @@ body.landing .consultation-list li::before {
 
 body.landing .consultation-section .note {
     font-size: 0.95rem;
-    color: #6b7280; /* slate-500 */
+    color: #000000;
     text-align: center;
     line-height: 1.6;
     max-width: 640px;
