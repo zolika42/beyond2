@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <!-- Google tag (gtag.js) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16882358510"></script>
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(() => {
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'AW-16882358510');
+            }, 3000);
+        });
+    </script>
+
+    <!-- Loader handling -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loading');
+            window.addEventListener('load', () => {
+                const loader = document.getElementById('site-loader');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.remove();
+                        document.body.classList.remove('loading');
+                    }, 300);
+                }
+            });
+        });
+    </script>
+
+    <!-- Preloader styles -->
+    <style>
+        .hero-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.625rem;
+            margin-bottom: 2rem;
+            color: #d1d5db;
+        }
+
+        .lcp-fake {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.001;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+
+    <!-- Meta / SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drupal, Laravel &amp; Shopify Help – BeyondStart Solutions</title>
+    <meta name="description" content="Secure Drupal updates, fast Laravel optimization, and conversion-boosting Shopify audits. Resolved within 72 hours with a money-back guarantee.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://godisittes.hu/landing/digital-transformation.html">
+
+    <!-- Social Preview / OG -->
+    <meta property="og:title" content="Drupal, Laravel and Shopify Solutions – BeyondStart Solutions">
+    <meta property="og:description" content="Over 20 years of experience. Fast bug fixing and performance optimization within 72 hours, with a satisfaction guarantee.">
+    <meta property="og:image" content="https://beyondstart.solutions/images/beyondstart_logo_sm.webp">
+    <meta property="og:url" content="https://beyondstart.solutions/landing/digital-transformation">
+    <meta property="og:type" content="website">
+
+    <!-- Preloads -->
+    <link rel="preconnect" href="https://assets.calendly.com" crossorigin="">
+    <link rel="preload" href="/style.min.css" as="style">
+    <link rel="preload" as="image" href="/images/digital_transformation.webp" type="image/webp">
+    <link href="/style.min.css" rel="stylesheet" media="print" onload="this.onload=null;this.media='all';">
+    <noscript><link rel="stylesheet" href="/style.min.css"></noscript>
+
+    <!-- Favicon / PWA -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="landing digital-transformation">
+<a href="#main" class="skip-link" data-i18n="jumpToMainContent">Jump to the main content</a>
+<div id="site-loader" class="site-loader">
+    <div class="loader-circle"></div>
+</div>
+<header id="site-header" class="site-header">
+    <!-- Logo -->
+    <a href="/en/">
+        <img src="/images/beyondstart_logo_sm.webp" alt="BeyondStart Solutions logó" width="200" height="56" loading="eager" decoding="async" fetchpriority="high">
+    </a>
+
+    <!-- Mobile navigation -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü megnyitása">
+    <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+    </label>
+
+    <!-- Navigation -->
+    <div class="header-right">
+        <nav class="main-nav" aria-label="Fő navigáció">
+            <ul>
+                <li><a href="/en/#services" data-i18n="servicesTitle">Our Services</a></li>
+                <li><a href="/en/#references" data-i18n="referencesTitle">Who we've worked with</a></li>
+                <li><a href="/en/#testimonials" data-i18n="testimonialTitle">What our clients say</a></li>
+                <li><a href="/en/#about" data-i18n="aboutTitle">About BeyondStart</a></li>
+                <li><a href="/en/#contact" data-i18n="ctaBlockButton">Get a Quote</a></li>
+            </ul>
+        </nav>
+
+        <!-- Language Selector -->
+        <form action="" method="get" onsubmit="event.preventDefault(); location.href=this.language.value;">
+            <div class="language-switcher">
+                <label for="language" class="sr-only">Nyelvválasztás</label>
+                <select id="language" name="language" aria-label="Language selection" class="language-select">
+                    <option value="/hu/index.html">🇭🇺 HU</option>
+                    <option value="/en/index.html" selected="selected">🇬🇧 EN</option>
+                    <option value="/de/index.html">🇩🇪 DE</option>
+                    <option value="/fr/index.html">🇫🇷 FR</option>
+                    <option value="/nl/index.html">🇳🇱 NL</option>
+                    <option value="/es/index.html">🇪🇸 ES</option>
+                </select>
+                <button type="submit" class="language-button" onclick="setLanguage(document.getElementById('language').value.split('/')[1])">
+                    OK
+                </button>
+            </div>
+        </form>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero-section" aria-label="BeyondStart Solutions">
+    <img src="/images/digital_transformation.webp" fetchpriority="high" alt="hero background" style="display: none;" loading="eager">
+
+    <div class="hero-overlay">
+
+        <div class="hero-badge" data-i18n="landing1-badge">🔥 New! 30-minute digital audit</div>
+
+        <h1 data-i18n="landing1-heroTitle">🕙7:42 AM. Three people already messaged you that something’s broken again.</h1>
+
+        <p class="lead" data-i18n="landing1-heroSubtitle">Order placement crashed. Backend is dying. Google Analytics is missing. And your day hasn’t even started yet.</p>
+
+        <p data-i18n="landing1-heroSubtitle2">💣 Why are you constantly struggling with your business? 5 mistakes nearly every growing company makes — and how we solve them in 30 minutes.</p>
+
+        <p class="lead" data-i18n="landing1-heroSubtitle3">🎯Real examples. Free consultation. No bullshit.</p>
+
+        <p class="lead" data-i18n="landing1-heroSubtitle4">👉 30 minutes. Zero bullshit. We get to the point. 🎁 Book now and get a free mini-roadmap.</p>
+
+        <a href="#contact" class="service-button" data-i18n="landing1-bookButton">Yes, I’m interested – show me!</a>
+
+        <p class="scroll-hint" data-i18n="landing1-scrollHint">👇 Scroll down, we’ll show you the details</p>
+
+        <p class="small-note" data-i18n="landing1-smallNote">🚀 This isn’t a “let’s have a look” pitch. It’s a real conversation about why it’s not working — and how it will. Brutal honesty works best.</p>
+
+    </div>
+</section>
+
+<section class="pain-section drama-mode">
+    <div class="container">
+
+        <h2 data-i18n="pain-title">😩 What does real pain look like?</h2>
+
+        <div class="mega-grid">
+
+            <!-- painboxes -->
+            <div class="painbox" data-i18n="pain1">💥 You can’t even look at your website.<br>Outdated, slow, embarrassing. You know it’s not worthy of you.</div>
+
+            <div class="painbox" data-i18n="pain2">🧱 Your developer disappeared.<br>Or you’re on your third one, and still nothing works right.</div>
+
+            <div class="painbox" data-i18n="pain3">🕳️ Every new process is manual.<br>Excel, emails, phone calls — but no transparent system.</div>
+
+            <div class="painbox" data-i18n="pain4">📉 Time, money, and momentum are draining away.<br>Your team’s demotivated and drifting.</div>
+
+            <!-- punchboxes -->
+            <div class="punchbox" data-i18n="punch1">📊 Still using Excel as your system?<br>That’s a clown move.</div>
+
+            <div class="punchbox" data-i18n="punch2">💸 Your team’s just waiting for payday?<br>You’re circling the drain.</div>
+
+            <div class="punchbox" data-i18n="punch3">📬 Decisions over email?<br>That’s self-inflicted torture.<br>Welcome to premium pain.</div>
+
+            <div class="punchbox" data-i18n="punch4">🧨 Three systems that don’t talk to each other?<br>Congrats. You’ve built Digital Frankenstein.</div>
+
+        </div>
+
+        <p class="pain-note" data-i18n="pain-note">You don’t have to stay stuck.<br>One conversation might be all it takes to make your business actually work.</p>
+
+        <a href="#contact" class="service-button cta-red" data-i18n="pain-cta">Book my session →</a>
+
+    </div>
+</section>
+
+<section class="consultation-section">
+    <div class="container">
+
+        <h2 data-i18n="consult-title">🎁 What do you get in the free consultation?</h2>
+
+        <ul class="consultation-list">
+            <li data-i18n="consult1">🧠 A fast but deep <strong>digital audit</strong> – we pinpoint where your time and money are leaking</li>
+            <li data-i18n="consult2">🛠️ <strong>Concrete suggestions</strong> on what systems to use and how to automate within 2 weeks</li>
+            <li data-i18n="consult3">🗺️ A <strong>mini-roadmap</strong> outlining your first steps toward transformation</li>
+            <li data-i18n="consult4">📞 All this in a <strong>30-minute online call</strong> — with us. Not an AI chatbot. Not a sales rep.</li>
+        </ul>
+
+        <div class="cta-wrapper">
+            <a href="#contact" class="service-button" data-i18n="consult-button">Book my session →</a>
+        </div>
+
+        <p class="scroll-hint" data-i18n="consult-scroll">👇 Scroll down, we’ll show you the details</p>
+
+        <p class="note" data-i18n="consult-note">❌ No obligations. ❌ No pushy sales. ❌ No shady subscriptions.<br>👉 This is <strong>real help</strong> — or you pay nothing. Oh wait, it’s free anyway.</p>
+
+    </div>
+</section>
+
+<section class="why-us-section">
+    <h2 data-i18n="why-title">🧠 Why us?</h2>
+    <ul class="why-us-list">
+        <li data-i18n="why1"><strong>We think in systems.</strong><br>We don’t just build. We redesign. We make things work, not just patch them.</li>
+        <li data-i18n="why2"><strong>No cookie-cutter crap.</strong><br>No “none of our clients needed this.” Everything’s tailored to your specific company.</li>
+        <li data-i18n="why3"><strong>We’re not salespeople.</strong><br>Straight talk, real options. If we can’t help, we’ll say so.</li>
+        <li data-i18n="why4"><strong>You can count on us.</strong><br>We don’t disappear. We don’t BS. We hate ghost developers too.</li>
+    </ul>
+</section>
+
+<!-- Testimonial Section -->
+<section class="testimonial-section">
+    <div class="container">
+        <h2 data-i18n="testimonial-title">💬 What do our clients say?</h2>
+        <div class="testimonials">
+            <div class="testimonial-card">
+                <p data-i18n="testimonial1">I expected a dev team. What I got was a complete system rethink. What they do actually works.</p>
+                <span class="author">– Ster Nerinckx, ACEG Belgium</span>
+            </div>
+            <div class="testimonial-card">
+                <p data-i18n="testimonial2">No templates, just real thinking. Best development decision we ever made.</p>
+                <span class="author">– Maciej D., TechSoup Europe</span>
+            </div>
+            <div class="testimonial-card">
+                <p data-i18n="testimonial3">Zoli’s team didn’t just make a website — they cleaned up our entire online operations.</p>
+                <span class="author">– Alan B., CompanyApp</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-us-section">
+    <div class="about-container">
+        <div class="about-text">
+            <h2 data-i18n="about-title">🧍 Who am I, and why should you listen to me?</h2>
+            <p data-i18n="about-p1">In the past 15 years, I’ve worked with multinationals, nonprofits, tech firms — and even my mom when the Wi-Fi broke.</p>
+            <p data-i18n="about-p2">I’ve seen chaotic projects from the inside, devs who missed deadlines for months, and companies managing <strong>multi-million revenue with Excel</strong>. Oh, and yes, I’ve screwed up too.</p>
+            <p data-i18n="about-p3">That’s why I started helping businesses on a systems level. Because the problem isn’t the tech. <strong>It’s the lack of structure, of strategy. Just fires everywhere — and no bucket.</strong></p>
+            <p data-i18n="about-p4">What we do isn’t software development.<br><strong>It’s business fire prevention.</strong> And I know it works.</p>
+        </div>
+        <div class="about-photo">
+            <img src="/images/about_me.webp" alt="Aki mögött ez van – ember, nem AI">
+            <div class="photo-overlay" data-i18n="about-overlay">After a rough day, you’re not always camera-ready. That’s part of the job too.</div>
+        </div>
+    </div>
+</section>
+
+<section class="partners-section" aria-label="Partnereink">
+    <img src="/images/partners.webp" fetchpriority="high" alt="hero background" style="display: none;" loading="eager">
+    <div class="container">
+        <h2 data-i18n="partners-title">🤝 Who have we worked with?</h2>
+        <p class="intro" data-i18n="partners-intro">Anyone can build a website. We design working business systems — from ERP to Shopify optimization.</p>
+        <div class="partner-tiles">
+
+            <div class="partner-tile">
+                <img src="/images/kinepolis_bg.webp" alt="Kinepolis logó">
+                <p data-i18n="partner-kinepolis"><strong>Kinepolis</strong><br>Maintenance, migration, and custom Drupal modules for an international cinema network.</p>
+                <a href="https://www.kinepolis.com/" target="_blank" rel="noopener" class="partner-card" aria-label="Kinepolis weboldal"></a>
+            </div>
+
+            <div class="partner-tile">
+                <img src="/images/techsoup_bg.webp" alt="TechSoup logó">
+                <p data-i18n="partner-techsoup"><strong>TechSoup Europe</strong><br>Admin interfaces and permission systems for the nonprofit sector.</p>
+                <a href="https://www.techsoupeurope.org/" target="_blank" rel="noopener" class="partner-card" aria-label="TechSoup Europe weboldal"></a>
+            </div>
+
+            <div class="partner-tile">
+                <img src="/images/aceg_bg.webp" alt="ACEG logó">
+                <p data-i18n="partner-aceg"><strong>ACEG Belgium</strong><br>Complete rewrite of an internal ERP system in Laravel: access control, records, PDF generation.</p>
+                <a href="https://www.aceg.be/" target="_blank" rel="noopener" class="partner-card" aria-label="ACEG weboldal"></a>
+            </div>
+
+            <div class="partner-tile">
+                <img src="/images/companyapp_bg.webp" alt="CompanyApp logó">
+                <p data-i18n="partner-companyapp"><strong>CompanyApp</strong><br>Internal mobile communication platform with custom modules and performance tuning.</p>
+                <a href="https://companyapp.co.uk/" target="_blank" rel="noopener" class="partner-card" aria-label="CompanyApp weboldal"></a>
+            </div>
+
+            <div class="partner-tile">
+                <img src="/images/judynatale_bg.webp" alt="JudyNatale logó">
+                <p data-i18n="partner-judynatale"><strong>JudyNatale Handmade</strong><br>Shopify store for a handmade brand – design, development, marketing integration.</p>
+                <a href="https://judynatale.com/" target="_blank" rel="noopener" class="partner-card" aria-label="JudyNatale weboldal"></a>
+            </div>
+
+            <div class="partner-tile">
+                <img src="/images/columbiagames_bg.webp" alt="Columbia Games logó">
+                <p data-i18n="partner-columbiagames"><strong>Columbia Games</strong><br>Python-based ecommerce development and tech consulting in the US gaming industry.</p>
+                <a href="https://columbiagames.com/" target="_blank" rel="noopener" class="partner-card" aria-label="Columbia Games weboldal"></a>
+            </div>
+
+            <div class="partner-tile">
+                <img src="/images/godisittes_bg.webp" alt="Gödi Sittes logó">
+                <p data-i18n="partner-godisittes"><strong>Gödi Sittes</strong><br>Static site + automated build workflow for a dumpster-free waste hauling business.</p>
+                <a href="https://godisittes.hu/" target="_blank" rel="noopener" class="partner-card" aria-label="Gödi Sittes weboldal"></a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="next-step-section">
+    <h2 data-i18n="next-title">🧭 What happens after the consultation?</h2>
+    <ul class="next-step-list">
+        <li data-i18n="next1"><strong>1. We uncover your most urgent problem</strong> — no fluff, based on a real audit.</li>
+        <li data-i18n="next2"><strong>2. You get a mini roadmap</strong> — clear, 2–3 step action plan.</li>
+        <li data-i18n="next3"><strong>3. You decide whether we work together</strong> — no pressure, no gimmicks.</li>
+    </ul>
+</section>
+
+<section class="faq-section">
+    <h2 data-i18n="faq-title">❓ Questions before you write to us</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+            <h3 data-i18n="faq-q1">💸 Is it really free?</h3>
+            <p data-i18n="faq-a1">Yes. No sales pitch. No trap. No upsell. We help, then you decide.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 data-i18n="faq-q2">🤷 What if I’m not technical?</h3>
+            <p data-i18n="faq-a2">Even better! This talk isn’t about code — it’s about how your business runs. We speak human.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 data-i18n="faq-q3">📉 What if it turns out everything sucks?</h3>
+            <p data-i18n="faq-a3">That’s still something. At least now you know. From there, you can actually move forward.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 data-i18n="faq-q4">⌛ Really just 30 minutes?</h3>
+            <p data-i18n="faq-a4">Yes, we stick to it. Sometimes it goes longer — but we won’t waste your time.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-final">
+    <h2 data-i18n="cta-final-title">📅 Still haven’t booked your consultation?</h2>
+    <p data-i18n="cta-final-text">It won’t hurt. In fact, it might be the best half hour your business has had.</p>
+    <a href="#contact" class="service-button" data-i18n="cta-final-button">Book my session →</a>
+</section>
+
+<!-- Closing Statement -->
+<section class="closing-section">
+    <h2 data-i18n="closing-title">🌍 Want your place on the map too?</h2>
+    <p data-i18n="closing-text">You’re one conversation away from having a business that works — not just looks like it does.<br>We don’t talk. We show.</p>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <h3 data-i18n="footerCompanyName">BeyondStart Solutions</h3>
+            <p data-i18n="footerCompanyDetails">Managing Director: Zoltán Horváth <br> Headquarters: Str. Parângului 10, Ap. 2, 440031, Satu Mare, Romania <br> VAT Number: RO43923085 <br> Company Reg. No.: J30/291/2021</p>
+        </div>
+        <div>
+            <h3 data-i18n="footerLegal">Legal documents</h3>
+            <ul>
+                <li><a href="/en/impresszum.html" class="hover:underline" data-i18n="footerImprint">Imprint</a></li>
+                <li><a href="/en/adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy">Privacy Policy</a></li>
+                <li><a href="/en/cookie.html" class="hover:underline" data-i18n="footerCookies">Cookie Policy</a></li>
+                <li><a href="/en/aszf.html" class="hover:underline" data-i18n="footerTerms">Terms and Conditions</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 data-i18n="footerContact">Contact</h3>
+            <ul>
+                <li>
+                    <span data-i18n="footerEmail">E-mail:</span>
+                    <a href="mailto:zoltan@beyondstart.solutions" class="hover:underline">zoltan[at]beyondstart[dot]solutions</a>
+                </li>
+                <li>
+                    <span data-i18n="footerPhone">Phone:</span>
+                    <a href="tel:+36705084100" class="hover:underline">+36 70 508 4100</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3 data-i18n="footerNav">Navigation</h3>
+            <ul>
+                <li><a href="/en/" class="hover:underline" data-i18n="footerNavHome">Home</a></li>
+                <li><a href="/en/#services" class="hover:underline" data-i18n="footerNavServices">Services</a></li>
+                <li><a href="/en/#references" class="hover:underline" data-i18n="footerNavReferences">References</a></li>
+                <li><a href="/en/#about" class="hover:underline" data-i18n="footerNavAbout">About Us</a></li>
+                <li><a href="/en/#contact" class="hover:underline" data-i18n="footerNavContact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom" data-i18n="footerCopyright">© 2025 BeyondStart Solutions. All rights reserved.</div>
+</footer>
+
+<!-- Sticky CTA -->
+<a href="#contact" class="sticky-cta" data-i18n="stickyCTA">Request a Quote</a>
+
+<script src="/translations.min.js" defer=""></script>
+<script src="/script.min.js" defer=""></script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "BeyondStart Solutions",
+        "url": "https://beyondstart.solutions",
+        "logo": "https://beyondstart.solutions/images/beyondstart_logo_sm.webp",
+        "sameAs": [],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+36 70 508 4100",
+            "contactType": "customer service",
+            "areaServed": "HU",
+            "availableLanguage": [
+                "Hungarian",
+                "English"
+            ]
+        }
+    }
+</script>
+
+
+</body></html>

@@ -18,7 +18,8 @@ const autoTranslations = langs.reduce((acc, lang) => ({ ...acc, [lang]: {} }), {
 
 const rootHtmlFiles = fs.readdirSync(".").filter(f => f.endsWith(".html"));
 const blogHtmlFiles = fs.existsSync("blog") ? fs.readdirSync("blog").filter(f => f.endsWith(".html")).map(f => `blog/${f}`) : [];
-const htmlFiles = [...rootHtmlFiles, ...blogHtmlFiles];
+const landingHtmlFiles = fs.existsSync("landing") ? fs.readdirSync("landing").filter(file => file.endsWith(".html")).map(file => `landing/${file}`) : [];
+const htmlFiles = [...rootHtmlFiles, ...blogHtmlFiles, ...landingHtmlFiles];
 
 const missing = [];
 

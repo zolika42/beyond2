@@ -1,0 +1,58 @@
+{
+  "hu": {},
+  "en": {
+    "landing1-badge": "🔥 New! ",
+    "landing1-heroTitle": "🕙Regel 7:42. ",
+    "landing1-heroSubtitle": "The order is broken. ",
+    "landing1-heroSubtitle2": "💣 Why are you constantly smelling with your company?\n            ",
+    "landing1-heroSubtitle3": "🎯 Concrete examples. ",
+    "landing1-heroSubtitle4": "👉 30 minutes. ",
+    "landing1-bookButton": "Yes, I care - show me!",
+    "landing1-scrollHint": "👇 Scroll down, we'll show you the details",
+    "landing1-smallNote": "🚀 This is not just \"look at it\" duma. "
+  },
+  "de": {
+    "landing1-badge": "🔥 Neu! 30 Minuten digitales Audit",
+    "landing1-heroTitle": "🕙ELLEL 7:42. Drei haben Ihnen bereits geschrieben, dass etwas nicht mehr funktioniert hat.",
+    "landing1-heroSubtitle": "Die Bestellung ist gebrochen. Das Backend stirbt. Google Analytics ist nirgendwo.\n            Und dein Tag hat nicht begonnen.",
+    "landing1-heroSubtitle2": "💣 Warum riechen Sie ständig mit Ihrem Unternehmen?\n            5 Fehler, die fast alle wachsenden Unternehmen in Bezug auf digitale Systeme begehen -\n            Und wie man diese in 30 Minuten lösen.",
+    "landing1-heroSubtitle3": "🎯 BETRETE Beispiele. Mit kostenloser Beratung. Ohne Bullshit.",
+    "landing1-heroSubtitle4": "👉 30 Minuten. 0 Bullshit. Wir reden nur über den Punkt. \n            🎁 Buchen Sie jetzt und holen Sie sich eine Mini-Roadmap als Geschenk.",
+    "landing1-bookButton": "Ja, es ist mir wichtig - zeig es mir!",
+    "landing1-scrollHint": "👇 Scrollen Sie nach unten, wir zeigen Ihnen die Details",
+    "landing1-smallNote": "🚀 Dies ist nicht nur \"schau es dir an\" Duma. Dies ist ein scharfes Gespräch darüber, warum es nicht funktioniert - und wie es will.\n            Grausamer Aufrichtigkeit ist die zweckmäßigste."
+  },
+  "fr": {
+    "landing1-badge": "🔥 Nouveau! Audit numérique de 30 minutes",
+    "landing1-heroTitle": "🕙Regel 7:42. Trois vous ont déjà écrit que quelque chose ne fonctionnait plus.",
+    "landing1-heroSubtitle": "La commande est rompue. Le backend est en train de mourir. Google Analytics n'est nulle part.\n            Et votre journée n'a pas commencé.",
+    "landing1-heroSubtitle2": "💣 Pourquoi sentez-vous constamment avec votre entreprise?\n            5 erreurs que presque toutes les entreprises croissantes commettent autour des systèmes numériques -\n            Et comment les résoudre en 30 minutes.",
+    "landing1-heroSubtitle3": "🎯 Exemples de béton. Avec consultation gratuite. Sans conneries.",
+    "landing1-heroSubtitle4": "👉 30 minutes. 0 conneries. Nous parlons juste du point. \n            🎁 Réservez maintenant et obtenez un mini-route en cadeau.",
+    "landing1-bookButton": "Oui, je m'en soucie - montre-moi!",
+    "landing1-scrollHint": "👇 Faites défiler vers le bas, nous vous montrerons les détails",
+    "landing1-smallNote": "🚀 Ce n'est pas seulement \"regardez\" Duma. C'est une conversation nette sur la raison pour laquelle cela ne fonctionne pas - et comment cela le fera.\n            La sincérité cruelle est la plus opportun."
+  },
+  "nl": {
+    "landing1-badge": "🔥 Nieuw! 30 minuten digitale audit",
+    "landing1-heroTitle": "🕙regel 7:42. Drie hebben u al geschreven dat er iets niet meer werkte.",
+    "landing1-heroSubtitle": "De bestelling is verbroken. De backend sterft. Google Analytics is nergens.\n            En je dag is nog niet begonnen.",
+    "landing1-heroSubtitle2": "💣 Waarom ruik je constant met je bedrijf?\n            5 fouten die bijna alle groeiende bedrijven zich inzetten voor digitale systemen -\n            En hoe deze in 30 minuten op te lossen.",
+    "landing1-heroSubtitle3": "🎯 Concrete voorbeelden. Met gratis consult. Zonder onzin.",
+    "landing1-heroSubtitle4": "👉 30 minuten. 0 onzin. We hebben het gewoon over het punt. \n            🎁 Boek nu en ontvang een mini-roadmap als cadeau.",
+    "landing1-bookButton": "Ja, het kan me schelen - laat het me zien!",
+    "landing1-scrollHint": "👇 Scroll naar beneden, we laten u de details laten zien",
+    "landing1-smallNote": "🚀 Dit is niet alleen \"kijk naar\" Doema. Dit is een scherp gesprek over waarom het niet werkt - en hoe het zal.\n            Wreed oprechtheid is het meest opportuun."
+  },
+  "es": {
+    "landing1-badge": "🔥 ¡NUEVO! Auditoría digital de 30 minutos",
+    "landing1-heroTitle": "🕙Rregel 7:42. Tres ya te han escrito que algo no volvió a funcionar.",
+    "landing1-heroSubtitle": "El orden está roto. El backend está muriendo. Google Analytics no está en ninguna parte.\n            Y tu día no ha comenzado.",
+    "landing1-heroSubtitle2": "💣 ¿Por qué oles constantemente con tu empresa?\n            5 errores que casi todas las empresas en crecimiento se comprometen en torno a los sistemas digitales -\n            Y cómo resolverlos en 30 minutos.",
+    "landing1-heroSubtitle3": "🎯 Ejemplos concretos. Con consulta gratuita. Sin mierda.",
+    "landing1-heroSubtitle4": "👉 30 minutos. 0 mierda. Solo estamos hablando del punto. \n            🎁 Reserve ahora y obtenga un mini-roadmap como regalo.",
+    "landing1-bookButton": "Sí, me importa, ¡muéstrame!",
+    "landing1-scrollHint": "👇 Desplácese hacia abajo, le mostraremos los detalles",
+    "landing1-smallNote": "🚀 Esto no es solo \"míralo\" Duma. Esta es una conversación aguda sobre por qué no funciona y cómo lo hará.\n            La sinceridad cruel es la más conveniente."
+  }
+}

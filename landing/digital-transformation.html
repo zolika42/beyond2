@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16882358510"></script>
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(() => {
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'AW-16882358510');
+            }, 3000);
+        });
+    </script>
+
+    <!-- Loader handling -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loading');
+            window.addEventListener('load', () => {
+                const loader = document.getElementById('site-loader');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.remove();
+                        document.body.classList.remove('loading');
+                    }, 300);
+                }
+            });
+        });
+    </script>
+
+    <!-- Preloader styles -->
+    <style>
+        .hero-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.625rem;
+            margin-bottom: 2rem;
+            color: #d1d5db;
+        }
+
+        .lcp-fake {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.001;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+
+    <!-- Meta / SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miért nem működik a céged rendszere? – Ingyenes digitális audit 30 percben</title>
+    <meta name="description" content="5 gyakori hiba, amit a céged is elkövethet – és hogyan oldjuk meg őket mi. Foglalj ingyenes konzultációt és kapj konkrét javaslatokat. Bullshit nélkül.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://beyondstart.solutions/landing/digital-transformation">
+
+    <!-- Social Preview / OG -->
+    <meta property="og:title" content="Digitális konzultáció cégeknek – Miért nem működik a rendszered?" />
+    <meta property="og:description" content="30 perces ingyenes beszélgetés – mutatjuk a hibákat, és hogy mit tehetsz. Valódi példák, valódi emberek." />
+    <meta property="og:image" content="https://beyondstart.solutions/images/beyondstart_logo_sm.webp" />
+    <meta property="og:url" content="https://beyondstart.solutions/landing/digital-transformation" />
+    <meta property="og:type" content="website" />
+
+    <!-- Preloads -->
+    <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
+    <link rel="preload" href="/style.min.css" as="style">
+    <link rel="preload" as="image" href="/images/digital_transformation.webp" type="image/webp">
+    <link href="/style.min.css" rel="stylesheet" media="print" onload="this.onload=null;this.media='all';">
+    <noscript><link rel="stylesheet" href="/style.min.css"></noscript>
+
+    <!-- Favicon / PWA -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="landing digital-transformation">
+<a href="#main" class="skip-link" data-i18n="jumpToMainContent">Ugrás a fő tartalomra</a>
+<div id="site-loader" class="site-loader">
+    <div class="loader-circle"></div>
+</div>
+<header id="site-header" class="site-header">
+    <!-- Logo -->
+    <a href="/">
+        <img src="/images/beyondstart_logo_sm.webp" alt="BeyondStart Solutions logó" width="200" height="56"
+             loading="eager" decoding="async" fetchpriority="high">
+    </a>
+
+    <!-- Mobile navigation -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü megnyitása">
+    <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+    </label>
+
+    <!-- Navigation -->
+    <div class="header-right">
+        <nav class="main-nav" aria-label="Fő navigáció">
+            <ul>
+                <li><a href="/#services" data-i18n="servicesTitle">Szolgáltatások</a></li>
+                <li><a href="/#references" data-i18n="referencesTitle">Referenciák</a></li>
+                <li><a href="/#testimonials" data-i18n="testimonialTitle">Vélemények</a></li>
+                <li><a href="/#about" data-i18n="aboutTitle">Rólunk</a></li>
+                <li><a href="/#contact" data-i18n="ctaBlockButton">Kapcsolat</a></li>
+            </ul>
+        </nav>
+
+        <!-- Language Selector -->
+        <form action="" method="get" onsubmit="event.preventDefault(); location.href=this.language.value;">
+            <div class="language-switcher">
+                <label for="language" class="sr-only">Nyelvválasztás</label>
+                <select id="language" name="language" aria-label="Language selection" class="language-select">
+                    <option value="/hu/index.html">🇭🇺 HU</option>
+                    <option value="/en/index.html">🇬🇧 EN</option>
+                    <option value="/de/index.html">🇩🇪 DE</option>
+                    <option value="/fr/index.html">🇫🇷 FR</option>
+                    <option value="/nl/index.html">🇳🇱 NL</option>
+                    <option value="/es/index.html">🇪🇸 ES</option>
+                </select>
+                <button type="submit" class="language-button"
+                        onclick="setLanguage(document.getElementById('language').value.split('/')[1])">
+                    OK
+                </button>
+            </div>
+        </form>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero-section" aria-label="BeyondStart Solutions">
+    <img src="/images/digital_transformation.webp" fetchpriority="high" alt="hero background" style="display: none;"
+         loading="eager" />
+
+    <div class="hero-overlay">
+
+        <div class="hero-badge" data-i18n="landing1-badge">🔥 Új! 30 perces digitális audit</div>
+
+        <h1 data-i18n="landing1-heroTitle">🕙Reggel 7:42. Már hárman rád írtak, hogy megint nem működik valami.</h1>
+
+        <p class="lead" data-i18n="landing1-heroSubtitle">
+            Elromlott a rendelés leadás. A backend haldoklik. A Google Analytics sehol.
+            És még el sem kezdődött a napod.
+        </p>
+
+        <p data-i18n="landing1-heroSubtitle2">
+            💣 <strong>Miért szívsz folyamatosan a cégeddel?</strong><br>
+            5 hiba, amit szinte minden növekvő cég elkövet a digitális rendszerei körül –
+            és hogyan oldjuk meg ezeket mi, 30 perc alatt.
+        </p>
+
+        <p class="lead" data-i18n="landing1-heroSubtitle3">
+            <strong>🎯Konkrét példákkal. Ingyenes konzultációval. Bullshit nélkül.</strong>
+        </p>
+
+        <p class="lead" data-i18n="landing1-heroSubtitle4">
+            👉 30 perc. 0 bullshit. Csak a lényegről beszélünk. <br/>
+            🎁 <strong>Foglalj most, és kapj egy mini-roadmapet ajándékba.</strong>
+        </p>
+
+        <a href="#contact" class="service-button" data-i18n="landing1-bookButton">Igen, érdekel – mutassátok meg!</a>
+
+        <p class="scroll-hint" data-i18n="landing1-scrollHint">👇 Görgess le, mutatjuk a részleteket</p>
+
+        <p class="small-note" data-i18n="landing1-smallNote">
+            🚀 Ez nem csak “nézzünk rá” duma. Ez egy éles beszélgetés arról, miért nem működik – és hogyan fog.
+            <strong>A kegyetlen őszinteség a legcélravezetőbb.</strong>
+        </p>
+
+    </div>
+</section>
+
+<section class="pain-section drama-mode">
+    <div class="container">
+
+        <h2 data-i18n="pain-title">😩 Hogy néz ki, amikor már tényleg szívás van?</h2>
+
+        <div class="mega-grid">
+
+            <!-- painboxes -->
+            <div class="painbox" data-i18n="pain1">
+                <span class="emoji">💥</span>
+                <p><strong>Rá sem mersz nézni a weboldaladra.</strong><br>
+                    Elavult, lassú, szégyelled. Tudod, hogy ez nem méltó hozzád.</p>
+            </div>
+
+            <div class="painbox" data-i18n="pain2">
+                <span class="emoji">🧱</span>
+                <p><strong>A fejlesztőd eltűnt.</strong><br>
+                    Vagy már a harmadikat cserélted le, és még mindig nem működik semmi rendesen.</p>
+            </div>
+
+            <div class="painbox" data-i18n="pain3">
+                <span class="emoji">🕳️</span>
+                <p><strong>Minden új folyamat kézzel megy.</strong><br>
+                    Excel, e-mail, telefon – csak átlátható rendszer nincs.</p>
+            </div>
+
+            <div class="painbox" data-i18n="pain4">
+                <span class="emoji">📉</span>
+                <p><strong>Elfolyik az idő, a pénz, a lendület.</strong><br>
+                    A csapat már nem motivált, csak sodródik.</p>
+            </div>
+
+            <!-- punchboxes -->
+            <div class="punchbox" data-i18n="punch1">
+                <span class="emoji">📊</span>
+                <p><strong>Excel a rendszered?</strong><br>Szopóroller.</p>
+            </div>
+
+            <div class="punchbox" data-i18n="punch2">
+                <span class="emoji">💸</span>
+                <p><strong>A kollégák csak túlélnek?</strong><br>Szopóroller.</p>
+            </div>
+
+            <div class="punchbox" data-i18n="punch3">
+                <span class="emoji">📬</span>
+                <p><strong>Döntés e-mailben?</strong><br>Ez önkínzás.<br>Szopóroller deluxe.</p>
+            </div>
+
+            <div class="punchbox" data-i18n="punch4">
+                <span class="emoji">🧨</span>
+                <p><strong>3 rendszered van, de egyik se beszél egymással?</strong><br>Gratulálunk. Digitális Frankenstein.</p>
+            </div>
+
+        </div>
+
+        <p class="pain-note" data-i18n="pain-note">
+            Nem kell ebben maradnod.<br>
+            Egy beszélgetés elég lehet ahhoz, hogy a céged is végre működjön.
+        </p>
+
+        <a href="#contact" class="service-button cta-red" data-i18n="pain-cta">Foglalok időpontot →</a>
+
+    </div>
+</section>
+
+<section class="consultation-section">
+    <div class="container">
+
+        <h2 data-i18n="consult-title">🎁 Mit kapsz az ingyenes konzultáción?</h2>
+
+        <ul class="consultation-list">
+            <li data-i18n="consult1">🧠 Egy gyors, de mélyre menő <strong>digitális auditot</strong> – megnézzük, hol szivárog el az idő és pénz</li>
+            <li data-i18n="consult2">🛠️ <strong>Konkrét javaslatokat</strong>, milyen rendszerekkel és hogyan tudsz 2 hét alatt automatizálni</li>
+            <li data-i18n="consult3">🗺️ Egy <strong>mini-roadmapet</strong> az átalakításod első lépéseiről</li>
+            <li data-i18n="consult4">📞 Mindezt <strong>egy 30 perces online hívásban</strong>, velünk – nem egy AI chatbot, nem egy értékesítő</li>
+        </ul>
+
+        <div class="cta-wrapper">
+            <a href="#contact" class="service-button" data-i18n="consult-button">Foglalok időpontot →</a>
+        </div>
+
+        <p class="scroll-hint" data-i18n="consult-scroll">👇 Görgess le, mutatjuk a részleteket</p>
+
+        <p class="note" data-i18n="consult-note">
+            ❌ Nincs kötelezettség. ❌ Nincs pushy sales. ❌ Nincs „előfizetéses csapda”.<br>
+            👉 Ez <strong>valódi segítség</strong>, vagy semmit nem fizetsz – ja, amúgy amúgy is ingyenes.
+        </p>
+
+    </div>
+</section>
+
+<section class="why-us-section">
+    <h2 data-i18n="why-title">🧠 Miért pont mi?</h2>
+    <ul class="why-us-list">
+        <li data-i18n="why1">
+            <strong>Rendszerben gondolkodunk.</strong><br>
+            Nem csak fejlesztünk, hanem újratervezünk. Működővé tesszük, amit most csak toldozol.
+        </li>
+        <li data-i18n="why2">
+            <strong>Nem nyomjuk a sablont.</strong><br>
+            Nincs „egyik ügyfelünknek se volt ilyen”. Mindig konkrét cégedre szabjuk.
+        </li>
+        <li data-i18n="why3">
+            <strong>Nem vagyunk értékesítők.</strong><br>
+            Egyenes beszéd, reális lehetőségek. Ha nem tudunk segíteni, azt is megmondjuk.
+        </li>
+        <li data-i18n="why4">
+            <strong>Ránk lehet számítani.</strong><br>
+            Nem tűnünk el, nem kamuzunk. Mi is utáljuk a fejlesztőket, akik eltűnnek launch után.
+        </li>
+    </ul>
+</section>
+
+<!-- Testimonial Section -->
+<section class="testimonial-section">
+    <div class="container">
+        <h2 data-i18n="testimonial-title">💬 Ők mit mondtak rólunk?</h2>
+        <div class="testimonials">
+            <div class="testimonial-card">
+                <p data-i18n="testimonial1">"Azt hittem, egy szoftvercég jön. Ehelyett egy teljes rendszer-újragondolás lett belőle. Tényleg működik, amit csinálnak."</p>
+                <span class="author">– Ster Nerinckx, ACEG Belgium</span>
+            </div>
+            <div class="testimonial-card">
+                <p data-i18n="testimonial2">"Nem sablonmegoldás, hanem valódi gondolkodás. A legjobb döntésünk volt fejlesztés fronton."</p>
+                <span class="author">– Maciej D., TechSoup Europe</span>
+            </div>
+            <div class="testimonial-card">
+                <p data-i18n="testimonial3">"Zoliék nem csak weboldalt csináltak, hanem rendbe tették a teljes online működésünket."</p>
+                <span class="author">– Alan B., CompanyApp</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-us-section">
+    <div class="about-container">
+        <div class="about-text">
+            <h2 data-i18n="about-title">🧍 Ki vagyok én, és miért kéne rám hallgatnod?</h2>
+            <p data-i18n="about-p1">Az elmúlt 15 évben dolgoztam multival, nonprofit szervezettel, tech céggel és anyámmal is, mikor épp nem működött a net.</p>
+            <p data-i18n="about-p2">Láttam belülről szétcsúszó projekteket, hónapokat csúszó fejlesztőket, cégeket, amik <strong>milliárdos forgalommal is Excelben</strong> menedzselték magukat. Ja, és persze voltam én is az, aki elkúrt dolgokat.</p>
+            <p data-i18n="about-p3">Ezért kezdtem el rendszerszinten segíteni cégeknek. Mert a gond nem a technológiával van. <strong>Hanem azzal, hogy nincs rendszer, nincs koncepció. Csak tüzek vannak, és vödör nincs.</strong></p>
+            <p data-i18n="about-p4">Amit most csinálunk, az <strong>nem szoftverfejlesztés, hanem céges tűzoltás-elhárítás</strong>. És tudom, hogy működik.</p>
+        </div>
+        <div class="about-photo">
+            <img src="/images/about_me.webp" alt="Aki mögött ez van – ember, nem AI" />
+            <div class="photo-overlay" data-i18n="about-overlay">
+                <p>Egy nehéz nap után nem mindig szalonképes az ember. Ez is a munkával jár.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="partners-section" aria-label="Partnereink">
+    <img src="/images/partners.webp" fetchpriority="high" alt="hero background" style="display: none;"
+         fetchpriority="high" loading="eager"/>
+    <div class="container">
+        <h2 data-i18n="partners-title">🤝 Kikkel dolgoztunk együtt?</h2>
+        <p class="intro" data-i18n="partners-intro">
+            Weboldalt bárki épít. Mi viszont működő cégrendszert tervezünk – vállalatirányítástól a Shopify optimalizálásig.
+        </p>
+        <div class="partner-tiles">
+
+            <div class="partner-tile">
+                <img src="/images/kinepolis_bg.webp" alt="Kinepolis logó" />
+                <p data-i18n="partner-kinepolis">
+                    <strong>Kinepolis</strong><br>
+                    Nemzetközi mozimultiplex rendszer karbantartása, migráció, saját Drupal modulokkal.
+                </p>
+                <a href="https://www.kinepolis.com/" target="_blank" rel="noopener" class="partner-card" aria-label="Kinepolis weboldal"></a>
+            </div>
+
+            <div class="partner-tile">
+                <img src="/images/techsoup_bg.webp" alt="TechSoup logó" />
+                <p data-i18n="partner-techsoup">
+                    <strong>TechSoup Europe</strong><br>
+                    Admin felületek és jogosultságkezelés fejlesztése a nonprofit szektorban.
+                </p>
+                <a href="https://www.techsoupeurope.org/" target="_blank" rel="noopener" class="partner-card" aria-label="TechSoup Europe weboldal"></a>
+            </div>
+
+            <div class="partner-tile">
+                <img src="/images/aceg_bg.webp" alt="ACEG logó" />
+                <p data-i18n="partner-aceg">
+                    <strong>ACEG Belgium</strong><br>
+                    Laravel alapú ERP-rendszer teljes újraírása: jogosultság, PDF, belső workflow.
+                </p>
+                <a href="https://www.aceg.be/" target="_blank" rel="noopener" class="partner-card" aria-label="ACEG weboldal"></a>
+            </div>
+
+            <div class="partner-tile">
+                <img src="/images/companyapp_bg.webp" alt="CompanyApp logó" />
+                <p data-i18n="partner-companyapp">
+                    <strong>CompanyApp</strong><br>
+                    Mobilos kommunikációs platform új modulokkal és sebességnöveléssel.
+                </p>
+                <a href="https://companyapp.co.uk/" target="_blank" rel="noopener" class="partner-card" aria-label="CompanyApp weboldal"></a>
+            </div>
+
+            <div class="partner-tile">
+                <img src="/images/judynatale_bg.webp" alt="JudyNatale logó" />
+                <p data-i18n="partner-judynatale">
+                    <strong>JudyNatale Handmade</strong><br>
+                    Shopify webáruház felépítése kézműves márkának, dizájn + marketing integrációval.
+                </p>
+                <a href="https://judynatale.com/" target="_blank" rel="noopener" class="partner-card" aria-label="JudyNatale weboldal"></a>
+            </div>
+
+            <div class="partner-tile">
+                <img src="/images/columbiagames_bg.webp" alt="Columbia Games logó" />
+                <p data-i18n="partner-columbiagames">
+                    <strong>Columbia Games</strong><br>
+                    Python-alapú e-kereskedelmi rendszer fejlesztés és technikai tanácsadás az USA-ban.
+                </p>
+                <a href="https://columbiagames.com/" target="_blank" rel="noopener" class="partner-card" aria-label="Columbia Games weboldal"></a>
+            </div>
+
+            <div class="partner-tile">
+                <img src="/images/godisittes_bg.webp" alt="Gödi Sittes logó" />
+                <p data-i18n="partner-godisittes">
+                    <strong>Gödi Sittes</strong><br>
+                    Statikus oldal + automatizált build workflow egy konténer nélküli sittszállító vállalkozásnak.
+                </p>
+                <a href="https://godisittes.hu/" target="_blank" rel="noopener" class="partner-card" aria-label="Gödi Sittes weboldal"></a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="next-step-section">
+    <h2 data-i18n="next-title">🧭 Mi történik a konzultáció után?</h2>
+    <ul class="next-step-list">
+        <li data-i18n="next1"><strong>1. Feltárjuk a legégetőbb problémád</strong> – nem bullshit, konkrét audit alapján.</li>
+        <li data-i18n="next2"><strong>2. Kapsz egy mini roadmapet</strong> – 2-3 lépésben, érthetően.</li>
+        <li data-i18n="next3"><strong>3. Eldöntöd, hogy velünk csinálod-e</strong> – nincs nyomás, nincs trükk.</li>
+    </ul>
+</section>
+
+<section class="faq-section">
+    <h2 data-i18n="faq-title">❓ Gyakori kérdések, mielőtt még rám írsz</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+            <h3 data-i18n="faq-q1">💸 Ez tényleg ingyenes?</h3>
+            <p data-i18n="faq-a1">Igen. Ez nem sales meeting, nem upsell, nem csapda. Segítünk, aztán te döntesz.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 data-i18n="faq-q2">🤷 Mi van, ha nem vagyok technikai?</h3>
+            <p data-i18n="faq-a2">Az a legjobb! A beszélgetés nem kódról szól, hanem céges működésről. Emberi nyelven.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 data-i18n="faq-q3">📉 Mi van, ha kiderül, hogy minden szar?</h3>
+            <p data-i18n="faq-a3">Az is valami. Legalább tudod, hol állsz, és már nem csak tippelsz. Innen lehet elindulni.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 data-i18n="faq-q4">⌛ Tényleg csak 30 perc?</h3>
+            <p data-i18n="faq-a4">Mi tartjuk. Néha hosszabb lesz, ha benne vagy. De nem fogod azt érezni, hogy vesztegetjük az idődet.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-final">
+    <h2 data-i18n="cta-final-title">📅 Még nem kérted a konzultációt?</h2>
+    <p data-i18n="cta-final-text">Nem fog fájni. Sőt, lehet, hogy ez lesz a legjobb fél órád az egész vállalkozásodban.</p>
+    <a href="#contact" class="service-button" data-i18n="cta-final-button">Foglalok időpontot →</a>
+</section>
+
+<!-- Closing Statement -->
+<section class="closing-section">
+    <h2 data-i18n="closing-title">🌍 Te is beállnál a térképre?</h2>
+    <p data-i18n="closing-text">
+        Csak egy beszélgetés választ el attól, hogy a céged is működjön – nem csak látszódjon.<br>
+        Mi nem dumálunk. Mutatunk.
+    </p>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <h3 data-i18n="footerCompanyName">BeyondStart Solutions</h3>
+            <p data-i18n="footerCompanyDetails">
+                Cégvezető: Horváth Zoltán<br>
+                Székhely: Str. Parângului 10, Ap. 2, 440031, Satu Mare, Romania.<br>
+                Adószám: RO43923085<br>
+                Cégjegyzékszám: J30/291/2021
+            </p>
+        </div>
+        <div>
+            <h3 data-i18n="footerLegal">Jogi dokumentumok</h3>
+            <ul>
+                <li><a href="/impresszum.html" class="hover:underline" data-i18n="footerImprint">Impresszum</a></li>
+                <li><a href="/adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy">Adatvédelmi
+                    irányelvek</a></li>
+                <li><a href="/cookie.html" class="hover:underline" data-i18n="footerCookies">Cookie tájékoztató</a></li>
+                <li><a href="/aszf.html" class="hover:underline" data-i18n="footerTerms">ÁSZF</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 data-i18n="footerContact">Kapcsolat</h3>
+            <ul>
+                <li>
+                    <span data-i18n="footerEmail">E-mail:</span>
+                    <a href="mailto:zoltan@beyondstart.solutions" class="hover:underline">zoltan[at]beyondstart[dot]solutions</a>
+                </li>
+                <li>
+                    <span data-i18n="footerPhone">Telefon:</span>
+                    <a href="tel:+36705084100" class="hover:underline">+36 70 508 4100</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3 data-i18n="footerNav">Navigáció</h3>
+            <ul>
+                <li><a href="/" class="hover:underline" data-i18n="footerNavHome">Főoldal</a></li>
+                <li><a href="/#services" class="hover:underline" data-i18n="footerNavServices">Szolgáltatások</a></li>
+                <li><a href="/#references" class="hover:underline" data-i18n="footerNavReferences">Referenciák</a></li>
+                <li><a href="/#about" class="hover:underline" data-i18n="footerNavAbout">Rólunk</a></li>
+                <li><a href="/#contact" class="hover:underline" data-i18n="footerNavContact">Kapcsolat</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom" data-i18n="footerCopyright">
+        &copy; 2025 BeyondStart Solutions. Minden jog fenntartva.
+    </div>
+</footer>
+
+<!-- Sticky CTA -->
+<a href="#contact" class="sticky-cta" data-i18n="stickyCTA">💬 Ajánlatkérés</a>
+
+<script src="/translations.min.js" defer></script>
+<script src="/script.min.js" defer></script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "BeyondStart Solutions",
+        "url": "https://beyondstart.solutions",
+        "logo": "https://beyondstart.solutions/images/beyondstart_logo_sm.webp",
+        "sameAs": [],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+36 70 508 4100",
+            "contactType": "customer service",
+            "areaServed": "HU",
+            "availableLanguage": [
+                "Hungarian",
+                "English"
+            ]
+        }
+    }
+</script>
+</body>
+</html>

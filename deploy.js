@@ -101,7 +101,8 @@ if (fs.existsSync("images")) {
 // 9. Process HTML files
 const rootHtmlFiles = fs.readdirSync(".").filter(file => file.endsWith(".html"));
 const blogHtmlFiles = fs.existsSync("blog") ? fs.readdirSync("blog").filter(file => file.endsWith(".html")).map(file => `blog/${file}`) : [];
-const htmlFiles = [...rootHtmlFiles, ...blogHtmlFiles];
+const landingHtmlFiles = fs.existsSync("landing") ? fs.readdirSync("landing").filter(file => file.endsWith(".html")).map(file => `landing/${file}`) : [];
+const htmlFiles = [...rootHtmlFiles, ...blogHtmlFiles, ...landingHtmlFiles];
 const missingTranslationTable = [];
 
 for (const htmlFile of htmlFiles) {
