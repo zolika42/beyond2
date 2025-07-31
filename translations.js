@@ -207,7 +207,15 @@ const translations = {
         "cta-final-text": "Nem fog fájni. Sőt, lehet, hogy ez lesz a legjobb fél órád az egész vállalkozásodban.",
         "cta-final-button": "Foglalok időpontot →",
         "closing-title": "🌍 Te is beállnál a térképre?",
-        "closing-text": "Csak egy beszélgetés választ el attól, hogy a céged is működjön – nem csak látszódjon.<br>Mi nem dumálunk. Mutatunk."
+        "closing-text": "Csak egy beszélgetés választ el attól, hogy a céged is működjön – nem csak látszódjon.<br>Mi nem dumálunk. Mutatunk.",
+        "adatvedelem-pageTitle": "Adatvédelem – BeyondStart Solutions",
+        "adatvedelem-metaDescription": "Adatvédelemi nyilatkozat – BeyondStart Solutions",
+        "adatvedelem-ogTitle": "Adatvédelem – BeyondStart Solution",
+        "adatvedelem-ogDescription": "Adatvédelemi nyilatkozat – BeyondStart Solutions",
+        "landing-digital-transformation-pageTitle": "Digitális transzformáció – BeyondStart",
+        "landing-digital-transformation-metaDescription": "Gyors és fájdalommentes digitális upgrade. 30 perc alatt audit, bullshit nélkül.",
+        "landing-digital-transformation-ogTitle": "Digitális transzformáció – BeyondStart",
+        "landing-digital-transformation-ogDescription": "Tudd meg, miért nem működik rendesen a céged rendszere – és hogyan javítható."
     },
     "en": {
         "footerCompanyName": "BeyondStart Solutions",

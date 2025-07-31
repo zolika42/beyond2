@@ -17,6 +17,7 @@ const specialKeys = [
     "ogDescription",
     "metaKeywords"
 ];
+const baseURL = "https://beyondstart.solutions";
 fs.writeFileSync("translations.node.js", exported);
 console.log(green("✔ translations.node.js created."));
 
@@ -62,6 +63,7 @@ console.log(green("✔ style.min.css created."));
 
 // 5. Load translations
 const translations = require("./translations.node.js");
+const {retarget} = require("jsdom/lib/jsdom/living/helpers/shadow-dom");
 if (!translations || typeof translations !== "object") {
     console.error(red("❌ The translations object is not available!"));
     process.exit(1);
@@ -130,7 +132,7 @@ for (const htmlFile of htmlFiles) {
         const canonical = doc.querySelector('link[rel="canonical"]');
         if (canonical) {
             const langPath = lang === "en" ? "" : `${lang}/`;
-            canonical.href = `https://beyondstart.solutions/${langPath}${htmlFile}`;
+            canonical.href = `${baseURL}/${langPath}${htmlFile}`;
         }
 
         // 🔁 Replace non-data-i18n elements based on known selectors
@@ -145,9 +147,16 @@ for (const htmlFile of htmlFiles) {
 
         for (const [selector, key] of Object.entries(specialMap)) {
             const el = doc.querySelector(selector);
-            if (el && langDict[key]) {
-                if (el.tagName === "TITLE") el.textContent = langDict[key];
-                else el.setAttribute("content", langDict[key]);
+            let langKey = htmlFile.replace('_', '-');
+            langKey = htmlFile.replace('/', '-');
+            langKey = langKey.replace('.html', '-' + key);
+            if (!langDict[langKey]) {
+                langKey = key; // Fallback
+            }
+
+            if (el && langDict[langKey]) {
+                if (el.tagName === "TITLE") el.textContent = langDict[langKey];
+                else el.setAttribute("content", langDict[langKey]);
             }
         }
 
@@ -299,7 +308,7 @@ if (Object.keys(unusedKeysByLang).length > 0) {
     const unusedKeysByLang = {};
 
     Object.entries(translations).forEach(([lang, langData]) => {
-        const unused = Object.keys(langData).filter(key => !usedKeys.has(key) && !specialKeys.includes(key));
+        const unused = Object.keys(langData).filter(key => !usedKeys.has(key) && !specialKeys.some(special => key.includes(special)));
         if (unused.length > 0) unusedKeysByLang[lang] = unused;
     });
 
@@ -353,7 +362,7 @@ const cleanedTranslations = {};
 Object.entries(translations).forEach(([lang, dict]) => {
     const cleaned = {};
     Object.entries(dict).forEach(([key, value]) => {
-        if (usedKeys.has(key) || specialKeys.includes(key)) {
+        if (usedKeys.has(key) || specialKeys.some(special => key.includes(special))) {
             cleaned[key] = value;
         }
     });
