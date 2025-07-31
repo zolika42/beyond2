@@ -707,7 +707,7 @@ main {
 .testimonial-card p {
     font-style: italic;
     font-size: var(--font-size-sm);
-    color: var(--color-text-dark);
+    color: var(--color-bg-white);
     margin-bottom: 1rem;
 }
 
