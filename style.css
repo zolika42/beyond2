@@ -49,6 +49,10 @@ body {
     line-height: var(--line-height-base);
 }
 
+section h1 {
+    font-size: 2rem;
+}
+
 .sr-only {
     position: absolute;
     width: 1px;
