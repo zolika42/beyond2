@@ -1519,6 +1519,10 @@ body.landing .testimonials {
     margin: 0 auto;
 }
 
+body.landing .testimonial-card p {
+    color: var(--color-bg-white);
+}
+
 body.landing .testimonial-card {
     background: white;
     border-radius: 1rem;
