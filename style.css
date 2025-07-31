@@ -1520,7 +1520,7 @@ body.landing .testimonials {
 }
 
 body.landing .testimonial-card p {
-    color: var(--color-bg-white);
+    color: var(--color-text-dark);
 }
 
 body.landing .testimonial-card {
