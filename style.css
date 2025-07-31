@@ -707,7 +707,7 @@ main {
 .testimonial-card p {
     font-style: italic;
     font-size: var(--font-size-sm);
-    color: var(--color-text-dark);
+    color: var(--color-bg-white);
     margin-bottom: 1rem;
 }
 
@@ -1109,6 +1109,12 @@ body.landing .hero-section {
     background-image: url('/images/digital_transformation.webp');
     color: var(--color-bg-white);
     padding: 2rem 0 2rem 0;
+}
+
+@media screen and (max-width: 1024px) {
+    body.landing .hero-section {
+        padding: 20rem 0 20rem 0;
+    }
 }
 
 body.landing .hero-overlay {
