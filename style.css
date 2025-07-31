@@ -1264,8 +1264,12 @@ body.landing .punchbox:hover {
 
 body.landing .painbox .emoji,
 body.landing .punchbox .emoji {
-    font-size: 2.25rem;
-    margin-bottom: 0.75rem;
+    font-size: 2.75rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 body.landing .painbox p,
