@@ -806,7 +806,7 @@ main {
 .footer {
     background-color: var(--color-text-light);
     padding: 4rem var(--font-size-xl) 2rem;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xxsm);
     color: #4b5563;
 }
 
