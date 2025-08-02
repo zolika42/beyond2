@@ -44,4 +44,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Lefordítjuk az oldalt
     translatePage(currentLang || savedLang || detectBrowserLanguage());
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-16905609495/lEufCJjsrv4aEJfCnP0-'
+                });
+                observer.disconnect(); // egyszeri trigger
+            }
+        });
+    });
+
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+        observer.observe(contactSection);
+    }
 });
