@@ -79,7 +79,8 @@
                 <li><a href="/de/#references" data-i18n="referencesTitle">Mit wem wir zusammengearbeitet haben</a></li>
                 <li><a href="/de/#testimonials" data-i18n="testimonialTitle">Was unsere Kunden sagen</a></li>
                 <li><a href="/de/#about" data-i18n="aboutTitle">Über BeyondStart</a></li>
-                <li><a href="/de/#contact" data-i18n="ctaBlockButton" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/CReZCNfPrP4aEJfCnP0-'});">Angebot einholen</a></li>
+                <li><a href="/de/#contact" data-i18n="ctaBlockButton" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/CReZCNfPrP4aEJfCnP0-'});">Angebot einholen</a>
+                </li>
             </ul>
         </nav>
 
@@ -455,15 +456,12 @@
     });
 </script>
 <script>
-    window.addEventListener('load', function () {
-        setTimeout(() => {
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'AW-16905609495');
-        }, 3000);
-    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'AW-16905609495');
 </script>
 
 

@@ -85,8 +85,9 @@
                 <li><a href="/#about" data-i18n="aboutTitle">Rólunk</a></li>
                 <li><a
                         href="/#contact"
-                       data-i18n="ctaBlockButton"
-                       onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/CReZCNfPrP4aEJfCnP0-'});">>Kapcsolat</a></li>
+                        data-i18n="ctaBlockButton"
+                        onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/CReZCNfPrP4aEJfCnP0-'});">>Kapcsolat</a>
+                </li>
             </ul>
         </nav>
 
@@ -577,15 +578,12 @@
     });
 </script>
 <script>
-    window.addEventListener('load', function () {
-        setTimeout(() => {
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'AW-16905609495');
-        }, 3000);
-    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'AW-16905609495');
 </script>
 </body>
 </html>

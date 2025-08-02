@@ -79,7 +79,8 @@
                 <li><a href="/hu/#references" data-i18n="referencesTitle">Kikkel dolgoztunk együtt</a></li>
                 <li><a href="/hu/#testimonials" data-i18n="testimonialTitle">Ügyfeleink mondták</a></li>
                 <li><a href="/hu/#about" data-i18n="aboutTitle">A BeyondStart mögött</a></li>
-                <li><a href="/hu/#contact" data-i18n="ctaBlockButton" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/CReZCNfPrP4aEJfCnP0-'});">Kérek ajánlatot</a></li>
+                <li><a href="/hu/#contact" data-i18n="ctaBlockButton" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/CReZCNfPrP4aEJfCnP0-'});">Kérek ajánlatot</a>
+                </li>
             </ul>
         </nav>
 
@@ -455,15 +456,12 @@
     });
 </script>
 <script>
-    window.addEventListener('load', function () {
-        setTimeout(() => {
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'AW-16905609495');
-        }, 3000);
-    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'AW-16905609495');
 </script>
 
 
