@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(contactSection);
     }
 
-    const loader = document.getElementById("loader");
+    const loader = document.getElementById("site-loader");
     if (loader) {
         loader.style.opacity = "0";
         setTimeout(() => {
