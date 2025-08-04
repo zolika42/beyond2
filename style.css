@@ -1800,3 +1800,113 @@ body.landing .faq-item p {
     font-size: 1.05rem;
     line-height: 1.6;
 }
+
+body.landing .freebie-block {
+    background: linear-gradient(135deg, #0f172a, #1e293b); /* sötétkék */
+    padding: 4rem 1.5rem;
+    text-align: center;
+    color: #fff;
+}
+
+body.landing .form-lead-capture {
+    background: #ffffff;
+    padding: 2rem;
+    max-width: 480px;
+    margin: 0 auto;
+    border-radius: 1.5rem;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    text-align: left;
+}
+
+body.landing .form-lead-capture label {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1f2937;
+    text-align: left;
+}
+
+body.landing .form-lead-capture input[type="email"] {
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #cbd5e1;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+body.landing .form-lead-capture input[type="email"]:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.form-lead-capture .service-button {
+    font-size: 1.1rem;
+}
+
+.email-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 1rem;
+}
+
+.email-modal.visible {
+    display: flex;
+}
+
+.modal-content {
+    background: #fff;
+    color: #1f2937;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+}
+
+.modal-content input[type="email"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+}
+
+.modal-content .service-button {
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    border: none;
+    background: transparent;
+    color: #6b7280;
+    cursor: pointer;
+}

@@ -144,7 +144,9 @@
                 🎁 <strong>Foglalj most, és kapj egy mini-roadmapet ajándékba.</strong>
             </p>
 
-            <a href="#contact" class="service-button" data-i18n="landing1-bookButton" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/0HsACO3Pnf4aEJfCnP0-'});">Igen, érdekel – mutassátok
+            <a href="#contact" class="service-button" data-i18n="landing1-bookButton"
+               onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/0HsACO3Pnf4aEJfCnP0-'});">Igen, érdekel
+                – mutassátok
                 meg!</a>
 
             <p class="scroll-hint" data-i18n="landing1-scrollHint">👇 Görgess le, mutatjuk a részleteket</p>
@@ -262,6 +264,31 @@
             </p>
 
         </div>
+    </section>
+
+    <section class="freebie-block">
+        <p class="note" data-i18n="feebie-note">
+            ❌ Eleged van abból, hogy minden rád borul? <br/>
+            ✅ Töltsd le ezt az ingyenes PDF-et – 5 hiba, amit a legtöbb cég elkövet a digitális rendszereivel. <br/>
+            🔒 Nincs spam. Nincs bullshit. Csak konkrét segítség.
+        </p>
+        <form action="https://api.web3forms.com/submit" method="POST" class="form-lead-capture">
+            <input type="hidden" name="access_key" value="5338805b-78b9-46d4-9b0e-5a4128cefb73">
+            <input type="hidden" name="from_name" value="BeyondStart Solutions">
+            <input type="hidden" name="subject" value="Letöltés – 5 gyakori digitális hiba PDF">
+            <input type="hidden" name="language" value="hu">
+
+            <label for="email" data-i18n="emailLabel">Email címed:</label>
+            <input type="email" id="email" name="email" placeholder="pl. te@ceged.hu" required>
+
+            <button
+                    type="submit"
+                    class="service-button"
+                    data-i18n="freebie-button"
+                    onclick="gtag('event', 'conversion', { 'send_to': 'AW-16905609495/5pMnCJb5v_4aEJfCnP0-' });">
+                Kérem a PDF-et →
+            </button>
+        </form>
     </section>
 
     <section class="why-us-section">
@@ -578,28 +605,35 @@
         }
     }
 </script>
+<div id="email-modal" class="email-modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="document.getElementById('email-modal').classList.remove('visible')">×
+        </button>
+        <h2 data-i18n="modal-title">📥 Segíthetünk egy ingyenes kis PDF-el?</h2>
+        <p data-i18n="modal-subtitle">Add meg az e-mail címed, és már küldjük is az 5 digitális hibáról szóló
+            útmutatót.</p>
+        <form action="https://api.web3forms.com/submit" method="POST" class="form-lead-capture">
+            <input type="hidden" name="access_key" value="5338805b-78b9-46d4-9b0e-5a4128cefb73">
+            <input type="hidden" name="from_name" value="BeyondStart Solutions">
+            <input type="hidden" name="subject" value="Letöltés – 5 gyakori digitális hiba PDF">
+            <input type="hidden" name="language" value="hu">
+            <input type="hidden" name="redirect" value="https://beyondstart.solutions/hu/landing/koszonom.html">
+
+            <label for="modal-email" data-i18n="emailLabel">Email címed:</label>
+            <input type="email" id="modal-email" name="email" placeholder="pl. te@ceged.hu" required>
+            <button type="submit" class="service-button" data-i18n="freebie-button">Kérem a PDF-et →</button>
+        </form>
+    </div>
+</div>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16882358510"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16905609495"></script>
 <script>
-    window.addEventListener('load', function () {
-        setTimeout(() => {
-            window.dataLayer = window.dataLayer || [];
-
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-
-            gtag('js', new Date());
-            gtag('config', 'AW-16882358510');
-        }, 3000);
-    });
-</script>
-<script>
     window.dataLayer = window.dataLayer || [];
+
     function gtag() {
         dataLayer.push(arguments);
     }
+
     gtag('js', new Date());
     gtag('config', 'AW-16905609495');
 </script>

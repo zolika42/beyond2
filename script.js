@@ -19,6 +19,35 @@ function detectBrowserLanguage() {
     return supported.includes(browserLang) ? browserLang : 'en';
 }
 
+function showEmailModal() {
+    let el = document.getElementById("email-modal");
+    if (el) {
+        el.classList.add("visible");
+    }
+}
+
+let scrollTriggered = false;
+window.addEventListener("scroll", () => {
+    const scrollPercent = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
+    if (scrollPercent > 0.4 && !scrollTriggered) {
+        scrollTriggered = true;
+        showEmailModal(); // saját modalod meghívása
+    }
+});
+
+let exitTriggered = false;
+document.addEventListener("mouseleave", (e) => {
+    if (e.clientY < 10 && !exitTriggered) {
+        exitTriggered = true;
+        showEmailModal();
+    }
+});
+
+setTimeout(() => {
+    showEmailModal();
+}, 30000); // 30 sec
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const supported = ['en', 'hu', 'de', 'fr', 'nl', 'es'];
     const savedLang = localStorage.getItem('lang');

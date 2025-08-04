@@ -1,12 +1,12 @@
 const fs = require("fs");
 const path = require("path");
 const { JSDOM } = require("jsdom");
+const config = require("./deploy.config.js");
 
 const green = (str) => `\x1b[32m${str}\x1b[0m`;
 const yellow = (str) => `\x1b[33m${str}\x1b[0m`;
 const red = (str) => `\x1b[31m${str}\x1b[0m`;
 
-// 1. Generate translations.node.js
 const original = fs.readFileSync("translations.js", "utf-8");
 const originalScript = fs.readFileSync("script.js", "utf-8");
 const exported = original.replace(/^const translations =/, "module.exports =");
@@ -17,7 +17,105 @@ const specialKeys = [
     "ogDescription",
     "metaKeywords"
 ];
-const baseURL = "https://beyondstart.solutions";
+const GTAG_SNIPPET = config.GTAG_SNIPPET;
+const baseURL = config.baseURL;
+// 0. Check Google tags
+function ensureGtagInRawHTML(filePath) {
+    const html = fs.readFileSync(filePath, "utf-8");
+
+    const hasTag1 = html.includes(`gtag/js?id=${config.GTAG_SNIPPET_AW_CODE}`) &&
+        html.includes(`gtag('config', '${config.GTAG_SNIPPET_AW_CODE}'`);
+
+    if (hasTag1) return; // minden rendben
+
+    const snippets = [];
+    if (!hasTag1) snippets.push(GTAG_SNIPPET);
+
+    const injected = snippets.join("\n") + "\n</body>";
+    const modified = html.replace("</body>", injected);
+
+    fs.writeFileSync(filePath, modified, "utf-8");
+    console.log(yellow(`⚠️ Raw GTAG injected into ${filePath} (${snippets.length} tag)`));
+}
+const allRawHtmlFiles = [
+    ...fs.readdirSync(".").filter(f => f.endsWith(".html")).map(f => f),
+    ...(fs.existsSync("blog") ? fs.readdirSync("blog").filter(f => f.endsWith(".html")).map(f => `blog/${f}`) : []),
+    ...(fs.existsSync("landing") ? fs.readdirSync("landing").filter(f => f.endsWith(".html")).map(f => `landing/${f}`) : [])
+];
+
+allRawHtmlFiles.forEach(ensureGtagInRawHTML);
+console.log(green("✔ Raw HTML files checked & GTAG injected where needed."));
+
+// 0/b. Check missing gtag event tracking on CTA
+const trackingMissingTable = [];
+
+function checkMissingTrackingCTAs(filePath) {
+    const html = fs.readFileSync(filePath, "utf-8");
+    const dom = new JSDOM(html);
+    const doc = dom.window.document;
+
+    const selectors = [
+        'a[href^="#contact"]',
+        'a[href^="/#contact"]',
+        'button',
+        'input[type="submit"]',
+        'form[action*="web3forms"]',
+        'form[action*="contact"]',
+        'form[action*="submit"]'
+    ];
+
+    const candidates = [...doc.querySelectorAll(selectors.join(','))];
+
+    candidates.forEach((el, i) => {
+        const outer = el.outerHTML;
+        const hasTracking =
+            el.getAttribute("onclick")?.includes("gtag('event'") ||
+            el.getAttribute("onsubmit")?.includes("gtag('event'");
+
+        if (!hasTracking) {
+            trackingMissingTable.push({
+                file: filePath,
+                index: i + 1,
+                tag: el.tagName.toLowerCase(),
+                html: outer
+            });
+        }
+    });
+}
+
+allRawHtmlFiles.forEach(checkMissingTrackingCTAs);
+
+if (trackingMissingTable.length > 0) {
+    const col1 = "file";
+    const col2 = "index";
+    const col3 = "tag";
+    const col4 = "snippet";
+
+    const col1Len = Math.max(...trackingMissingTable.map(r => r.file.length), col1.length);
+    const col2Len = col2.length;
+    const col3Len = col3.length;
+    const col4Len = 50;
+
+    const pad = (str, len) => str + " ".repeat(Math.max(0, len - str.length));
+    const truncate = (str, len) => str.length > len ? str.slice(0, len - 3) + "..." : str;
+
+    const line = `┌${"─".repeat(col1Len + 2)}┬${"─".repeat(col2Len + 2)}┬${"─".repeat(col3Len + 2)}┬${"─".repeat(col4Len + 2)}┐`;
+    const sep  = `├${"─".repeat(col1Len + 2)}┼${"─".repeat(col2Len + 2)}┼${"─".repeat(col3Len + 2)}┼${"─".repeat(col4Len + 2)}┤`;
+    const end  = `└${"─".repeat(col1Len + 2)}┴${"─".repeat(col2Len + 2)}┴${"─".repeat(col3Len + 2)}┴${"─".repeat(col4Len + 2)}┘`;
+
+    console.log("\n🔍 CTAs with missing GTAG 'event' tracking:");
+    console.log(line);
+    console.log(`│ ${pad(col1, col1Len)} │ ${pad(col2, col2Len)} │ ${pad(col3, col3Len)} │ ${pad(col4, col4Len)} │`);
+    console.log(sep);
+    trackingMissingTable.forEach(row => {
+        console.log(yellow(`│ ${pad(row.file, col1Len)} │ ${pad(String(row.index), col2Len)} │ ${pad(row.tag, col3Len)} │ ${pad(truncate(row.html, col4Len), col4Len)} │`));
+    });
+    console.log(end);
+} else {
+    console.log(green("🎯 All CTA links to #contact have proper GTAG tracking."));
+}
+
+// 1. Generate translations.node.js
 fs.writeFileSync("translations.node.js", exported);
 console.log(green("✔ translations.node.js created."));
 
@@ -244,7 +342,7 @@ if (missingTranslationTable.length > 0) {
 }
 
 // 11. Generate sitemap.xml
-const siteBase = "https://beyondstart.solutions";
+const siteBase = baseURL;
 const sitemapEntries = [];
 
 for (const htmlFile of htmlFiles) {

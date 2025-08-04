@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="nl"><head>
+    <!-- Loader handling -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loading');
+            window.addEventListener('load', () => {
+                const loader = document.getElementById('site-loader');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.remove();
+                        document.body.classList.remove('loading');
+                    }, 2000);
+                }
+            });
+        });
+    </script>
+
+    <!-- Preloader styles -->
+    <style>
+        section h1 {
+            font-size: 2rem;
+        }
+    </style>
+
+    <!-- Meta / SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hulp bij Drupal, Laravel &amp; Shopify – BeyondStart</title>
+    <meta name="description" content="Veilige Drupal-updates, snelle Laravel-optimalisatie en conversieverhogende Shopify-audits. Opgelost binnen 72 uur met geld-terug-garantie.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://beyondstart.solutions/nl/landing/koszonom.html">
+
+    <!-- Social Preview / OG -->
+    <meta property="og:title" content="Drupal, Laravel en Shopify Oplossingen – BeyondStart Solutions">
+    <meta property="og:description" content="Meer dan 20 jaar ervaring. Snelle bugfixes en prestatieoptimalisatie binnen 72 uur, met tevredenheidsgarantie.">
+    <meta property="og:image" content="https://beyondstart.solutions/images/beyondstart_logo_sm.webp">
+    <meta property="og:url" content="https://beyondstart.solutions/landing/digital-transformation">
+    <meta property="og:type" content="website">
+
+    <!-- Preloads -->
+    <link rel="preconnect" href="https://assets.calendly.com" crossorigin="">
+    <link rel="preload" href="/style.min.css" as="style">
+    <link href="/style.min.css" rel="stylesheet" media="print" onload="this.onload=null;this.media='all';">
+    <noscript>
+        <link rel="stylesheet" href="/style.min.css">
+    </noscript>
+
+    <!-- Favicon / PWA -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="landing digital-transformation">
+<a href="#main" class="skip-link" data-i18n="jumpToMainContent">Spring naar de hoofdinhoud</a>
+<div id="site-loader" class="site-loader">
+    <div class="loader-circle"></div>
+</div>
+<header id="site-header" class="site-header">
+    <!-- Logo -->
+    <a href="/nl/">
+        <img src="/images/beyondstart_logo_sm.webp" alt="BeyondStart Solutions logó" width="200" height="56" loading="eager" decoding="async" fetchpriority="high">
+    </a>
+
+    <!-- Mobile navigation -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü megnyitása">
+    <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+    </label>
+
+    <!-- Navigation -->
+    <div class="header-right">
+        <nav class="main-nav" aria-label="Fő navigáció">
+            <ul>
+                <li><a href="/nl/#services" data-i18n="servicesTitle">Onze diensten</a></li>
+                <li><a href="/nl/#references" data-i18n="referencesTitle">Met wie we hebben gewerkt</a></li>
+                <li><a href="/nl/#testimonials" data-i18n="testimonialTitle">Wat onze klanten zeggen</a></li>
+                <li><a href="/nl/#about" data-i18n="aboutTitle">Over BeyondStart</a></li>
+                <li><a href="/nl/#contact" data-i18n="ctaBlockButton" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/CReZCNfPrP4aEJfCnP0-'});">Vraag offerte aan</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Language Selector -->
+        <form action="" method="get" onsubmit="event.preventDefault(); location.href=this.language.value;">
+            <div class="language-switcher">
+                <label for="language" class="sr-only">Nyelvválasztás</label>
+                <select id="language" name="language" aria-label="Language selection" class="language-select">
+                    <option value="/hu/index.html">🇭🇺 HU</option>
+                    <option value="/en/index.html">🇬🇧 EN</option>
+                    <option value="/de/index.html">🇩🇪 DE</option>
+                    <option value="/fr/index.html">🇫🇷 FR</option>
+                    <option value="/nl/index.html" selected="selected">🇳🇱 NL</option>
+                    <option value="/es/index.html">🇪🇸 ES</option>
+                </select>
+                <button type="submit" class="language-button" onclick="setLanguage(document.getElementById('language').value.split('/')[1])">
+                    OK
+                </button>
+            </div>
+        </form>
+    </div>
+</header>
+
+<main id="main">
+    <section class="next-step-section">
+        <h2 data-i18n="thanks-title">🎉 Köszönjük!</h2>
+        <p data-i18n="thanks-text">Elküldtük a <strong>5 gyakori digitális hiba</strong> PDF-et az email címedre.<br>
+            Nézd meg a beérkező leveleidet – és ne felejtsd el csekkolni a Promóciók / Spam mappát sem!</p>
+        <a href="/nl/" class="cta-back" data-i18n="cta-back">← Vissza a főoldalra</a>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <h3 data-i18n="footerCompanyName">BeyondStart Solutions</h3>
+            <p data-i18n="footerCompanyDetails">Zaakvoerder: Zoltán Horváth <br> Maatschappelijke zetel: Str. Parângului 10, Ap. 2, 440031, Satu Mare, Roemenië <br> BTW-nummer: RO43923085 <br> Handelsregisternummer: J30/291/2021</p>
+        </div>
+        <div>
+            <h3 data-i18n="footerLegal">Juridische documenten</h3>
+            <ul>
+                <li><a href="/nl/impresszum.html" class="hover:underline" data-i18n="footerImprint">Impressum</a></li>
+                <li><a href="/nl/adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy">Privacybeleid</a></li>
+                <li><a href="/nl/cookie.html" class="hover:underline" data-i18n="footerCookies">Cookiebeleid</a></li>
+                <li><a href="/nl/aszf.html" class="hover:underline" data-i18n="footerTerms">Algemene Voorwaarden</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 data-i18n="footerContact">Contact</h3>
+            <ul>
+                <li>
+                    <span data-i18n="footerEmail">E-mail:</span>
+                    <a href="mailto:zoltan@beyondstart.solutions" class="hover:underline">zoltan[at]beyondstart[dot]solutions</a>
+                </li>
+                <li>
+                    <span data-i18n="footerPhone">Telefoon:</span>
+                    <a href="tel:+36705084100" class="hover:underline">+36 70 508 4100</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3 data-i18n="footerNav">Navigatie</h3>
+            <ul>
+                <li><a href="/nl/" class="hover:underline" data-i18n="footerNavHome">Startpagina</a></li>
+                <li><a href="/nl/#services" class="hover:underline" data-i18n="footerNavServices">Diensten</a></li>
+                <li><a href="/nl/#references" class="hover:underline" data-i18n="footerNavReferences">Referenties</a></li>
+                <li><a href="/nl/#about" class="hover:underline" data-i18n="footerNavAbout">Over ons</a></li>
+                <li><a href="/nl/#contact" class="hover:underline" data-i18n="footerNavContact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom" data-i18n="footerCopyright">© 2025 BeyondStart Solutions. Alle rechten voorbehouden.</div>
+</footer>
+
+<!-- Sticky CTA -->
+<a href="#contact" class="sticky-cta" data-i18n="stickyCTA" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-'});">Offerte aanvragen</a>
+
+<script src="/translations.min.js" defer=""></script>
+<script src="/script.min.js" defer=""></script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "BeyondStart Solutions",
+        "url": "https://beyondstart.solutions",
+        "logo": "https://beyondstart.solutions/images/beyondstart_logo_sm.webp",
+        "sameAs": [],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+36 70 508 4100",
+            "contactType": "customer service",
+            "areaServed": "HU",
+            "availableLanguage": [
+                "Hungarian",
+                "English"
+            ]
+        }
+    }
+</script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16905609495"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+</script>
+<!-- Google tag (gtag.js) – AW-16905609495 -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16905609495"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'AW-16905609495');
+</script>
+
+
+</body></html>
