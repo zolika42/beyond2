@@ -89,4 +89,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (contactSection) {
         observer.observe(contactSection);
     }
+
+    const loader = document.getElementById("loader");
+    if (loader) {
+        loader.style.opacity = "0";
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 300);
+    }
 });
