@@ -6,11 +6,29 @@ const config = require("./deploy.config.js");
 const args = process.argv.slice(2);
 const cliFlags = new Set(args.map(arg => arg.trim().toLowerCase()));
 
+if (cliFlags.has("--help") || cliFlags.has("-h")) {
+    console.log(`
+🆘 \x1b[36mBeyondStart deploy.js – CLI flags\x1b[0m
+
+\x1b[33m--noGoogleTags\x1b[0m             Disable Google Tag injection and CTA tracking check
+\x1b[33m--noHeaderFooterTemplates\x1b[0m  Skip replacing <header>/<footer> using templates
+\x1b[33m--noAssetMinification\x1b[0m      Skip minifying JS and CSS assets
+\x1b[33m--noSitemap\x1b[0m                Skip generating sitemap.xml and robots.txt
+\x1b[33m--noCleanTranslations\x1b[0m      Skip cleaning unused translation keys
+\x1b[33m--dry-run\x1b[0m                   Simulate the process – no file writes, just logs
+
+\x1b[36mExample:\x1b[0m
+  node deploy.js --noGoogleTags --dry-run
+    `);
+    process.exit(0);
+}
+
 if (cliFlags.has("--nogoogletags")) config.enableGoogleTags = false;
 if (cliFlags.has("--noheaderfootertemplates")) config.enableHeaderFooterTemplates = false;
 if (cliFlags.has("--noassetminification")) config.enableAssetMinification = false;
 if (cliFlags.has("--nositemap")) config.generateSitemapAndRobots = false;
 if (cliFlags.has("--nocleantranslations")) config.cleanUnusedTranslations = false;
+const dryRun = cliFlags.has("--dry-run");
 
 console.log("\n🛠️ CLI kapcsolók feldolgozva:");
 console.table({
@@ -58,7 +76,9 @@ function ensureGtagInRawHTML(filePath) {
     const injected = snippets.join("\n") + "\n</body>";
     const modified = html.replace("</body>", injected);
 
-    fs.writeFileSync(filePath, modified, "utf-8");
+    if (!dryRun) {
+        fs.writeFileSync(filePath, modified, "utf-8");
+    }
     console.log(yellow(`⚠️ Raw GTAG injected into ${filePath} (${snippets.length} tag)`));
 }
 
@@ -181,7 +201,7 @@ function replaceHeaderFooter(filePath) {
         }
     }
 
-    if (modified) {
+    if (modified && !dryRun) {
         fs.writeFileSync(filePath, html, "utf-8");
     }
 }
@@ -191,7 +211,9 @@ if (config.enableHeaderFooterTemplates) {
 }
 
 // 4. Generate translations.node.js
-fs.writeFileSync("translations.node.js", exported);
+if (!dryRun) {
+    fs.writeFileSync("translations.node.js", exported);
+}
 console.log(green("✔ translations.node.js created."));
 
 // 5. Generate translations.min.js
@@ -204,7 +226,9 @@ const minifiedTranslations = original
     .replace(/,\s+/g, ",")
     .replace(/\{\s+/g, "{")
     .replace(/\s+\}/g, "}");
-fs.writeFileSync("translations.min.js", minifiedTranslations);
+if (!dryRun) {
+    fs.writeFileSync("translations.min.js", minifiedTranslations);
+}
 console.log(green("✔ translations.min.js created."));
 
 if (config.enableAssetMinification) {
@@ -218,7 +242,9 @@ if (config.enableAssetMinification) {
         .replace(/,\s+/g, ",")
         .replace(/\{\s+/g, "{")
         .replace(/\s+\}/g, "}");
-    fs.writeFileSync("script.min.js", minifiedScript);
+    if (!dryRun) {
+        fs.writeFileSync("script.min.js", minifiedScript);
+    }
     console.log(green("✔ script.min.js created."));
 
 // 7. Generate style.min.css
@@ -232,7 +258,9 @@ if (config.enableAssetMinification) {
         .replace(/\s*;\s*/g, ";")
         .replace(/\s*:\s*/g, ":")
         .trim();
-    fs.writeFileSync("style.min.css", cssMinified);
+    if (!dryRun) {
+        fs.writeFileSync("style.min.css", cssMinified);
+    }
     console.log(green("✔ style.min.css created."));
 }
 
@@ -246,27 +274,32 @@ if (!translations || typeof translations !== "object") {
 
 // 9. Create dist directory
 const targetDir = "dist";
-if (!fs.existsSync(targetDir)) fs.mkdirSync(targetDir);
+if (!fs.existsSync(targetDir) && !dryRun) fs.mkdirSync(targetDir);
 
 // 10. Copy minified files
-fs.copyFileSync("style.min.css", path.join(targetDir, "style.min.css"));
-fs.copyFileSync("script.min.js", path.join(targetDir, "script.min.js"));
-fs.copyFileSync("translations.min.js", path.join(targetDir, "translations.min.js"));
-if (fs.existsSync("site.webmanifest")) {
-    fs.copyFileSync("site.webmanifest", path.join(targetDir, "site.webmanifest"));
+if (!dryRun) {
+    fs.copyFileSync("style.min.css", path.join(targetDir, "style.min.css"));
+    fs.copyFileSync("script.min.js", path.join(targetDir, "script.min.js"));
+    fs.copyFileSync("translations.min.js", path.join(targetDir, "translations.min.js"));
+    if (fs.existsSync("site.webmanifest")) {
+        fs.copyFileSync("site.webmanifest", path.join(targetDir, "site.webmanifest"));
+    }
 }
+
 console.log(green("✔ Minified files copied into /dist folder."));
 
 // 11. Copy images folder
 function copyFolderRecursive(src, dest) {
-    if (!fs.existsSync(dest)) fs.mkdirSync(dest, { recursive: true });
+    if (!fs.existsSync(dest) && !dryRun) fs.mkdirSync(dest, { recursive: true });
     fs.readdirSync(src).forEach(file => {
         const srcPath = path.join(src, file);
         const destPath = path.join(dest, file);
         if (fs.lstatSync(srcPath).isDirectory()) {
             copyFolderRecursive(srcPath, destPath);
         } else {
-            fs.copyFileSync(srcPath, destPath);
+            if (!dryRun) {
+                fs.copyFileSync(srcPath, destPath);
+            }
         }
     });
 }
@@ -374,12 +407,14 @@ for (const htmlFile of htmlFiles) {
         });
 
         const langDir = path.join(targetDir, lang);
-        if (!fs.existsSync(langDir)) fs.mkdirSync(langDir);
+        if (!fs.existsSync(langDir) &&!dryRun) fs.mkdirSync(langDir);
 
         const outputHtml = "<!DOCTYPE html>\n" + doc.documentElement.outerHTML;
         const fullPath = path.join(langDir, htmlFile);
-        fs.mkdirSync(path.dirname(fullPath), { recursive: true });
-        fs.writeFileSync(fullPath, outputHtml, "utf-8");
+        if (!dryRun) {
+            fs.mkdirSync(path.dirname(fullPath), { recursive: true });
+            fs.writeFileSync(fullPath, outputHtml, "utf-8");
+        }
         console.log(green(`✅ ${lang}/${htmlFile} created.`));
 
         if (missingKeys.length > 0) {
@@ -436,12 +471,16 @@ if (config.generateSitemapAndRobots) {
         sitemapEntries.join("\n") +
         `\n</urlset>`;
 
-    fs.writeFileSync(path.join(targetDir, "sitemap.xml"), sitemapXml, "utf-8");
+    if (!dryRun) {
+        fs.writeFileSync(path.join(targetDir, "sitemap.xml"), sitemapXml, "utf-8");
+    }
     console.log(green("✔ sitemap.xml created."));
 
     // 15. Generate robots.txt
     const robotsTxt = `User-agent: *\nAllow: /\nSitemap: ${siteBase}/sitemap.xml`;
-    fs.writeFileSync(path.join(targetDir, "robots.txt"), robotsTxt, "utf-8");
+    if (!dryRun) {
+        fs.writeFileSync(path.join(targetDir, "robots.txt"), robotsTxt, "utf-8");
+    }
     console.log(green("✔ robots.txt created."));
 }
 
@@ -514,7 +553,9 @@ if (table.length > 0) {
 // 18. Copy .htaccess file from template
 if (fs.existsSync(".htaccess.template")) {
     const htaccess = fs.readFileSync(".htaccess.template", "utf-8");
-    fs.writeFileSync(path.join(targetDir, ".htaccess"), htaccess.trim() + "\n", "utf-8");
+    if (!dryRun) {
+        fs.writeFileSync(path.join(targetDir, ".htaccess"), htaccess.trim() + "\n", "utf-8");
+    }
     console.log(green("✔ .htaccess created in /dist from template."));
 }
 
@@ -524,7 +565,9 @@ if (fs.existsSync(faviconsDir)) {
     fs.readdirSync(faviconsDir).forEach(file => {
         const srcPath = path.join(faviconsDir, file);
         const destPath = path.join(targetDir, file);
-        fs.copyFileSync(srcPath, destPath);
+        if (!dryRun) {
+            fs.copyFileSync(srcPath, destPath);
+        }
     });
     console.log(green("✔ favicons copied directly into /dist."));
 }
@@ -545,11 +588,15 @@ if (config.cleanUnusedTranslations) {
 
 // Re-format JS file.
     const output = "const translations = " + JSON.stringify(cleanedTranslations, null, 4) + ";\n";
-    fs.writeFileSync("translations.js", output, "utf-8");
+    if (!dryRun) {
+        fs.writeFileSync("translations.js", output, "utf-8");
+    }
     console.log(green("🧹 translations.js cleaned from unused keys."));
 
 // Update translations.node.js again.
     const reexported = output.replace(/^const translations =/, "module.exports =");
-    fs.writeFileSync("translations.node.js", reexported, "utf-8");
+    if (!dryRun) {
+        fs.writeFileSync("translations.node.js", reexported, "utf-8");
+    }
     console.log(green("🔁 translations.node.js regenerated from cleaned source."));
 }
