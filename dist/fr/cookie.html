@@ -86,7 +86,9 @@
         <li><a href="/fr/#references" data-i18n="referencesTitle">Nos collaborations</a></li>
         <li><a href="/fr/#testimonials" data-i18n="testimonialTitle">Ce que disent nos clients</a></li>
         <li><a href="/fr/#about" data-i18n="aboutTitle">À propos de BeyondStart</a></li>
-        <li><a href="/fr/#contact" data-i18n="ctaBlockButton" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/CReZCNfPrP4aEJfCnP0-'});">Obtenir un devis</a>
+        <li><a href="/fr/#contact" data-i18n="ctaBlockButton" onclick="
+                        gtag('event', 'conversion', {'send_to': 'AW-16905609495/CReZCNfPrP4aEJfCnP0-'});
+                        gtag('event', 'main_menu_cta_click', {event_category: 'CTA',event_label: 'Main Menu CTA',value: 1});">Obtenir un devis</a>
         </li>
       </ul>
     </nav>
@@ -103,9 +105,11 @@
           <option value="/nl/index.html">🇳🇱 NL</option>
           <option value="/es/index.html">🇪🇸 ES</option>
         </select>
-        <button type="submit" class="language-button" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-'});">
-                    OK
-                </button>
+        <button type="submit" class="language-button" onclick="
+                        gtag('event', 'conversion', {'send_to': 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-'});
+                        gtag('event', 'language_change', {event_category: 'Event',event_label: 'Language change',value: 1});">
+          OK
+        </button>
       </div>
     </form>
   </div>
@@ -128,6 +132,7 @@
   <p class="cookie-note" data-i18n="cookieNote">Note : la désactivation des cookies peut perturber le fonctionnement de certaines fonctionnalités du site.</p>
 </main>
 
+<!-- Footer -->
 <footer class="footer">
   <div class="footer-content">
     <div>
@@ -163,14 +168,20 @@
         <li><a href="/fr/#services" class="hover:underline" data-i18n="footerNavServices">Services</a></li>
         <li><a href="/fr/#references" class="hover:underline" data-i18n="footerNavReferences">Références</a></li>
         <li><a href="/fr/#about" class="hover:underline" data-i18n="footerNavAbout">À propos</a></li>
-        <li><a href="/fr/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-'});">Contact</a></li>
+        <li><a href="/fr/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="
+                gtag('event', 'conversion', {'send_to': 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-'});
+                gtag('event', 'footer_cta', {event_category: 'CTA',event_label: 'Footer CTA',value: 1});">Contact</a>
+        </li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom" data-i18n="footerCopyright">© 2025 BeyondStart Solutions. Tous droits réservés.</div>
 </footer>
+
 <!-- Sticky CTA -->
-<a href="#contact" class="sticky-cta" data-i18n="stickyCTA" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-'});">Demander un devis</a>
+<a href="#contact" class="sticky-cta" data-i18n="stickyCTA" onclick="
+   gtag('event', 'conversion', {'send_to': 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-'});
+   gtag('event', 'sticky_cta', {event_category: 'CTA',event_label: 'Sticky CTA',value: 1});">Demander un devis</a>
 
 <script src="/translations.min.js"></script>
 <script src="/script.min.js"></script>

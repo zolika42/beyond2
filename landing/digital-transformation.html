@@ -86,7 +86,11 @@
                 <li><a
                         href="/#contact"
                         data-i18n="ctaBlockButton"
-                        onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/CReZCNfPrP4aEJfCnP0-'});">>Kapcsolat</a>
+                        onclick="
+                        gtag('event', 'conversion', {'send_to': 'AW-16905609495/CReZCNfPrP4aEJfCnP0-'});
+                        gtag('event', 'main_menu_cta', {event_category: 'CTA',event_label: 'Main Menu CTA',value: 1});">
+                    Kapcsolat
+                </a>
                 </li>
             </ul>
         </nav>
@@ -105,7 +109,9 @@
                 </select>
                 <button type="submit"
                         class="language-button"
-                        onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-'});">
+                        onclick="
+                        gtag('event', 'conversion', {'send_to': 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-'});
+                        gtag('event', 'language_change', {event_category: 'Event',event_label: 'Language change',value: 1});">
                     OK
                 </button>
             </div>
@@ -146,9 +152,11 @@
             </p>
 
             <a href="#contact" class="service-button" data-i18n="landing1-bookButton"
-               onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/0HsACO3Pnf4aEJfCnP0-'});">Igen, érdekel
-                – mutassátok
-                meg!</a>
+               onclick="
+               gtag('event', 'conversion', {'send_to': 'AW-16905609495/0HsACO3Pnf4aEJfCnP0-'});
+               gtag('event', 'hero_cta', {event_category: 'Event',event_label: 'Hero CTA',value: 1});">
+                Igen, érdekel – mutassátok meg!
+            </a>
 
             <p class="scroll-hint" data-i18n="landing1-scrollHint">👇 Görgess le, mutatjuk a részleteket</p>
 
@@ -224,7 +232,9 @@
             <a href="#contact"
                class="service-button cta-red"
                data-i18n="pain-cta"
-               onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/T88VCKCfnP4aEJfCnP0-'});">
+               onclick="
+               gtag('event', 'conversion', {'send_to': 'AW-16905609495/T88VCKCfnP4aEJfCnP0-'});
+               gtag('event', 'pain_cta', {event_category: 'Event',event_label: 'Pain CTA',value: 1});">
                 Foglalok időpontot →
             </a>
 
@@ -253,8 +263,11 @@
                 <a href="#contact"
                    class="service-button"
                    data-i18n="consult-button"
-                   onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/ASjfCMXmnf4aEJfCnP0-'});"
-                >Foglalok időpontot →</a>
+                   onclick="
+                   gtag('event', 'conversion', {'send_to': 'AW-16905609495/ASjfCMXmnf4aEJfCnP0-'});
+                   gtag('event', 'consult_cta', {event_category: 'CTA',event_label: 'Consult CTA',value: 1});">
+                    Foglalok időpontot →
+                </a>
             </div>
 
             <p class="scroll-hint" data-i18n="consult-scroll">👇 Görgess le, mutatjuk a részleteket</p>
@@ -286,7 +299,9 @@
                     type="submit"
                     class="service-button"
                     data-i18n="freebie-button"
-                    onclick="gtag('event', 'conversion', { 'send_to': 'AW-16905609495/5pMnCJb5v_4aEJfCnP0-' });">
+                    onclick="
+                    gtag('event', 'conversion', { 'send_to': 'AW-16905609495/5pMnCJb5v_4aEJfCnP0-' });
+                    gtag('event', 'pdf_directly', {event_category: 'CTA',event_label: 'PDF directly',value: 1});">
                 Kérem a PDF-et →
             </button>
         </form>
@@ -501,7 +516,9 @@
                 href="#contact"
                 class="service-button"
                 data-i18n="cta-final-button"
-                onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/77jcCJb2nv4aEJfCnP0-'});">
+                onclick="
+                gtag('event', 'conversion', {'send_to': 'AW-16905609495/77jcCJb2nv4aEJfCnP0-'});
+                gtag('event', 'final_cta', {event_category: 'Event',event_label: 'Final CTA',value: 1});">
             Foglalok időpontot →
         </a>
     </section>
@@ -569,7 +586,13 @@
                 <li><a href="/#services" class="hover:underline" data-i18n="footerNavServices">Szolgáltatások</a></li>
                 <li><a href="/#references" class="hover:underline" data-i18n="footerNavReferences">Referenciák</a></li>
                 <li><a href="/#about" class="hover:underline" data-i18n="footerNavAbout">Rólunk</a></li>
-                <li><a href="/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-'});">Kapcsolat</a></li>
+                <li>
+                    <a href="/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="
+                        gtag('event', 'conversion', {'send_to': 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-'});
+                        gtag('event', 'footer_cta', {event_category: 'CTA',event_label: 'Footer CTA',value: 1});">
+                    Kapcsolat
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
@@ -582,7 +605,11 @@
 <a href="#contact"
    class="sticky-cta"
    data-i18n="stickyCTA"
-   onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-'});">💬 Ajánlatkérés</a>
+   onclick="
+   gtag('event', 'conversion', {'send_to': 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-'});
+   gtag('event', 'sticky_cta', {event_category: 'CTA',event_label: 'Sticky CTA',value: 1});">
+    💬 Ajánlatkérés
+</a>
 
 <script src="/translations.min.js" defer></script>
 <script src="/script.min.js" defer></script>
@@ -611,7 +638,8 @@
         <button class="modal-close"
                 onclick="
                 document.getElementById('email-modal').classList.remove('visible');
-                gtag('event', 'conversion', { 'send_to': 'AW-16905609495/s_N1CL_p3YAbEJfCnP0-' });">
+                gtag('event', 'conversion', { 'send_to': 'AW-16905609495/s_N1CL_p3YAbEJfCnP0-' });
+                gtag('event', 'close_modal', {event_category: 'Event',event_label: 'Close CTA',value: 1});">
             ×
         </button>
         <h2 data-i18n="modal-title">📥 Segíthetünk egy ingyenes kis PDF-el?</h2>
@@ -630,7 +658,9 @@
                     type="submit"
                     class="service-button"
                     data-i18n="freebie-button"
-                    onclick="gtag('event', 'conversion', { 'send_to': 'AW-16905609495/QKBTCM7L3YAbEJfCnP0-' });">
+                    onclick="
+                    gtag('event', 'conversion', { 'send_to': 'AW-16905609495/QKBTCM7L3YAbEJfCnP0-' });
+                    gtag('event', 'modal_pdf', {event_category: 'Event',event_label: 'Modal PDF',value: 1});">
                 Kérem a PDF-et →
             </button>
         </form>

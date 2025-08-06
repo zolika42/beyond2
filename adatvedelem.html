@@ -77,7 +77,11 @@
         <li><a
                 href="/#contact"
                 data-i18n="ctaBlockButton"
-                onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/CReZCNfPrP4aEJfCnP0-'});">>Kapcsolat</a>
+                onclick="
+                        gtag('event', 'conversion', {'send_to': 'AW-16905609495/CReZCNfPrP4aEJfCnP0-'});
+                        gtag('event', 'main_menu_cta_click', {event_category: 'CTA',event_label: 'Main Menu CTA',value: 1});">
+          Kapcsolat
+        </a>
         </li>
       </ul>
     </nav>
@@ -95,10 +99,12 @@
           <option value="/es/index.html">🇪🇸 ES</option>
         </select>
         <button type="submit"
-                        class="language-button"
-                        onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-'});">
-                    OK
-                </button>
+                class="language-button"
+                onclick="
+                        gtag('event', 'conversion', {'send_to': 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-'});
+                        gtag('event', 'language_change', {event_category: 'Event',event_label: 'Language change',value: 1});">
+          OK
+        </button>
       </div>
     </form>
   </div>
@@ -189,7 +195,12 @@
         <li><a href="/#services" class="hover:underline" data-i18n="footerNavServices">Szolgáltatások</a></li>
         <li><a href="/#references" class="hover:underline" data-i18n="footerNavReferences">Referenciák</a></li>
         <li><a href="/#about" class="hover:underline" data-i18n="footerNavAbout">Rólunk</a></li>
-        <li><a href="/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-'});">Kapcsolat</a></li>
+        <li><a href="/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="
+                gtag('event', 'conversion', {'send_to': 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-'});
+                gtag('event', 'footer_cta', {event_category: 'CTA',event_label: 'Footer CTA',value: 1});">
+          Kapcsolat
+        </a>
+        </li>
       </ul>
     </div>
   </div>
@@ -201,7 +212,11 @@
 <a href="#contact"
    class="sticky-cta"
    data-i18n="stickyCTA"
-   onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-'});">💬 Ajánlatkérés</a>
+   onclick="
+   gtag('event', 'conversion', {'send_to': 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-'});
+   gtag('event', 'sticky_cta', {event_category: 'CTA',event_label: 'Sticky CTA',value: 1});">
+  💬 Ajánlatkérés
+</a>
 
 <script src="/translations.min.js"></script>
 <script src="/script.min.js"></script>

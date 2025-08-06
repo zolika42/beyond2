@@ -15,6 +15,7 @@
                 }
             });
             gtag('event', 'conversion', { 'send_to': 'AW-16905609495/cLrBCM2C4P4aEJfCnP0-', 'value': 50.0, 'currency': 'EUR' });
+            gtag('event', 'pdf_downloader', {event_category: 'Subscription',event_label: 'PDF download',value: 1});
         });
     </script>
 
@@ -79,7 +80,9 @@
                 <li><a href="/nl/#references" data-i18n="referencesTitle">Met wie we hebben gewerkt</a></li>
                 <li><a href="/nl/#testimonials" data-i18n="testimonialTitle">Wat onze klanten zeggen</a></li>
                 <li><a href="/nl/#about" data-i18n="aboutTitle">Over BeyondStart</a></li>
-                <li><a href="/nl/#contact" data-i18n="ctaBlockButton" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/CReZCNfPrP4aEJfCnP0-'});">Vraag offerte aan</a>
+                <li><a href="/nl/#contact" data-i18n="ctaBlockButton" onclick="
+                        gtag('event', 'conversion', {'send_to': 'AW-16905609495/CReZCNfPrP4aEJfCnP0-'});
+                        gtag('event', 'main_menu_cta_click', {event_category: 'CTA',event_label: 'Main Menu CTA',value: 1});">Vraag offerte aan</a>
                 </li>
             </ul>
         </nav>
@@ -96,7 +99,9 @@
                     <option value="/nl/index.html" selected="selected">🇳🇱 NL</option>
                     <option value="/es/index.html">🇪🇸 ES</option>
                 </select>
-                <button type="submit" class="language-button" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-'});">
+                <button type="submit" class="language-button" onclick="
+                        gtag('event', 'conversion', {'send_to': 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-'});
+                        gtag('event', 'language_change', {event_category: 'Event',event_label: 'Language change',value: 1});">
                     OK
                 </button>
             </div>
@@ -149,7 +154,10 @@ Check je inbox – of kijk bij de spam/promoties.</p>
                 <li><a href="/nl/#services" class="hover:underline" data-i18n="footerNavServices">Diensten</a></li>
                 <li><a href="/nl/#references" class="hover:underline" data-i18n="footerNavReferences">Referenties</a></li>
                 <li><a href="/nl/#about" class="hover:underline" data-i18n="footerNavAbout">Over ons</a></li>
-                <li><a href="/nl/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-'});">Contact</a></li>
+                <li><a href="/nl/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="
+                gtag('event', 'conversion', {'send_to': 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-'});
+                gtag('event', 'footer_cta', {event_category: 'CTA',event_label: 'Footer CTA',value: 1});">Contact</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -157,7 +165,9 @@ Check je inbox – of kijk bij de spam/promoties.</p>
 </footer>
 
 <!-- Sticky CTA -->
-<a href="#contact" class="sticky-cta" data-i18n="stickyCTA" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-'});">Offerte aanvragen</a>
+<a href="#contact" class="sticky-cta" data-i18n="stickyCTA" onclick="
+   gtag('event', 'conversion', {'send_to': 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-'});
+   gtag('event', 'sticky_cta', {event_category: 'CTA',event_label: 'Sticky CTA',value: 1});">Offerte aanvragen</a>
 
 <script src="/translations.min.js" defer=""></script>
 <script src="/script.min.js" defer=""></script>

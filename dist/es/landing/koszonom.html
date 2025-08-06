@@ -15,6 +15,7 @@
                 }
             });
             gtag('event', 'conversion', { 'send_to': 'AW-16905609495/cLrBCM2C4P4aEJfCnP0-', 'value': 50.0, 'currency': 'EUR' });
+            gtag('event', 'pdf_downloader', {event_category: 'Subscription',event_label: 'PDF download',value: 1});
         });
     </script>
 
@@ -79,7 +80,9 @@
                 <li><a href="/es/#references" data-i18n="referencesTitle">Con quién hemos trabajado</a></li>
                 <li><a href="/es/#testimonials" data-i18n="testimonialTitle">Lo que dicen nuestros clientes</a></li>
                 <li><a href="/es/#about" data-i18n="aboutTitle">Sobre BeyondStart</a></li>
-                <li><a href="/es/#contact" data-i18n="ctaBlockButton" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/CReZCNfPrP4aEJfCnP0-'});">Solicitar presupuesto</a>
+                <li><a href="/es/#contact" data-i18n="ctaBlockButton" onclick="
+                        gtag('event', 'conversion', {'send_to': 'AW-16905609495/CReZCNfPrP4aEJfCnP0-'});
+                        gtag('event', 'main_menu_cta_click', {event_category: 'CTA',event_label: 'Main Menu CTA',value: 1});">Solicitar presupuesto</a>
                 </li>
             </ul>
         </nav>
@@ -96,7 +99,9 @@
                     <option value="/nl/index.html">🇳🇱 NL</option>
                     <option value="/es/index.html" selected="selected">🇪🇸 ES</option>
                 </select>
-                <button type="submit" class="language-button" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-'});">
+                <button type="submit" class="language-button" onclick="
+                        gtag('event', 'conversion', {'send_to': 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-'});
+                        gtag('event', 'language_change', {event_category: 'Event',event_label: 'Language change',value: 1});">
                     OK
                 </button>
             </div>
@@ -149,7 +154,10 @@ Revisa tu bandeja de entrada – y no olvides mirar en Promociones o Spam.</p>
                 <li><a href="/es/#services" class="hover:underline" data-i18n="footerNavServices">Servicios</a></li>
                 <li><a href="/es/#references" class="hover:underline" data-i18n="footerNavReferences">Referencias</a></li>
                 <li><a href="/es/#about" class="hover:underline" data-i18n="footerNavAbout">Sobre nosotros</a></li>
-                <li><a href="/es/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-'});">Contacto</a></li>
+                <li><a href="/es/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="
+                gtag('event', 'conversion', {'send_to': 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-'});
+                gtag('event', 'footer_cta', {event_category: 'CTA',event_label: 'Footer CTA',value: 1});">Contacto</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -157,7 +165,9 @@ Revisa tu bandeja de entrada – y no olvides mirar en Promociones o Spam.</p>
 </footer>
 
 <!-- Sticky CTA -->
-<a href="#contact" class="sticky-cta" data-i18n="stickyCTA" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-'});">Solicitar presupuesto</a>
+<a href="#contact" class="sticky-cta" data-i18n="stickyCTA" onclick="
+   gtag('event', 'conversion', {'send_to': 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-'});
+   gtag('event', 'sticky_cta', {event_category: 'CTA',event_label: 'Sticky CTA',value: 1});">Solicitar presupuesto</a>
 
 <script src="/translations.min.js" defer=""></script>
 <script src="/script.min.js" defer=""></script>
