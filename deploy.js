@@ -2,6 +2,7 @@
 const fs = require("fs");
 const path = require("path");
 const {JSDOM} = require("jsdom");
+const { pad, truncate } = require('./deploy_assets/logUtils.js');
 const config = require("./deploy.config.js");
 const translations = require("./translations.node.js");
 const args = process.argv.slice(2);
@@ -9,14 +10,14 @@ const cliFlags = new Set(args.map(arg => arg.trim().toLowerCase()));
 
 // Config based constants.
 const GTAG_SNIPPET = config.GTAG_SNIPPET;
-const baseURL = config.baseURL;
-const headerTemplate = fs.readFileSync(config.headerTemplate, "utf-8").trim();
-const footerTemplate = fs.readFileSync(config.footerTemplate, "utf-8").trim();
-const targetDir = config.targetDir;
-const faviconsDir = config.faviconsDir;
-const green = config.okColor;
-const yellow = config.warningColor;
-const red = config.errorColor;
+const baseURL = config.paths.baseURL;
+const headerTemplate = fs.readFileSync(config.paths.headerTemplate, "utf-8").trim();
+const footerTemplate = fs.readFileSync(config.paths.footerTemplate, "utf-8").trim();
+const targetDir = config.paths.targetDir;
+const faviconsDir = config.paths.faviconsDir;
+const green = config.log.okColor;
+const yellow = config.log.warningColor;
+const red = config.log.errorColor;
 
 const originalTranslationsFile = fs.readFileSync("translations.js", "utf-8");
 const cssOriginal = fs.readFileSync("style.css", "utf-8");
@@ -78,26 +79,31 @@ let dryRun = false;
  */
 function cliFlagsHandler(cliFlags) {
     if (cliFlags.has("--help") || cliFlags.has("-h")) {
-        console.log(config.helpText);
+        console.log(config.node.helpText);
         process.exit(0);
     }
-    if (cliFlags.has("--nogoogletags")) config.enableGoogleTags = false;
-    if (cliFlags.has("--noheaderfootertemplates")) config.enableHeaderFooterTemplates = false;
-    if (cliFlags.has("--noassetminification")) config.enableAssetMinification = false;
-    if (cliFlags.has("--nositemap")) config.generateSitemapAndRobots = false;
-    if (cliFlags.has("--nocleantranslations")) config.cleanUnusedTranslations = false;
+    if (cliFlags.has("--nogoogletags")) config.features.enableGoogleTags = false;
+    if (cliFlags.has("--noheaderfootertemplates")) config.features.enableHeaderFooterTemplates = false;
+    if (cliFlags.has("--noassetminification")) config.features.enableAssetMinification = false;
+    if (cliFlags.has("--nositemap")) config.features.generateSitemapAndRobots = false;
+    if (cliFlags.has("--nocleantranslations")) config.features.cleanUnusedTranslations = false;
     dryRun = cliFlags.has("--dry-run");
 
     console.log("\n🛠️ CLI flags has been checked:");
     console.table({
-        GoogleTags: config.enableGoogleTags,
-        HeaderFooterTemplates: config.enableHeaderFooterTemplates,
-        AssetMinification: config.enableAssetMinification,
-        SitemapAndRobots: config.generateSitemapAndRobots,
-        CleanTranslations: config.cleanUnusedTranslations,
+        GoogleTags: config.features.enableGoogleTags,
+        HeaderFooterTemplates: config.features.enableHeaderFooterTemplates,
+        AssetMinification: config.features.enableAssetMinification,
+        SitemapAndRobots: config.features.generateSitemapAndRobots,
+        CleanTranslations: config.features.cleanUnusedTranslations,
     });
 }
 
+/**
+ * Make sure we have added Google Tag Manager's tracking codes.
+ *
+ * @param filePath
+ */
 function ensureGtagInRawHTML(filePath) {
     const html = fs.readFileSync(filePath, "utf-8");
 
@@ -118,6 +124,12 @@ function ensureGtagInRawHTML(filePath) {
     console.log(yellow(`⚠️ Raw GTAG injected into ${filePath} (${snippets.length} tag)`));
 }
 
+/**
+ * Make sure we have tracking code for every call to action.
+ *
+ * @param filePath
+ *   Path of the HTML.
+ */
 function checkMissingTrackingCTAs(filePath) {
     const html = fs.readFileSync(filePath, "utf-8");
     const dom = new JSDOM(html);
@@ -152,6 +164,9 @@ function checkMissingTrackingCTAs(filePath) {
     });
 }
 
+/**
+ * Make console log about maybe missing CTAs.
+ */
 function logMissingTrackingCTAs() {
     if (trackingMissingTable.length > 0) {
         const col1 = "file";
@@ -165,7 +180,6 @@ function logMissingTrackingCTAs() {
         const col4Len = 50;
 
         const pad = (str, len) => str + " ".repeat(Math.max(0, len - str.length));
-        const truncate = (str, len) => str.length > len ? str.slice(0, len - 3) + "..." : str;
 
         const line = `┌${"─".repeat(col1Len + 2)}┬${"─".repeat(col2Len + 2)}┬${"─".repeat(col3Len + 2)}┬${"─".repeat(col4Len + 2)}┐`;
         const sep = `├${"─".repeat(col1Len + 2)}┼${"─".repeat(col2Len + 2)}┼${"─".repeat(col3Len + 2)}┼${"─".repeat(col4Len + 2)}┤`;
@@ -184,6 +198,12 @@ function logMissingTrackingCTAs() {
     }
 }
 
+/**
+ * Replace header and footer elements based on templates. To make sure we have the same on all pages.
+ *
+ * @param filePath
+ *   Path of the HTML.
+ */
 function replaceHeaderFooter(filePath) {
     let html = fs.readFileSync(filePath, "utf-8");
 
@@ -229,6 +249,9 @@ function replaceHeaderFooter(filePath) {
     }
 }
 
+/**
+ * Just a little helper to make sure we export translations for Node.
+ */
 function createTranslationsNodeJS() {
     if (!dryRun) {
         fs.writeFileSync("translations.node.js", exportedTranslationsFile);
@@ -236,6 +259,9 @@ function createTranslationsNodeJS() {
     console.log(green("✔ translations.node.js created."));
 }
 
+/**
+ * Minify translation.js.
+ */
 function minifyTranslations() {
     if (!dryRun) {
         fs.writeFileSync("translations.min.js", minifiedTranslations);
@@ -243,6 +269,9 @@ function minifyTranslations() {
     console.log(green("✔ translations.min.js created."));
 }
 
+/**
+ * Minify script.js.
+ */
 function minifyScript() {
     if (!dryRun) {
         fs.writeFileSync("script.min.js", minifiedScript);
@@ -250,6 +279,9 @@ function minifyScript() {
     console.log(green("✔ script.min.js created."));
 }
 
+/**
+ * Minify style.css.
+ */
 function minifyCSS() {
     if (!dryRun) {
         fs.writeFileSync("style.min.css", cssMinified);
@@ -257,6 +289,9 @@ function minifyCSS() {
     console.log(green("✔ style.min.css created."));
 }
 
+/**
+ * Check if translations presents.
+ */
 function loadTranslations() {
     if (!translations || typeof translations !== "object") {
         console.error(red("❌ The translations object is not available!"));
@@ -264,10 +299,16 @@ function loadTranslations() {
     }
 }
 
+/**
+ * Create distribution directory for generated pages.
+ */
 function createDistDirectory() {
     if (!fs.existsSync(targetDir) && !dryRun) fs.mkdirSync(targetDir);
 }
 
+/**
+ * Copy minified files into dist folder.
+ */
 function copyMinifiedFiles() {
     if (!dryRun) {
         fs.copyFileSync("style.min.css", path.join(targetDir, "style.min.css"));
@@ -281,6 +322,14 @@ function copyMinifiedFiles() {
     console.log(green("✔ Minified files copied into /dist folder."));
 }
 
+/**
+ * Helper to copy recursively.
+ *
+ * @param src
+ *   Source path of the file.
+ * @param dest
+ *   Destination of the file.
+ */
 function copyFolderRecursive(src, dest) {
     if (!fs.existsSync(dest) && !dryRun) fs.mkdirSync(dest, {recursive: true});
     fs.readdirSync(src).forEach(file => {
@@ -296,6 +345,9 @@ function copyFolderRecursive(src, dest) {
     });
 }
 
+/**
+ * Copy images folder into dist.
+ */
 function copyImagesFolder() {
     if (fs.existsSync("images")) {
         copyFolderRecursive("images", path.join(targetDir, "images"));
@@ -303,6 +355,9 @@ function copyImagesFolder() {
     }
 }
 
+/**
+ * Distributs HTML files on all languages.
+ */
 function processHTMLFiles() {
     for (const htmlFile of allRawHtmlFiles) {
         const htmlContent = fs.readFileSync(htmlFile, "utf-8");
@@ -332,17 +387,8 @@ function processHTMLFiles() {
                 canonical.href = `${baseURL}/${langPath}${htmlFile}`;
             }
 
-            // 🔁 Replace non-data-i18n elements based on known selectors
-            const skipTags = ["option", "button", "span", "li"];
-            const specialMap = {
-                title: "pageTitle",
-                "meta[name='description']": "metaDescription",
-                "meta[property='og:title']": "ogTitle",
-                "meta[property='og:description']": "ogDescription",
-                "meta[name='keywords']": "metaKeywords",
-            };
-
-            for (const [selector, key] of Object.entries(specialMap)) {
+            // Replace non-data-i18n elements based on known selectors
+            for (const [selector, key] of Object.entries(config.exclusions.specialMap)) {
                 const el = doc.querySelector(selector);
                 let langKey = htmlFile.replace('_', '-');
                 langKey = htmlFile.replace('/', '-');
@@ -358,7 +404,7 @@ function processHTMLFiles() {
             }
 
             doc.querySelectorAll("body *:not([data-i18n])").forEach(el => {
-                if (skipTags.includes(el.tagName.toLowerCase())) return;
+                if (config.exclusions.skipTags.includes(el.tagName.toLowerCase())) return;
                 if (el.children.length > 0) return;
                 const text = el.textContent.trim();
                 if (!text || text.length < 2) return;
@@ -413,10 +459,9 @@ function processHTMLFiles() {
     }
 }
 
-function pad(str, len) {
-    return str + " ".repeat(Math.max(0, len - str.length));
-}
-
+/**
+ * Console log missing translations.
+ */
 function logMissingTranslations() {
     if (missingTranslationTable.length > 0) {
         const col1 = "key";
@@ -444,11 +489,14 @@ function logMissingTranslations() {
     }
 }
 
+/**
+ * Generate sitemap.xml files.
+ */
 function generateSitemap() {
     for (const htmlFile of allRawHtmlFiles) {
         const filename = path.basename(htmlFile);
         for (const lang of Object.keys(translations)) {
-            const url = `${config.baseURL}${lang === "en" ? "" : `/${lang}`}/${filename}`;
+            const url = `${config.paths.baseURL}${lang === "en" ? "" : `/${lang}`}/${filename}`;
             sitemapEntries.push(`<url><loc>${url}</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>`);
         }
     }
@@ -464,6 +512,9 @@ function generateSitemap() {
     console.log(green("✔ sitemap.xml created."));
 }
 
+/**
+ * Generate robots.txt.
+ */
 function generateRobotsTxt() {
     const robotsTxt = `User-agent: *\nAllow: /\nSitemap: ${baseURL}/sitemap.xml`;
     if (!dryRun) {
@@ -472,6 +523,15 @@ function generateRobotsTxt() {
     console.log(green("✔ robots.txt created."));
 }
 
+/**
+ * Update the language selector accordingly to the current language.
+ * @param doc
+ *   The HTML document.
+ * @param currentLang
+ *   Current language.
+ * @param currentPath
+ *   Current path.
+ */
 function updateLanguageSelect(doc, currentLang, currentPath) {
     const select = doc.querySelector("select#language");
     if (!select) return;
@@ -493,6 +553,9 @@ function updateLanguageSelect(doc, currentLang, currentPath) {
     });
 }
 
+/**
+ * Console log not used translations.
+ */
 function logUnusedTranslations() {
     allRawHtmlFiles.forEach(file => {
         const htmlContent = fs.readFileSync(file, "utf-8");
@@ -536,6 +599,9 @@ function logUnusedTranslations() {
     }
 }
 
+/**
+ * Copy .htaccess file from template.
+ */
 function copyHtaccess() {
     if (fs.existsSync(".htaccess.template")) {
         const htaccess = fs.readFileSync(".htaccess.template", "utf-8");
@@ -546,6 +612,9 @@ function copyHtaccess() {
     }
 }
 
+/**
+ * Copy favicons.
+ */
 function copyFavicons() {
     if (fs.existsSync(faviconsDir)) {
         fs.readdirSync(faviconsDir).forEach(file => {
@@ -559,7 +628,10 @@ function copyFavicons() {
     }
 }
 
-function cleanUnunsedTranslations() {
+/**
+ * It can clear out all the not used translations from translation.js.
+ */
+function cleanUnusedTranslations() {
     Object.entries(translations).forEach(([lang, dict]) => {
         const cleaned = {};
         Object.entries(dict).forEach(([key, value]) => {
@@ -585,21 +657,26 @@ function cleanUnunsedTranslations() {
     console.log(green("🔁 translations.node.js regenerated from cleaned source."));
 }
 
+/**
+ * Asynchronous main funtion.
+ *
+ * @returns {Promise<void>}
+ */
 async function main() {
     // 1. Handle CLI input
     cliFlagsHandler(cliFlags);
     // 2. Check Google tags
-    if (config.enableGoogleTags) {
+    if (config.features.enableGoogleTags) {
         allRawHtmlFiles.forEach(ensureGtagInRawHTML);
         console.log(green("✔ Raw HTML files checked & GTAG injected where needed."));
     }
     // 3. Check missing gtag event tracking on CTA
-    if (config.enableGoogleTags) {
+    if (config.features.enableGoogleTags) {
         allRawHtmlFiles.forEach(checkMissingTrackingCTAs);
         logMissingTrackingCTAs();
     }
     // 4. Insert/Override header and footer from templates.
-    if (config.enableHeaderFooterTemplates) {
+    if (config.features.enableHeaderFooterTemplates) {
         allRawHtmlFiles.forEach(replaceHeaderFooter);
     }
     // 5. Generate translations.node.js
@@ -607,11 +684,11 @@ async function main() {
     // 6. Generate translations.min.js
     minifyTranslations();
     // 7. Generate script.min.js
-    if (config.enableAssetMinification) {
+    if (config.features.enableAssetMinification) {
         minifyScript();
     }
     // 8. Generate style.min.css
-    if (config.enableAssetMinification) {
+    if (config.features.enableAssetMinification) {
         minifyCSS();
     }
     // 9. Load translations
@@ -627,7 +704,7 @@ async function main() {
     // 14. Print summary table of missing translations
     logMissingTranslations();
     // 15. Generate sitemap.xml
-    if (config.generateSitemapAndRobots) {
+    if (config.features.generateSitemapAndRobots) {
         generateSitemap();
         generateRobotsTxt();
     }
@@ -638,8 +715,8 @@ async function main() {
     // 18. Copy contents of favicons/ directly into dist/
     copyFavicons();
     // 19. REMOVE UNUSED TRANSLATION KEYS FROM translations.js
-    if (config.cleanUnusedTranslations) {
-        cleanUnunsedTranslations();
+    if (config.features.cleanUnusedTranslations) {
+        cleanUnusedTranslations();
     }
 }
 

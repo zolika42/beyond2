@@ -26,5 +26,8 @@
     "puppeteer": "^24.15.0",
     "table": "^6.9.0",
     "terser": "^5.43.1"
+  },
+  "devDependencies": {
+    "jsdoc": "^4.0.4"
   }
 }

@@ -1,0 +1,6 @@
+# Block all access to this directory
+Order allow,deny
+Deny from all
+<RequireAll>
+  Require all denied
+</RequireAll>
