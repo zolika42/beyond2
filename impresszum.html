@@ -54,58 +54,58 @@
   <div class="loader-circle"></div>
 </div>
 <header id="site-header" class="site-header">
-  <!-- Logo -->
-  <a href="/">
-    <img src="/images/beyondstart_logo_sm.webp" alt="BeyondStart Solutions logó" width="200" height="56"
-         loading="eager" decoding="async" fetchpriority="high">
-  </a>
+    <!-- Logo -->
+    <a href="/">
+        <img src="/images/beyondstart_logo_sm.webp" alt="BeyondStart Solutions logó" width="200" height="56"
+             loading="eager" decoding="async" fetchpriority="high">
+    </a>
 
-  <!-- Mobile navigation -->
-  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü megnyitása">
-  <label for="nav-toggle" class="nav-toggle-label">
-    <span></span>
-  </label>
+    <!-- Mobile navigation -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü megnyitása">
+    <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+    </label>
 
-  <!-- Navigation -->
-  <div class="header-right">
-    <nav class="main-nav" aria-label="Fő navigáció">
-      <ul>
-        <li><a href="/#services" data-i18n="servicesTitle">Szolgáltatások</a></li>
-        <li><a href="/#references" data-i18n="referencesTitle">Referenciák</a></li>
-        <li><a href="/#testimonials" data-i18n="testimonialTitle">Vélemények</a></li>
-        <li><a href="/#about" data-i18n="aboutTitle">Rólunk</a></li>
-        <li><a
-                href="/#contact"
-                data-i18n="ctaBlockButton"
-                onclick="
+    <!-- Navigation -->
+    <div class="header-right">
+        <nav class="main-nav" aria-label="Fő navigáció">
+            <ul>
+                <li><a href="/#services" data-i18n="servicesTitle">Szolgáltatások</a></li>
+                <li><a href="/#references" data-i18n="referencesTitle">Referenciák</a></li>
+                <li><a href="/#testimonials" data-i18n="testimonialTitle">Vélemények</a></li>
+                <li><a href="/#about" data-i18n="aboutTitle">Rólunk</a></li>
+                <li><a
+                        href="/#contact"
+                        data-i18n="ctaBlockButton"
+                        onclick="
                         tracking('main_menu_cta_click', 'CTA', 'Main Menu CTA', 'AW-16905609495/CReZCNfPrP4aEJfCnP0-');">
-          Kapcsolat
-        </a>
-        </li>
-      </ul>
-    </nav>
+                    Kapcsolat
+                </a>
+                </li>
+            </ul>
+        </nav>
 
-    <!-- Language Selector -->
-    <form action="" method="get" onsubmit="event.preventDefault(); location.href=this.language.value;">
-      <div class="language-switcher">
-        <label for="language" class="sr-only">Nyelvválasztás</label>
-        <select id="language" name="language" aria-label="Language selection" class="language-select">
-          <option value="/hu/index.html">🇭🇺 HU</option>
-          <option value="/en/index.html">🇬🇧 EN</option>
-          <option value="/de/index.html">🇩🇪 DE</option>
-          <option value="/fr/index.html">🇫🇷 FR</option>
-          <option value="/nl/index.html">🇳🇱 NL</option>
-          <option value="/es/index.html">🇪🇸 ES</option>
-        </select>
-        <button type="submit"
-                class="language-button"
-                onclick="
+        <!-- Language Selector -->
+        <form action="" method="get" onsubmit="event.preventDefault(); location.href=this.language.value;">
+            <div class="language-switcher">
+                <label for="language" class="sr-only">Nyelvválasztás</label>
+                <select id="language" name="language" aria-label="Language selection" class="language-select">
+                    <option value="/hu/index.html">🇭🇺 HU</option>
+                    <option value="/en/index.html">🇬🇧 EN</option>
+                    <option value="/de/index.html">🇩🇪 DE</option>
+                    <option value="/fr/index.html">🇫🇷 FR</option>
+                    <option value="/nl/index.html">🇳🇱 NL</option>
+                    <option value="/es/index.html">🇪🇸 ES</option>
+                </select>
+                <button type="submit"
+                        class="language-button"
+                        onclick="
                         tracking('language_change', 'Event', 'Language change', 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-');">
-          OK
-        </button>
-      </div>
-    </form>
-  </div>
+                    OK
+                </button>
+            </div>
+        </form>
+    </div>
 </header>
 <main id="main" class="imprint-main">
   <h1 class="imprint-title" data-i18n="imprintTitle">Impresszum</h1>
@@ -150,57 +150,57 @@
 
 <!-- Footer -->
 <footer class="footer">
-  <div class="footer-content">
-    <div>
-      <h3 data-i18n="footerCompanyName">BeyondStart Solutions</h3>
-      <p data-i18n="footerCompanyDetails">
-        Cégvezető: Horváth Zoltán<br>
-        Székhely: Str. Parângului 10, Ap. 2, 440031, Satu Mare, Romania.<br>
-        Adószám: RO43923085<br>
-        Cégjegyzékszám: J30/291/2021
-      </p>
-    </div>
-    <div>
-      <h3 data-i18n="footerLegal">Jogi dokumentumok</h3>
-      <ul>
-        <li><a href="/impresszum.html" class="hover:underline" data-i18n="footerImprint">Impresszum</a></li>
-        <li><a href="/adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy">Adatvédelmi
-          irányelvek</a></li>
-        <li><a href="/cookie.html" class="hover:underline" data-i18n="footerCookies">Cookie tájékoztató</a></li>
-        <li><a href="/aszf.html" class="hover:underline" data-i18n="footerTerms">ÁSZF</a></li>
-      </ul>
-    </div>
-    <div>
-      <h3 data-i18n="footerContact">Kapcsolat</h3>
-      <ul>
-        <li>
-          <span data-i18n="footerEmail">E-mail:</span>
-          <a href="mailto:zoltan@beyondstart.solutions" class="hover:underline">zoltan[at]beyondstart[dot]solutions</a>
-        </li>
-        <li>
-          <span data-i18n="footerPhone">Telefon:</span>
-          <a href="tel:+36705084100" class="hover:underline">+36 70 508 4100</a>
-        </li>
-      </ul>
-    </div>
-    <div>
-      <h3 data-i18n="footerNav">Navigáció</h3>
-      <ul>
-        <li><a href="/" class="hover:underline" data-i18n="footerNavHome">Főoldal</a></li>
-        <li><a href="/#services" class="hover:underline" data-i18n="footerNavServices">Szolgáltatások</a></li>
-        <li><a href="/#references" class="hover:underline" data-i18n="footerNavReferences">Referenciák</a></li>
-        <li><a href="/#about" class="hover:underline" data-i18n="footerNavAbout">Rólunk</a></li>
-        <li><a href="/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="
+    <div class="footer-content">
+        <div>
+            <h3 data-i18n="footerCompanyName">BeyondStart Solutions</h3>
+            <p data-i18n="footerCompanyDetails">
+                Cégvezető: Horváth Zoltán<br>
+                Székhely: Str. Parângului 10, Ap. 2, 440031, Satu Mare, Romania.<br>
+                Adószám: RO43923085<br>
+                Cégjegyzékszám: J30/291/2021
+            </p>
+        </div>
+        <div>
+            <h3 data-i18n="footerLegal">Jogi dokumentumok</h3>
+            <ul>
+                <li><a href="/impresszum.html" class="hover:underline" data-i18n="footerImprint">Impresszum</a></li>
+                <li><a href="/adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy">Adatvédelmi
+                    irányelvek</a></li>
+                <li><a href="/cookie.html" class="hover:underline" data-i18n="footerCookies">Cookie tájékoztató</a></li>
+                <li><a href="/aszf.html" class="hover:underline" data-i18n="footerTerms">ÁSZF</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 data-i18n="footerContact">Kapcsolat</h3>
+            <ul>
+                <li>
+                    <span data-i18n="footerEmail">E-mail:</span>
+                    <a href="mailto:zoltan@beyondstart.solutions" class="hover:underline">zoltan[at]beyondstart[dot]solutions</a>
+                </li>
+                <li>
+                    <span data-i18n="footerPhone">Telefon:</span>
+                    <a href="tel:+36705084100" class="hover:underline">+36 70 508 4100</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3 data-i18n="footerNav">Navigáció</h3>
+            <ul>
+                <li><a href="/" class="hover:underline" data-i18n="footerNavHome">Főoldal</a></li>
+                <li><a href="/#services" class="hover:underline" data-i18n="footerNavServices">Szolgáltatások</a></li>
+                <li><a href="/#references" class="hover:underline" data-i18n="footerNavReferences">Referenciák</a></li>
+                <li><a href="/#about" class="hover:underline" data-i18n="footerNavAbout">Rólunk</a></li>
+                <li><a href="/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="
                 tracking('footer_cta', 'CTA', 'Footer CTA', 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-');">
-          Kapcsolat
-        </a>
-        </li>
-      </ul>
+                    Kapcsolat
+                </a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
-  <div class="footer-bottom" data-i18n="footerCopyright">
-    &copy; 2025 BeyondStart Solutions. Minden jog fenntartva.
-  </div>
+    <div class="footer-bottom" data-i18n="footerCopyright">
+        &copy; 2025 BeyondStart Solutions. Minden jog fenntartva.
+    </div>
 </footer>
 
 <!-- Sticky CTA -->

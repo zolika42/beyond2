@@ -73,7 +73,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Set dropdown érték
     const selector = document.getElementById('language');
     if (selector && supported.includes(currentLang)) {
-        selector.value = `/${currentLang}/index.html`;
+        const currentPath = window.location.pathname.split('/').slice(2).join('/');
+        selector.value = `/${currentLang}/${currentPath}`;
     }
 
     // Lefordítjuk az oldalt

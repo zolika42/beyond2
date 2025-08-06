@@ -732,7 +732,7 @@ main {
     object-fit: cover;
 }
 
-.author footer {
+.author .author-name {
     font-size: var(--font-size-xsm);
     font-weight: 600;
     color: var(--color-text-light);

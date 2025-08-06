@@ -2,6 +2,24 @@ const fs = require("fs");
 const path = require("path");
 const { JSDOM } = require("jsdom");
 const config = require("./deploy.config.js");
+// --- CLI parameters override ---
+const args = process.argv.slice(2);
+const cliFlags = new Set(args.map(arg => arg.trim().toLowerCase()));
+
+if (cliFlags.has("--nogoogletags")) config.enableGoogleTags = false;
+if (cliFlags.has("--noheaderfootertemplates")) config.enableHeaderFooterTemplates = false;
+if (cliFlags.has("--noassetminification")) config.enableAssetMinification = false;
+if (cliFlags.has("--nositemap")) config.generateSitemapAndRobots = false;
+if (cliFlags.has("--nocleantranslations")) config.cleanUnusedTranslations = false;
+
+console.log("\n🛠️ CLI kapcsolók feldolgozva:");
+console.table({
+    GoogleTags: config.enableGoogleTags,
+    HeaderFooterTemplates: config.enableHeaderFooterTemplates,
+    AssetMinification: config.enableAssetMinification,
+    SitemapAndRobots: config.generateSitemapAndRobots,
+    CleanTranslations: config.cleanUnusedTranslations,
+});
 
 const green = (str) => `\x1b[32m${str}\x1b[0m`;
 const yellow = (str) => `\x1b[33m${str}\x1b[0m`;
@@ -19,14 +37,20 @@ const specialKeys = [
 ];
 const GTAG_SNIPPET = config.GTAG_SNIPPET;
 const baseURL = config.baseURL;
-// 0. Check Google tags
+const allRawHtmlFiles = [
+    ...fs.readdirSync(".").filter(f => f.endsWith(".html")).map(f => f),
+    ...(fs.existsSync("blog") ? fs.readdirSync("blog").filter(f => f.endsWith(".html")).map(f => `blog/${f}`) : []),
+    ...(fs.existsSync("landing") ? fs.readdirSync("landing").filter(f => f.endsWith(".html")).map(f => `landing/${f}`) : [])
+];
+
+// 1. Check Google tags
 function ensureGtagInRawHTML(filePath) {
     const html = fs.readFileSync(filePath, "utf-8");
 
     const hasTag1 = html.includes(`gtag/js?id=${config.GTAG_SNIPPET_AW_CODE}`) &&
         html.includes(`gtag('config', '${config.GTAG_SNIPPET_AW_CODE}'`);
 
-    if (hasTag1) return; // minden rendben
+    if (hasTag1) return;
 
     const snippets = [];
     if (!hasTag1) snippets.push(GTAG_SNIPPET);
@@ -37,16 +61,13 @@ function ensureGtagInRawHTML(filePath) {
     fs.writeFileSync(filePath, modified, "utf-8");
     console.log(yellow(`⚠️ Raw GTAG injected into ${filePath} (${snippets.length} tag)`));
 }
-const allRawHtmlFiles = [
-    ...fs.readdirSync(".").filter(f => f.endsWith(".html")).map(f => f),
-    ...(fs.existsSync("blog") ? fs.readdirSync("blog").filter(f => f.endsWith(".html")).map(f => `blog/${f}`) : []),
-    ...(fs.existsSync("landing") ? fs.readdirSync("landing").filter(f => f.endsWith(".html")).map(f => `landing/${f}`) : [])
-];
 
-allRawHtmlFiles.forEach(ensureGtagInRawHTML);
-console.log(green("✔ Raw HTML files checked & GTAG injected where needed."));
+if (config.enableGoogleTags) {
+    allRawHtmlFiles.forEach(ensureGtagInRawHTML);
+    console.log(green("✔ Raw HTML files checked & GTAG injected where needed."));
+}
 
-// 0/b. Check missing gtag event tracking on CTA
+// 2. Check missing gtag event tracking on CTA
 const trackingMissingTable = [];
 
 function checkMissingTrackingCTAs(filePath) {
@@ -83,43 +104,97 @@ function checkMissingTrackingCTAs(filePath) {
     });
 }
 
-allRawHtmlFiles.forEach(checkMissingTrackingCTAs);
+if (config.enableGoogleTags) {
+    allRawHtmlFiles.forEach(checkMissingTrackingCTAs);
+    if (trackingMissingTable.length > 0) {
+        const col1 = "file";
+        const col2 = "index";
+        const col3 = "tag";
+        const col4 = "snippet";
 
-if (trackingMissingTable.length > 0) {
-    const col1 = "file";
-    const col2 = "index";
-    const col3 = "tag";
-    const col4 = "snippet";
+        const col1Len = Math.max(...trackingMissingTable.map(r => r.file.length), col1.length);
+        const col2Len = col2.length;
+        const col3Len = col3.length;
+        const col4Len = 50;
 
-    const col1Len = Math.max(...trackingMissingTable.map(r => r.file.length), col1.length);
-    const col2Len = col2.length;
-    const col3Len = col3.length;
-    const col4Len = 50;
+        const pad = (str, len) => str + " ".repeat(Math.max(0, len - str.length));
+        const truncate = (str, len) => str.length > len ? str.slice(0, len - 3) + "..." : str;
 
-    const pad = (str, len) => str + " ".repeat(Math.max(0, len - str.length));
-    const truncate = (str, len) => str.length > len ? str.slice(0, len - 3) + "..." : str;
+        const line = `┌${"─".repeat(col1Len + 2)}┬${"─".repeat(col2Len + 2)}┬${"─".repeat(col3Len + 2)}┬${"─".repeat(col4Len + 2)}┐`;
+        const sep  = `├${"─".repeat(col1Len + 2)}┼${"─".repeat(col2Len + 2)}┼${"─".repeat(col3Len + 2)}┼${"─".repeat(col4Len + 2)}┤`;
+        const end  = `└${"─".repeat(col1Len + 2)}┴${"─".repeat(col2Len + 2)}┴${"─".repeat(col3Len + 2)}┴${"─".repeat(col4Len + 2)}┘`;
 
-    const line = `┌${"─".repeat(col1Len + 2)}┬${"─".repeat(col2Len + 2)}┬${"─".repeat(col3Len + 2)}┬${"─".repeat(col4Len + 2)}┐`;
-    const sep  = `├${"─".repeat(col1Len + 2)}┼${"─".repeat(col2Len + 2)}┼${"─".repeat(col3Len + 2)}┼${"─".repeat(col4Len + 2)}┤`;
-    const end  = `└${"─".repeat(col1Len + 2)}┴${"─".repeat(col2Len + 2)}┴${"─".repeat(col3Len + 2)}┴${"─".repeat(col4Len + 2)}┘`;
-
-    console.log("\n🔍 CTAs with missing GTAG 'event' tracking:");
-    console.log(line);
-    console.log(`│ ${pad(col1, col1Len)} │ ${pad(col2, col2Len)} │ ${pad(col3, col3Len)} │ ${pad(col4, col4Len)} │`);
-    console.log(sep);
-    trackingMissingTable.forEach(row => {
-        console.log(yellow(`│ ${pad(row.file, col1Len)} │ ${pad(String(row.index), col2Len)} │ ${pad(row.tag, col3Len)} │ ${pad(truncate(row.html, col4Len), col4Len)} │`));
-    });
-    console.log(end);
-} else {
-    console.log(green("🎯 All CTA links to #contact have proper GTAG tracking."));
+        console.log("\n🔍 CTAs with missing GTAG 'event' tracking:");
+        console.log(line);
+        console.log(`│ ${pad(col1, col1Len)} │ ${pad(col2, col2Len)} │ ${pad(col3, col3Len)} │ ${pad(col4, col4Len)} │`);
+        console.log(sep);
+        trackingMissingTable.forEach(row => {
+            console.log(yellow(`│ ${pad(row.file, col1Len)} │ ${pad(String(row.index), col2Len)} │ ${pad(row.tag, col3Len)} │ ${pad(truncate(row.html, col4Len), col4Len)} │`));
+        });
+        console.log(end);
+    } else {
+        console.log(green("🎯 All CTA links to #contact have proper GTAG tracking."));
+    }
 }
 
-// 1. Generate translations.node.js
+// 3. Insert/Override header and footer from templates.
+const headerTemplate = fs.readFileSync(config.headerTemplate, "utf-8").trim();
+const footerTemplate = fs.readFileSync(config.footerTemplate, "utf-8").trim();
+
+function replaceHeaderFooter(filePath) {
+    let html = fs.readFileSync(filePath, "utf-8");
+
+    let modified = false;
+
+    // --- HEADER ---
+    const headerRegex = /<header[\s\S]*?<\/header>/i;
+    if (headerRegex.test(html)) {
+        html = html.replace(headerRegex, headerTemplate);
+        modified = true;
+        console.log(green(`✔ ${filePath}: <header> overriden.`));
+    } else {
+        const mainStart = html.indexOf("<main");
+        if (mainStart !== -1) {
+            const insertAt = html.indexOf(">", mainStart) + 1;
+            html = html.slice(0, mainStart) + headerTemplate + "\n" + html.slice(mainStart);
+            modified = true;
+            console.log(yellow(`➕ ${filePath}: <header> couldn't found, inserted before <main> element.`));
+        } else {
+            console.warn(red(`❌ ${filePath}: <main> tag was not found – insert before <header> failed.`));
+        }
+    }
+
+    // --- FOOTER ---
+    const footerRegex = /<footer[\s\S]*?<\/footer>/i;
+    if (footerRegex.test(html)) {
+        html = html.replace(footerRegex, footerTemplate);
+        modified = true;
+        console.log(green(`✔ ${filePath}: <footer> overriden.`));
+    } else {
+        const mainClose = html.indexOf("</main>");
+        if (mainClose !== -1) {
+            html = html.slice(0, mainClose + 7) + "\n" + footerTemplate + html.slice(mainClose + 7);
+            modified = true;
+            console.log(yellow(`➕ ${filePath}: <footer> element couldn't found, inserted after </main> element.`));
+        } else {
+            console.warn(red(`❌ ${filePath}: </main> tag cannot be found – <footer> insertion failed.`));
+        }
+    }
+
+    if (modified) {
+        fs.writeFileSync(filePath, html, "utf-8");
+    }
+}
+
+if (config.enableHeaderFooterTemplates) {
+    allRawHtmlFiles.forEach(replaceHeaderFooter);
+}
+
+// 4. Generate translations.node.js
 fs.writeFileSync("translations.node.js", exported);
 console.log(green("✔ translations.node.js created."));
 
-// 2. Generate translations.min.js
+// 5. Generate translations.min.js
 const minifiedTranslations = original
     .replace(/\/\*[\s\S]*?\*\//g, "")
     .replace(/\/\/.*$/gm, "")
@@ -132,34 +207,36 @@ const minifiedTranslations = original
 fs.writeFileSync("translations.min.js", minifiedTranslations);
 console.log(green("✔ translations.min.js created."));
 
-// 3. Generate script.min.js
-const minifiedScript = originalScript
-    .replace(/\/\*[\s\S]*?\*\//g, "")
-    .replace(/\/\/.*$/gm, "")
-    .replace(/\n/g, "")
-    .replace(/\s{2,}/g, " ")
-    .replace(/:\s+/g, ":")
-    .replace(/,\s+/g, ",")
-    .replace(/\{\s+/g, "{")
-    .replace(/\s+\}/g, "}");
-fs.writeFileSync("script.min.js", minifiedScript);
-console.log(green("✔ script.min.js created."));
+if (config.enableAssetMinification) {
+    // 6. Generate script.min.js
+    const minifiedScript = originalScript
+        .replace(/\/\*[\s\S]*?\*\//g, "")
+        .replace(/\/\/.*$/gm, "")
+        .replace(/\n/g, "")
+        .replace(/\s{2,}/g, " ")
+        .replace(/:\s+/g, ":")
+        .replace(/,\s+/g, ",")
+        .replace(/\{\s+/g, "{")
+        .replace(/\s+\}/g, "}");
+    fs.writeFileSync("script.min.js", minifiedScript);
+    console.log(green("✔ script.min.js created."));
 
-// 4. Generate style.min.css
-const cssOriginal = fs.readFileSync("style.css", "utf-8");
-const cssMinified = cssOriginal
-    .replace(/\/\*[\s\S]*?\*\//g, "")
-    .replace(/\n/g, "")
-    .replace(/\s{2,}/g, " ")
-    .replace(/\s*{\s*/g, "{")
-    .replace(/\s*}\s*/g, "}")
-    .replace(/\s*;\s*/g, ";")
-    .replace(/\s*:\s*/g, ":")
-    .trim();
-fs.writeFileSync("style.min.css", cssMinified);
-console.log(green("✔ style.min.css created."));
+// 7. Generate style.min.css
+    const cssOriginal = fs.readFileSync("style.css", "utf-8");
+    const cssMinified = cssOriginal
+        .replace(/\/\*[\s\S]*?\*\//g, "")
+        .replace(/\n/g, "")
+        .replace(/\s{2,}/g, " ")
+        .replace(/\s*{\s*/g, "{")
+        .replace(/\s*}\s*/g, "}")
+        .replace(/\s*;\s*/g, ";")
+        .replace(/\s*:\s*/g, ":")
+        .trim();
+    fs.writeFileSync("style.min.css", cssMinified);
+    console.log(green("✔ style.min.css created."));
+}
 
-// 5. Load translations
+// 8. Load translations
 const translations = require("./translations.node.js");
 const {retarget} = require("jsdom/lib/jsdom/living/helpers/shadow-dom");
 if (!translations || typeof translations !== "object") {
@@ -167,11 +244,11 @@ if (!translations || typeof translations !== "object") {
     process.exit(1);
 }
 
-// 6. Create dist directory
+// 9. Create dist directory
 const targetDir = "dist";
 if (!fs.existsSync(targetDir)) fs.mkdirSync(targetDir);
 
-// 7. Copy minified files
+// 10. Copy minified files
 fs.copyFileSync("style.min.css", path.join(targetDir, "style.min.css"));
 fs.copyFileSync("script.min.js", path.join(targetDir, "script.min.js"));
 fs.copyFileSync("translations.min.js", path.join(targetDir, "translations.min.js"));
@@ -180,7 +257,7 @@ if (fs.existsSync("site.webmanifest")) {
 }
 console.log(green("✔ Minified files copied into /dist folder."));
 
-// 8. Copy images folder
+// 11. Copy images folder
 function copyFolderRecursive(src, dest) {
     if (!fs.existsSync(dest)) fs.mkdirSync(dest, { recursive: true });
     fs.readdirSync(src).forEach(file => {
@@ -198,7 +275,7 @@ if (fs.existsSync("images")) {
     console.log(green("✔ images folder copied."));
 }
 
-// 9. Process HTML files
+// 12. Process HTML files
 const rootHtmlFiles = fs.readdirSync(".").filter(file => file.endsWith(".html"));
 const blogHtmlFiles = fs.existsSync("blog") ? fs.readdirSync("blog").filter(file => file.endsWith(".html")).map(file => `blog/${file}`) : [];
 const landingHtmlFiles = fs.existsSync("landing") ? fs.readdirSync("landing").filter(file => file.endsWith(".html")).map(file => `landing/${file}`) : [];
@@ -270,7 +347,7 @@ for (const htmlFile of htmlFiles) {
             }
         });
 
-        updateLanguageSelect(doc, lang);
+        updateLanguageSelect(doc, lang, htmlFile);
 
         // Rewrite hrefs
         doc.querySelectorAll("a[href]").forEach((a) => {
@@ -311,7 +388,7 @@ for (const htmlFile of htmlFiles) {
     }
 }
 
-// 10. Print summary table of missing translations
+// 13. Print summary table of missing translations
 function pad(str, len) {
     return str + " ".repeat(Math.max(0, len - str.length));
 }
@@ -341,39 +418,47 @@ if (missingTranslationTable.length > 0) {
     console.log(green("🎉 All translations are complete in every language!"));
 }
 
-// 11. Generate sitemap.xml
-const siteBase = baseURL;
-const sitemapEntries = [];
+if (config.generateSitemapAndRobots) {
+    // 14. Generate sitemap.xml
+    const siteBase = baseURL;
+    const sitemapEntries = [];
 
-for (const htmlFile of htmlFiles) {
-    const filename = path.basename(htmlFile);
-    for (const lang of Object.keys(translations)) {
-        const url = `${siteBase}${lang === "en" ? "" : `/${lang}`}/${filename}`;
-        sitemapEntries.push(`<url><loc>${url}</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>`);
+    for (const htmlFile of htmlFiles) {
+        const filename = path.basename(htmlFile);
+        for (const lang of Object.keys(translations)) {
+            const url = `${siteBase}${lang === "en" ? "" : `/${lang}`}/${filename}`;
+            sitemapEntries.push(`<url><loc>${url}</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>`);
+        }
     }
+
+    const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n` +
+        `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+        sitemapEntries.join("\n") +
+        `\n</urlset>`;
+
+    fs.writeFileSync(path.join(targetDir, "sitemap.xml"), sitemapXml, "utf-8");
+    console.log(green("✔ sitemap.xml created."));
+
+    // 15. Generate robots.txt
+    const robotsTxt = `User-agent: *\nAllow: /\nSitemap: ${siteBase}/sitemap.xml`;
+    fs.writeFileSync(path.join(targetDir, "robots.txt"), robotsTxt, "utf-8");
+    console.log(green("✔ robots.txt created."));
 }
 
-const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n` +
-    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-    sitemapEntries.join("\n") +
-    `\n</urlset>`;
-
-fs.writeFileSync(path.join(targetDir, "sitemap.xml"), sitemapXml, "utf-8");
-console.log(green("✔ sitemap.xml created."));
-
-// 12. Generate robots.txt
-const robotsTxt = `User-agent: *\nAllow: /\nSitemap: ${siteBase}/sitemap.xml`;
-fs.writeFileSync(path.join(targetDir, "robots.txt"), robotsTxt, "utf-8");
-console.log(green("✔ robots.txt created."));
-
-// 13. Update <select id="language"> for selected language
-function updateLanguageSelect(doc, currentLang) {
+// 16. Update <select id="language"> for selected language
+function updateLanguageSelect(doc, currentLang, currentPath) {
     const select = doc.querySelector("select#language");
     if (!select) return;
 
     const options = select.querySelectorAll("option");
     options.forEach((opt) => {
         const langFromValue = (opt.value.match(/^\/([a-z]{2})\//) || [])[1];
+
+        if (langFromValue) {
+            // Update value to same path in different language
+            opt.value = `/${langFromValue}/${currentPath}`;
+        }
+
         if (langFromValue === currentLang) {
             opt.setAttribute("selected", "selected");
         } else {
@@ -382,7 +467,7 @@ function updateLanguageSelect(doc, currentLang) {
     });
 }
 
-// 14. Log unused translation keys
+// 17. Log unused translation keys
 const usedKeys = new Set();
 htmlFiles.forEach(file => {
     const htmlContent = fs.readFileSync(file, "utf-8");
@@ -390,39 +475,29 @@ htmlFiles.forEach(file => {
     matches.forEach(m => usedKeys.add(m[1]));
 });
 
-const unusedKeysByLang = {};
+const table = [];
+
 for (const [lang, dict] of Object.entries(translations)) {
-    const langKeys = Object.keys(dict);
-    const unused = langKeys.filter(k => !usedKeys.has(k));
-    if (unused.length > 0) unusedKeysByLang[lang] = unused;
+    for (const key of Object.keys(dict)) {
+        const isSpecial = specialKeys.some(special => key.includes(special));
+        if (!usedKeys.has(key) && !isSpecial) {
+            table.push({ key, lang, file: "translations.js" });
+        }
+    }
 }
 
-if (Object.keys(unusedKeysByLang).length > 0) {
+if (table.length > 0) {
     const col1 = "key";
     const col2 = "language";
     const col3 = "file";
-    const table = [];
-
-    const unusedKeysByLang = {};
-
-    Object.entries(translations).forEach(([lang, langData]) => {
-        const unused = Object.keys(langData).filter(key => !usedKeys.has(key) && !specialKeys.some(special => key.includes(special)));
-        if (unused.length > 0) unusedKeysByLang[lang] = unused;
-    });
-
-    Object.entries(unusedKeysByLang).forEach(([lang, keys]) => {
-        keys.forEach(key => {
-            table.push({ key, lang, file: "translations.js" });
-        });
-    });
 
     const col1Len = Math.max(...table.map(r => r.key.length), col1.length);
     const col2Len = Math.max(...table.map(r => r.lang.length), col2.length);
     const col3Len = Math.max(...table.map(r => r.file.length), col3.length);
 
     const line = `┌${"─".repeat(col1Len + 2)}┬${"─".repeat(col2Len + 2)}┬${"─".repeat(col3Len + 2)}┐`;
-    const sep = `├${"─".repeat(col1Len + 2)}┼${"─".repeat(col2Len + 2)}┼${"─".repeat(col3Len + 2)}┤`;
-    const end = `└${"─".repeat(col1Len + 2)}┴${"─".repeat(col2Len + 2)}┴${"─".repeat(col3Len + 2)}┘`;
+    const sep  = `├${"─".repeat(col1Len + 2)}┼${"─".repeat(col2Len + 2)}┼${"─".repeat(col3Len + 2)}┤`;
+    const end  = `└${"─".repeat(col1Len + 2)}┴${"─".repeat(col2Len + 2)}┴${"─".repeat(col3Len + 2)}┘`;
 
     console.log("\n🟨 Unused translation keys:");
     console.log(line);
@@ -436,14 +511,14 @@ if (Object.keys(unusedKeysByLang).length > 0) {
     console.log(green("🎉 No unused translation keys. translations.js is clean!"));
 }
 
-// 15. Copy .htaccess file from template
+// 18. Copy .htaccess file from template
 if (fs.existsSync(".htaccess.template")) {
     const htaccess = fs.readFileSync(".htaccess.template", "utf-8");
     fs.writeFileSync(path.join(targetDir, ".htaccess"), htaccess.trim() + "\n", "utf-8");
     console.log(green("✔ .htaccess created in /dist from template."));
 }
 
-// 16. Copy contents of favicons/ directly into dist/
+// 19. Copy contents of favicons/ directly into dist/
 const faviconsDir = "favicons";
 if (fs.existsSync(faviconsDir)) {
     fs.readdirSync(faviconsDir).forEach(file => {
@@ -454,25 +529,27 @@ if (fs.existsSync(faviconsDir)) {
     console.log(green("✔ favicons copied directly into /dist."));
 }
 
-// 17. REMOVE UNUSED TRANSLATION KEYS FROM translations.js
-const cleanedTranslations = {};
+// 20. REMOVE UNUSED TRANSLATION KEYS FROM translations.js
+if (config.cleanUnusedTranslations) {
+    const cleanedTranslations = {};
 
-Object.entries(translations).forEach(([lang, dict]) => {
-    const cleaned = {};
-    Object.entries(dict).forEach(([key, value]) => {
-        if (usedKeys.has(key) || specialKeys.some(special => key.includes(special))) {
-            cleaned[key] = value;
-        }
+    Object.entries(translations).forEach(([lang, dict]) => {
+        const cleaned = {};
+        Object.entries(dict).forEach(([key, value]) => {
+            if (usedKeys.has(key) || specialKeys.some(special => key.includes(special))) {
+                cleaned[key] = value;
+            }
+        });
+        cleanedTranslations[lang] = cleaned;
     });
-    cleanedTranslations[lang] = cleaned;
-});
 
 // Re-format JS file.
-const output = "const translations = " + JSON.stringify(cleanedTranslations, null, 4) + ";\n";
-fs.writeFileSync("translations.js", output, "utf-8");
-console.log(green("🧹 translations.js cleaned from unused keys."));
+    const output = "const translations = " + JSON.stringify(cleanedTranslations, null, 4) + ";\n";
+    fs.writeFileSync("translations.js", output, "utf-8");
+    console.log(green("🧹 translations.js cleaned from unused keys."));
 
 // Update translations.node.js again.
-const reexported = output.replace(/^const translations =/, "module.exports =");
-fs.writeFileSync("translations.node.js", reexported, "utf-8");
-console.log(green("🔁 translations.node.js regenerated from cleaned source."));
+    const reexported = output.replace(/^const translations =/, "module.exports =");
+    fs.writeFileSync("translations.node.js", reexported, "utf-8");
+    console.log(green("🔁 translations.node.js regenerated from cleaned source."));
+}
