@@ -26,6 +26,11 @@ function showEmailModal() {
     }
 }
 
+function tracking(g4a_name, g4a_category, g4a_event_label, tag_send_to) {
+    gtag('event', 'conversion', {'send_to': tag_send_to});
+    gtag('event', g4a_name, {event_category: g4a_category, event_label: g4a_event_label, value: 1});
+}
+
 let scrollTriggered = false;
 window.addEventListener("scroll", () => {
     const scrollPercent = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
