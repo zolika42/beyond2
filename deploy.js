@@ -9,7 +9,7 @@ const args = process.argv.slice(2);
 const cliFlags = new Set(args.map(arg => arg.trim().toLowerCase()));
 
 // Config based constants.
-const GTAG_SNIPPET = config.GTAG_SNIPPET;
+const GTAG_SNIPPET = config.gtag.GTAG_SNIPPET;
 const baseURL = config.paths.baseURL;
 const headerTemplate = fs.readFileSync(config.paths.headerTemplate, "utf-8").trim();
 const footerTemplate = fs.readFileSync(config.paths.footerTemplate, "utf-8").trim();
@@ -107,15 +107,15 @@ function cliFlagsHandler(cliFlags) {
 function ensureGtagInRawHTML(filePath) {
     const html = fs.readFileSync(filePath, "utf-8");
 
-    const hasTag1 = html.includes(`gtag/js?id=${config.GTAG_SNIPPET_AW_CODE}`) &&
-        html.includes(`gtag('config', '${config.GTAG_SNIPPET_AW_CODE}'`);
+    const hasTag1 = html.includes(`gtag/js?id=${config.gtag.GTAG_SNIPPET_AW_CODE}`) &&
+        html.includes(`gtag('config', '${config.gtag.GTAG_SNIPPET_AW_CODE}'`);
 
     if (hasTag1) return;
 
     const snippets = [];
     if (!hasTag1) snippets.push(GTAG_SNIPPET);
 
-    const injected = snippets.join("\n") + "\n</body>";
+    const injected = snippets.join("\n") + "</body>";
     const modified = html.replace("</body>", injected);
 
     if (!dryRun) {

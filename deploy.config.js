@@ -11,8 +11,8 @@ module.exports = {
     },
     paths: {
         baseURL: "https://beyondstart.solutions",
-        headerTemplate: 'header.template',
-        footerTemplate: 'footer.template',
+        headerTemplate: 'templates/header.template.html',
+        footerTemplate: 'templates/footer.template.html',
         targetDir: 'dist',
         faviconsDir: 'favicons',
     },
