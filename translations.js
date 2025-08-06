@@ -215,7 +215,15 @@ const translations = {
         "landing-digital-transformation-pageTitle": "Digitális transzformáció – BeyondStart",
         "landing-digital-transformation-metaDescription": "Gyors és fájdalommentes digitális upgrade. 30 perc alatt audit, bullshit nélkül.",
         "landing-digital-transformation-ogTitle": "Digitális transzformáció – BeyondStart",
-        "landing-digital-transformation-ogDescription": "Tudd meg, miért nem működik rendesen a céged rendszere – és hogyan javítható."
+        "landing-digital-transformation-ogDescription": "Tudd meg, miért nem működik rendesen a céged rendszere – és hogyan javítható.",
+        "feebie-note": "❌ Eleged van abból, hogy minden rád borul?<br /> ✅ Töltsd le ezt az ingyenes PDF-et – 5 hiba, amit a legtöbb cég elkövet a digitális rendszereivel.<br /> 🔒 Nincs spam. Nincs bullshit. Csak konkrét segítség.",
+        "emailLabel": "Email címed:",
+        "freebie-button": "Kérem a PDF-et →",
+        "modal-title": "📥 Segíthetünk egy ingyenes kis PDF-el?",
+        "modal-subtitle": "Add meg az e-mail címed, és már küldjük is az 5 digitális hibáról szóló útmutatót.",
+        "thanks-title": "🎉 Köszönjük!",
+        "thanks-text": "Elküldtük a 5 gyakori digitális hiba PDF-et az email címedre.\nNézd meg a beérkező leveleidet – és ne felejtsd el csekkolni a Promóciók / Spam mappát sem!",
+        "cta-back": "← Vissza a főoldalra"
     },
     "en": {
         "footerCompanyName": "BeyondStart Solutions",
@@ -425,7 +433,15 @@ const translations = {
         "cta-final-text": "It won’t hurt. In fact, it might be the best half hour your business has had.",
         "cta-final-button": "Book my session →",
         "closing-title": "🌍 Want your place on the map too?",
-        "closing-text": "You’re one conversation away from having a business that works — not just looks like it does.<br>We don’t talk. We show."
+        "closing-text": "You’re one conversation away from having a business that works — not just looks like it does.<br>We don’t talk. We show.",
+        "feebie-note": "❌ Tired of everything crashing down on you?<br /> ✅ Download this free PDF – 5 mistakes most companies make with their digital systems. <br />🔒 No spam. No bullshit. Just real help.",
+        "emailLabel": "Your email:",
+        "freebie-button": "Send me the PDF →",
+        "modal-title": "📥 Want a free little PDF?",
+        "modal-subtitle": "Enter your email and we’ll send over the 5 common digital mistakes guide.",
+        "thanks-title": "🎉 Thank you!",
+        "thanks-text": "We’ve sent the 5 Common Digital Mistakes PDF to your inbox.\nCheck your Promotions or Spam folder if it’s not there!",
+        "cta-back": "← Back to homepage"
     },
     "de": {
         "footerCompanyName": "BeyondStart Solutions",
@@ -635,7 +651,15 @@ const translations = {
         "cta-final-text": "Es wird nicht wehtun. Vielleicht wird’s die wertvollste halbe Stunde deines Unternehmens.",
         "cta-final-button": "Termin buchen →",
         "closing-title": "🌍 Willst du auch auf die Karte?",
-        "closing-text": "Nur ein Gespräch trennt dich von einem Business, das wirklich läuft – nicht nur so aussieht.<br>Wir reden nicht. Wir liefern."
+        "closing-text": "Nur ein Gespräch trennt dich von einem Business, das wirklich läuft – nicht nur so aussieht.<br>Wir reden nicht. Wir liefern.",
+        "feebie-note": "❌ Du hast genug davon, dass alles auf dich einstürzt?<br /> ✅ Lade dieses kostenlose PDF herunter – 5 Fehler, die die meisten Unternehmen mit ihren digitalen Systemen machen.<br /> 🔒 Kein Spam. Kein Bullshit. Nur konkrete Hilfe.",
+        "emailLabel": "Deine E-Mail-Adresse:",
+        "freebie-button": "PDF anfordern →",
+        "modal-title": "📥 Möchtest du ein kostenloses kleines PDF?",
+        "modal-subtitle": "Gib deine E-Mail-Adresse ein und wir senden dir den Guide zu den 5 häufigsten digitalen Fehlern.",
+        "thanks-title": "🎉 Danke!",
+        "thanks-text": "Wir haben dir das PDF zu den 5 häufigsten digitalen Fehlern geschickt.\nBitte prüfe auch deinen Spam- oder Werbeordner.",
+        "cta-back": "← Zurück zur Startseite"
     },
     "fr": {
         "footerCompanyName": "BeyondStart Solutions",
@@ -845,7 +869,15 @@ const translations = {
         "cta-final-text": "Promis, ça pique pas. Et peut-être que c’est la demi-heure la plus utile de ton année.",
         "cta-final-button": "Je réserve un créneau →",
         "closing-title": "🌍 Tu veux apparaître sur la carte ?",
-        "closing-text": "Il te manque juste une conversation pour que ton business fonctionne vraiment – pas juste en apparence.<br>On ne parle pas. On agit."
+        "closing-text": "Il te manque juste une conversation pour que ton business fonctionne vraiment – pas juste en apparence.<br>On ne parle pas. On agit.",
+        "feebie-note": "❌ Marre que tout s'effondre autour de toi?<br /> ✅ Télécharge ce PDF gratuit – 5 erreurs que la plupart des entreprises commettent avec leurs systèmes digitaux. 🔒<br /> Pas de spam. Pas de bullshit. Juste de l’aide concrète.",
+        "emailLabel": "Votre adresse e-mail :",
+        "freebie-button": "Recevoir le PDF →",
+        "modal-title": "📥 Un petit PDF gratuit ?",
+        "modal-subtitle": "Indique ton adresse e-mail et on t’envoie le guide des 5 erreurs digitales.",
+        "thanks-title": "🎉 Merci !",
+        "thanks-text": "Le PDF des 5 erreurs digitales a été envoyé à ta boîte mail.\nPense à vérifier les dossiers Promotions ou Spam.",
+        "cta-back": "← Retour à l’accueil"
     },
     "nl": {
         "footerCompanyName": "BeyondStart Solutions",
@@ -1055,7 +1087,15 @@ const translations = {
         "cta-final-text": "Het doet geen pijn. Sterker nog, het kan de meest waardevolle 30 minuten van je bedrijf zijn.",
         "cta-final-button": "Ik boek een tijdslot →",
         "closing-title": "🌍 Wil jij ook op de kaart?",
-        "closing-text": "Slechts één gesprek scheidt je ervan om een bedrijf te hebben dat écht werkt – niet alleen lijkt alsof het werkt.<br>Wij praten niet. Wij laten het zien."
+        "closing-text": "Slechts één gesprek scheidt je ervan om een bedrijf te hebben dat écht werkt – niet alleen lijkt alsof het werkt.<br>Wij praten niet. Wij laten het zien.",
+        "feebie-note": "❌ Heb je genoeg van alles dat op je afkomt?<br /> ✅ Download deze gratis PDF – 5 fouten die de meeste bedrijven maken met hun digitale systemen.<br /> 🔒 Geen spam. Geen bullshit. Gewoon echte hulp.",
+        "emailLabel": "Jouw e-mailadres:",
+        "freebie-button": "Stuur mij de PDF →",
+        "modal-title": "📥 Gratis mini-PDF ontvangen?",
+        "modal-subtitle": "Vul je e-mailadres in en ontvang de gids over de 5 digitale fouten.",
+        "thanks-title": "🎉 Bedankt!",
+        "thanks-text": "De PDF over de 5 veelvoorkomende digitale fouten is verstuurd.\nCheck je inbox – of kijk bij de spam/promoties.",
+        "cta-back": "← Terug naar de homepage"
     },
     "es": {
         "footerCompanyName": "BeyondStart Solutions",
@@ -1265,6 +1305,14 @@ const translations = {
         "cta-final-text": "No dolerá. De hecho, podría ser la mejor media hora para tu empresa.",
         "cta-final-button": "Reservar una cita →",
         "closing-title": "🌍 ¿Quieres estar en el mapa también?",
-        "closing-text": "Solo una conversación te separa de tener un negocio que realmente funcione – no solo parezca que lo hace.<br>No hablamos. Mostramos resultados."
+        "closing-text": "Solo una conversación te separa de tener un negocio que realmente funcione – no solo parezca que lo hace.<br>No hablamos. Mostramos resultados.",
+        "feebie-note": "❌ ¿Cansado de que todo se te venga encima?<br /> ✅ Descarga este PDF gratuito – 5 errores comunes que cometen la mayoría de las empresas con sus sistemas digitales.<br /> 🔒 Sin spam. Sin bullshit. Solo ayuda concreta.",
+        "emailLabel": "Tu correo electrónico:",
+        "freebie-button": "Quiero el PDF →",
+        "modal-title": "📥 ¿Te gustaría un pequeño PDF gratuito?",
+        "modal-subtitle": "Deja tu correo y te mandamos la guía de los 5 errores digitales.",
+        "thanks-title": "🎉 ¡Gracias!",
+        "thanks-text": "Te hemos enviado el PDF de los 5 errores digitales más comunes.\nRevisa tu bandeja de entrada – y no olvides mirar en Promociones o Spam.",
+        "cta-back": "← Volver al inicio"
     }
 };

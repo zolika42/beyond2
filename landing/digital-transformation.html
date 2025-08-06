@@ -103,8 +103,9 @@
                     <option value="/nl/index.html">🇳🇱 NL</option>
                     <option value="/es/index.html">🇪🇸 ES</option>
                 </select>
-                <button type="submit" class="language-button"
-                        onclick="setLanguage(document.getElementById('language').value.split('/')[1])">
+                <button type="submit"
+                        class="language-button"
+                        onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-'});">
                     OK
                 </button>
             </div>
@@ -568,7 +569,7 @@
                 <li><a href="/#services" class="hover:underline" data-i18n="footerNavServices">Szolgáltatások</a></li>
                 <li><a href="/#references" class="hover:underline" data-i18n="footerNavReferences">Referenciák</a></li>
                 <li><a href="/#about" class="hover:underline" data-i18n="footerNavAbout">Rólunk</a></li>
-                <li><a href="/#contact" class="hover:underline" data-i18n="footerNavContact">Kapcsolat</a></li>
+                <li><a href="/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/d-8hcms2myabejfcnp0-'});">Kapcsolat</a></li>
             </ul>
         </div>
     </div>
@@ -607,7 +608,11 @@
 </script>
 <div id="email-modal" class="email-modal">
     <div class="modal-content">
-        <button class="modal-close" onclick="document.getElementById('email-modal').classList.remove('visible')">×
+        <button class="modal-close"
+                onclick="
+                document.getElementById('email-modal').classList.remove('visible');
+                gtag('event', 'conversion', { 'send_to': 'AW-16905609495/s_N1CL_p3YAbEJfCnP0-' });">
+            ×
         </button>
         <h2 data-i18n="modal-title">📥 Segíthetünk egy ingyenes kis PDF-el?</h2>
         <p data-i18n="modal-subtitle">Add meg az e-mail címed, és már küldjük is az 5 digitális hibáról szóló
@@ -621,7 +626,13 @@
 
             <label for="modal-email" data-i18n="emailLabel">Email címed:</label>
             <input type="email" id="modal-email" name="email" placeholder="pl. te@ceged.hu" required>
-            <button type="submit" class="service-button" data-i18n="freebie-button">Kérem a PDF-et →</button>
+            <button
+                    type="submit"
+                    class="service-button"
+                    data-i18n="freebie-button"
+                    onclick="gtag('event', 'conversion', { 'send_to': 'AW-16905609495/QKBTCM7L3YAbEJfCnP0-' });">
+                Kérem a PDF-et →
+            </button>
         </form>
     </div>
 </div>

@@ -96,7 +96,7 @@
                     <option value="/nl/index.html">🇳🇱 NL</option>
                     <option value="/es/index.html">🇪🇸 ES</option>
                 </select>
-                <button type="submit" class="language-button" onclick="setLanguage(document.getElementById('language').value.split('/')[1])">
+                <button type="submit" class="language-button" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-'});">
                     OK
                 </button>
             </div>
@@ -214,23 +214,17 @@
     </section>
 
     <section class="freebie-block">
-        <p class="note" data-i18n="feebie-note">
-            ❌ Eleged van abból, hogy minden rád borul? <br>
-            ✅ Töltsd le ezt az ingyenes PDF-et – 5 hiba, amit a legtöbb cég elkövet a digitális rendszereivel. <br>
-            🔒 Nincs spam. Nincs bullshit. Csak konkrét segítség.
-        </p>
+        <p class="note" data-i18n="feebie-note">❌ Tired of everything crashing down on you?<br> ✅ Download this free PDF – 5 mistakes most companies make with their digital systems. <br>🔒 No spam. No bullshit. Just real help.</p>
         <form action="https://api.web3forms.com/submit" method="POST" class="form-lead-capture">
             <input type="hidden" name="access_key" value="5338805b-78b9-46d4-9b0e-5a4128cefb73">
             <input type="hidden" name="from_name" value="BeyondStart Solutions">
             <input type="hidden" name="subject" value="Letöltés – 5 gyakori digitális hiba PDF">
             <input type="hidden" name="language" value="hu">
 
-            <label for="email" data-i18n="emailLabel">Email címed:</label>
+            <label for="email" data-i18n="emailLabel">Your email:</label>
             <input type="email" id="email" name="email" placeholder="pl. te@ceged.hu" required="">
 
-            <button type="submit" class="service-button" data-i18n="freebie-button" onclick="gtag('event', 'conversion', { 'send_to': 'AW-16905609495/5pMnCJb5v_4aEJfCnP0-' });">
-                Kérem a PDF-et →
-            </button>
+            <button type="submit" class="service-button" data-i18n="freebie-button" onclick="gtag('event', 'conversion', { 'send_to': 'AW-16905609495/5pMnCJb5v_4aEJfCnP0-' });">Send me the PDF →</button>
         </form>
     </section>
 
@@ -427,7 +421,7 @@
                 <li><a href="/en/#services" class="hover:underline" data-i18n="footerNavServices">Services</a></li>
                 <li><a href="/en/#references" class="hover:underline" data-i18n="footerNavReferences">References</a></li>
                 <li><a href="/en/#about" class="hover:underline" data-i18n="footerNavAbout">About Us</a></li>
-                <li><a href="/en/#contact" class="hover:underline" data-i18n="footerNavContact">Contact</a></li>
+                <li><a href="/en/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="gtag('event', 'conversion', {'send_to': 'AW-16905609495/d-8hcms2myabejfcnp0-'});">Contact</a></li>
             </ul>
         </div>
     </div>
@@ -461,11 +455,13 @@
 </script>
 <div id="email-modal" class="email-modal">
     <div class="modal-content">
-        <button class="modal-close" onclick="document.getElementById('email-modal').classList.remove('visible')">×
+        <button class="modal-close" onclick="
+                document.getElementById('email-modal').classList.remove('visible');
+                gtag('event', 'conversion', { 'send_to': 'AW-16905609495/s_N1CL_p3YAbEJfCnP0-' });">
+            ×
         </button>
-        <h2 data-i18n="modal-title">📥 Segíthetünk egy ingyenes kis PDF-el?</h2>
-        <p data-i18n="modal-subtitle">Add meg az e-mail címed, és már küldjük is az 5 digitális hibáról szóló
-            útmutatót.</p>
+        <h2 data-i18n="modal-title">📥 Want a free little PDF?</h2>
+        <p data-i18n="modal-subtitle">Enter your email and we’ll send over the 5 common digital mistakes guide.</p>
         <form action="https://api.web3forms.com/submit" method="POST" class="form-lead-capture">
             <input type="hidden" name="access_key" value="5338805b-78b9-46d4-9b0e-5a4128cefb73">
             <input type="hidden" name="from_name" value="BeyondStart Solutions">
@@ -473,9 +469,9 @@
             <input type="hidden" name="language" value="hu">
             <input type="hidden" name="redirect" value="https://beyondstart.solutions/hu/landing/koszonom.html">
 
-            <label for="modal-email" data-i18n="emailLabel">Email címed:</label>
+            <label for="modal-email" data-i18n="emailLabel">Your email:</label>
             <input type="email" id="modal-email" name="email" placeholder="pl. te@ceged.hu" required="">
-            <button type="submit" class="service-button" data-i18n="freebie-button">Kérem a PDF-et →</button>
+            <button type="submit" class="service-button" data-i18n="freebie-button" onclick="gtag('event', 'conversion', { 'send_to': 'AW-16905609495/QKBTCM7L3YAbEJfCnP0-' });">Send me the PDF →</button>
         </form>
     </div>
 </div>
