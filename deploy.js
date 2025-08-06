@@ -69,8 +69,8 @@ function checkMissingTrackingCTAs(filePath) {
     candidates.forEach((el, i) => {
         const outer = el.outerHTML;
         const hasTracking =
-            el.getAttribute("onclick")?.includes("gtag('event'") ||
-            el.getAttribute("onsubmit")?.includes("gtag('event'");
+            el.getAttribute("onclick")?.includes("tracking(") ||
+            el.getAttribute("onsubmit")?.includes("tracking(");
 
         if (!hasTracking) {
             trackingMissingTable.push({
