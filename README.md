@@ -194,6 +194,117 @@ Notes:
 - `deploy.js` injects only what is used and removes the rest.
 - Minified versions generated automatically.
 
+# ✨ BeyondStart Page Generator
+
+This tool helps you quickly scaffold new responsive, SEO-friendly HTML pages based on modular sections from the `templates/` folder.
+
+## 🗣️ Key Features
+
+- 🔽 Interactive CLI for entering page name, sections, and SEO metadata
+- 🧩 Section selection using arrow keys + space (checkbox interface)
+- 🧠 Automatic `data-i18n` prefixing based on the page name
+- ✍️ SEO meta fields (title, description, OG tags)
+- 💡 `--dry-run` mode to preview the generated HTML without writing to disk
+- 🎨 Terminal output highlighting (HTML code)
+- 🔁 Automatically runs `deploy.js` after generation (can be commented out)
+- 🌐 Full UTF-8 support, including emojis
+
+---
+
+## 🚀 Usage
+
+```bash
+node page-generator.js [--prefix=CustomPrefix] [--dry-run] [--list]
+```
+
+### Available Flags
+
+| Flag         | Description                                            |
+|--------------|--------------------------------------------------------|
+| `--prefix`   | Manually define i18n prefix (defaults to page name)   |
+| `--dry-run`  | Outputs HTML to console instead of writing to file     |
+| `--list`     | Lists existing HTML pages in the project folder        |
+
+---
+
+## 🧪 CLI Prompts
+
+1. **What should the page name be?**  
+   → e.g. `digital-transformation` → creates `digital-transformation.html`
+
+2. **Which sections do you want to include?**  
+   → Multi-select list:
+    - `hero`
+    - `problem`
+    - `services`
+    - `references`
+    - `testimonials`
+    - `about`
+    - `contact`
+    - `cta-section`
+
+3. **Optional SEO fields**
+    - `<title>` — Page title
+    - `<meta name="description">` — Meta description
+    - `<meta property="og:title">` — Open Graph title
+    - `<meta property="og:description">` — Open Graph description
+
+---
+
+## 🧠 How it works
+
+- Loads the base template (`index.template.html`)
+- Inserts selected sections into `<main>`
+- Applies `data-i18n` prefix to all translatable keys
+- Optionally injects meta fields in `<head>`
+- Saves the result as `*.html` file in the project root
+- Runs `deploy.js` to finalize the file (header/footer injection)
+
+## 📂 File structure
+
+```  
+.  
+├── templates/  
+│   ├── index.template.html  
+│   ├── hero.template.html  
+│   ├── problem.template.html  
+│   ├── ...  
+├── page-generator.js  
+├── deploy.js  
+└── ...  
+```
+
+---
+
+## 📂 Output structure
+
+- Output file: `your-page-name.html` (e.g. `digital-transformation.html`)
+- All selected sections are inserted **inside** the `<main id="main">` tag
+- All `data-i18n` keys are prefixed with a PascalCase version of the filename
+  - Example: `data-i18n="heroTitle"` → `data-i18n="DigitalTransformation_heroTitle"`
+
+---
+
+
+## 🚀 Integration
+
+If `deploy.js` exists in the root directory, it will be automatically run after page creation to inject headers, footers, etc.
+
+You can disable this line in `page-generator.js` if needed:
+
+```  
+execSync('node deploy.js', { stdio: 'inherit' });  
+```
+
+---
+
+## ✅ Requirements
+
+- Node.js (v14+)
+- `inquirer` package (install via `npm install inquirer`)
+
+---
+
 ## 🔒 License
 
 This project is open source and free to use or modify.  

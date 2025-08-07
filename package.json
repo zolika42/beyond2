@@ -20,6 +20,7 @@
   "dependencies": {
     "chalk": "^5.4.1",
     "chokidar": "^4.0.3",
+    "cli-highlight": "^2.1.11",
     "csso": "^5.0.5",
     "inquirer": "^12.9.0",
     "jsdom": "^26.1.0",
