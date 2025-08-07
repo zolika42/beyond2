@@ -285,16 +285,35 @@ node page-generator.js [--prefix=CustomPrefix] [--dry-run] [--list]
 
 ---
 
+## 🚀 Landing Page Generator
 
-## 🚀 Integration
+This script generates SEO-ready, multilingual landing pages using a fixed `landing.template.html` file. It shares the same logic and CLI as the main `page-generator.js`, with a few landing-specific customizations.
 
-If `deploy.js` exists in the root directory, it will be automatically run after page creation to inject headers, footers, etc.
+### ✅ Differences from `page-generator.js`
 
-You can disable this line in `page-generator.js` if needed:
+| Feature | `page-generator.js` | `landing-page-generator.js` |
+|--------|----------------------|------------------------------|
+| 🔄 Template source | `index.template.html` | `landing.template.html` |
+| 📁 Output folder | `./` (root) | `/landing/` |
+| 🧩 Section selection | interactive checkbox | not applicable (template-based) |
+| 🧠 i18n prefixing | based on `pageName` or `--prefix` | same |
+| 🔍 SEO metadata injection | via prompt | same |
+| 📦 `deploy.js` execution | optional | same |
+| 🧰 CLI options | `--help`, `--dry-run`, `--prefix`, `--no-deploy`, `--list` | same |
 
-```  
-execSync('node deploy.js', { stdio: 'inherit' });  
+### 🛠 CLI Options
+
+```bash
+node landing-page-generator.js [options]
 ```
+
+| Flag | Description |
+|------|-------------|
+| `--prefix=<CustomPrefix>` | Use a custom prefix for `data-i18n` keys |
+| `--dry-run` | Preview the final output without writing any files |
+| `--no-deploy` | Skip the `deploy.js` post-processing step |
+| `--help` | Show CLI usage instructions |
+| `--list` | List already generated landing pages |
 
 ---
 

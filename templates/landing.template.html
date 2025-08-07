@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <!-- Loader handling -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loading');
+            window.addEventListener('load', () => {
+                const loader = document.getElementById('site-loader');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.remove();
+                        document.body.classList.remove('loading');
+                    }, 2000);
+                }
+            });
+        });
+    </script>
+
+    <!-- Preloader styles -->
+    <style>
+        section h1 {
+            font-size: 2rem;
+        }
+    </style>
+
+    <!-- Meta / SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miért nem működik a céged rendszere? – Ingyenes digitális audit 30 percben</title>
+    <meta name="description"
+          content="5 gyakori hiba, amit a céged is elkövethet – és hogyan oldjuk meg őket mi. Foglalj ingyenes konzultációt és kapj konkrét javaslatokat. Bullshit nélkül.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://beyondstart.solutions/landing/digital-transformation">
+
+    <!-- Social Preview / OG -->
+    <meta property="og:title" content="Digitális konzultáció cégeknek – Miért nem működik a rendszered?"/>
+    <meta property="og:description"
+          content="30 perces ingyenes beszélgetés – mutatjuk a hibákat, és hogy mit tehetsz. Valódi példák, valódi emberek."/>
+    <meta property="og:image" content="https://beyondstart.solutions/images/beyondstart_logo_sm.webp"/>
+    <meta property="og:url" content="https://beyondstart.solutions/landing/digital-transformation"/>
+    <meta property="og:type" content="website"/>
+
+    <!-- Preloads -->
+    <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
+    <link rel="preload" href="/style.min.css" as="style">
+    <link rel="preload" as="image" href="/images/digital_transformation.webp" type="image/webp">
+    <link href="/style.min.css" rel="stylesheet" media="print" onload="this.onload=null;this.media='all';">
+    <noscript>
+        <link rel="stylesheet" href="/style.min.css">
+    </noscript>
+
+    <!-- Favicon / PWA -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="landing digital-transformation">
+<a href="#main" class="skip-link" data-i18n="jumpToMainContent">Ugrás a fő tartalomra</a>
+<div id="site-loader" class="site-loader">
+    <div class="loader-circle"></div>
+</div>
+<header id="site-header" class="site-header">
+    <!-- Logo -->
+    <a href="/">
+        <img src="/images/beyondstart_logo_sm.webp" alt="BeyondStart Solutions logó" width="200" height="56"
+             loading="eager" decoding="async" fetchpriority="high">
+    </a>
+
+    <!-- Mobile navigation -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü megnyitása">
+    <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+    </label>
+
+    <!-- Navigation -->
+    <div class="header-right">
+        <nav class="main-nav" aria-label="Fő navigáció">
+            <ul>
+                <li><a href="/#services" data-i18n="servicesTitle">Services</a></li>
+                <li><a href="/#references" data-i18n="referencesTitle">References</a></li>
+                <li><a href="/#testimonials" data-i18n="testimonialTitle">Testimonials</a></li>
+                <li><a href="/#about" data-i18n="aboutTitle">About Us</a></li>
+                <li><a
+                        href="/#contact"
+                        data-i18n="ctaBlockButton">
+                    Kapcsolat
+                </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Language Selector -->
+        <form action="" method="get" onsubmit="event.preventDefault(); location.href=this.language.value;">
+            <div class="language-switcher">
+                <label for="language" class="sr-only">Language switcher</label>
+                <select id="language" name="language" aria-label="Language selection" class="language-select">
+                    <option value="/hu/index.html">🇭🇺 HU</option>
+                    <option value="/en/index.html">🇬🇧 EN</option>
+                    <option value="/de/index.html">🇩🇪 DE</option>
+                    <option value="/fr/index.html">🇫🇷 FR</option>
+                    <option value="/nl/index.html">🇳🇱 NL</option>
+                    <option value="/es/index.html">🇪🇸 ES</option>
+                </select>
+                <button type="submit"
+                        class="language-button">
+                    OK
+                </button>
+            </div>
+        </form>
+    </div>
+</header>
+
+<main id="main">
+    <!-- Hero -->
+    <section class="hero-section" aria-label="BeyondStart Solutions" fetchpriority="high">
+        <img src="/images/digital_transformation.webp" fetchpriority="high" alt="hero background" style="display: none;"
+             loading="eager" width="657" height="657" decoding="async"/>
+
+        <div class="hero-overlay">
+            <div class="hero-badge" data-i18n="landing1-badge">🔥 New!</div>
+            <h1 data-i18n="landing1-heroTitle">Kick in text</h1>
+
+            <p class="lead" data-i18n="landing1-heroSubtitle">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim tincidunt nulla, bibendum viverra velit convallis in. Sed in ex eget massa molestie cursus vitae tristique nisl.
+            </p>
+
+            <p data-i18n="landing1-heroSubtitle2">
+                💣 <strong>Lorem ipsum?</strong><br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim tincidunt nulla, bibendum viverra velit convallis in. Sed in ex eget massa molestie cursus vitae tristique nisl.
+            </p>
+
+            <p class="lead" data-i18n="landing1-heroSubtitle3">
+                <strong>🎯Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong>
+            </p>
+
+            <p class="lead" data-i18n="landing1-heroSubtitle4">
+                👉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br/>
+                🎁 <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong>
+            </p>
+
+            <a href="#contact" class="service-button" data-i18n="landing1-bookButton">
+                Lorem ipsum dolor sit amet
+            </a>
+
+            <p class="scroll-hint" data-i18n="landing1-scrollHint">👇 Lorem ipsum dolor sit amet</p>
+
+            <p class="small-note" data-i18n="landing1-smallNote">
+                🚀 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim tincidunt nulla, bibendum viverra velit convallis in.
+                <strong>Lorem ipsum dolor sit amet.</strong>
+            </p>
+
+        </div>
+    </section>
+
+    <section class="pain-section drama-mode">
+        <div class="container">
+
+            <h2 data-i18n="pain-title">😩 Lorem ipsum dolor sit amet?</h2>
+
+            <div class="mega-grid">
+
+                <!-- painboxes -->
+                <div class="painbox">
+                    <span class="emoji">💥</span>
+                    <p data-i18n="pain1"><strong>Lorem ipsum dolor sit amet.</strong><br>
+                        Lorem ipsum dolor sit amet.</p>
+                </div>
+
+                <div class="painbox">
+                    <span class="emoji">🧱</span>
+                    <p data-i18n="pain2"><strong>Lorem ipsum dolor sit amet.</strong><br>
+                        Lorem ipsum dolor sit amet.</p>
+                </div>
+
+                <div class="painbox">
+                    <span class="emoji">🕳️</span>
+                    <p data-i18n="pain3"><strong>Lorem ipsum dolor sit amet.</strong><br>
+                        Lorem ipsum dolor sit amet.</p>
+                </div>
+
+                <div class="painbox">
+                    <span class="emoji">📉</span>
+                    <p data-i18n="pain4"><strong>Lorem ipsum dolor sit amet.</strong><br>
+                        Lorem ipsum dolor sit amet.</p>
+                </div>
+
+                <!-- punchboxes -->
+                <div class="punchbox">
+                    <span class="emoji">📊</span>
+                    <p data-i18n="punch1"><strong>Lorem ipsum dolor sit amet?</strong><br>Lorem ipsum dolor sit amet.</p>
+                </div>
+
+                <div class="punchbox">
+                    <span class="emoji">💸</span>
+                    <p data-i18n="punch2"><strong>Lorem ipsum dolor sit amet?</strong><br>Lorem ipsum dolor sit amet.</p>
+                </div>
+
+                <div class="punchbox">
+                    <span class="emoji">📬</span>
+                    <p data-i18n="punch3"><strong>Lorem ipsum dolor sit amet?</strong><br>Lorem ipsum dolor sit amet.<br>Lorem ipsum dolor sit amet.</p>
+                </div>
+
+                <div class="punchbox">
+                    <span class="emoji">🧨</span>
+                    <p data-i18n="punch4"><strong>Lorem ipsum dolor sit amet?</strong><br>Lorem ipsum dolor sit amet.</p>
+                </div>
+
+            </div>
+
+            <p class="pain-note" data-i18n="pain-note">
+                Lorem ipsum dolor sit amet.<br>
+                Lorem ipsum dolor sit amet.
+            </p>
+
+            <a href="#contact"
+               class="service-button cta-red"
+               data-i18n="pain-cta">
+                CTA →
+            </a>
+
+        </div>
+    </section>
+
+    <section class="consultation-section">
+        <div class="container">
+
+            <h2 data-i18n="consult-title">🎁 Lorem ipsum dolor sit amet?</h2>
+
+            <ul class="consultation-list">
+                <li data-i18n="consult1">🧠 Lorem ipsum dolor sit amet <strong>consectetur adipiscing elit.</strong> – Sed dignissim tincidunt nulla, bibendum viverra velit convallis in.</li>
+                <li data-i18n="consult2">🛠️ <strong>Lorem ipsum dolor sit amet</strong>, consectetur adipiscing elit</li>
+                <li data-i18n="consult3">🗺️ Lorem <strong>ipsum dolor sit amet</strong> consectetur adipiscing elit</li>
+                <li data-i18n="consult4">📞 Lorem <strong>ipsum dolor sit amet</strong>, consectetur adipiscing elit</li>
+            </ul>
+
+            <div class="cta-wrapper">
+                <a href="#contact"
+                   class="service-button"
+                   data-i18n="consult-button">
+                    CTA →
+                </a>
+            </div>
+
+            <p class="scroll-hint" data-i18n="consult-scroll">👇 Lorem ipsum dolor</p>
+
+            <p class="note" data-i18n="consult-note">
+                ❌ Lorem ipsum. ❌ Dolor sit amet. ❌ consectetur adipiscing elit.<br>
+                👉 Lorem <strong>ipsum</strong>,dolor sit amet – ja, consectetur adipiscing elit.
+            </p>
+
+        </div>
+    </section>
+
+    <section class="freebie-block">
+        <p class="note" data-i18n="feebie-note">
+            ❌ Lorem ipsum dolor sit amet, consectetur adipiscing elit? <br/>
+            ✅ Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br/>
+            🔒 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <form action="https://api.web3forms.com/submit" method="POST" class="form-lead-capture">
+            <input type="hidden" name="access_key" value="5338805b-78b9-46d4-9b0e-5a4128cefb73">
+            <input type="hidden" name="from_name" value="BeyondStart Solutions">
+            <input type="hidden" name="subject" value="Lorem ipsum">
+            <input type="hidden" name="language" value="hu">
+
+            <label for="email" data-i18n="emailLabel">Email:</label>
+            <input type="email" id="email" name="email" placeholder="pl. te@ceged.hu" required>
+
+            <button
+                    type="submit"
+                    class="service-button"
+                    data-i18n="freebie-button">
+                CTA →
+            </button>
+        </form>
+    </section>
+
+    <section class="why-us-section">
+        <h2 data-i18n="why-title">🧠 Lorem ipsum?</h2>
+        <ul class="why-us-list">
+            <li data-i18n="why1">
+                <strong>Lorem Ipsum.</strong><br>
+                Sed dignissim tincidunt nulla, bibendum viverra velit convallis in.
+            </li>
+            <li data-i18n="why2">
+                <strong>Lorem Ipsum.</strong><br>
+                Sed dignissim tincidunt nulla, bibendum viverra velit convallis in.
+            </li>
+            <li data-i18n="why3">
+                <strong>Lorem Ipsum.</strong><br>
+                Sed dignissim tincidunt nulla, bibendum viverra velit convallis in.
+            </li>
+            <li data-i18n="why4">
+                <strong>Lorem Ipsum.</strong><br>
+                Sed dignissim tincidunt nulla, bibendum viverra velit convallis in.
+            </li>
+        </ul>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <h2 data-i18n="testimonial-title">💬 Lorem Ipsum?</h2>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <p data-i18n="testimonial1">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim tincidunt nulla, bibendum viverra velit convallis in."</p>
+                    <span class="author">– Mr A, Company</span>
+                </div>
+                <div class="testimonial-card">
+                    <p data-i18n="testimonial2">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim tincidunt nulla, bibendum viverra velit convallis in."</p>
+                    <span class="author">– Mr B, Company</span>
+                </div>
+                <div class="testimonial-card">
+                    <p data-i18n="testimonial3">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim tincidunt nulla, bibendum viverra velit convallis in."</p>
+                    <span class="author">– Mr C, Company</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-us-section">
+        <div class="about-container">
+            <div class="about-text">
+                <h2 data-i18n="about-title">🧍 Cras nulla orci, rutrum id dui et, pulvinar luctus mauris?</h2>
+                <p data-i18n="about-p1">Integer hendrerit diam eu massa lacinia, id scelerisque orci ornare. Maecenas a lacus augue. Curabitur eu tortor vel mi lacinia tempus.</p>
+                <p data-i18n="about-p2">Nam quis cursus libero. Mauris commodo imperdiet blandit. Pellentesque lacinia nunc eget odio luctus finibus. </p>
+                <p data-i18n="about-p3">Quisque lacus mi, tempus nec hendrerit id, aliquet at orci. Vestibulum efficitur maximus leo ac scelerisque. Nam eu elementum lectus.</p>
+                <p data-i18n="about-p4">Vivamus eu ligula sed urna tempus gravida placerat quis enim. Morbi quis dolor at libero ornare tristique in vitae dolor. Maecenas egestas neque sit amet leo maximus imperdiet.</p>
+            </div>
+            <div class="about-photo">
+                <img src="/images/about_me.webp" alt="Lorem Ipsum" width="506" height="675"
+                     loading="lazy"/>
+                <div class="photo-overlay" data-i18n="about-overlay">
+                    <p>Donec vel dui et neque imperdiet vehicula. Donec quis efficitur augue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners-section" aria-label="Partners">
+        <img src="/images/partners.webp" alt="hero background" style="display: none;" loading="lazy"
+             width="1536" height="1024"/>
+        <div class="container">
+            <h2 data-i18n="partners-title">🤝 Donec a ipsum in tellus tristique dignissim?</h2>
+            <p class="intro" data-i18n="partners-intro">
+                Mauris turpis lectus, ultrices non dui quis, faucibus semper orci.
+            </p>
+            <div class="partner-tiles">
+
+                <div class="partner-tile">
+                    <img src="/images/kinepolis_bg.webp" alt="Company logo" width="657" height="260" loading="lazy"/>
+                    <p data-i18n="partner-company1">
+                        <strong>Company 1</strong><br>
+                        Nulla et nulla nulla. Integer in elit in quam euismod efficitur..
+                    </p>
+                    <a href="#" target="_blank" rel="noopener" class="partner-card"
+                       aria-label="Company 1 website"></a>
+                </div>
+
+                <div class="partner-tile">
+                    <img src="/images/aceg_bg.webp" alt="Company logo" width="657" height="260" loading="lazy"/>
+                    <p data-i18n="partner-company2">
+                        <strong>Company 2</strong><br>
+                        Nulla et nulla nulla. Integer in elit in quam euismod efficitur..
+                    </p>
+                    <a href="#" target="_blank" rel="noopener" class="partner-card"
+                       aria-label="Company 2 website"></a>
+                </div>
+
+                <div class="partner-tile">
+                    <img src="/images/techsoup_bg.webp" alt="Company logo" width="657" height="260" loading="lazy"/>
+                    <p data-i18n="partner-company3">
+                        <strong>Company 3</strong><br>
+                        Nulla et nulla nulla. Integer in elit in quam euismod efficitur..
+                    </p>
+                    <a href="#" target="_blank" rel="noopener" class="partner-card"
+                       aria-label="Company 3 website"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="next-step-section">
+        <h2 data-i18n="next-title">🧭 Sed eros ligula, pellentesque vitae?</h2>
+        <ul class="next-step-list">
+            <li data-i18n="next1"><strong>1. Vivamus id neque ut augue iaculis efficitur</strong> – Fusce eget egestas sem. Integer mollis, erat non rhoncus mollis</li>
+            <li data-i18n="next2"><strong>1. Vivamus id neque ut augue iaculis efficitur</strong> – Fusce eget egestas sem. Integer mollis, erat non rhoncus mollis</li>
+            <li data-i18n="next3"><strong>1. Vivamus id neque ut augue iaculis efficitur</strong> – Fusce eget egestas sem. Integer mollis, erat non rhoncus mollis</li>
+        </ul>
+    </section>
+
+    <section class="faq-section">
+        <h2 data-i18n="faq-title">❓ FAQ</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3 data-i18n="faq-q1">💸 Nullam viverra lacinia nulla vel fermentum?</h3>
+                <p data-i18n="faq-a1">Phasellus nulla mauris, pharetra quis libero ut, dapibus luctus est. Curabitur sed tincidunt dui.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 data-i18n="faq-q2">🤷 Nullam viverra lacinia nulla vel fermentum?</h3>
+                <p data-i18n="faq-a2">Phasellus nulla mauris, pharetra quis libero ut, dapibus luctus est. Curabitur sed tincidunt dui.</p>
+
+            </div>
+
+            <div class="faq-item">
+                <h3 data-i18n="faq-q3">📉 Nullam viverra lacinia nulla vel fermentum?</h3>
+                <p data-i18n="faq-a3">Phasellus nulla mauris, pharetra quis libero ut, dapibus luctus est. Curabitur sed tincidunt dui.</p>
+
+            </div>
+
+            <div class="faq-item">
+                <h3 data-i18n="faq-q4">⌛ Nullam viverra lacinia nulla vel fermentum?</h3>
+                <p data-i18n="faq-a4">Phasellus nulla mauris, pharetra quis libero ut, dapibus luctus est. Curabitur sed tincidunt dui.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-final">
+        <h2 data-i18n="cta-final-title">📅 Lorem ipsum?</h2>
+        <p data-i18n="cta-final-text">Phasellus nulla mauris, pharetra quis libero ut, dapibus luctus est. Curabitur sed tincidunt dui.</p>
+        <a
+                href="#contact"
+                class="service-button"
+                data-i18n="cta-final-button">
+            CTA →
+        </a>
+    </section>
+
+    <!-- Closing Statement -->
+    <section class="closing-section">
+        <h2 data-i18n="closing-title">🌍 Lorem Ipsum?</h2>
+        <p data-i18n="closing-text">
+            Donec iaculis lacus justo, ac tempor dolor posuere in. Aliquam varius risus turpis, sed fermentum erat bibendum sed.
+        </p>
+    </section>
+
+    <!-- Contact / Calendly -->
+    <section id="contact" class="contact-section" aria-label="Contact">
+        <h2 class="section-title" data-i18n="ctaBlockButton">Lorem Ipsum</h2>
+        <p class="section-text" data-i18n="contactSubtitle">Donec iaculis lacus justo, ac tempor dolor posuere in. Aliquam varius risus turpis, sed fermentum erat bibendum sed.</p>
+        <div class="calendly-wrapper">
+            <iframe src="https://calendly.com/zoltan-beyondstart" width="768" height="600"
+                    title="Book appointment - Calendly" loading="lazy"></iframe>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <h3 data-i18n="footerCompanyName">BeyondStart Solutions</h3>
+            <p data-i18n="footerCompanyDetails">
+                Cégvezető: Horváth Zoltán<br>
+                Székhely: Str. Parângului 10, Ap. 2, 440031, Satu Mare, Romania.<br>
+                Adószám: RO43923085<br>
+                Cégjegyzékszám: J30/291/2021
+            </p>
+        </div>
+        <div>
+            <h3 data-i18n="footerLegal">Jogi dokumentumok</h3>
+            <ul>
+                <li><a href="/impresszum.html" class="hover:underline" data-i18n="footerImprint">Impresszum</a></li>
+                <li><a href="/adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy">Adatvédelmi
+                    irányelvek</a></li>
+                <li><a href="/cookie.html" class="hover:underline" data-i18n="footerCookies">Cookie tájékoztató</a></li>
+                <li><a href="/aszf.html" class="hover:underline" data-i18n="footerTerms">ÁSZF</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 data-i18n="footerContact">Kapcsolat</h3>
+            <ul>
+                <li>
+                    <span data-i18n="footerEmail">E-mail:</span>
+                    <a href="mailto:zoltan@beyondstart.solutions" class="hover:underline">zoltan[at]beyondstart[dot]solutions</a>
+                </li>
+                <li>
+                    <span data-i18n="footerPhone">Telefon:</span>
+                    <a href="tel:+36705084100" class="hover:underline">+36 70 508 4100</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3 data-i18n="footerNav">Navigáció</h3>
+            <ul>
+                <li><a href="/" class="hover:underline" data-i18n="footerNavHome">Főoldal</a></li>
+                <li><a href="/#services" class="hover:underline" data-i18n="footerNavServices">Szolgáltatások</a></li>
+                <li><a href="/#references" class="hover:underline" data-i18n="footerNavReferences">Referenciák</a></li>
+                <li><a href="/#about" class="hover:underline" data-i18n="footerNavAbout">Rólunk</a></li>
+                <li><a href="/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="
+                tracking('footer_cta', 'CTA', 'Footer CTA', 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-');">
+                    Kapcsolat
+                </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom" data-i18n="footerCopyright">
+        &copy; 2025 BeyondStart Solutions. Minden jog fenntartva.
+    </div>
+</footer>
+
+<!-- Sticky CTA -->
+<a href="#contact"
+   class="sticky-cta"
+   data-i18n="stickyCTA"
+   onclick="tracking('sticky_cta', 'CTA', 'Sticky CTA', 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-');">
+    💬 Ajánlatkérés
+</a>
+
+<script src="/translations.min.js" defer></script>
+<script src="/script.min.js" defer></script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "BeyondStart Solutions",
+        "url": "https://beyondstart.solutions",
+        "logo": "https://beyondstart.solutions/images/beyondstart_logo_sm.webp",
+        "sameAs": [],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+36 70 508 4100",
+            "contactType": "customer service",
+            "areaServed": "HU",
+            "availableLanguage": [
+                "Hungarian",
+                "English"
+            ]
+        }
+    }
+</script>
+<div id="email-modal" class="email-modal">
+    <div class="modal-content">
+        <button class="modal-close"
+                onclick="
+                document.getElementById('email-modal').classList.remove('visible');">
+            ×
+        </button>
+        <h2 data-i18n="modal-title">📥 Lorem Ipsum?</h2>
+        <p data-i18n="modal-subtitle">Donec id lorem posuere odio hendrerit aliquam in eget dolor. Donec ullamcorper elit in felis condimentum, nec commodo diam maximus.</p>
+        <form action="https://api.web3forms.com/submit" method="POST" class="form-lead-capture">
+            <input type="hidden" name="access_key" value="5338805b-78b9-46d4-9b0e-5a4128cefb73">
+            <input type="hidden" name="from_name" value="BeyondStart Solutions">
+            <input type="hidden" name="subject" value="Subject">
+            <input type="hidden" name="language" value="hu">
+            <input type="hidden" name="redirect" value="https://beyondstart.solutions/hu/landing/koszonom.html">
+
+            <label for="modal-email" data-i18n="emailLabel">Email:</label>
+            <input type="email" id="modal-email" name="email" placeholder="pl. te@ceged.hu" required>
+            <button
+                    type="submit"
+                    class="service-button"
+                    data-i18n="freebie-button">
+                CTA →
+            </button>
+        </form>
+    </div>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16905609495"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16882358510"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'AW-16905609495');
+    gtag('config', 'AW-16882358510');
+</script>
+</body>
+</html>
