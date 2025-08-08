@@ -10,6 +10,7 @@ module.exports = {
         cleanUnusedTranslations: true,
     },
     paths: {
+        root: "./",
         baseURL: "https://beyondstart.solutions",
         templateDir: "./templates",
         landingDir: "./landing",
@@ -17,6 +18,12 @@ module.exports = {
         footerTemplate: 'templates/footer.template.html',
         targetDir: 'dist',
         faviconsDir: 'favicons',
+        blogDir: './blog',
+        blogIndexTemplate: 'templates/blog-index.template.html',
+        blogEntryTemplate: 'templates/blog.template.html',
+        rootBlogHtml: './blog.html',
+        indexTemplate: 'templates/index.template.html',
+        blogListSelector: 'ul.blog-list',
     },
     gtag: {
         GTAG_SNIPPET_AW_CODE,

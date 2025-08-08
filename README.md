@@ -317,6 +317,72 @@ node landing-page-generator.js [options]
 
 ---
 
+# ✍️ Blog Generator – `blog-generator.js`
+
+This CLI tool creates localized blog posts and automatically updates the blog index.
+
+### ✅ Features
+
+- 📄 Creates new blog post HTML files from `templates/blog.template.html`
+- 📂 Outputs to `/blog/[slug].html`
+- 🧠 Adds unique `data-i18n` prefixes for each blog post
+- 🗓️ Automatically inserts current date and time
+- 🧵 Extracts blog title and intro for the blog index
+- 📄 Updates `blog.html` (based on `templates/blog-index.template.html`)
+- ⚙️ Optionally calls `deploy.js` to finalize everything
+
+### 🧪 Usage
+
+```bash
+node blog-generator.js [options]
+```
+
+### 🛠 CLI Options
+
+| Flag            | Description                                                                 |
+|------------------|-----------------------------------------------------------------------------|
+| `--title="..."`  | The visible blog post title (`<h2>`)                                        |
+| `--prefix=...`   | Custom i18n prefix (auto-generated if omitted)                             |
+| `--dry-run`      | Show output without writing any files                                      |
+| `--no-deploy`    | Skip calling `deploy.js` after generation                                  |
+| `--no-index`     | Skip updating `blog.html` index page                                       |
+| `--help`         | Show CLI help                                                              |
+| `--list`         | Lists all blog posts in the `/blog` directory                              |
+
+### 📂 Output
+
+- `/blog/your-post.html` — with proper meta structure, date, i18n keys
+- `/blog.html` — auto-updated blog index with all posts listed
+
+### 🧠 How it works
+
+1. Loads `templates/blog.template.html`
+2. Replaces `<h2 data-i18n="blog_title">` and `<strong data-i18n="blog_date">`
+3. Injects current date and title
+4. Extracts content from post for blog list:
+    - `<h2 data-i18n="blog_title">` → blog_post_*_title
+    - `<p data-i18n="blog_intro">` → blog_post_*_desc
+5. Inserts entries into `<ul class="blog-list">` of `blog.html`
+6. Optionally triggers `deploy.js`
+
+### Example
+
+```bash
+node blog-generator.js --title="My First Blog Post"
+```
+
+Creates:
+
+- `blog/my-first-blog-post.html`
+- Updates `blog.html` with:
+  ```html
+  <a href="/blog/my-first-blog-post.html" data-i18n="blog_post_1_title">
+    My First Blog Post
+  </a>
+  <p data-i18n="blog_post_1_desc">Short intro paragraph...</p>
+  ```
+---
+
 ## ✅ Requirements
 
 - Node.js (v14+)
