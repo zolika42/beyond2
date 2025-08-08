@@ -15,11 +15,13 @@ This repository contains CLI tools used to generate and deploy static websites, 
 ## 🛠 Generators
 
 ### Blog Generator
+
 - Creates a new blog post from `templates/blog.template.html`
 - Injects i18n keys with a unique prefix
 - Updates `blog.html` with links and previews
 
 ### Page Generator
+
 - Generates static or landing pages
 - Supports dynamic sections and templates
 - Uses CLI flags for control (`--prefix`, `--dry-run`, `--template`, etc.)

@@ -1,106 +1,105 @@
 function setLanguage(lang) {
-    localStorage.setItem("lang", lang);
-    window.location.href = `/${lang}/index.html`;
+  localStorage.setItem('lang', lang);
+  window.location.href = `/${lang}/index.html`;
 }
 
 function translatePage(lang) {
-    const elements = document.querySelectorAll('[data-i18n]');
-    elements.forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-            el.innerHTML = translations[lang][key];
-        }
-    });
+  const elements = document.querySelectorAll('[data-i18n]');
+  elements.forEach((el) => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
 }
 
 function detectBrowserLanguage() {
-    const supported = Object.keys(translations);
-    const browserLang = navigator.language.slice(0, 2).toLowerCase();
-    return supported.includes(browserLang) ? browserLang : 'en';
+  const supported = Object.keys(translations);
+  const browserLang = navigator.language.slice(0, 2).toLowerCase();
+  return supported.includes(browserLang) ? browserLang : 'en';
 }
 
 function showEmailModal() {
-    let el = document.getElementById("email-modal");
-    if (el) {
-        el.classList.add("visible");
-    }
+  let el = document.getElementById('email-modal');
+  if (el) {
+    el.classList.add('visible');
+  }
 }
 
 function tracking(g4a_name, g4a_category, g4a_event_label, tag_send_to) {
-    gtag('event', 'conversion', {'send_to': tag_send_to});
-    gtag('event', g4a_name, {event_category: g4a_category, event_label: g4a_event_label, value: 1});
+  gtag('event', 'conversion', { send_to: tag_send_to });
+  gtag('event', g4a_name, { event_category: g4a_category, event_label: g4a_event_label, value: 1 });
 }
 
 let scrollTriggered = false;
-window.addEventListener("scroll", () => {
-    const scrollPercent = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
-    if (scrollPercent > 0.4 && !scrollTriggered) {
-        scrollTriggered = true;
-        showEmailModal(); // saját modalod meghívása
-    }
+window.addEventListener('scroll', () => {
+  const scrollPercent = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
+  if (scrollPercent > 0.4 && !scrollTriggered) {
+    scrollTriggered = true;
+    showEmailModal(); // saját modalod meghívása
+  }
 });
 
 let exitTriggered = false;
-document.addEventListener("mouseleave", (e) => {
-    if (e.clientY < 10 && !exitTriggered) {
-        exitTriggered = true;
-        showEmailModal();
-    }
+document.addEventListener('mouseleave', (e) => {
+  if (e.clientY < 10 && !exitTriggered) {
+    exitTriggered = true;
+    showEmailModal();
+  }
 });
 
 setTimeout(() => {
-    showEmailModal();
+  showEmailModal();
 }, 30000); // 30 sec
 
+document.addEventListener('DOMContentLoaded', () => {
+  const supported = ['en', 'hu', 'de', 'fr', 'nl', 'es'];
+  const savedLang = localStorage.getItem('lang');
+  const parts = window.location.pathname.split('/');
+  const currentLang = parts[1]; // e.g., 'en' from /en/index.html
 
-document.addEventListener("DOMContentLoaded", () => {
-    const supported = ['en', 'hu', 'de', 'fr', 'nl', 'es'];
-    const savedLang = localStorage.getItem('lang');
-    const parts = window.location.pathname.split('/');
-    const currentLang = parts[1]; // e.g., 'en' from /en/index.html
+  // Ha a gyökérből jövünk és van mentett nyelv, irányítsuk át
+  if (window.location.pathname === '/' && savedLang && supported.includes(savedLang)) {
+    window.location.href = `/${savedLang}/index.html`;
+    return;
+  }
 
-    // Ha a gyökérből jövünk és van mentett nyelv, irányítsuk át
-    if (window.location.pathname === '/' && savedLang && supported.includes(savedLang)) {
-        window.location.href = `/${savedLang}/index.html`;
-        return;
-    }
+  // Ha nincs mentett nyelv, és támogatott az aktuális, mentsük el
+  if (!savedLang && supported.includes(currentLang)) {
+    localStorage.setItem('lang', currentLang);
+  }
 
-    // Ha nincs mentett nyelv, és támogatott az aktuális, mentsük el
-    if (!savedLang && supported.includes(currentLang)) {
-        localStorage.setItem('lang', currentLang);
-    }
+  // Set dropdown érték
+  const selector = document.getElementById('language');
+  if (selector && supported.includes(currentLang)) {
+    const currentPath = window.location.pathname.split('/').slice(2).join('/');
+    selector.value = `/${currentLang}/${currentPath}`;
+  }
 
-    // Set dropdown érték
-    const selector = document.getElementById('language');
-    if (selector && supported.includes(currentLang)) {
-        const currentPath = window.location.pathname.split('/').slice(2).join('/');
-        selector.value = `/${currentLang}/${currentPath}`;
-    }
+  // Lefordítjuk az oldalt
+  translatePage(currentLang || savedLang || detectBrowserLanguage());
 
-    // Lefordítjuk az oldalt
-    translatePage(currentLang || savedLang || detectBrowserLanguage());
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-16905609495/lEufCJjsrv4aEJfCnP0-'
-                });
-                observer.disconnect(); // egyszeri trigger
-            }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        gtag('event', 'conversion', {
+          send_to: 'AW-16905609495/lEufCJjsrv4aEJfCnP0-'
         });
+        observer.disconnect(); // egyszeri trigger
+      }
     });
+  });
 
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-        observer.observe(contactSection);
-    }
+  const contactSection = document.getElementById('contact');
+  if (contactSection) {
+    observer.observe(contactSection);
+  }
 
-    const loader = document.getElementById("site-loader");
-    if (loader) {
-        loader.style.opacity = "0";
-        setTimeout(() => {
-            loader.style.display = "none";
-        }, 300);
-    }
+  const loader = document.getElementById('site-loader');
+  if (loader) {
+    loader.style.opacity = '0';
+    setTimeout(() => {
+      loader.style.display = 'none';
+    }, 300);
+  }
 });

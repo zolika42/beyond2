@@ -28,31 +28,31 @@ If one day we need CMS features (e.g. blog, client-managed content), we can laye
 
 ```
 .
-├── .ddev/                # Local dev environment (optional)  
-├── dist/                 # Final static build output (HTML + CSS + assets)  
-├── favicons/             # Generated favicons (copied to dist during deployment)  
-├── images/               # Static images (logos, partners, etc.)  
-├── locales/              # Language files (not actively used)  
-├── node_modules/         # npm dependencies (excluded from repo)  
-├── .htaccess             # Apache rewrite rules  
-├── .htaccess.template    # Template version of .htaccess  
-├── adatvedelem.html      # Privacy policy (HU)  
-├── aszf.html             # Terms and conditions (HU)  
-├── cookie.html           # Cookie policy (HU)  
-├── deploy.js             # Node.js build + deploy + cleanup + translation manager  
-├── impresszum.html       # Legal notice (HU)  
-├── index.html            # Main homepage (default: HU)  
-├── package.json          # npm dependencies  
-├── package-lock.json     # npm lock file  
-├── README.md             # This file  
-├── script.js             # Core JS functionality  
-├── script.min.js         # Minified version  
-├── site.webmanifest      # PWA manifest  
-├── style.css             # Main styling  
-├── style.min.css         # Minified version  
-├── translations.js       # All language content (flat key-value)  
-├── translations.min.js   # Minified version  
-├── translations.node.js  # Node.js importable version  
+├── .ddev/                # Local dev environment (optional)
+├── dist/                 # Final static build output (HTML + CSS + assets)
+├── favicons/             # Generated favicons (copied to dist during deployment)
+├── images/               # Static images (logos, partners, etc.)
+├── locales/              # Language files (not actively used)
+├── node_modules/         # npm dependencies (excluded from repo)
+├── .htaccess             # Apache rewrite rules
+├── .htaccess.template    # Template version of .htaccess
+├── adatvedelem.html      # Privacy policy (HU)
+├── aszf.html             # Terms and conditions (HU)
+├── cookie.html           # Cookie policy (HU)
+├── deploy.js             # Node.js build + deploy + cleanup + translation manager
+├── impresszum.html       # Legal notice (HU)
+├── index.html            # Main homepage (default: HU)
+├── package.json          # npm dependencies
+├── package-lock.json     # npm lock file
+├── README.md             # This file
+├── script.js             # Core JS functionality
+├── script.min.js         # Minified version
+├── site.webmanifest      # PWA manifest
+├── style.css             # Main styling
+├── style.min.css         # Minified version
+├── translations.js       # All language content (flat key-value)
+├── translations.min.js   # Minified version
+├── translations.node.js  # Node.js importable version
 └── watch.js              # Development file-watcher (auto runs deploy.js)
 ```
 
@@ -101,6 +101,7 @@ The `deploy.js` script will automatically:
 Use this for rapid iteration.
 
 ### Start it:
+
 ```bash
 node watch.js
 ```
@@ -118,29 +119,29 @@ node watch.js
 ### .htaccess (inside `dist/`)
 
 ```
-RewriteEngine On  
-RewriteCond %{REQUEST_FILENAME} !-f  
-RewriteCond %{REQUEST_FILENAME} !-d  
-RewriteRule ^([a-z]{2})/?$ /$1/index.html [L]  
-RewriteRule ^([a-z]{2})/(.*)$ /$1/$2 [L]  
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z]{2})/?$ /$1/index.html [L]
+RewriteRule ^([a-z]{2})/(.*)$ /$1/$2 [L]
 ```
 
 ### Example VirtualHost
 
 ```
-<VirtualHost *:443>  
-    ServerName beyondstart.solutions  
-    DocumentRoot /var/www/beyondstart/dist  
+<VirtualHost *:443>
+    ServerName beyondstart.solutions
+    DocumentRoot /var/www/beyondstart/dist
 
-    SSLEngine on  
-    SSLCertificateFile /etc/letsencrypt/live/beyondstart.solutions/fullchain.pem  
-    SSLCertificateKeyFile /etc/letsencrypt/live/beyondstart.solutions/privkey.pem  
+    SSLEngine on
+    SSLCertificateFile /etc/letsencrypt/live/beyondstart.solutions/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/beyondstart.solutions/privkey.pem
 
-    <Directory /var/www/beyondstart/dist>  
-        Options Indexes FollowSymLinks  
-        AllowOverride All  
-        Require all granted  
-    </Directory>  
+    <Directory /var/www/beyondstart/dist>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
 </VirtualHost>
 ```
 
@@ -192,7 +193,6 @@ Notes:
 - Make sure the `post-receive` script is executable:  
   `chmod +x hooks/post-receive`
 
-
 ## 🌐 Multilingual Support
 
 - `translations.js` stores all language strings.
@@ -224,11 +224,11 @@ node page-generator.js [--prefix=CustomPrefix] [--dry-run] [--list]
 
 ### Available Flags
 
-| Flag         | Description                                            |
-|--------------|--------------------------------------------------------|
-| `--prefix`   | Manually define i18n prefix (defaults to page name)   |
-| `--dry-run`  | Outputs HTML to console instead of writing to file     |
-| `--list`     | Lists existing HTML pages in the project folder        |
+| Flag        | Description                                         |
+| ----------- | --------------------------------------------------- |
+| `--prefix`  | Manually define i18n prefix (defaults to page name) |
+| `--dry-run` | Outputs HTML to console instead of writing to file  |
+| `--list`    | Lists existing HTML pages in the project folder     |
 
 ---
 
@@ -239,20 +239,20 @@ node page-generator.js [--prefix=CustomPrefix] [--dry-run] [--list]
 
 2. **Which sections do you want to include?**  
    → Multi-select list:
-    - `hero`
-    - `problem`
-    - `services`
-    - `references`
-    - `testimonials`
-    - `about`
-    - `contact`
-    - `cta-section`
+   - `hero`
+   - `problem`
+   - `services`
+   - `references`
+   - `testimonials`
+   - `about`
+   - `contact`
+   - `cta-section`
 
 3. **Optional SEO fields**
-    - `<title>` — Page title
-    - `<meta name="description">` — Meta description
-    - `<meta property="og:title">` — Open Graph title
-    - `<meta property="og:description">` — Open Graph description
+   - `<title>` — Page title
+   - `<meta name="description">` — Meta description
+   - `<meta property="og:title">` — Open Graph title
+   - `<meta property="og:description">` — Open Graph description
 
 ---
 
@@ -267,16 +267,16 @@ node page-generator.js [--prefix=CustomPrefix] [--dry-run] [--list]
 
 ## 📂 File structure
 
-```  
-.  
-├── templates/  
-│   ├── index.template.html  
-│   ├── hero.template.html  
-│   ├── problem.template.html  
-│   ├── ...  
-├── page-generator.js  
-├── deploy.js  
-└── ...  
+```
+.
+├── templates/
+│   ├── index.template.html
+│   ├── hero.template.html
+│   ├── problem.template.html
+│   ├── ...
+├── page-generator.js
+├── deploy.js
+└── ...
 ```
 
 ---
@@ -296,15 +296,15 @@ This script generates SEO-ready, multilingual landing pages using a fixed `landi
 
 ### ✅ Differences from `page-generator.js`
 
-| Feature | `page-generator.js` | `landing-page-generator.js` |
-|--------|----------------------|------------------------------|
-| 🔄 Template source | `index.template.html` | `landing.template.html` |
-| 📁 Output folder | `./` (root) | `/landing/` |
-| 🧩 Section selection | interactive checkbox | not applicable (template-based) |
-| 🧠 i18n prefixing | based on `pageName` or `--prefix` | same |
-| 🔍 SEO metadata injection | via prompt | same |
-| 📦 `deploy.js` execution | optional | same |
-| 🧰 CLI options | `--help`, `--dry-run`, `--prefix`, `--no-deploy`, `--list` | same |
+| Feature                   | `page-generator.js`                                        | `landing-page-generator.js`     |
+| ------------------------- | ---------------------------------------------------------- | ------------------------------- |
+| 🔄 Template source        | `index.template.html`                                      | `landing.template.html`         |
+| 📁 Output folder          | `./` (root)                                                | `/landing/`                     |
+| 🧩 Section selection      | interactive checkbox                                       | not applicable (template-based) |
+| 🧠 i18n prefixing         | based on `pageName` or `--prefix`                          | same                            |
+| 🔍 SEO metadata injection | via prompt                                                 | same                            |
+| 📦 `deploy.js` execution  | optional                                                   | same                            |
+| 🧰 CLI options            | `--help`, `--dry-run`, `--prefix`, `--no-deploy`, `--list` | same                            |
 
 ### 🛠 CLI Options
 
@@ -312,13 +312,13 @@ This script generates SEO-ready, multilingual landing pages using a fixed `landi
 node landing-page-generator.js [options]
 ```
 
-| Flag | Description |
-|------|-------------|
-| `--prefix=<CustomPrefix>` | Use a custom prefix for `data-i18n` keys |
-| `--dry-run` | Preview the final output without writing any files |
-| `--no-deploy` | Skip the `deploy.js` post-processing step |
-| `--help` | Show CLI usage instructions |
-| `--list` | List already generated landing pages |
+| Flag                      | Description                                        |
+| ------------------------- | -------------------------------------------------- |
+| `--prefix=<CustomPrefix>` | Use a custom prefix for `data-i18n` keys           |
+| `--dry-run`               | Preview the final output without writing any files |
+| `--no-deploy`             | Skip the `deploy.js` post-processing step          |
+| `--help`                  | Show CLI usage instructions                        |
+| `--list`                  | List already generated landing pages               |
 
 ---
 
@@ -344,15 +344,15 @@ node blog-generator.js [options]
 
 ### 🛠 CLI Options
 
-| Flag            | Description                                                                 |
-|------------------|-----------------------------------------------------------------------------|
-| `--title="..."`  | The visible blog post title (`<h2>`)                                        |
-| `--prefix=...`   | Custom i18n prefix (auto-generated if omitted)                             |
-| `--dry-run`      | Show output without writing any files                                      |
-| `--no-deploy`    | Skip calling `deploy.js` after generation                                  |
-| `--no-index`     | Skip updating `blog.html` index page                                       |
-| `--help`         | Show CLI help                                                              |
-| `--list`         | Lists all blog posts in the `/blog` directory                              |
+| Flag            | Description                                    |
+| --------------- | ---------------------------------------------- |
+| `--title="..."` | The visible blog post title (`<h2>`)           |
+| `--prefix=...`  | Custom i18n prefix (auto-generated if omitted) |
+| `--dry-run`     | Show output without writing any files          |
+| `--no-deploy`   | Skip calling `deploy.js` after generation      |
+| `--no-index`    | Skip updating `blog.html` index page           |
+| `--help`        | Show CLI help                                  |
+| `--list`        | Lists all blog posts in the `/blog` directory  |
 
 ### 📂 Output
 
@@ -365,8 +365,8 @@ node blog-generator.js [options]
 2. Replaces `<h2 data-i18n="blog_title">` and `<strong data-i18n="blog_date">`
 3. Injects current date and title
 4. Extracts content from post for blog list:
-    - `<h2 data-i18n="blog_title">` → blog_post_*_title
-    - `<p data-i18n="blog_intro">` → blog_post_*_desc
+   - `<h2 data-i18n="blog_title">` → blog*post*\*\_title
+   - `<p data-i18n="blog_intro">` → blog*post*\*\_desc
 5. Inserts entries into `<ul class="blog-list">` of `blog.html`
 6. Optionally triggers `deploy.js`
 
@@ -381,11 +381,10 @@ Creates:
 - `blog/my-first-blog-post.html`
 - Updates `blog.html` with:
   ```html
-  <a href="/blog/my-first-blog-post.html" data-i18n="blog_post_1_title">
-    My First Blog Post
-  </a>
+  <a href="/blog/my-first-blog-post.html" data-i18n="blog_post_1_title"> My First Blog Post </a>
   <p data-i18n="blog_post_1_desc">Short intro paragraph...</p>
   ```
+
 ---
 
 ## ✅ Requirements

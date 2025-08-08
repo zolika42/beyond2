@@ -2,15 +2,15 @@
   "name": "beyondstart-generators",
   "version": "1.0.0",
   "description": "CLI tools for generating and deploying static websites with multilingual support.",
-  "author": "Zolt\u00e1n Horv\u00e1th <zoltan@beyondstart.solutions>",
+  "author": "Zoltán Horváth <zoltan@beyondstart.solutions>",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "test": "echo \"No test defined\" && exit 0",
     "generate:blog": "node blog-generator.js",
     "generate:page": "node page-generator.js",
     "generate:landing": "node page-generator.js --template=landing.template.html",
-    "deploy": "node deploy.js"
+    "deploy": "node deploy.js",
+    "format": "prettier --write '**/*.{js,json,md}'"
   },
   "keywords": [
     "cli",
@@ -42,6 +42,7 @@
     "terser": "^5.43.1"
   },
   "devDependencies": {
-    "jsdoc": "^4.0.4"
+    "jsdoc": "^4.0.4",
+    "prettier": "^3.6.2"
   }
 }
