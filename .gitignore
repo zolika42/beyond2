@@ -1,0 +1,26 @@
+# Node modules
+#node_modules/
+
+# Build output
+#dist/
+*.log
+
+# System / OS files
+.DS_Store
+Thumbs.db
+
+# VSCode, JetBrains
+.vscode/
+.idea/
+
+# Compiled files
+*.zip
+*.tar.gz
+*.map
+
+# JSDoc output
+docs/out/
+
+# Local config / secrets
+.env
+.env.*
