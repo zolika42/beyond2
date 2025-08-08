@@ -692,6 +692,55 @@ function cleanUnusedTranslations() {
 }
 
 /**
+ * Detect and log unused CSS classes in style.css.
+ */
+function detectUnusedCSSClasses() {
+  const cssPath = 'style.css';
+  if (!fs.existsSync(cssPath)) {
+    console.warn(yellow('⚠️ style.css not found. Skipping unused CSS class check.'));
+    return;
+  }
+
+  const cssContent = fs.readFileSync(cssPath, 'utf-8');
+
+  // Regex: .class-name or .class_name (ignores Tailwind variants, pseudo-classes etc)
+  const classRegex = /(^|[\s{,])\.([a-zA-Z_-][a-zA-Z0-9_-]*)\b/g;
+  const allCSSClasses = new Set();
+  let match;
+  while ((match = classRegex.exec(cssContent)) !== null) {
+    allCSSClasses.add(match[1]);
+  }
+
+  // Gather all classes used in HTML files
+  const usedClasses = new Set();
+  allRawHtmlFiles.forEach((filePath) => {
+    const html = fs.readFileSync(filePath, 'utf-8');
+    const dom = new JSDOM(html);
+    dom.window.document.querySelectorAll('[class]').forEach((el) => {
+      el.className
+        .split(/\s+/)
+        .filter(Boolean)
+        .forEach((cls) => usedClasses.add(cls));
+    });
+  });
+
+  // Calculate unused classes
+  const unused = [...allCSSClasses].filter((cls) => !usedClasses.has(cls));
+  if (unused.length > 0) {
+    console.log(yellow('\n🧼 Unused CSS classes found in style.css:\n'));
+    unused.forEach((cls) => console.log(yellow(`– .${cls}`)));
+
+    console.warn(
+      yellow(
+        '\n⚠️ These might be used dynamically (e.g. via JS). Please double-check before removing.\n'
+      )
+    );
+  } else {
+    console.log(green('🎉 All CSS classes are used somewhere in your HTML files.'));
+  }
+}
+
+/**
  * Asynchronous main funtion.
  *
  * @returns {Promise<void>}
@@ -754,6 +803,10 @@ async function main() {
   if (config.features.cleanUnusedTranslations) {
     cleanUnusedTranslations();
   }
+  // 20. Detect unused CSS classes
+  detectUnusedCSSClasses();
+  // 21. Post deployment cleanup.
+  execSync('node postDeployCleanup.js', { stdio: 'inherit' });
 }
 
 main().then((r) => console.log('🎉 Deployment done.'));

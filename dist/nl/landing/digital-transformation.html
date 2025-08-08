@@ -1,449 +1,843 @@
-<!DOCTYPE html>
-<html lang="nl"><head>
+<!doctype html>
+<html lang="nl">
+  <head>
     <!-- Loader handling -->
     <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            document.body.classList.add('loading');
-            window.addEventListener('load', () => {
-                const loader = document.getElementById('site-loader');
-                if (loader) {
-                    loader.style.opacity = '0';
-                    setTimeout(() => {
-                        loader.remove();
-                        document.body.classList.remove('loading');
-                    }, 2000);
-                }
-            });
+      window.addEventListener('DOMContentLoaded', () => {
+        document.body.classList.add('loading');
+        window.addEventListener('load', () => {
+          const loader = document.getElementById('site-loader');
+          if (loader) {
+            loader.style.opacity = '0';
+            setTimeout(() => {
+              loader.remove();
+              document.body.classList.remove('loading');
+            }, 2000);
+          }
         });
+      });
     </script>
 
     <!-- Preloader styles -->
     <style>
-        section h1 {
-            font-size: 2rem;
-        }
+      section h1 {
+        font-size: 2rem;
+      }
     </style>
 
     <!-- Meta / SEO -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hulp bij Drupal, Laravel &amp; Shopify – BeyondStart</title>
-    <meta name="description" content="Veilige Drupal-updates, snelle Laravel-optimalisatie en conversieverhogende Shopify-audits. Opgelost binnen 72 uur met geld-terug-garantie.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://beyondstart.solutions/nl/landing/digital-transformation.html">
+    <meta
+      name="description"
+      content="Veilige Drupal-updates, snelle Laravel-optimalisatie en conversieverhogende Shopify-audits. Opgelost binnen 72 uur met geld-terug-garantie."
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://beyondstart.solutions/nl/landing/digital-transformation.html"
+    />
 
     <!-- Social Preview / OG -->
-    <meta property="og:title" content="Drupal, Laravel en Shopify Oplossingen – BeyondStart Solutions">
-    <meta property="og:description" content="Meer dan 20 jaar ervaring. Snelle bugfixes en prestatieoptimalisatie binnen 72 uur, met tevredenheidsgarantie.">
-    <meta property="og:image" content="https://beyondstart.solutions/images/beyondstart_logo_sm.webp">
-    <meta property="og:url" content="https://beyondstart.solutions/landing/digital-transformation">
-    <meta property="og:type" content="website">
+    <meta
+      property="og:title"
+      content="Drupal, Laravel en Shopify Oplossingen – BeyondStart Solutions"
+    />
+    <meta
+      property="og:description"
+      content="Meer dan 20 jaar ervaring. Snelle bugfixes en prestatieoptimalisatie binnen 72 uur, met tevredenheidsgarantie."
+    />
+    <meta
+      property="og:image"
+      content="https://beyondstart.solutions/images/beyondstart_logo_sm.webp"
+    />
+    <meta
+      property="og:url"
+      content="https://beyondstart.solutions/landing/digital-transformation"
+    />
+    <meta property="og:type" content="website" />
 
     <!-- Preloads -->
-    <link rel="preconnect" href="https://assets.calendly.com" crossorigin="">
-    <link rel="preload" href="/style.min.css" as="style">
-    <link rel="preload" as="image" href="/images/digital_transformation.webp" type="image/webp">
-    <link href="/style.min.css" rel="stylesheet" media="print" onload="this.onload=null;this.media='all';">
+    <link rel="preconnect" href="https://assets.calendly.com" crossorigin="" />
+    <link rel="preload" href="/style.min.css" as="style" />
+    <link rel="preload" as="image" href="/images/digital_transformation.webp" type="image/webp" />
+    <link
+      href="/style.min.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.onload=null;this.media='all';"
+    />
     <noscript>
-        <link rel="stylesheet" href="/style.min.css">
+      <link rel="stylesheet" href="/style.min.css" />
     </noscript>
 
     <!-- Favicon / PWA -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-</head>
-<body class="landing digital-transformation">
-<a href="#main" class="skip-link" data-i18n="jumpToMainContent">Spring naar de hoofdinhoud</a>
-<div id="site-loader" class="site-loader">
-    <div class="loader-circle"></div>
-</div>
-<header id="site-header" class="site-header">
-    <!-- Logo -->
-    <a href="/nl/">
-        <img src="/images/beyondstart_logo_sm.webp" alt="BeyondStart Solutions logó" width="200" height="56" loading="eager" decoding="async" fetchpriority="high">
-    </a>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body class="landing digital-transformation">
+    <a href="#main" class="skip-link" data-i18n="jumpToMainContent">Spring naar de hoofdinhoud</a>
+    <div id="site-loader" class="site-loader">
+      <div class="loader-circle"></div>
+    </div>
+    <header id="site-header" class="site-header">
+      <!-- Logo -->
+      <a href="/nl/">
+        <img
+          src="/images/beyondstart_logo_sm.webp"
+          alt="BeyondStart Solutions logó"
+          width="200"
+          height="56"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </a>
 
-    <!-- Mobile navigation -->
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü megnyitása">
-    <label for="nav-toggle" class="nav-toggle-label">
+      <!-- Mobile navigation -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü megnyitása" />
+      <label for="nav-toggle" class="nav-toggle-label">
         <span></span>
-    </label>
+      </label>
 
-    <!-- Navigation -->
-    <div class="header-right">
+      <!-- Navigation -->
+      <div class="header-right">
         <nav class="main-nav" aria-label="Fő navigáció">
-            <ul>
-                <li><a href="/nl/#services" data-i18n="servicesTitle">Onze diensten</a></li>
-                <li><a href="/nl/#references" data-i18n="referencesTitle">Met wie we hebben gewerkt</a></li>
-                <li><a href="/nl/#testimonials" data-i18n="testimonialTitle">Wat onze klanten zeggen</a></li>
-                <li><a href="/nl/#about" data-i18n="aboutTitle">Over BeyondStart</a></li>
-                <li><a href="/nl/#contact" data-i18n="ctaBlockButton" onclick="
-                        tracking('main_menu_cta_click', 'CTA', 'Main Menu CTA', 'AW-16905609495/CReZCNfPrP4aEJfCnP0-');">Vraag offerte aan</a>
-                </li>
-            </ul>
+          <ul>
+            <li><a href="/nl/#services" data-i18n="servicesTitle">Onze diensten</a></li>
+            <li>
+              <a href="/nl/#references" data-i18n="referencesTitle">Met wie we hebben gewerkt</a>
+            </li>
+            <li>
+              <a href="/nl/#testimonials" data-i18n="testimonialTitle">Wat onze klanten zeggen</a>
+            </li>
+            <li><a href="/nl/#about" data-i18n="aboutTitle">Over BeyondStart</a></li>
+            <li>
+              <a
+                href="/nl/#contact"
+                data-i18n="ctaBlockButton"
+                onclick="
+                        tracking('main_menu_cta_click', 'CTA', 'Main Menu CTA', 'AW-16905609495/CReZCNfPrP4aEJfCnP0-');"
+                >Vraag offerte aan</a
+              >
+            </li>
+          </ul>
         </nav>
 
         <!-- Language Selector -->
-        <form action="" method="get" onsubmit="event.preventDefault(); location.href=this.language.value;">
-            <div class="language-switcher">
-                <label for="language" class="sr-only">Nyelvválasztás</label>
-                <select id="language" name="language" aria-label="Language selection" class="language-select">
-                    <option value="/hu/landing/digital-transformation.html">🇭🇺 HU</option>
-                    <option value="/en/landing/digital-transformation.html">🇬🇧 EN</option>
-                    <option value="/de/landing/digital-transformation.html">🇩🇪 DE</option>
-                    <option value="/fr/landing/digital-transformation.html">🇫🇷 FR</option>
-                    <option value="/nl/landing/digital-transformation.html" selected="selected">🇳🇱 NL</option>
-                    <option value="/es/landing/digital-transformation.html">🇪🇸 ES</option>
-                </select>
-                <button type="submit" class="language-button" onclick="
-                        tracking('language_change', 'Event', 'Language change', 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-');">
-                    OK
-                </button>
-            </div>
+        <form
+          action=""
+          method="get"
+          onsubmit="event.preventDefault(); location.href=this.language.value;"
+        >
+          <div class="language-switcher">
+            <label for="language" class="sr-only">Nyelvválasztás</label>
+            <select
+              id="language"
+              name="language"
+              aria-label="Language selection"
+              class="language-select"
+            >
+              <option value="/hu/landing/digital-transformation.html">🇭🇺 HU</option>
+              <option value="/en/landing/digital-transformation.html">🇬🇧 EN</option>
+              <option value="/de/landing/digital-transformation.html">🇩🇪 DE</option>
+              <option value="/fr/landing/digital-transformation.html">🇫🇷 FR</option>
+              <option value="/nl/landing/digital-transformation.html" selected="selected">
+                🇳🇱 NL
+              </option>
+              <option value="/es/landing/digital-transformation.html">🇪🇸 ES</option>
+            </select>
+            <button
+              type="submit"
+              class="language-button"
+              onclick="
+                        tracking('language_change', 'Event', 'Language change', 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-');"
+            >
+              OK
+            </button>
+          </div>
         </form>
-    </div>
-</header>
+      </div>
+    </header>
 
-<main id="main">
-    <!-- Hero -->
-    <section class="hero-section" aria-label="BeyondStart Solutions" fetchpriority="high">
-        <img src="/images/digital_transformation.webp" fetchpriority="high" alt="hero background" style="display: none;" loading="eager" width="657" height="657" decoding="async">
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero-section" aria-label="BeyondStart Solutions" fetchpriority="high">
+        <img
+          src="/images/digital_transformation.webp"
+          fetchpriority="high"
+          alt="hero background"
+          style="display: none"
+          loading="eager"
+          width="657"
+          height="657"
+          decoding="async"
+        />
 
         <div class="hero-overlay">
+          <div class="hero-badge" data-i18n="landing1-badge">
+            🔥 Nieuw! 30 minuten digitale audit
+          </div>
 
-            <div class="hero-badge" data-i18n="landing1-badge">🔥 Nieuw! 30 minuten digitale audit</div>
+          <h1 data-i18n="landing1-heroTitle">
+            🕙7:42 ’s ochtends. Drie mensen hebben al geklaagd dat er weer iets niet werkt.
+          </h1>
 
-            <h1 data-i18n="landing1-heroTitle">🕙7:42 ’s ochtends. Drie mensen hebben al geklaagd dat er weer iets niet werkt.</h1>
+          <p class="lead" data-i18n="landing1-heroSubtitle">
+            Het bestelformulier ligt eruit. De backend is aan het sterven. Google Analytics?
+            Foetsie. En je dag is nog niet eens begonnen.
+          </p>
 
-            <p class="lead" data-i18n="landing1-heroSubtitle">Het bestelformulier ligt eruit. De backend is aan het sterven. Google Analytics? Foetsie. En je dag is nog niet eens begonnen.</p>
+          <p data-i18n="landing1-heroSubtitle2">
+            💣 Waarom loop je constant vast met je bedrijf? 5 fouten die bijna elk groeiend bedrijf
+            maakt – en hoe wij ze in 30 minuten fixen.
+          </p>
 
-            <p data-i18n="landing1-heroSubtitle2">💣 Waarom loop je constant vast met je bedrijf? 5 fouten die bijna elk groeiend bedrijf maakt – en hoe wij ze in 30 minuten fixen.</p>
+          <p class="lead" data-i18n="landing1-heroSubtitle3">
+            🎯Concrete voorbeelden. Gratis consult. Geen bullshit.
+          </p>
 
-            <p class="lead" data-i18n="landing1-heroSubtitle3">🎯Concrete voorbeelden. Gratis consult. Geen bullshit.</p>
+          <p class="lead" data-i18n="landing1-heroSubtitle4">
+            👉 30 minuten. 0 bullshit. Alleen wat er écht toe doet. 🎁 Boek nu en krijg een
+            mini-roadmap cadeau.
+          </p>
 
-            <p class="lead" data-i18n="landing1-heroSubtitle4">👉 30 minuten. 0 bullshit. Alleen wat er écht toe doet. 🎁 Boek nu en krijg een mini-roadmap cadeau.</p>
+          <a
+            href="#contact"
+            class="service-button"
+            data-i18n="landing1-bookButton"
+            onclick="
+               tracking('hero_cta', 'Event', 'Hero CTA', 'AW-16905609495/0HsACO3Pnf4aEJfCnP0-');"
+            >Ja, ik wil dit – laat maar zien!</a
+          >
 
-            <a href="#contact" class="service-button" data-i18n="landing1-bookButton" onclick="
-               tracking('hero_cta', 'Event', 'Hero CTA', 'AW-16905609495/0HsACO3Pnf4aEJfCnP0-');">Ja, ik wil dit – laat maar zien!</a>
+          <p class="scroll-hint" data-i18n="landing1-scrollHint">
+            👇 Scroll verder, we laten je alles zien
+          </p>
 
-            <p class="scroll-hint" data-i18n="landing1-scrollHint">👇 Scroll verder, we laten je alles zien</p>
-
-            <p class="small-note" data-i18n="landing1-smallNote">🚀 Dit is geen vrijblijvende babbel. Dit is een rechttoe-rechtaan gesprek over waarom het niet werkt – en hoe het wel kan. Brutale eerlijkheid werkt het best.</p>
-
+          <p class="small-note" data-i18n="landing1-smallNote">
+            🚀 Dit is geen vrijblijvende babbel. Dit is een rechttoe-rechtaan gesprek over waarom
+            het niet werkt – en hoe het wel kan. Brutale eerlijkheid werkt het best.
+          </p>
         </div>
-    </section>
+      </section>
 
-    <section class="pain-section drama-mode">
+      <section class="pain-section drama-mode">
         <div class="container">
+          <h2 data-i18n="pain-title">😩 Hoe ziet het eruit als je vastloopt?</h2>
 
-            <h2 data-i18n="pain-title">😩 Hoe ziet het eruit als je vastloopt?</h2>
-
-            <div class="mega-grid">
-
-                <!-- painboxes -->
-                <div class="painbox">
-                    <span class="emoji">💥</span>
-                    <p data-i18n="pain1"><strong>Je durft je eigen website niet meer te bekijken.</strong><br>Verouderd, traag, gênant. Je weet dat dit niet meer kan.</p>
-                </div>
-
-                <div class="painbox">
-                    <span class="emoji">🧱</span>
-                    <p data-i18n="pain2"><strong>Je developer is spoorloos.</strong><br>Of je zit al bij nummer drie – en nog steeds werkt het niet.</p>
-                </div>
-
-                <div class="painbox">
-                    <span class="emoji">🕳️</span>
-                    <p data-i18n="pain3"><strong>Alles gaat handmatig.</strong><br>Excel, e-mail, telefoontjes – maar geen duidelijk systeem.</p>
-                </div>
-
-                <div class="painbox">
-                    <span class="emoji">📉</span>
-                    <p data-i18n="pain4"><strong>Tijd, geld, energie lekken weg.</strong><br>Je team is moe, de motivatie zakt weg.</p>
-                </div>
-
-                <!-- punchboxes -->
-                <div class="punchbox">
-                    <span class="emoji">📊</span>
-                    <p data-i18n="punch1"><strong>Excel is je belangrijkste tool?</strong><br>Welkom op de lijdensweg.</p>
-                </div>
-
-                <div class="punchbox">
-                    <span class="emoji">💸</span>
-                    <p data-i18n="punch2"><strong>Je team doet alleen nog het hoognodige?</strong><br>Rollercoaster richting burn-out.</p>
-                </div>
-
-                <div class="punchbox">
-                    <span class="emoji">📬</span>
-                    <p data-i18n="punch3"><strong>Besluiten via e-mail?</strong><br>Dat is zelfkastijding.<br>Ultra lijdensmodus.</p>
-                </div>
-
-                <div class="punchbox">
-                    <span class="emoji">🧨</span>
-                    <p data-i18n="punch4"><strong>3 systemen die niet met elkaar praten?</strong><br>Gefeliciteerd. Je hebt Frankenstein gebouwd.</p>
-                </div>
-
+          <div class="mega-grid">
+            <!-- painboxes -->
+            <div class="painbox">
+              <span class="emoji">💥</span>
+              <p data-i18n="pain1">
+                <strong>Je durft je eigen website niet meer te bekijken.</strong><br />Verouderd,
+                traag, gênant. Je weet dat dit niet meer kan.
+              </p>
             </div>
 
-            <p class="pain-note" data-i18n="pain-note">Je hoeft hier niet in te blijven hangen.<br>Één gesprek kan het verschil maken.</p>
-
-            <a href="#contact" class="service-button cta-red" data-i18n="pain-cta" onclick="
-               tracking('pain_cta', 'CTA', 'Pain CTA', 'AW-16905609495/T88VCKCfnP4aEJfCnP0-');">Ik boek een tijdslot →</a>
-
-        </div>
-    </section>
-
-    <section class="consultation-section">
-        <div class="container">
-
-            <h2 data-i18n="consult-title">🎁 Wat krijg je in de gratis consultatie?</h2>
-
-            <ul class="consultation-list">
-                <li data-i18n="consult1">🧠 Een snelle maar diepgaande <strong>digitale audit</strong> – we vinden waar tijd en geld lekken</li>
-                <li data-i18n="consult2">🛠️ <strong>Concrete suggesties</strong> voor tools en aanpak om binnen 2 weken te automatiseren</li>
-                <li data-i18n="consult3">🗺️ Een <strong>mini-roadmap</strong> voor de eerste stappen naar verbetering</li>
-                <li data-i18n="consult4">📞 Alles in een <strong>online call van 30 minuten</strong> – met ons, geen bot of verkoper</li>
-            </ul>
-
-            <div class="cta-wrapper">
-                <a href="#contact" class="service-button" data-i18n="consult-button" onclick="
-                   tracking('consult_cta', 'CTA', 'Consult CTA', 'AW-16905609495/ASjfCMXmnf4aEJfCnP0-');">Ik boek een tijdslot →</a>
+            <div class="painbox">
+              <span class="emoji">🧱</span>
+              <p data-i18n="pain2">
+                <strong>Je developer is spoorloos.</strong><br />Of je zit al bij nummer drie – en
+                nog steeds werkt het niet.
+              </p>
             </div>
 
-            <p class="scroll-hint" data-i18n="consult-scroll">👇 Scroll verder, we leggen alles uit</p>
+            <div class="painbox">
+              <span class="emoji">🕳️</span>
+              <p data-i18n="pain3">
+                <strong>Alles gaat handmatig.</strong><br />Excel, e-mail, telefoontjes – maar geen
+                duidelijk systeem.
+              </p>
+            </div>
 
-            <p class="note" data-i18n="consult-note">❌ Geen verplichtingen. ❌ Geen gladde sales. ❌ Geen abonnementsval.<br>👉 Echte hulp – en het is sowieso gratis.</p>
+            <div class="painbox">
+              <span class="emoji">📉</span>
+              <p data-i18n="pain4">
+                <strong>Tijd, geld, energie lekken weg.</strong><br />Je team is moe, de motivatie
+                zakt weg.
+              </p>
+            </div>
 
+            <!-- punchboxes -->
+            <div class="punchbox">
+              <span class="emoji">📊</span>
+              <p data-i18n="punch1">
+                <strong>Excel is je belangrijkste tool?</strong><br />Welkom op de lijdensweg.
+              </p>
+            </div>
+
+            <div class="punchbox">
+              <span class="emoji">💸</span>
+              <p data-i18n="punch2">
+                <strong>Je team doet alleen nog het hoognodige?</strong><br />Rollercoaster richting
+                burn-out.
+              </p>
+            </div>
+
+            <div class="punchbox">
+              <span class="emoji">📬</span>
+              <p data-i18n="punch3">
+                <strong>Besluiten via e-mail?</strong><br />Dat is zelfkastijding.<br />Ultra
+                lijdensmodus.
+              </p>
+            </div>
+
+            <div class="punchbox">
+              <span class="emoji">🧨</span>
+              <p data-i18n="punch4">
+                <strong>3 systemen die niet met elkaar praten?</strong><br />Gefeliciteerd. Je hebt
+                Frankenstein gebouwd.
+              </p>
+            </div>
+          </div>
+
+          <p class="pain-note" data-i18n="pain-note">
+            Je hoeft hier niet in te blijven hangen.<br />Één gesprek kan het verschil maken.
+          </p>
+
+          <a
+            href="#contact"
+            class="service-button cta-red"
+            data-i18n="pain-cta"
+            onclick="
+               tracking('pain_cta', 'CTA', 'Pain CTA', 'AW-16905609495/T88VCKCfnP4aEJfCnP0-');"
+            >Ik boek een tijdslot →</a
+          >
         </div>
-    </section>
+      </section>
 
-    <section class="freebie-block">
-        <p class="note" data-i18n="feebie-note">❌ Heb je genoeg van alles dat op je afkomt?<br> ✅ Download deze gratis PDF – 5 fouten die de meeste bedrijven maken met hun digitale systemen.<br> 🔒 Geen spam. Geen bullshit. Gewoon echte hulp.</p>
+      <section class="consultation-section">
+        <div class="container">
+          <h2 data-i18n="consult-title">🎁 Wat krijg je in de gratis consultatie?</h2>
+
+          <ul class="consultation-list">
+            <li data-i18n="consult1">
+              🧠 Een snelle maar diepgaande <strong>digitale audit</strong> – we vinden waar tijd en
+              geld lekken
+            </li>
+            <li data-i18n="consult2">
+              🛠️ <strong>Concrete suggesties</strong> voor tools en aanpak om binnen 2 weken te
+              automatiseren
+            </li>
+            <li data-i18n="consult3">
+              🗺️ Een <strong>mini-roadmap</strong> voor de eerste stappen naar verbetering
+            </li>
+            <li data-i18n="consult4">
+              📞 Alles in een <strong>online call van 30 minuten</strong> – met ons, geen bot of
+              verkoper
+            </li>
+          </ul>
+
+          <div class="cta-wrapper">
+            <a
+              href="#contact"
+              class="service-button"
+              data-i18n="consult-button"
+              onclick="
+                   tracking('consult_cta', 'CTA', 'Consult CTA', 'AW-16905609495/ASjfCMXmnf4aEJfCnP0-');"
+              >Ik boek een tijdslot →</a
+            >
+          </div>
+
+          <p class="scroll-hint" data-i18n="consult-scroll">
+            👇 Scroll verder, we leggen alles uit
+          </p>
+
+          <p class="note" data-i18n="consult-note">
+            ❌ Geen verplichtingen. ❌ Geen gladde sales. ❌ Geen abonnementsval.<br />👉 Echte hulp
+            – en het is sowieso gratis.
+          </p>
+        </div>
+      </section>
+
+      <section class="freebie-block">
+        <p class="note" data-i18n="feebie-note">
+          ❌ Heb je genoeg van alles dat op je afkomt?<br />
+          ✅ Download deze gratis PDF – 5 fouten die de meeste bedrijven maken met hun digitale
+          systemen.<br />
+          🔒 Geen spam. Geen bullshit. Gewoon echte hulp.
+        </p>
         <form action="https://api.web3forms.com/submit" method="POST" class="form-lead-capture">
-            <input type="hidden" name="access_key" value="5338805b-78b9-46d4-9b0e-5a4128cefb73">
-            <input type="hidden" name="from_name" value="BeyondStart Solutions">
-            <input type="hidden" name="subject" value="Letöltés – 5 gyakori digitális hiba PDF">
-            <input type="hidden" name="language" value="hu">
+          <input type="hidden" name="access_key" value="5338805b-78b9-46d4-9b0e-5a4128cefb73" />
+          <input type="hidden" name="from_name" value="BeyondStart Solutions" />
+          <input type="hidden" name="subject" value="Letöltés – 5 gyakori digitális hiba PDF" />
+          <input type="hidden" name="language" value="hu" />
 
-            <label for="email" data-i18n="emailLabel">Jouw e-mailadres:</label>
-            <input type="email" id="email" name="email" placeholder="pl. te@ceged.hu" required="">
+          <label for="email" data-i18n="emailLabel">Jouw e-mailadres:</label>
+          <input type="email" id="email" name="email" placeholder="pl. te@ceged.hu" required="" />
 
-            <button type="submit" class="service-button" data-i18n="freebie-button" onclick="
-                    tracking('pdf_directly', 'CTA', 'PDF directly', 'AW-16905609495/5pMnCJb5v_4aEJfCnP0-');">Stuur mij de PDF →</button>
+          <button
+            type="submit"
+            class="service-button"
+            data-i18n="freebie-button"
+            onclick="
+                    tracking('pdf_directly', 'CTA', 'PDF directly', 'AW-16905609495/5pMnCJb5v_4aEJfCnP0-');"
+          >
+            Stuur mij de PDF →
+          </button>
         </form>
-    </section>
+      </section>
 
-    <section class="why-us-section">
+      <section class="why-us-section">
         <h2 data-i18n="why-title">🧠 Waarom wij?</h2>
         <ul class="why-us-list">
-            <li data-i18n="why1"><strong>Wij denken in systemen.</strong><br>We bouwen niet zomaar, we herdenken. We maken het werkend.</li>
-            <li data-i18n="why2"><strong>Geen standaardoplossingen.</strong><br>Geen ‘dit hebben we nog nooit meegemaakt’. Alles is op maat van jouw bedrijf.</li>
-            <li data-i18n="why3"><strong>We zijn geen verkopers.</strong><br>Heldere taal. Realistische opties. En als we je niet kunnen helpen, zeggen we dat ook.</li>
-            <li data-i18n="why4"><strong>Wij zijn betrouwbaar.</strong><br>We verdwijnen niet. Geen bullshit. Wij haten developers die wegduiken na de lancering net zo hard als jij.</li>
+          <li data-i18n="why1">
+            <strong>Wij denken in systemen.</strong><br />We bouwen niet zomaar, we herdenken. We
+            maken het werkend.
+          </li>
+          <li data-i18n="why2">
+            <strong>Geen standaardoplossingen.</strong><br />Geen ‘dit hebben we nog nooit
+            meegemaakt’. Alles is op maat van jouw bedrijf.
+          </li>
+          <li data-i18n="why3">
+            <strong>We zijn geen verkopers.</strong><br />Heldere taal. Realistische opties. En als
+            we je niet kunnen helpen, zeggen we dat ook.
+          </li>
+          <li data-i18n="why4">
+            <strong>Wij zijn betrouwbaar.</strong><br />We verdwijnen niet. Geen bullshit. Wij haten
+            developers die wegduiken na de lancering net zo hard als jij.
+          </li>
         </ul>
-    </section>
+      </section>
 
-    <!-- Testimonial Section -->
-    <section class="testimonial-section">
+      <!-- Testimonial Section -->
+      <section class="testimonial-section">
         <div class="container">
-            <h2 data-i18n="testimonial-title">💬 Wat anderen over ons zeggen</h2>
-            <div class="testimonials">
-                <div class="testimonial-card">
-                    <p data-i18n="testimonial1">Ik dacht dat ze software kwamen bouwen. Ze herontwierpen het hele systeem. En ja, het werkt.</p>
-                    <span class="author">– Ster Nerinckx, ACEG Belgium</span>
-                </div>
-                <div class="testimonial-card">
-                    <p data-i18n="testimonial2">Geen standaardoplossing, maar echt meedenken. Beste beslissing die we namen op gebied van development.</p>
-                    <span class="author">– Maciej D., TechSoup Europe</span>
-                </div>
-                <div class="testimonial-card">
-                    <p data-i18n="testimonial3">Zoli en zijn team bouwden niet alleen een website, maar hebben onze hele online structuur op orde gebracht.</p>
-                    <span class="author">– Alan B., CompanyApp</span>
-                </div>
+          <h2 data-i18n="testimonial-title">💬 Wat anderen over ons zeggen</h2>
+          <div class="testimonials">
+            <div class="testimonial-card">
+              <p data-i18n="testimonial1">
+                Ik dacht dat ze software kwamen bouwen. Ze herontwierpen het hele systeem. En ja,
+                het werkt.
+              </p>
+              <span class="author">– Ster Nerinckx, ACEG Belgium</span>
             </div>
+            <div class="testimonial-card">
+              <p data-i18n="testimonial2">
+                Geen standaardoplossing, maar echt meedenken. Beste beslissing die we namen op
+                gebied van development.
+              </p>
+              <span class="author">– Maciej D., TechSoup Europe</span>
+            </div>
+            <div class="testimonial-card">
+              <p data-i18n="testimonial3">
+                Zoli en zijn team bouwden niet alleen een website, maar hebben onze hele online
+                structuur op orde gebracht.
+              </p>
+              <span class="author">– Alan B., CompanyApp</span>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <section class="about-us-section">
+      <section class="about-us-section">
         <div class="about-container">
-            <div class="about-text">
-                <h2 data-i18n="about-title">🧍 Wie ben ik en waarom zou je luisteren?</h2>
-                <p data-i18n="about-p1">In de afgelopen 15 jaar heb ik gewerkt met multinationals, non-profits, techbedrijven – en mijn moeder als de wifi weer uitviel.</p>
-                <p data-i18n="about-p2">Ik heb van binnenuit projecten zien ontsporen, developers zien verdwijnen, bedrijven met <strong>miljoenen omzet die alles in Excel doen</strong>. En ja, ook ik heb dingen verkloot.</p>
-                <p data-i18n="about-p3">Daarom help ik bedrijven nu systematisch. Het probleem is niet de technologie. <strong>Het is het gebrek aan structuur en visie. Altijd brandjes, geen blusdeken.</strong></p>
-                <p data-i18n="about-p4">Wat we nu doen, is <strong>geen softwareontwikkeling – het is bedrijfsbrandbestrijding</strong>. En ik weet dat het werkt.</p>
+          <div class="about-text">
+            <h2 data-i18n="about-title">🧍 Wie ben ik en waarom zou je luisteren?</h2>
+            <p data-i18n="about-p1">
+              In de afgelopen 15 jaar heb ik gewerkt met multinationals, non-profits, techbedrijven
+              – en mijn moeder als de wifi weer uitviel.
+            </p>
+            <p data-i18n="about-p2">
+              Ik heb van binnenuit projecten zien ontsporen, developers zien verdwijnen, bedrijven
+              met <strong>miljoenen omzet die alles in Excel doen</strong>. En ja, ook ik heb dingen
+              verkloot.
+            </p>
+            <p data-i18n="about-p3">
+              Daarom help ik bedrijven nu systematisch. Het probleem is niet de technologie.
+              <strong
+                >Het is het gebrek aan structuur en visie. Altijd brandjes, geen blusdeken.</strong
+              >
+            </p>
+            <p data-i18n="about-p4">
+              Wat we nu doen, is
+              <strong>geen softwareontwikkeling – het is bedrijfsbrandbestrijding</strong>. En ik
+              weet dat het werkt.
+            </p>
+          </div>
+          <div class="about-photo">
+            <img
+              src="/images/about_me.webp"
+              alt="Aki mögött ez van – ember, nem AI"
+              width="506"
+              height="675"
+              loading="lazy"
+            />
+            <div class="photo-overlay" data-i18n="about-overlay">
+              Na een zware dag ziet niemand er netjes uit. Dat hoort erbij.
             </div>
-            <div class="about-photo">
-                <img src="/images/about_me.webp" alt="Aki mögött ez van – ember, nem AI" width="506" height="675" loading="lazy">
-                <div class="photo-overlay" data-i18n="about-overlay">Na een zware dag ziet niemand er netjes uit. Dat hoort erbij.</div>
-            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <section class="partners-section" aria-label="Partnereink">
-        <img src="/images/partners.webp" alt="hero background" style="display: none;" loading="lazy" width="1536" height="1024">
+      <section class="partners-section" aria-label="Partnereink">
+        <img
+          src="/images/partners.webp"
+          alt="hero background"
+          style="display: none"
+          loading="lazy"
+          width="1536"
+          height="1024"
+        />
         <div class="container">
-            <h2 data-i18n="partners-title">🤝 Met wie hebben we samengewerkt?</h2>
-            <p class="intro" data-i18n="partners-intro">Iedereen kan een website maken. Wij bouwen systemen die draaien – van ERP tot Shopify optimalisatie.</p>
-            <div class="partner-tiles">
-
-                <div class="partner-tile">
-                    <img src="/images/kinepolis_bg.webp" alt="Kinepolis logó" width="657" height="260" loading="lazy">
-                    <p data-i18n="partner-kinepolis"><strong>Kinepolis</strong><br>Onderhoud, migratie en op maat gemaakte Drupal-modules voor een internationale bioscoopketen.</p>
-                    <a href="https://www.kinepolis.com/" target="_blank" rel="noopener" class="partner-card" aria-label="Kinepolis weboldal"></a>
-                </div>
-
-                <div class="partner-tile">
-                    <img src="/images/techsoup_bg.webp" alt="TechSoup logó" width="657" height="260" loading="lazy">
-                    <p data-i18n="partner-techsoup"><strong>TechSoup Europe</strong><br>Beheerportals en toegangsbeheer voor de non-profitsector.</p>
-                    <a href="https://www.techsoupeurope.org/" target="_blank" rel="noopener" class="partner-card" aria-label="TechSoup Europe weboldal"></a>
-                </div>
-
-                <div class="partner-tile">
-                    <img src="/images/aceg_bg.webp" alt="ACEG logó" width="657" height="260" loading="lazy">
-                    <p data-i18n="partner-aceg"><strong>ACEG Belgium</strong><br>Volledige herbouw van een ERP-systeem in Laravel: rechten, pdf's, interne workflows.</p>
-                    <a href="https://www.aceg.be/" target="_blank" rel="noopener" class="partner-card" aria-label="ACEG weboldal"></a>
-                </div>
-
-                <div class="partner-tile">
-                    <img src="/images/companyapp_bg.webp" alt="CompanyApp logó" width="657" height="260" loading="lazy">
-                    <p data-i18n="partner-companyapp"><strong>CompanyApp</strong><br>Mobiel platform met nieuwe modules en performance upgrades.</p>
-                    <a href="https://companyapp.co.uk/" target="_blank" rel="noopener" class="partner-card" aria-label="CompanyApp weboldal"></a>
-                </div>
-
-                <div class="partner-tile">
-                    <img src="/images/judynatale_bg.webp" alt="JudyNatale logó" width="657" height="260" loading="lazy">
-                    <p data-i18n="partner-judynatale"><strong>JudyNatale Handmade</strong><br>Shopify webshop voor een handgemaakt merk – inclusief design en marketing.</p>
-                    <a href="https://judynatale.com/" target="_blank" rel="noopener" class="partner-card" aria-label="JudyNatale weboldal"></a>
-                </div>
-
-                <div class="partner-tile">
-                    <img src="/images/columbiagames_bg.webp" alt="Columbia Games logó" width="657" height="260" loading="lazy">
-                    <p data-i18n="partner-columbiagames"><strong>Columbia Games</strong><br>Python-gebaseerde e-commerce oplossing + technisch advies voor een Amerikaanse game-uitgever.</p>
-                    <a href="https://columbiagames.com/" target="_blank" rel="noopener" class="partner-card" aria-label="Columbia Games weboldal"></a>
-                </div>
-
-                <div class="partner-tile">
-                    <img src="/images/godisittes_bg.webp" alt="Gödi Sittes logó" width="657" height="260" loading="lazy">
-                    <p data-i18n="partner-godisittes"><strong>Gödi Sittes</strong><br>Statische site met geautomatiseerde build voor een puinophaaldienst zonder containers.</p>
-                    <a href="https://godisittes.hu/" target="_blank" rel="noopener" class="partner-card" aria-label="Gödi Sittes weboldal"></a>
-                </div>
-
+          <h2 data-i18n="partners-title">🤝 Met wie hebben we samengewerkt?</h2>
+          <p class="intro" data-i18n="partners-intro">
+            Iedereen kan een website maken. Wij bouwen systemen die draaien – van ERP tot Shopify
+            optimalisatie.
+          </p>
+          <div class="partner-tiles">
+            <div class="partner-tile">
+              <img
+                src="/images/kinepolis_bg.webp"
+                alt="Kinepolis logó"
+                width="657"
+                height="260"
+                loading="lazy"
+              />
+              <p data-i18n="partner-kinepolis">
+                <strong>Kinepolis</strong><br />Onderhoud, migratie en op maat gemaakte
+                Drupal-modules voor een internationale bioscoopketen.
+              </p>
+              <a
+                href="https://www.kinepolis.com/"
+                target="_blank"
+                rel="noopener"
+                class="partner-card"
+                aria-label="Kinepolis weboldal"
+              ></a>
             </div>
-        </div>
-    </section>
 
-    <section class="next-step-section">
+            <div class="partner-tile">
+              <img
+                src="/images/techsoup_bg.webp"
+                alt="TechSoup logó"
+                width="657"
+                height="260"
+                loading="lazy"
+              />
+              <p data-i18n="partner-techsoup">
+                <strong>TechSoup Europe</strong><br />Beheerportals en toegangsbeheer voor de
+                non-profitsector.
+              </p>
+              <a
+                href="https://www.techsoupeurope.org/"
+                target="_blank"
+                rel="noopener"
+                class="partner-card"
+                aria-label="TechSoup Europe weboldal"
+              ></a>
+            </div>
+
+            <div class="partner-tile">
+              <img
+                src="/images/aceg_bg.webp"
+                alt="ACEG logó"
+                width="657"
+                height="260"
+                loading="lazy"
+              />
+              <p data-i18n="partner-aceg">
+                <strong>ACEG Belgium</strong><br />Volledige herbouw van een ERP-systeem in Laravel:
+                rechten, pdf's, interne workflows.
+              </p>
+              <a
+                href="https://www.aceg.be/"
+                target="_blank"
+                rel="noopener"
+                class="partner-card"
+                aria-label="ACEG weboldal"
+              ></a>
+            </div>
+
+            <div class="partner-tile">
+              <img
+                src="/images/companyapp_bg.webp"
+                alt="CompanyApp logó"
+                width="657"
+                height="260"
+                loading="lazy"
+              />
+              <p data-i18n="partner-companyapp">
+                <strong>CompanyApp</strong><br />Mobiel platform met nieuwe modules en performance
+                upgrades.
+              </p>
+              <a
+                href="https://companyapp.co.uk/"
+                target="_blank"
+                rel="noopener"
+                class="partner-card"
+                aria-label="CompanyApp weboldal"
+              ></a>
+            </div>
+
+            <div class="partner-tile">
+              <img
+                src="/images/judynatale_bg.webp"
+                alt="JudyNatale logó"
+                width="657"
+                height="260"
+                loading="lazy"
+              />
+              <p data-i18n="partner-judynatale">
+                <strong>JudyNatale Handmade</strong><br />Shopify webshop voor een handgemaakt merk
+                – inclusief design en marketing.
+              </p>
+              <a
+                href="https://judynatale.com/"
+                target="_blank"
+                rel="noopener"
+                class="partner-card"
+                aria-label="JudyNatale weboldal"
+              ></a>
+            </div>
+
+            <div class="partner-tile">
+              <img
+                src="/images/columbiagames_bg.webp"
+                alt="Columbia Games logó"
+                width="657"
+                height="260"
+                loading="lazy"
+              />
+              <p data-i18n="partner-columbiagames">
+                <strong>Columbia Games</strong><br />Python-gebaseerde e-commerce oplossing +
+                technisch advies voor een Amerikaanse game-uitgever.
+              </p>
+              <a
+                href="https://columbiagames.com/"
+                target="_blank"
+                rel="noopener"
+                class="partner-card"
+                aria-label="Columbia Games weboldal"
+              ></a>
+            </div>
+
+            <div class="partner-tile">
+              <img
+                src="/images/godisittes_bg.webp"
+                alt="Gödi Sittes logó"
+                width="657"
+                height="260"
+                loading="lazy"
+              />
+              <p data-i18n="partner-godisittes">
+                <strong>Gödi Sittes</strong><br />Statische site met geautomatiseerde build voor een
+                puinophaaldienst zonder containers.
+              </p>
+              <a
+                href="https://godisittes.hu/"
+                target="_blank"
+                rel="noopener"
+                class="partner-card"
+                aria-label="Gödi Sittes weboldal"
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="next-step-section">
         <h2 data-i18n="next-title">🧭 Wat gebeurt er na het consult?</h2>
         <ul class="next-step-list">
-            <li data-i18n="next1"><strong>1. We brengen jouw grootste knelpunt in kaart</strong> – geen vaagheid, maar een concreet audit.</li>
-            <li data-i18n="next2"><strong>2. Je krijgt een mini-roadmap</strong> – 2–3 stappen, helder en concreet.</li>
-            <li data-i18n="next3"><strong>3. Jij beslist of je met ons verder gaat</strong> – geen druk, geen trucjes.</li>
+          <li data-i18n="next1">
+            <strong>1. We brengen jouw grootste knelpunt in kaart</strong> – geen vaagheid, maar een
+            concreet audit.
+          </li>
+          <li data-i18n="next2">
+            <strong>2. Je krijgt een mini-roadmap</strong> – 2–3 stappen, helder en concreet.
+          </li>
+          <li data-i18n="next3">
+            <strong>3. Jij beslist of je met ons verder gaat</strong> – geen druk, geen trucjes.
+          </li>
         </ul>
-    </section>
+      </section>
 
-    <section class="faq-section">
+      <section class="faq-section">
         <h2 data-i18n="faq-title">❓ Veelgestelde vragen (voordat je mailt)</h2>
         <div class="faq-list">
-            <div class="faq-item">
-                <h3 data-i18n="faq-q1">💸 Is het echt gratis?</h3>
-                <p data-i18n="faq-a1">Ja. Geen verkooptruc, geen upsell, geen val. We helpen. Jij beslist.</p>
-            </div>
+          <div class="faq-item">
+            <h3 data-i18n="faq-q1">💸 Is het echt gratis?</h3>
+            <p data-i18n="faq-a1">
+              Ja. Geen verkooptruc, geen upsell, geen val. We helpen. Jij beslist.
+            </p>
+          </div>
 
-            <div class="faq-item">
-                <h3 data-i18n="faq-q2">🤷 Wat als ik niet technisch ben?</h3>
-                <p data-i18n="faq-a2">Perfect. Dit gesprek gaat niet over code, maar over bedrijfsvoering. In gewone mensentaal.</p>
-            </div>
+          <div class="faq-item">
+            <h3 data-i18n="faq-q2">🤷 Wat als ik niet technisch ben?</h3>
+            <p data-i18n="faq-a2">
+              Perfect. Dit gesprek gaat niet over code, maar over bedrijfsvoering. In gewone
+              mensentaal.
+            </p>
+          </div>
 
-            <div class="faq-item">
-                <h3 data-i18n="faq-q3">📉 Wat als alles bij mij bagger is?</h3>
-                <p data-i18n="faq-a3">Dat is ook iets. Dan weet je tenminste waar je staat. Vanaf daar kun je bouwen.</p>
-            </div>
+          <div class="faq-item">
+            <h3 data-i18n="faq-q3">📉 Wat als alles bij mij bagger is?</h3>
+            <p data-i18n="faq-a3">
+              Dat is ook iets. Dan weet je tenminste waar je staat. Vanaf daar kun je bouwen.
+            </p>
+          </div>
 
-            <div class="faq-item">
-                <h3 data-i18n="faq-q4">⌛ Echt maar 30 minuten?</h3>
-                <p data-i18n="faq-a4">We houden ons eraan. Soms wordt het iets langer – als jij dat wilt. Maar je tijd wordt niet verspild.</p>
-            </div>
+          <div class="faq-item">
+            <h3 data-i18n="faq-q4">⌛ Echt maar 30 minuten?</h3>
+            <p data-i18n="faq-a4">
+              We houden ons eraan. Soms wordt het iets langer – als jij dat wilt. Maar je tijd wordt
+              niet verspild.
+            </p>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- CTA Section -->
-    <section class="cta-final">
+      <!-- CTA Section -->
+      <section class="cta-final">
         <h2 data-i18n="cta-final-title">📅 Nog geen consult geboekt?</h2>
-        <p data-i18n="cta-final-text">Het doet geen pijn. Sterker nog, het kan de meest waardevolle 30 minuten van je bedrijf zijn.</p>
-        <a href="#contact" class="service-button" data-i18n="cta-final-button" onclick="
-                tracking('final_cta', 'CTA', 'Final CTA', 'AW-16905609495/77jcCJb2nv4aEJfCnP0-');">Ik boek een tijdslot →</a>
-    </section>
+        <p data-i18n="cta-final-text">
+          Het doet geen pijn. Sterker nog, het kan de meest waardevolle 30 minuten van je bedrijf
+          zijn.
+        </p>
+        <a
+          href="#contact"
+          class="service-button"
+          data-i18n="cta-final-button"
+          onclick="
+                tracking('final_cta', 'CTA', 'Final CTA', 'AW-16905609495/77jcCJb2nv4aEJfCnP0-');"
+          >Ik boek een tijdslot →</a
+        >
+      </section>
 
-    <!-- Closing Statement -->
-    <section class="closing-section">
+      <!-- Closing Statement -->
+      <section class="closing-section">
         <h2 data-i18n="closing-title">🌍 Wil jij ook op de kaart?</h2>
-        <p data-i18n="closing-text">Slechts één gesprek scheidt je ervan om een bedrijf te hebben dat écht werkt – niet alleen lijkt alsof het werkt.<br>Wij praten niet. Wij laten het zien.</p>
-    </section>
+        <p data-i18n="closing-text">
+          Slechts één gesprek scheidt je ervan om een bedrijf te hebben dat écht werkt – niet alleen
+          lijkt alsof het werkt.<br />Wij praten niet. Wij laten het zien.
+        </p>
+      </section>
 
-    <!-- Contact / Calendly -->
-    <section id="contact" class="contact-section" aria-label="Kapcsolat">
+      <!-- Contact / Calendly -->
+      <section id="contact" class="contact-section" aria-label="Kapcsolat">
         <h2 class="section-title" data-i18n="ctaBlockButton">Vraag offerte aan</h2>
-        <p class="section-text" data-i18n="contactSubtitle">Laten we je project bespreken – het eerste gesprek is gratis en vrijblijvend.</p>
+        <p class="section-text" data-i18n="contactSubtitle">
+          Laten we je project bespreken – het eerste gesprek is gratis en vrijblijvend.
+        </p>
         <div class="calendly-wrapper">
-            <iframe src="https://calendly.com/zoltan-beyondstart" width="768" height="600" title="Időpontfoglalás - Calendly" loading="lazy"></iframe>
+          <iframe
+            src="https://calendly.com/zoltan-beyondstart"
+            width="768"
+            height="600"
+            title="Időpontfoglalás - Calendly"
+            loading="lazy"
+          ></iframe>
         </div>
-    </section>
-</main>
+      </section>
+    </main>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-content">
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
         <div>
-            <h3 data-i18n="footerCompanyName">BeyondStart Solutions</h3>
-            <p data-i18n="footerCompanyDetails">Zaakvoerder: Zoltán Horváth <br> Maatschappelijke zetel: Str. Parângului 10, Ap. 2, 440031, Satu Mare, Roemenië <br> BTW-nummer: RO43923085 <br> Handelsregisternummer: J30/291/2021</p>
+          <h3 data-i18n="footerCompanyName">BeyondStart Solutions</h3>
+          <p data-i18n="footerCompanyDetails">
+            Zaakvoerder: Zoltán Horváth <br />
+            Maatschappelijke zetel: Str. Parângului 10, Ap. 2, 440031, Satu Mare, Roemenië <br />
+            BTW-nummer: RO43923085 <br />
+            Handelsregisternummer: J30/291/2021
+          </p>
         </div>
         <div>
-            <h3 data-i18n="footerLegal">Juridische documenten</h3>
-            <ul>
-                <li><a href="/nl/impresszum.html" class="hover:underline" data-i18n="footerImprint">Impressum</a></li>
-                <li><a href="/nl/adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy">Privacybeleid</a></li>
-                <li><a href="/nl/cookie.html" class="hover:underline" data-i18n="footerCookies">Cookiebeleid</a></li>
-                <li><a href="/nl/aszf.html" class="hover:underline" data-i18n="footerTerms">Algemene Voorwaarden</a></li>
-            </ul>
+          <h3 data-i18n="footerLegal">Juridische documenten</h3>
+          <ul>
+            <li>
+              <a href="/nl/impresszum.html" class="hover:underline" data-i18n="footerImprint"
+                >Impressum</a
+              >
+            </li>
+            <li>
+              <a href="/nl/adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy"
+                >Privacybeleid</a
+              >
+            </li>
+            <li>
+              <a href="/nl/cookie.html" class="hover:underline" data-i18n="footerCookies"
+                >Cookiebeleid</a
+              >
+            </li>
+            <li>
+              <a href="/nl/aszf.html" class="hover:underline" data-i18n="footerTerms"
+                >Algemene Voorwaarden</a
+              >
+            </li>
+          </ul>
         </div>
         <div>
-            <h3 data-i18n="footerContact">Contact</h3>
-            <ul>
-                <li>
-                    <span data-i18n="footerEmail">E-mail:</span>
-                    <a href="mailto:zoltan@beyondstart.solutions" class="hover:underline">zoltan[at]beyondstart[dot]solutions</a>
-                </li>
-                <li>
-                    <span data-i18n="footerPhone">Telefoon:</span>
-                    <a href="tel:+36705084100" class="hover:underline">+36 70 508 4100</a>
-                </li>
-            </ul>
+          <h3 data-i18n="footerContact">Contact</h3>
+          <ul>
+            <li>
+              <span data-i18n="footerEmail">E-mail:</span>
+              <a href="mailto:zoltan@beyondstart.solutions" class="hover:underline"
+                >zoltan[at]beyondstart[dot]solutions</a
+              >
+            </li>
+            <li>
+              <span data-i18n="footerPhone">Telefoon:</span>
+              <a href="tel:+36705084100" class="hover:underline">+36 70 508 4100</a>
+            </li>
+          </ul>
         </div>
         <div>
-            <h3 data-i18n="footerNav">Navigatie</h3>
-            <ul>
-                <li><a href="/nl/" class="hover:underline" data-i18n="footerNavHome">Startpagina</a></li>
-                <li><a href="/nl/#services" class="hover:underline" data-i18n="footerNavServices">Diensten</a></li>
-                <li><a href="/nl/#references" class="hover:underline" data-i18n="footerNavReferences">Referenties</a></li>
-                <li><a href="/nl/#about" class="hover:underline" data-i18n="footerNavAbout">Over ons</a></li>
-                <li><a href="/nl/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="
-                tracking('footer_cta', 'CTA', 'Footer CTA', 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-');">Contact</a>
-                </li>
-            </ul>
+          <h3 data-i18n="footerNav">Navigatie</h3>
+          <ul>
+            <li>
+              <a href="/nl/" class="hover:underline" data-i18n="footerNavHome">Startpagina</a>
+            </li>
+            <li>
+              <a href="/nl/#services" class="hover:underline" data-i18n="footerNavServices"
+                >Diensten</a
+              >
+            </li>
+            <li>
+              <a href="/nl/#references" class="hover:underline" data-i18n="footerNavReferences"
+                >Referenties</a
+              >
+            </li>
+            <li>
+              <a href="/nl/#about" class="hover:underline" data-i18n="footerNavAbout">Over ons</a>
+            </li>
+            <li>
+              <a
+                href="/nl/#contact"
+                class="hover:underline"
+                data-i18n="footerNavContact"
+                onclick="
+                tracking('footer_cta', 'CTA', 'Footer CTA', 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-');"
+                >Contact</a
+              >
+            </li>
+          </ul>
         </div>
-    </div>
-    <div class="footer-bottom" data-i18n="footerCopyright">© 2025 BeyondStart Solutions. Alle rechten voorbehouden.</div>
-</footer>
+      </div>
+      <div class="footer-bottom" data-i18n="footerCopyright">
+        © 2025 BeyondStart Solutions. Alle rechten voorbehouden.
+      </div>
+    </footer>
 
-<!-- Sticky CTA -->
-<a href="#contact" class="sticky-cta" data-i18n="stickyCTA" onclick="tracking('sticky_cta', 'CTA', 'Sticky CTA', 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-');">Offerte aanvragen</a>
+    <!-- Sticky CTA -->
+    <a
+      href="#contact"
+      class="sticky-cta"
+      data-i18n="stickyCTA"
+      onclick="tracking('sticky_cta', 'CTA', 'Sticky CTA', 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-');"
+      >Offerte aanvragen</a
+    >
 
-<script src="/translations.min.js" defer=""></script>
-<script src="/script.min.js" defer=""></script>
-<script type="application/ld+json">
-    {
+    <script src="/translations.min.js" defer=""></script>
+    <script src="/script.min.js" defer=""></script>
+    <script type="application/ld+json">
+      {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "BeyondStart Solutions",
@@ -451,51 +845,69 @@
         "logo": "https://beyondstart.solutions/images/beyondstart_logo_sm.webp",
         "sameAs": [],
         "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+36 70 508 4100",
-            "contactType": "customer service",
-            "areaServed": "HU",
-            "availableLanguage": [
-                "Hungarian",
-                "English"
-            ]
+          "@type": "ContactPoint",
+          "telephone": "+36 70 508 4100",
+          "contactType": "customer service",
+          "areaServed": "HU",
+          "availableLanguage": ["Hungarian", "English"]
         }
-    }
-</script>
-<div id="email-modal" class="email-modal">
-    <div class="modal-content">
-        <button class="modal-close" onclick="
+      }
+    </script>
+    <div id="email-modal" class="email-modal">
+      <div class="modal-content">
+        <button
+          class="modal-close"
+          onclick="
                 document.getElementById('email-modal').classList.remove('visible');
-                tracking('close_modal', 'Event', 'Modal Close', 'AW-16905609495/s_N1CL_p3YAbEJfCnP0-');">
-            ×
+                tracking('close_modal', 'Event', 'Modal Close', 'AW-16905609495/s_N1CL_p3YAbEJfCnP0-');"
+        >
+          ×
         </button>
         <h2 data-i18n="modal-title">📥 Gratis mini-PDF ontvangen?</h2>
-        <p data-i18n="modal-subtitle">Vul je e-mailadres in en ontvang de gids over de 5 digitale fouten.</p>
+        <p data-i18n="modal-subtitle">
+          Vul je e-mailadres in en ontvang de gids over de 5 digitale fouten.
+        </p>
         <form action="https://api.web3forms.com/submit" method="POST" class="form-lead-capture">
-            <input type="hidden" name="access_key" value="5338805b-78b9-46d4-9b0e-5a4128cefb73">
-            <input type="hidden" name="from_name" value="BeyondStart Solutions">
-            <input type="hidden" name="subject" value="Letöltés – 5 gyakori digitális hiba PDF">
-            <input type="hidden" name="language" value="hu">
-            <input type="hidden" name="redirect" value="https://beyondstart.solutions/hu/landing/koszonom.html">
+          <input type="hidden" name="access_key" value="5338805b-78b9-46d4-9b0e-5a4128cefb73" />
+          <input type="hidden" name="from_name" value="BeyondStart Solutions" />
+          <input type="hidden" name="subject" value="Letöltés – 5 gyakori digitális hiba PDF" />
+          <input type="hidden" name="language" value="hu" />
+          <input
+            type="hidden"
+            name="redirect"
+            value="https://beyondstart.solutions/hu/landing/koszonom.html"
+          />
 
-            <label for="modal-email" data-i18n="emailLabel">Jouw e-mailadres:</label>
-            <input type="email" id="modal-email" name="email" placeholder="pl. te@ceged.hu" required="">
-            <button type="submit" class="service-button" data-i18n="freebie-button" onclick="
-                    tracking('modal_pdf', 'Event', 'Modal PDF', 'AW-16905609495/QKBTCM7L3YAbEJfCnP0-');">Stuur mij de PDF →</button>
+          <label for="modal-email" data-i18n="emailLabel">Jouw e-mailadres:</label>
+          <input
+            type="email"
+            id="modal-email"
+            name="email"
+            placeholder="pl. te@ceged.hu"
+            required=""
+          />
+          <button
+            type="submit"
+            class="service-button"
+            data-i18n="freebie-button"
+            onclick="
+                    tracking('modal_pdf', 'Event', 'Modal PDF', 'AW-16905609495/QKBTCM7L3YAbEJfCnP0-');"
+          >
+            Stuur mij de PDF →
+          </button>
         </form>
+      </div>
     </div>
-</div>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16905609495"></script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16882358510"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16905609495"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16882358510"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
         dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'AW-16905609495');
-    gtag('config', 'AW-16882358510');
-</script>
-
-
-</body></html>
+      }
+      gtag('js', new Date());
+      gtag('config', 'AW-16905609495');
+      gtag('config', 'AW-16882358510');
+    </script>
+  </body>
+</html>

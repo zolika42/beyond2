@@ -1,212 +1,326 @@
-<!DOCTYPE html>
-<html lang="es"><head>
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      document.body.classList.add('loading');
+<!doctype html>
+<html lang="es">
+  <head>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        document.body.classList.add('loading');
 
-      window.addEventListener('load', () => {
-        const loader = document.getElementById('site-loader');
-        if (loader) {
-          loader.style.opacity = '0';
-          setTimeout(() => {
-            loader.remove();
-            document.body.classList.remove('loading');
-          }, 300);
-        }
+        window.addEventListener('load', () => {
+          const loader = document.getElementById('site-loader');
+          if (loader) {
+            loader.style.opacity = '0';
+            setTimeout(() => {
+              loader.remove();
+              document.body.classList.remove('loading');
+            }, 300);
+          }
+        });
       });
-    });
-  </script>
-  <style>
-    .hero-title {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
+    </script>
+    <style>
+      .hero-title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
 
-    .hero-subtitle {
-      font-size: 1.625rem;
-      margin-bottom: 2rem;
-      color: #d1d5db;
-    }
+      .hero-subtitle {
+        font-size: 1.625rem;
+        margin-bottom: 2rem;
+        color: #d1d5db;
+      }
 
-    .lcp-fake {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0.001;
-      pointer-events: none;
-      z-index: -1;
-    }
-  </style>
+      .lcp-fake {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.001;
+        pointer-events: none;
+        z-index: -1;
+      }
+    </style>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soporte Drupal, Laravel y Shopify – BeyondStart</title>
-  <meta name="description" content="Actualizaciones seguras de Drupal, optimización rápida de Laravel y auditorías de Shopify centradas en la conversión. Soluciones en 72 horas con garantía de devolución de dinero.">
-  <link rel="preconnect" href="https://assets.calendly.com" crossorigin="">
-  <link rel="preload" href="/style.min.css" as="style">
-  <link rel="preload" as="image" href="/images/hero_bg.webp" type="image/webp">
-  <link href="/style.min.css" rel="stylesheet" media="print" onload="this.onload=null;this.media='all';">
-  <noscript>
-    <link rel="stylesheet" href="/style.min.css">
-  </noscript>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta property="og:title" content="Soluciones para Drupal, Laravel y Shopify – BeyondStart Solutions">
-  <meta property="og:description" content="Más de 20 años de experiencia. Corrección rápida de errores y optimización del rendimiento en 72 horas, con garantía de satisfacción.">
-  <meta property="og:image" content="/images/beyondstart_logo_sm.webp">
-  <meta property="og:url" content="https://beyondstart.solutions">
-  <meta property="og:type" content="website">
-  <link rel="canonical" href="https://beyondstart.solutions/es/cookie.html">
-</head>
-<body>
-<a href="#main" class="skip-link" data-i18n="jumpToMainContent">Saltar al contenido principal</a>
-<div id="site-loader" class="site-loader">
-  <div class="loader-circle"></div>
-</div>
-<header id="site-header" class="site-header">
-    <!-- Logo -->
-    <a href="/es/">
-        <img src="/images/beyondstart_logo_sm.webp" alt="BeyondStart Solutions logó" width="200" height="56" loading="eager" decoding="async" fetchpriority="high">
-    </a>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soporte Drupal, Laravel y Shopify – BeyondStart</title>
+    <meta
+      name="description"
+      content="Actualizaciones seguras de Drupal, optimización rápida de Laravel y auditorías de Shopify centradas en la conversión. Soluciones en 72 horas con garantía de devolución de dinero."
+    />
+    <link rel="preconnect" href="https://assets.calendly.com" crossorigin="" />
+    <link rel="preload" href="/style.min.css" as="style" />
+    <link rel="preload" as="image" href="/images/hero_bg.webp" type="image/webp" />
+    <link
+      href="/style.min.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.onload=null;this.media='all';"
+    />
+    <noscript>
+      <link rel="stylesheet" href="/style.min.css" />
+    </noscript>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta
+      property="og:title"
+      content="Soluciones para Drupal, Laravel y Shopify – BeyondStart Solutions"
+    />
+    <meta
+      property="og:description"
+      content="Más de 20 años de experiencia. Corrección rápida de errores y optimización del rendimiento en 72 horas, con garantía de satisfacción."
+    />
+    <meta property="og:image" content="/images/beyondstart_logo_sm.webp" />
+    <meta property="og:url" content="https://beyondstart.solutions" />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://beyondstart.solutions/es/cookie.html" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link" data-i18n="jumpToMainContent"
+      >Saltar al contenido principal</a
+    >
+    <div id="site-loader" class="site-loader">
+      <div class="loader-circle"></div>
+    </div>
+    <header id="site-header" class="site-header">
+      <!-- Logo -->
+      <a href="/es/">
+        <img
+          src="/images/beyondstart_logo_sm.webp"
+          alt="BeyondStart Solutions logó"
+          width="200"
+          height="56"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </a>
 
-    <!-- Mobile navigation -->
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü megnyitása">
-    <label for="nav-toggle" class="nav-toggle-label">
+      <!-- Mobile navigation -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü megnyitása" />
+      <label for="nav-toggle" class="nav-toggle-label">
         <span></span>
-    </label>
+      </label>
 
-    <!-- Navigation -->
-    <div class="header-right">
+      <!-- Navigation -->
+      <div class="header-right">
         <nav class="main-nav" aria-label="Fő navigáció">
-            <ul>
-                <li><a href="/es/#services" data-i18n="servicesTitle">Nuestros servicios</a></li>
-                <li><a href="/es/#references" data-i18n="referencesTitle">Con quién hemos trabajado</a></li>
-                <li><a href="/es/#testimonials" data-i18n="testimonialTitle">Lo que dicen nuestros clientes</a></li>
-                <li><a href="/es/#about" data-i18n="aboutTitle">Sobre BeyondStart</a></li>
-                <li><a href="/es/#contact" data-i18n="ctaBlockButton" onclick="
-                        tracking('main_menu_cta_click', 'CTA', 'Main Menu CTA', 'AW-16905609495/CReZCNfPrP4aEJfCnP0-');">Solicitar presupuesto</a>
-                </li>
-            </ul>
+          <ul>
+            <li><a href="/es/#services" data-i18n="servicesTitle">Nuestros servicios</a></li>
+            <li>
+              <a href="/es/#references" data-i18n="referencesTitle">Con quién hemos trabajado</a>
+            </li>
+            <li>
+              <a href="/es/#testimonials" data-i18n="testimonialTitle"
+                >Lo que dicen nuestros clientes</a
+              >
+            </li>
+            <li><a href="/es/#about" data-i18n="aboutTitle">Sobre BeyondStart</a></li>
+            <li>
+              <a
+                href="/es/#contact"
+                data-i18n="ctaBlockButton"
+                onclick="
+                        tracking('main_menu_cta_click', 'CTA', 'Main Menu CTA', 'AW-16905609495/CReZCNfPrP4aEJfCnP0-');"
+                >Solicitar presupuesto</a
+              >
+            </li>
+          </ul>
         </nav>
 
         <!-- Language Selector -->
-        <form action="" method="get" onsubmit="event.preventDefault(); location.href=this.language.value;">
-            <div class="language-switcher">
-                <label for="language" class="sr-only">Nyelvválasztás</label>
-                <select id="language" name="language" aria-label="Language selection" class="language-select">
-                    <option value="/hu/cookie.html">🇭🇺 HU</option>
-                    <option value="/en/cookie.html">🇬🇧 EN</option>
-                    <option value="/de/cookie.html">🇩🇪 DE</option>
-                    <option value="/fr/cookie.html">🇫🇷 FR</option>
-                    <option value="/nl/cookie.html">🇳🇱 NL</option>
-                    <option value="/es/cookie.html" selected="selected">🇪🇸 ES</option>
-                </select>
-                <button type="submit" class="language-button" onclick="
-                        tracking('language_change', 'Event', 'Language change', 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-');">
-                    OK
-                </button>
-            </div>
+        <form
+          action=""
+          method="get"
+          onsubmit="event.preventDefault(); location.href=this.language.value;"
+        >
+          <div class="language-switcher">
+            <label for="language" class="sr-only">Nyelvválasztás</label>
+            <select
+              id="language"
+              name="language"
+              aria-label="Language selection"
+              class="language-select"
+            >
+              <option value="/hu/cookie.html">🇭🇺 HU</option>
+              <option value="/en/cookie.html">🇬🇧 EN</option>
+              <option value="/de/cookie.html">🇩🇪 DE</option>
+              <option value="/fr/cookie.html">🇫🇷 FR</option>
+              <option value="/nl/cookie.html">🇳🇱 NL</option>
+              <option value="/es/cookie.html" selected="selected">🇪🇸 ES</option>
+            </select>
+            <button
+              type="submit"
+              class="language-button"
+              onclick="
+                        tracking('language_change', 'Event', 'Language change', 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-');"
+            >
+              OK
+            </button>
+          </div>
         </form>
-    </div>
-</header>
-<main id="main" class="cookie-main">
-  <h1 class="cookie-title" data-i18n="cookieTitle">Política de cookies</h1>
+      </div>
+    </header>
+    <main id="main" class="cookie-main">
+      <h1 class="cookie-title" data-i18n="cookieTitle">Política de cookies</h1>
 
-  <p class="cookie-paragraph" data-i18n="cookieIntro">Este sitio utiliza cookies para garantizar el funcionamiento y mejorar la experiencia de usuario.</p>
+      <p class="cookie-paragraph" data-i18n="cookieIntro">
+        Este sitio utiliza cookies para garantizar el funcionamiento y mejorar la experiencia de
+        usuario.
+      </p>
 
-  <h2 class="cookie-subtitle" data-i18n="cookieTypes">Tipos de cookies utilizadas:</h2>
-  <ul class="cookie-list">
-    <li data-i18n="cookieEssential">Cookies necesarias – fundamentales para el funcionamiento básico.</li>
-    <li data-i18n="cookieAnalytics">Cookies analíticas – nos ayudan a entender cómo se usa el sitio.</li>
-    <li data-i18n="cookiePreference">Cookies de preferencia – recuerdan tus ajustes, como idioma.</li>
-  </ul>
+      <h2 class="cookie-subtitle" data-i18n="cookieTypes">Tipos de cookies utilizadas:</h2>
+      <ul class="cookie-list">
+        <li data-i18n="cookieEssential">
+          Cookies necesarias – fundamentales para el funcionamiento básico.
+        </li>
+        <li data-i18n="cookieAnalytics">
+          Cookies analíticas – nos ayudan a entender cómo se usa el sitio.
+        </li>
+        <li data-i18n="cookiePreference">
+          Cookies de preferencia – recuerdan tus ajustes, como idioma.
+        </li>
+      </ul>
 
-  <h2 class="cookie-subtitle" data-i18n="cookieDisable">¿Cómo desactivar las cookies?</h2>
-  <p class="cookie-paragraph" data-i18n="cookieDisableText">La mayoría de navegadores permite gestionar o eliminar cookies desde el menú de “Configuración” o “Privacidad”.</p>
+      <h2 class="cookie-subtitle" data-i18n="cookieDisable">¿Cómo desactivar las cookies?</h2>
+      <p class="cookie-paragraph" data-i18n="cookieDisableText">
+        La mayoría de navegadores permite gestionar o eliminar cookies desde el menú de
+        “Configuración” o “Privacidad”.
+      </p>
 
-  <p class="cookie-note" data-i18n="cookieNote">Nota: si desactivas las cookies, algunas funciones del sitio pueden no funcionar correctamente.</p>
-</main>
-<footer class="footer">
-    <div class="footer-content">
+      <p class="cookie-note" data-i18n="cookieNote">
+        Nota: si desactivas las cookies, algunas funciones del sitio pueden no funcionar
+        correctamente.
+      </p>
+    </main>
+    <footer class="footer">
+      <div class="footer-content">
         <div>
-            <h3 data-i18n="footerCompanyName">BeyondStart Solutions</h3>
-            <p data-i18n="footerCompanyDetails">Director General: Zoltán Horváth <br> Sede: Str. Parângului 10, Ap. 2, 440031, Satu Mare, Rumanía <br> NIF: RO43923085 <br> Registro mercantil: J30/291/2021</p>
+          <h3 data-i18n="footerCompanyName">BeyondStart Solutions</h3>
+          <p data-i18n="footerCompanyDetails">
+            Director General: Zoltán Horváth <br />
+            Sede: Str. Parângului 10, Ap. 2, 440031, Satu Mare, Rumanía <br />
+            NIF: RO43923085 <br />
+            Registro mercantil: J30/291/2021
+          </p>
         </div>
         <div>
-            <h3 data-i18n="footerLegal">Documentos legales</h3>
-            <ul>
-                <li><a href="/es/impresszum.html" class="hover:underline" data-i18n="footerImprint">Aviso legal</a></li>
-                <li><a href="/es/adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy">Política de privacidad</a></li>
-                <li><a href="/es/cookie.html" class="hover:underline" data-i18n="footerCookies">Política de cookies</a></li>
-                <li><a href="/es/aszf.html" class="hover:underline" data-i18n="footerTerms">Términos y condiciones</a></li>
-            </ul>
+          <h3 data-i18n="footerLegal">Documentos legales</h3>
+          <ul>
+            <li>
+              <a href="/es/impresszum.html" class="hover:underline" data-i18n="footerImprint"
+                >Aviso legal</a
+              >
+            </li>
+            <li>
+              <a href="/es/adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy"
+                >Política de privacidad</a
+              >
+            </li>
+            <li>
+              <a href="/es/cookie.html" class="hover:underline" data-i18n="footerCookies"
+                >Política de cookies</a
+              >
+            </li>
+            <li>
+              <a href="/es/aszf.html" class="hover:underline" data-i18n="footerTerms"
+                >Términos y condiciones</a
+              >
+            </li>
+          </ul>
         </div>
         <div>
-            <h3 data-i18n="footerContact">Contacto</h3>
-            <ul>
-                <li>
-                    <span data-i18n="footerEmail">Correo electrónico:</span>
-                    <a href="mailto:zoltan@beyondstart.solutions" class="hover:underline">zoltan[at]beyondstart[dot]solutions</a>
-                </li>
-                <li>
-                    <span data-i18n="footerPhone">Teléfono:</span>
-                    <a href="tel:+36705084100" class="hover:underline">+36 70 508 4100</a>
-                </li>
-            </ul>
+          <h3 data-i18n="footerContact">Contacto</h3>
+          <ul>
+            <li>
+              <span data-i18n="footerEmail">Correo electrónico:</span>
+              <a href="mailto:zoltan@beyondstart.solutions" class="hover:underline"
+                >zoltan[at]beyondstart[dot]solutions</a
+              >
+            </li>
+            <li>
+              <span data-i18n="footerPhone">Teléfono:</span>
+              <a href="tel:+36705084100" class="hover:underline">+36 70 508 4100</a>
+            </li>
+          </ul>
         </div>
         <div>
-            <h3 data-i18n="footerNav">Navegación</h3>
-            <ul>
-                <li><a href="/es/" class="hover:underline" data-i18n="footerNavHome">Inicio</a></li>
-                <li><a href="/es/#services" class="hover:underline" data-i18n="footerNavServices">Servicios</a></li>
-                <li><a href="/es/#references" class="hover:underline" data-i18n="footerNavReferences">Referencias</a></li>
-                <li><a href="/es/#about" class="hover:underline" data-i18n="footerNavAbout">Sobre nosotros</a></li>
-                <li><a href="/es/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="
-                tracking('footer_cta', 'CTA', 'Footer CTA', 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-');">Contacto</a>
-                </li>
-            </ul>
+          <h3 data-i18n="footerNav">Navegación</h3>
+          <ul>
+            <li><a href="/es/" class="hover:underline" data-i18n="footerNavHome">Inicio</a></li>
+            <li>
+              <a href="/es/#services" class="hover:underline" data-i18n="footerNavServices"
+                >Servicios</a
+              >
+            </li>
+            <li>
+              <a href="/es/#references" class="hover:underline" data-i18n="footerNavReferences"
+                >Referencias</a
+              >
+            </li>
+            <li>
+              <a href="/es/#about" class="hover:underline" data-i18n="footerNavAbout"
+                >Sobre nosotros</a
+              >
+            </li>
+            <li>
+              <a
+                href="/es/#contact"
+                class="hover:underline"
+                data-i18n="footerNavContact"
+                onclick="
+                tracking('footer_cta', 'CTA', 'Footer CTA', 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-');"
+                >Contacto</a
+              >
+            </li>
+          </ul>
         </div>
-    </div>
-    <div class="footer-bottom" data-i18n="footerCopyright">© 2025 BeyondStart Solutions. Todos los derechos reservados.</div>
-</footer>
+      </div>
+      <div class="footer-bottom" data-i18n="footerCopyright">
+        © 2025 BeyondStart Solutions. Todos los derechos reservados.
+      </div>
+    </footer>
 
-<!-- Sticky CTA -->
-<a href="#contact" class="sticky-cta" data-i18n="stickyCTA" onclick="
-   tracking('sticky_cta', 'CTA', 'Sticky CTA', 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-');">Solicitar presupuesto</a>
+    <!-- Sticky CTA -->
+    <a
+      href="#contact"
+      class="sticky-cta"
+      data-i18n="stickyCTA"
+      onclick="
+   tracking('sticky_cta', 'CTA', 'Sticky CTA', 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-');"
+      >Solicitar presupuesto</a
+    >
 
-<script src="/translations.min.js"></script>
-<script src="/script.min.js"></script>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "BeyondStart Solutions",
-    "url": "https://beyondstart.solutions",
-    "logo": "https://beyondstart.solutions/images/beyondstart_logo_sm.webp",
-    "sameAs": [],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+36 70 508 4100",
-      "contactType": "customer service",
-      "areaServed": "HU",
-      "availableLanguage": ["Hungarian", "English"]
-    }
-  }
-</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16905609495"></script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16882358510"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
+    <script src="/translations.min.js"></script>
+    <script src="/script.min.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "BeyondStart Solutions",
+        "url": "https://beyondstart.solutions",
+        "logo": "https://beyondstart.solutions/images/beyondstart_logo_sm.webp",
+        "sameAs": [],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+36 70 508 4100",
+          "contactType": "customer service",
+          "areaServed": "HU",
+          "availableLanguage": ["Hungarian", "English"]
+        }
+      }
+    </script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16905609495"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16882358510"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
         dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'AW-16905609495');
-    gtag('config', 'AW-16882358510');
-</script>
-
-
-</body></html>
+      }
+      gtag('js', new Date());
+      gtag('config', 'AW-16905609495');
+      gtag('config', 'AW-16882358510');
+    </script>
+  </body>
+</html>

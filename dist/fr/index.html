@@ -1,465 +1,834 @@
-<!DOCTYPE html>
-<html lang="fr"><head>
+<!doctype html>
+<html lang="fr">
+  <head>
     <style>
-        .hero-title {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
+      .hero-title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
 
-        .hero-subtitle {
-            font-size: 1.625rem;
-            margin-bottom: 2rem;
-            color: #d1d5db;
-        }
+      .hero-subtitle {
+        font-size: 1.625rem;
+        margin-bottom: 2rem;
+        color: #d1d5db;
+      }
 
-        .lcp-fake {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0.001;
-            pointer-events: none;
-            z-index: -1;
-        }
+      .lcp-fake {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.001;
+        pointer-events: none;
+        z-index: -1;
+      }
     </style>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assistance Drupal, Laravel &amp; Shopify – BeyondStart</title>
-    <meta name="description" content="Mises à jour Drupal sécurisées, optimisation rapide de Laravel et audits Shopify axés sur la conversion. Résolu sous 72 heures, garantie de remboursement incluse.">
-    <link rel="preconnect" href="https://assets.calendly.com" crossorigin="">
-    <link rel="preload" href="/style.min.css" as="style">
-    <link rel="preload" as="image" href="/images/hero_bg.webp" type="image/webp">
-    <link href="/style.min.css" rel="stylesheet" media="print" onload="this.onload=null;this.media='all';">
+    <meta
+      name="description"
+      content="Mises à jour Drupal sécurisées, optimisation rapide de Laravel et audits Shopify axés sur la conversion. Résolu sous 72 heures, garantie de remboursement incluse."
+    />
+    <link rel="preconnect" href="https://assets.calendly.com" crossorigin="" />
+    <link rel="preload" href="/style.min.css" as="style" />
+    <link rel="preload" as="image" href="/images/hero_bg.webp" type="image/webp" />
+    <link
+      href="/style.min.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.onload=null;this.media='all';"
+    />
     <noscript>
-        <link rel="stylesheet" href="/style.min.css">
+      <link rel="stylesheet" href="/style.min.css" />
     </noscript>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta property="og:title" content="Solutions Drupal, Laravel et Shopify – BeyondStart Solutions">
-    <meta property="og:description" content="Plus de 20 ans d'expérience. Correction de bugs et optimisation des performances en 72 heures, avec garantie de satisfaction.">
-    <meta property="og:image" content="/images/beyondstart_logo_sm.webp">
-    <meta property="og:url" content="https://beyondstart.solutions">
-    <meta property="og:type" content="website">
-    <link rel="canonical" href="https://beyondstart.solutions/fr/index.html">
-</head>
-<body>
-<a href="#main" class="skip-link" data-i18n="jumpToMainContent">Sauter au contenu principal</a>
-<div id="site-loader" class="site-loader">
-    <div class="loader-circle"></div>
-</div>
-<header id="site-header" class="site-header">
-    <!-- Logo -->
-    <a href="/fr/">
-        <img src="/images/beyondstart_logo_sm.webp" alt="BeyondStart Solutions logó" width="200" height="56" loading="eager" decoding="async" fetchpriority="high">
-    </a>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta
+      property="og:title"
+      content="Solutions Drupal, Laravel et Shopify – BeyondStart Solutions"
+    />
+    <meta
+      property="og:description"
+      content="Plus de 20 ans d'expérience. Correction de bugs et optimisation des performances en 72 heures, avec garantie de satisfaction."
+    />
+    <meta property="og:image" content="/images/beyondstart_logo_sm.webp" />
+    <meta property="og:url" content="https://beyondstart.solutions" />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://beyondstart.solutions/fr/index.html" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link" data-i18n="jumpToMainContent">Sauter au contenu principal</a>
+    <div id="site-loader" class="site-loader">
+      <div class="loader-circle"></div>
+    </div>
+    <header id="site-header" class="site-header">
+      <!-- Logo -->
+      <a href="/fr/">
+        <img
+          src="/images/beyondstart_logo_sm.webp"
+          alt="BeyondStart Solutions logó"
+          width="200"
+          height="56"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </a>
 
-    <!-- Mobile navigation -->
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü megnyitása">
-    <label for="nav-toggle" class="nav-toggle-label">
+      <!-- Mobile navigation -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü megnyitása" />
+      <label for="nav-toggle" class="nav-toggle-label">
         <span></span>
-    </label>
+      </label>
 
-    <!-- Navigation -->
-    <div class="header-right">
+      <!-- Navigation -->
+      <div class="header-right">
         <nav class="main-nav" aria-label="Fő navigáció">
-            <ul>
-                <li><a href="/fr/#services" data-i18n="servicesTitle">Nos services</a></li>
-                <li><a href="/fr/#references" data-i18n="referencesTitle">Nos collaborations</a></li>
-                <li><a href="/fr/#testimonials" data-i18n="testimonialTitle">Ce que disent nos clients</a></li>
-                <li><a href="/fr/#about" data-i18n="aboutTitle">À propos de BeyondStart</a></li>
-                <li><a href="/fr/#contact" data-i18n="ctaBlockButton" onclick="
-                        tracking('main_menu_cta_click', 'CTA', 'Main Menu CTA', 'AW-16905609495/CReZCNfPrP4aEJfCnP0-');">Obtenir un devis</a>
-                </li>
-            </ul>
+          <ul>
+            <li><a href="/fr/#services" data-i18n="servicesTitle">Nos services</a></li>
+            <li><a href="/fr/#references" data-i18n="referencesTitle">Nos collaborations</a></li>
+            <li>
+              <a href="/fr/#testimonials" data-i18n="testimonialTitle">Ce que disent nos clients</a>
+            </li>
+            <li><a href="/fr/#about" data-i18n="aboutTitle">À propos de BeyondStart</a></li>
+            <li>
+              <a
+                href="/fr/#contact"
+                data-i18n="ctaBlockButton"
+                onclick="
+                        tracking('main_menu_cta_click', 'CTA', 'Main Menu CTA', 'AW-16905609495/CReZCNfPrP4aEJfCnP0-');"
+                >Obtenir un devis</a
+              >
+            </li>
+          </ul>
         </nav>
 
         <!-- Language Selector -->
-        <form action="" method="get" onsubmit="event.preventDefault(); location.href=this.language.value;">
-            <div class="language-switcher">
-                <label for="language" class="sr-only">Nyelvválasztás</label>
-                <select id="language" name="language" aria-label="Language selection" class="language-select">
-                    <option value="/hu/index.html">🇭🇺 HU</option>
-                    <option value="/en/index.html">🇬🇧 EN</option>
-                    <option value="/de/index.html">🇩🇪 DE</option>
-                    <option value="/fr/index.html" selected="selected">🇫🇷 FR</option>
-                    <option value="/nl/index.html">🇳🇱 NL</option>
-                    <option value="/es/index.html">🇪🇸 ES</option>
-                </select>
-                <button type="submit" class="language-button" onclick="
-                        tracking('language_change', 'Event', 'Language change', 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-');">
-                    OK
-                </button>
-            </div>
+        <form
+          action=""
+          method="get"
+          onsubmit="event.preventDefault(); location.href=this.language.value;"
+        >
+          <div class="language-switcher">
+            <label for="language" class="sr-only">Nyelvválasztás</label>
+            <select
+              id="language"
+              name="language"
+              aria-label="Language selection"
+              class="language-select"
+            >
+              <option value="/hu/index.html">🇭🇺 HU</option>
+              <option value="/en/index.html">🇬🇧 EN</option>
+              <option value="/de/index.html">🇩🇪 DE</option>
+              <option value="/fr/index.html" selected="selected">🇫🇷 FR</option>
+              <option value="/nl/index.html">🇳🇱 NL</option>
+              <option value="/es/index.html">🇪🇸 ES</option>
+            </select>
+            <button
+              type="submit"
+              class="language-button"
+              onclick="
+                        tracking('language_change', 'Event', 'Language change', 'AW-16905609495/VVnmCLb-mIAbEJfCnP0-');"
+            >
+              OK
+            </button>
+          </div>
         </form>
-    </div>
-</header>
-<main id="main">
-    <!-- Hero -->
-    <section class="hero-section" aria-label="BeyondStart Solutions">
-        <img class="hero-lcp-image" src="/images/hero_bg.webp" alt="hero background" width="1319" height="522" decoding="async" loading="eager" fetchpriority="high">
+      </div>
+    </header>
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero-section" aria-label="BeyondStart Solutions">
+        <img
+          class="hero-lcp-image"
+          src="/images/hero_bg.webp"
+          alt="hero background"
+          width="1319"
+          height="522"
+          decoding="async"
+          loading="eager"
+          fetchpriority="high"
+        />
         <div class="hero-overlay">
-            <h1 class="hero-title" data-i18n="heroTitle">Est-ce que votre projet Drupal, Laravel ou Shopify dans le chaos?</h1>
-            <p class="hero-subtitle" data-i18n="heroSubtitle">BeyondStart Solutions vous aide à réparer, optimiser ou relancer votre projet digital. 20 ans d’expérience, avec un savoir-faire corporate et une mentalité startup.</p>
-            <p class="hero-subtitle" data-i18n="heroSubtitle2">Résolu sous 72 heures – ou remboursé.</p>
-            <a href="#contact" class="hero-cta" onclick="
-            tracking('hero_cta', 'CTA', 'Hero CTA', 'AW-16905609495/xfF-CNjcmYAbEJfCnP0-');" data-i18n="bookButton">Réserver un créneau</a>
+          <h1 class="hero-title" data-i18n="heroTitle">
+            Est-ce que votre projet Drupal, Laravel ou Shopify dans le chaos?
+          </h1>
+          <p class="hero-subtitle" data-i18n="heroSubtitle">
+            BeyondStart Solutions vous aide à réparer, optimiser ou relancer votre projet digital.
+            20 ans d’expérience, avec un savoir-faire corporate et une mentalité startup.
+          </p>
+          <p class="hero-subtitle" data-i18n="heroSubtitle2">
+            Résolu sous 72 heures – ou remboursé.
+          </p>
+          <a
+            href="#contact"
+            class="hero-cta"
+            onclick="
+            tracking('hero_cta', 'CTA', 'Hero CTA', 'AW-16905609495/xfF-CNjcmYAbEJfCnP0-');"
+            data-i18n="bookButton"
+            >Réserver un créneau</a
+          >
         </div>
-    </section>
-    <!-- Problem -->
-    <section class="problem-section" aria-label="Miben segíthetünk?">
+      </section>
+      <!-- Problem -->
+      <section class="problem-section" aria-label="Miben segíthetünk?">
         <h2 class="section-title" data-i18n="problemTitle">Quels problèmes résolvons-nous ?</h2>
-        <p class="section-text" data-i18n="problemText">Votre site Drupal est obsolète et vulnérable ? Votre système Laravel est lent ou bogué ? Votre boutique Shopify ne convertit pas ? Ces problèmes ne peuvent pas attendre – c’est notre spécialité.</p>
-        <p class="section-text" data-i18n="serviceIntro1">Avec nos trois packs ciblés, nous résolvons ces problèmes en moins de 72 heures.</p>
-    </section>
-    <!-- Services -->
-    <section id="services" class="services-section" aria-label="Szolgáltatások">
+        <p class="section-text" data-i18n="problemText">
+          Votre site Drupal est obsolète et vulnérable ? Votre système Laravel est lent ou bogué ?
+          Votre boutique Shopify ne convertit pas ? Ces problèmes ne peuvent pas attendre – c’est
+          notre spécialité.
+        </p>
+        <p class="section-text" data-i18n="serviceIntro1">
+          Avec nos trois packs ciblés, nous résolvons ces problèmes en moins de 72 heures.
+        </p>
+      </section>
+      <!-- Services -->
+      <section id="services" class="services-section" aria-label="Szolgáltatások">
         <h2 class="section-title" data-i18n="servicesTitle">Nos services</h2>
         <div class="service-cards">
-            <div class="service-card featured">
+          <div class="service-card featured">
             <span class="badge" data-i18n="mostPopular">Le plus populaire</span>
 
-                <h3 class="service-title" data-i18n="service1Title">FixDrupal™ – Sécurité &amp; Mises à jour<br>149 €</h3>
-                <ul class="service-list">
-                    <li>
-                        <span class="service-icon">🧪</span>
-                        <span data-i18n="service1Item1">Audit complet et mise à jour de Drupal</span>
-                    </li>
-                    <li>
-                        <span class="service-icon">🔒</span>
-                        <span data-i18n="service1Item2">Correction des failles de sécurité</span>
-                    </li>
-                    <li>
-                        <span class="service-icon">🧩</span>
-                        <span data-i18n="service1Item3">Contrôle des modules</span>
-                    </li>
-                    <li>
-                        <span class="service-icon">👨‍💻</span>
-                        <span data-i18n="service1Item4">1h de consultation</span>
-                    </li>
-                    <li>
-                        <span class="service-icon">⏱️</span>
-                        <span data-i18n="service1Item5">Démarrage sous 48h</span>
-                    </li>
-                    <li>
-                        <span class="service-icon">💯</span>
-                        <span data-i18n="service1Item6">Garantie de satisfaction</span>
-                    </li>
-                </ul>
+            <h3 class="service-title" data-i18n="service1Title">
+              FixDrupal™ – Sécurité &amp; Mises à jour<br />149 €
+            </h3>
+            <ul class="service-list">
+              <li>
+                <span class="service-icon">🧪</span>
+                <span data-i18n="service1Item1">Audit complet et mise à jour de Drupal</span>
+              </li>
+              <li>
+                <span class="service-icon">🔒</span>
+                <span data-i18n="service1Item2">Correction des failles de sécurité</span>
+              </li>
+              <li>
+                <span class="service-icon">🧩</span>
+                <span data-i18n="service1Item3">Contrôle des modules</span>
+              </li>
+              <li>
+                <span class="service-icon">👨‍💻</span>
+                <span data-i18n="service1Item4">1h de consultation</span>
+              </li>
+              <li>
+                <span class="service-icon">⏱️</span>
+                <span data-i18n="service1Item5">Démarrage sous 48h</span>
+              </li>
+              <li>
+                <span class="service-icon">💯</span>
+                <span data-i18n="service1Item6">Garantie de satisfaction</span>
+              </li>
+            </ul>
 
-                <div class="text-center">
-                    <a href="https://calendly.com/zoltan-beyondstart" target="_blank" class="service-button" data-i18n="bookButton">Réserver un créneau</a>
-                </div>
+            <div class="text-center">
+              <a
+                href="https://calendly.com/zoltan-beyondstart"
+                target="_blank"
+                class="service-button"
+                data-i18n="bookButton"
+                >Réserver un créneau</a
+              >
             </div>
-            <div class="service-card">
-                <h3 class="service-title" data-i18n="service2Title">LaravelBoost™ – Vitesse &amp; Stabilité<br>299 €</h3>
-                <ul class="service-list">
-                    <li>
-                        <span class="service-icon">🛠️</span>
-                        <span data-i18n="service2Item1">Mise à jour de version et refactoring du code</span>
-                    </li>
-                    <li class="flex items-start gap-2 text-sm text-gray-700">
-                        <span class="service-icon">📦</span>
-                        <span data-i18n="service2Item2">Audit des dépendances Composer et sécurité</span>
-                    </li>
-                    <li class="flex items-start gap-2 text-sm text-gray-700">
-                        <span class="service-icon">🚀</span>
-                        <span data-i18n="service2Item3">Mise en place et conseils CI/CD</span>
-                    </li>
-                    <li class="flex items-start gap-2 text-sm text-gray-700">
-                        <span class="service-icon">⚙️</span>
-                        <span data-i18n="service2Item4">Optimisation des performances (cache, requêtes, files d’attente)</span>
-                    </li>
-                    <li class="flex items-start gap-2 text-sm text-gray-700">
-                        <span class="service-icon">⏱️</span>
-                        <span data-i18n="service2Item5">Démarrage sous 48h</span>
-                    </li>
-                    <li class="flex items-start gap-2 text-sm text-gray-700">
-                        <span class="service-icon">💯</span>
-                        <span data-i18n="service2Item6">Garantie de satisfaction</span>
-                    </li>
-                </ul>
+          </div>
+          <div class="service-card">
+            <h3 class="service-title" data-i18n="service2Title">
+              LaravelBoost™ – Vitesse &amp; Stabilité<br />299 €
+            </h3>
+            <ul class="service-list">
+              <li>
+                <span class="service-icon">🛠️</span>
+                <span data-i18n="service2Item1">Mise à jour de version et refactoring du code</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-gray-700">
+                <span class="service-icon">📦</span>
+                <span data-i18n="service2Item2">Audit des dépendances Composer et sécurité</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-gray-700">
+                <span class="service-icon">🚀</span>
+                <span data-i18n="service2Item3">Mise en place et conseils CI/CD</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-gray-700">
+                <span class="service-icon">⚙️</span>
+                <span data-i18n="service2Item4"
+                  >Optimisation des performances (cache, requêtes, files d’attente)</span
+                >
+              </li>
+              <li class="flex items-start gap-2 text-sm text-gray-700">
+                <span class="service-icon">⏱️</span>
+                <span data-i18n="service2Item5">Démarrage sous 48h</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-gray-700">
+                <span class="service-icon">💯</span>
+                <span data-i18n="service2Item6">Garantie de satisfaction</span>
+              </li>
+            </ul>
 
-                <div class="text-center">
-                    <a href="https://calendly.com/zoltan-beyondstart" target="_blank" class="service-button" data-i18n="bookButton">Réserver un créneau</a>
-                </div>
+            <div class="text-center">
+              <a
+                href="https://calendly.com/zoltan-beyondstart"
+                target="_blank"
+                class="service-button"
+                data-i18n="bookButton"
+                >Réserver un créneau</a
+              >
             </div>
-            <div class="service-card">
-                <h3 class="service-title" data-i18n="service3Title">ShopifyProAudit™ – Garantie de conversion<br>199 €</h3>
-                <ul class="service-list">
-                    <li>
-                        <span class="service-icon">⚡</span>
-                        <span data-i18n="service3Item1">Analyse et optimisation des performances (LCP, CLS, TTI)</span>
-                    </li>
-                    <li>
-                        <span class="service-icon">🔍</span>
-                        <span data-i18n="service3Item2">Audit SEO – structure, meta, alt, sitemap</span>
-                    </li>
-                    <li>
-                        <span class="service-icon">🎨</span>
-                        <span data-i18n="service3Item3">Maintenance du thème et des apps, suggestions de refonte</span>
-                    </li>
-                    <li>
-                        <span class="service-icon">📈</span>
-                        <span data-i18n="service3Item4">Garantie +10% de conversion ou remboursement</span>
-                    </li>
-                    <li>
-                        <span class="service-icon">⏱️</span>
-                        <span data-i18n="service3Item5">Démarrage sous 48h</span>
-                    </li>
-                    <li>
-                        <span class="service-icon">💯</span>
-                        <span data-i18n="service3Item6">Garantie de satisfaction</span>
-                    </li>
-                </ul>
+          </div>
+          <div class="service-card">
+            <h3 class="service-title" data-i18n="service3Title">
+              ShopifyProAudit™ – Garantie de conversion<br />199 €
+            </h3>
+            <ul class="service-list">
+              <li>
+                <span class="service-icon">⚡</span>
+                <span data-i18n="service3Item1"
+                  >Analyse et optimisation des performances (LCP, CLS, TTI)</span
+                >
+              </li>
+              <li>
+                <span class="service-icon">🔍</span>
+                <span data-i18n="service3Item2">Audit SEO – structure, meta, alt, sitemap</span>
+              </li>
+              <li>
+                <span class="service-icon">🎨</span>
+                <span data-i18n="service3Item3"
+                  >Maintenance du thème et des apps, suggestions de refonte</span
+                >
+              </li>
+              <li>
+                <span class="service-icon">📈</span>
+                <span data-i18n="service3Item4">Garantie +10% de conversion ou remboursement</span>
+              </li>
+              <li>
+                <span class="service-icon">⏱️</span>
+                <span data-i18n="service3Item5">Démarrage sous 48h</span>
+              </li>
+              <li>
+                <span class="service-icon">💯</span>
+                <span data-i18n="service3Item6">Garantie de satisfaction</span>
+              </li>
+            </ul>
 
-                <div class="text-center">
-                    <a href="https://calendly.com/zoltan-beyondstart" target="_blank" class="service-button" data-i18n="bookButton">Réserver un créneau</a>
-                </div>
+            <div class="text-center">
+              <a
+                href="https://calendly.com/zoltan-beyondstart"
+                target="_blank"
+                class="service-button"
+                data-i18n="bookButton"
+                >Réserver un créneau</a
+              >
             </div>
+          </div>
         </div>
-    </section>
-    <!-- References -->
-    <section id="references" class="references-section" aria-label="Referenciák">
+      </section>
+      <!-- References -->
+      <section id="references" class="references-section" aria-label="Referenciák">
         <h2 class="section-title" data-i18n="referencesTitle">Nos collaborations</h2>
         <div class="reference-cards">
-            <div class="reference-card has-bg">
-                <img src="/images/kinepolis_bg.webp" alt="Kinepolis weboldal háttér" class="reference-bg" loading="lazy" width="657" height="260">
-                <div class="reference-content">
-                    <h3 class="reference-title">Kinepolis</h3>
-                    <p data-i18n="ref1">Développement de modules Drupal, maintenance et migration pour un réseau de cinémas international.</p>
-                </div>
-                <a href="https://www.kinepolis.com/" target="_blank" aria-label="Kinepolis weboldal" class="reference-link"></a>
+          <div class="reference-card has-bg">
+            <img
+              src="/images/kinepolis_bg.webp"
+              alt="Kinepolis weboldal háttér"
+              class="reference-bg"
+              loading="lazy"
+              width="657"
+              height="260"
+            />
+            <div class="reference-content">
+              <h3 class="reference-title">Kinepolis</h3>
+              <p data-i18n="ref1">
+                Développement de modules Drupal, maintenance et migration pour un réseau de cinémas
+                international.
+              </p>
             </div>
+            <a
+              href="https://www.kinepolis.com/"
+              target="_blank"
+              aria-label="Kinepolis weboldal"
+              class="reference-link"
+            ></a>
+          </div>
 
-            <div class="reference-card has-bg">
-                <img src="/images/techsoup_bg.webp" alt="TechSoup weboldal háttér" class="reference-bg" loading="lazy" width="657" height="260">
-                <div class="reference-content">
-                    <h3 class="reference-title">TechSoup Europe</h3>
-                    <p data-i18n="ref2">Interfaces d’administration Laravel et gestion des droits pour le secteur associatif.</p>
-                </div>
-                <a href="https://www.techsoupeurope.org/" target="_blank" aria-label="TechSoup weboldal" class="reference-link"></a>
+          <div class="reference-card has-bg">
+            <img
+              src="/images/techsoup_bg.webp"
+              alt="TechSoup weboldal háttér"
+              class="reference-bg"
+              loading="lazy"
+              width="657"
+              height="260"
+            />
+            <div class="reference-content">
+              <h3 class="reference-title">TechSoup Europe</h3>
+              <p data-i18n="ref2">
+                Interfaces d’administration Laravel et gestion des droits pour le secteur
+                associatif.
+              </p>
             </div>
+            <a
+              href="https://www.techsoupeurope.org/"
+              target="_blank"
+              aria-label="TechSoup weboldal"
+              class="reference-link"
+            ></a>
+          </div>
 
-            <div class="reference-card has-bg">
-                <img src="/images/aceg_bg.webp" alt="ACEG weboldal háttér" class="reference-bg" loading="lazy" width="657" height="260">
-                <div class="reference-content">
-                    <h3 class="reference-title">ACEG Belgium</h3>
-                    <p data-i18n="ref3">Refonte d’un ERP interne avec Laravel : autorisations, gestion, génération de PDF.</p>
-                </div>
-                <a href="https://www.aceg.be/" target="_blank" aria-label="ACEG weboldal" class="reference-link"></a>
+          <div class="reference-card has-bg">
+            <img
+              src="/images/aceg_bg.webp"
+              alt="ACEG weboldal háttér"
+              class="reference-bg"
+              loading="lazy"
+              width="657"
+              height="260"
+            />
+            <div class="reference-content">
+              <h3 class="reference-title">ACEG Belgium</h3>
+              <p data-i18n="ref3">
+                Refonte d’un ERP interne avec Laravel : autorisations, gestion, génération de PDF.
+              </p>
             </div>
+            <a
+              href="https://www.aceg.be/"
+              target="_blank"
+              aria-label="ACEG weboldal"
+              class="reference-link"
+            ></a>
+          </div>
 
-            <div class="reference-card has-bg">
-                <img src="/images/companyapp_bg.webp" alt="CompanyApp weboldal háttér" class="reference-bg" loading="lazy" width="657" height="260">
-                <div class="reference-content">
-                    <h3 class="reference-title">CompanyApp</h3>
-                    <p data-i18n="ref4">Plateforme mobile de communication interne avec modules personnalisés et optimisation des performances.</p>
-                </div>
-                <a href="https://companyapp.co.uk/" target="_blank" aria-label="CompanyApp weboldal" class="reference-link"></a>
+          <div class="reference-card has-bg">
+            <img
+              src="/images/companyapp_bg.webp"
+              alt="CompanyApp weboldal háttér"
+              class="reference-bg"
+              loading="lazy"
+              width="657"
+              height="260"
+            />
+            <div class="reference-content">
+              <h3 class="reference-title">CompanyApp</h3>
+              <p data-i18n="ref4">
+                Plateforme mobile de communication interne avec modules personnalisés et
+                optimisation des performances.
+              </p>
             </div>
+            <a
+              href="https://companyapp.co.uk/"
+              target="_blank"
+              aria-label="CompanyApp weboldal"
+              class="reference-link"
+            ></a>
+          </div>
 
-            <div class="reference-card has-bg">
-                <img src="/images/judynatale_bg.webp" alt="JudyNatale Handmade weboldal háttér" class="reference-bg" loading="lazy" width="657" height="260">
-                <div class="reference-content">
-                    <h3 class="reference-title">JudyNatale Handmade</h3>
-                    <p data-i18n="ref5">Startup de produit digital avec APIs Laravel et frontend Vue.js.</p>
-                </div>
-                <a href="https://judynatale.com/" target="_blank" aria-label="JudyNatale weboldal" class="reference-link"></a>
+          <div class="reference-card has-bg">
+            <img
+              src="/images/judynatale_bg.webp"
+              alt="JudyNatale Handmade weboldal háttér"
+              class="reference-bg"
+              loading="lazy"
+              width="657"
+              height="260"
+            />
+            <div class="reference-content">
+              <h3 class="reference-title">JudyNatale Handmade</h3>
+              <p data-i18n="ref5">
+                Startup de produit digital avec APIs Laravel et frontend Vue.js.
+              </p>
             </div>
+            <a
+              href="https://judynatale.com/"
+              target="_blank"
+              aria-label="JudyNatale weboldal"
+              class="reference-link"
+            ></a>
+          </div>
 
-            <div class="reference-card has-bg">
-                <img src="/images/columbiagames_bg.webp" alt="Columbia Games weboldal háttér" class="reference-bg" loading="lazy" width="657" height="260">
-                <div class="reference-content">
-                    <h3 class="reference-title">Columbia Games</h3>
-                    <p data-i18n="ref6">Éditeur de jeux américain. Développement e-commerce Laravel et conseil technique.</p>
-                </div>
-                <a href="https://columbiagames.com/" target="_blank" aria-label="Columbia Games weboldal" class="reference-link"></a>
+          <div class="reference-card has-bg">
+            <img
+              src="/images/columbiagames_bg.webp"
+              alt="Columbia Games weboldal háttér"
+              class="reference-bg"
+              loading="lazy"
+              width="657"
+              height="260"
+            />
+            <div class="reference-content">
+              <h3 class="reference-title">Columbia Games</h3>
+              <p data-i18n="ref6">
+                Éditeur de jeux américain. Développement e-commerce Laravel et conseil technique.
+              </p>
             </div>
+            <a
+              href="https://columbiagames.com/"
+              target="_blank"
+              aria-label="Columbia Games weboldal"
+              class="reference-link"
+            ></a>
+          </div>
 
-            <div class="reference-card has-bg">
-                <img src="/images/godisittes_bg.webp" alt="Gödi Sittes weboldal háttér" class="reference-bg" loading="lazy" width="657" height="260">
-                <div class="reference-content">
-                    <h3 class="reference-title">Gödi Sittes</h3>
-                    <p data-i18n="ref7">Site web statique pour un service de collecte de déchets, avec un design moderne et un processus de build automatisé.</p>
-                </div>
-                <a href="https://godisittes.hu" target="_blank" aria-label="Gödi Sittes weboldal" class="reference-link"></a>
+          <div class="reference-card has-bg">
+            <img
+              src="/images/godisittes_bg.webp"
+              alt="Gödi Sittes weboldal háttér"
+              class="reference-bg"
+              loading="lazy"
+              width="657"
+              height="260"
+            />
+            <div class="reference-content">
+              <h3 class="reference-title">Gödi Sittes</h3>
+              <p data-i18n="ref7">
+                Site web statique pour un service de collecte de déchets, avec un design moderne et
+                un processus de build automatisé.
+              </p>
             </div>
+            <a
+              href="https://godisittes.hu"
+              target="_blank"
+              aria-label="Gödi Sittes weboldal"
+              class="reference-link"
+            ></a>
+          </div>
         </div>
-    </section>
-    <!-- Testimonials -->
-    <section id="testimonials" class="testimonials-section">
+      </section>
+      <!-- Testimonials -->
+      <section id="testimonials" class="testimonials-section">
         <div class="testimonials-bg">
-            <img src="/images/testimonials_bg.webp" alt="Testimonials Background" width="1024" height="1536" loading="lazy">
-            <div class="testimonials-overlay"></div>
+          <img
+            src="/images/testimonials_bg.webp"
+            alt="Testimonials Background"
+            width="1024"
+            height="1536"
+            loading="lazy"
+          />
+          <div class="testimonials-overlay"></div>
         </div>
 
         <div class="testimonials-container">
-            <h2 class="section-title" data-i18n="testimonialTitle">Ce que disent nos clients</h2>
-            <div class="testimonial-cards">
-                <blockquote class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p data-i18n="testimonial1Text">"Zoltán a apporté son expertise et un travail rapide et fiable à notre projet de portail d'entreprise. Un vrai joueur d’équipe."</p>
-                    <div class="author">
-                        <img src="https://i.pravatar.cc/40?img=11" width="40" height="40" alt="Eligio F." loading="lazy">
-                        <div class="author-name" data-i18n="testimonial1Author">– Eligio F., Chef de produit</div>
-                    </div>
-                </blockquote>
+          <h2 class="section-title" data-i18n="testimonialTitle">Ce que disent nos clients</h2>
+          <div class="testimonial-cards">
+            <blockquote class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p data-i18n="testimonial1Text">
+                "Zoltán a apporté son expertise et un travail rapide et fiable à notre projet de
+                portail d'entreprise. Un vrai joueur d’équipe."
+              </p>
+              <div class="author">
+                <img
+                  src="https://i.pravatar.cc/40?img=11"
+                  width="40"
+                  height="40"
+                  alt="Eligio F."
+                  loading="lazy"
+                />
+                <div class="author-name" data-i18n="testimonial1Author">
+                  – Eligio F., Chef de produit
+                </div>
+              </div>
+            </blockquote>
 
-                <blockquote class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p data-i18n="testimonial2Text">"Ses compétences techniques et sa capacité à résoudre des problèmes en ont fait un élément clé de notre équipe. Agréable à travailler avec lui."</p>
-                    <div class="author">
-                        <img src="https://i.pravatar.cc/40?img=12" width="40" height="40" alt="Arsen H." loading="lazy">
-                        <div class="author-name" data-i18n="testimonial2Author">– Arsen H., Analyste métier</div>
-                    </div>
-                </blockquote>
+            <blockquote class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p data-i18n="testimonial2Text">
+                "Ses compétences techniques et sa capacité à résoudre des problèmes en ont fait un
+                élément clé de notre équipe. Agréable à travailler avec lui."
+              </p>
+              <div class="author">
+                <img
+                  src="https://i.pravatar.cc/40?img=12"
+                  width="40"
+                  height="40"
+                  alt="Arsen H."
+                  loading="lazy"
+                />
+                <div class="author-name" data-i18n="testimonial2Author">
+                  – Arsen H., Analyste métier
+                </div>
+              </div>
+            </blockquote>
 
-                <blockquote class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p data-i18n="testimonial3Text">"Si vous cherchez un collègue créatif et bavard, c'est lui. Toujours prêt à apprendre et à relever les défis."</p>
-                    <div class="author">
-                        <img src="https://i.pravatar.cc/40?img=48" alt="Karina P." loading="lazy">
-                        <div class="author-name" data-i18n="testimonial3Author">– Tamás M., Responsable technique</div>
-                    </div>
-                </blockquote>
+            <blockquote class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p data-i18n="testimonial3Text">
+                "Si vous cherchez un collègue créatif et bavard, c'est lui. Toujours prêt à
+                apprendre et à relever les défis."
+              </p>
+              <div class="author">
+                <img src="https://i.pravatar.cc/40?img=48" alt="Karina P." loading="lazy" />
+                <div class="author-name" data-i18n="testimonial3Author">
+                  – Tamás M., Responsable technique
+                </div>
+              </div>
+            </blockquote>
 
-                <blockquote class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p data-i18n="testimonial4Text">Travailler avec Zoltán a été un vrai plaisir. Il est travailleur, a une attitude positive et résout les problèmes avec efficacité. Je le recommande vivement.</p>
-                    <div class="author">
-                        <img src="https://i.pravatar.cc/40?img=13" width="40" height="40" alt="Alex W." loading="lazy">
-                        <div class="author-name" data-i18n="testimonial4Author">– Alex W., Développeur senior</div>
-                    </div>
-                </blockquote>
+            <blockquote class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p data-i18n="testimonial4Text">
+                Travailler avec Zoltán a été un vrai plaisir. Il est travailleur, a une attitude
+                positive et résout les problèmes avec efficacité. Je le recommande vivement.
+              </p>
+              <div class="author">
+                <img
+                  src="https://i.pravatar.cc/40?img=13"
+                  width="40"
+                  height="40"
+                  alt="Alex W."
+                  loading="lazy"
+                />
+                <div class="author-name" data-i18n="testimonial4Author">
+                  – Alex W., Développeur senior
+                </div>
+              </div>
+            </blockquote>
 
-                <blockquote class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p data-i18n="testimonial5Text">Nous avons collaboré sur plusieurs projets en PHP et Drupal. Zoltán prend toujours le temps de réfléchir aux meilleures solutions. Humainement et professionnellement, c’est un excellent collègue. Je suis heureux d’avoir travaillé avec lui.</p>
-                    <div class="author">
-                        <img src="https://i.pravatar.cc/40?img=14" alt="Mark G." loading="lazy">
-                        <div class="author-name" data-i18n="testimonial5Author">– Mark G., Expert en développement mobile</div>
-                    </div>
-                </blockquote>
+            <blockquote class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p data-i18n="testimonial5Text">
+                Nous avons collaboré sur plusieurs projets en PHP et Drupal. Zoltán prend toujours
+                le temps de réfléchir aux meilleures solutions. Humainement et professionnellement,
+                c’est un excellent collègue. Je suis heureux d’avoir travaillé avec lui.
+              </p>
+              <div class="author">
+                <img src="https://i.pravatar.cc/40?img=14" alt="Mark G." loading="lazy" />
+                <div class="author-name" data-i18n="testimonial5Author">
+                  – Mark G., Expert en développement mobile
+                </div>
+              </div>
+            </blockquote>
 
-                <blockquote class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p data-i18n="testimonial6Text">Si vous cherchez un membre d’équipe communicatif et créatif, Zoltán est l’homme qu’il vous faut ! Ouvert aux nouvelles idées, il apporte de la valeur et ne recule jamais devant les défis.</p>
-                    <div class="author">
-                        <img src="https://i.pravatar.cc/40?img=15" width="40" height="40" alt="Tamás M." loading="lazy">
-                        <div class="author-name" data-i18n="testimonial6Author">– Tamás M., Architecte de solutions</div>
-                    </div>
-                </blockquote>
+            <blockquote class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p data-i18n="testimonial6Text">
+                Si vous cherchez un membre d’équipe communicatif et créatif, Zoltán est l’homme
+                qu’il vous faut ! Ouvert aux nouvelles idées, il apporte de la valeur et ne recule
+                jamais devant les défis.
+              </p>
+              <div class="author">
+                <img
+                  src="https://i.pravatar.cc/40?img=15"
+                  width="40"
+                  height="40"
+                  alt="Tamás M."
+                  loading="lazy"
+                />
+                <div class="author-name" data-i18n="testimonial6Author">
+                  – Tamás M., Architecte de solutions
+                </div>
+              </div>
+            </blockquote>
 
-                <blockquote class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p data-i18n="testimonial7Text">Zoltán est un excellent développeur qui livre un travail rapide et de qualité. Il est efficace en autonomie mais sait aussi collaborer en équipe. Il ne laisse jamais un problème non résolu.</p>
-                    <div class="author">
-                        <img src="https://i.pravatar.cc/40?img=49" width="40" height="40" alt="Zsuzsanna M." loading="lazy">
-                        <div class="author-name" data-i18n="testimonial7Author">– Zsuzsanna M., Enseignante en informatique</div>
-                    </div>
-                </blockquote>
+            <blockquote class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p data-i18n="testimonial7Text">
+                Zoltán est un excellent développeur qui livre un travail rapide et de qualité. Il
+                est efficace en autonomie mais sait aussi collaborer en équipe. Il ne laisse jamais
+                un problème non résolu.
+              </p>
+              <div class="author">
+                <img
+                  src="https://i.pravatar.cc/40?img=49"
+                  width="40"
+                  height="40"
+                  alt="Zsuzsanna M."
+                  loading="lazy"
+                />
+                <div class="author-name" data-i18n="testimonial7Author">
+                  – Zsuzsanna M., Enseignante en informatique
+                </div>
+              </div>
+            </blockquote>
 
-                <blockquote class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p data-i18n="testimonial8Text">Zoltán a toujours été fiable quand cela comptait le plus. Ses connaissances approfondies des backends en Python et de l’optimisation de WordPress ont été essentielles pour faire évoluer nos systèmes. Travailler avec lui a été fluide et efficace – je le recommande sans hésiter !</p>
-                    <div class="author">
-                        <img src="https://i.pravatar.cc/40?img=16" width="40" height="40" alt="Grant D." loading="lazy">
-                        <div class="author-name" data-i18n="testimonial8Author">– Grant D., Vice-président, Columbia Games</div>
-                    </div>
-                </blockquote>
+            <blockquote class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p data-i18n="testimonial8Text">
+                Zoltán a toujours été fiable quand cela comptait le plus. Ses connaissances
+                approfondies des backends en Python et de l’optimisation de WordPress ont été
+                essentielles pour faire évoluer nos systèmes. Travailler avec lui a été fluide et
+                efficace – je le recommande sans hésiter !
+              </p>
+              <div class="author">
+                <img
+                  src="https://i.pravatar.cc/40?img=16"
+                  width="40"
+                  height="40"
+                  alt="Grant D."
+                  loading="lazy"
+                />
+                <div class="author-name" data-i18n="testimonial8Author">
+                  – Grant D., Vice-président, Columbia Games
+                </div>
+              </div>
+            </blockquote>
 
-                <blockquote class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p data-i18n="testimonial9Text">Travailler avec Zoltán a été une expérience enrichissante. Son approche proactive et sa compréhension des systèmes complexes ont vraiment fait avancer nos projets. Qu’il s’agisse d’infrastructure ou d’architecture, il apporte toujours un regard neuf. Zoltán redéfinit ce que signifie réellement être 'senior'.</p>
-                    <div class="author">
-                        <img src="https://i.pravatar.cc/40?img=17" width="40" height="40" alt="Grant D." loading="lazy">
-                        <div class="author-name" data-i18n="testimonial9Author">– Grant D., Vice-président, Columbia Games</div>
-                    </div>
-                </blockquote>
-            </div>
+            <blockquote class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p data-i18n="testimonial9Text">
+                Travailler avec Zoltán a été une expérience enrichissante. Son approche proactive et
+                sa compréhension des systèmes complexes ont vraiment fait avancer nos projets. Qu’il
+                s’agisse d’infrastructure ou d’architecture, il apporte toujours un regard neuf.
+                Zoltán redéfinit ce que signifie réellement être 'senior'.
+              </p>
+              <div class="author">
+                <img
+                  src="https://i.pravatar.cc/40?img=17"
+                  width="40"
+                  height="40"
+                  alt="Grant D."
+                  loading="lazy"
+                />
+                <div class="author-name" data-i18n="testimonial9Author">
+                  – Grant D., Vice-président, Columbia Games
+                </div>
+              </div>
+            </blockquote>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- About -->
-    <section id="about" class="about-section" aria-label="Rólunk">
+      <!-- About -->
+      <section id="about" class="about-section" aria-label="Rólunk">
         <h2 class="section-title" data-i18n="aboutTitle">À propos de BeyondStart</h2>
-        <p class="section-text" data-i18n="aboutText">BeyondStart Solutions a été fondée par Zoltán Horváth, développeur de systèmes digitaux depuis près de 20 ans. Ses références incluent le réseau de cinémas Kinepolis, la plateforme associative TechSoup et les ERP internes d’ACEG. Votre projet est entre de bonnes mains – nous ne testons pas, nous résolvons.</p>
-    </section>
+        <p class="section-text" data-i18n="aboutText">
+          BeyondStart Solutions a été fondée par Zoltán Horváth, développeur de systèmes digitaux
+          depuis près de 20 ans. Ses références incluent le réseau de cinémas Kinepolis, la
+          plateforme associative TechSoup et les ERP internes d’ACEG. Votre projet est entre de
+          bonnes mains – nous ne testons pas, nous résolvons.
+        </p>
+      </section>
 
-    <!-- Contact / Calendly -->
-    <section id="contact" class="contact-section" aria-label="Kapcsolat">
+      <!-- Contact / Calendly -->
+      <section id="contact" class="contact-section" aria-label="Kapcsolat">
         <h2 class="section-title" data-i18n="ctaBlockButton">Obtenir un devis</h2>
-        <p class="section-text" data-i18n="contactSubtitle">Discutons de votre projet – la première consultation est gratuite et sans engagement.</p>
+        <p class="section-text" data-i18n="contactSubtitle">
+          Discutons de votre projet – la première consultation est gratuite et sans engagement.
+        </p>
         <div class="calendly-wrapper">
-            <iframe src="https://calendly.com/zoltan-beyondstart" width="768" height="600" title="Időpontfoglalás - Calendly" loading="lazy"></iframe>
+          <iframe
+            src="https://calendly.com/zoltan-beyondstart"
+            width="768"
+            height="600"
+            title="Időpontfoglalás - Calendly"
+            loading="lazy"
+          ></iframe>
         </div>
-    </section>
+      </section>
 
-    <!-- CTA -->
-    <section class="cta-section" aria-label="Záró CTA">
+      <!-- CTA -->
+      <section class="cta-section" aria-label="Záró CTA">
         <h2 class="cta-title section-title" data-i18n="ctaBlockTitle">Prêt à commencer ?</h2>
-        <p class="cta-text" data-i18n="ctaBlockText">Réservez un créneau dès maintenant, et lançons-nous aujourd’hui !</p>
-        <a href="#contact" class="cta-button" onclick="
-        tracking('final_cta', 'CTA', 'Final CTA', 'AW-16905609495/GgNCCIPzmYAbEJfCnP0-');" data-i18n="ctaBlockButton">Obtenir un devis</a>
-    </section>
-</main>
+        <p class="cta-text" data-i18n="ctaBlockText">
+          Réservez un créneau dès maintenant, et lançons-nous aujourd’hui !
+        </p>
+        <a
+          href="#contact"
+          class="cta-button"
+          onclick="
+        tracking('final_cta', 'CTA', 'Final CTA', 'AW-16905609495/GgNCCIPzmYAbEJfCnP0-');"
+          data-i18n="ctaBlockButton"
+          >Obtenir un devis</a
+        >
+      </section>
+    </main>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-content">
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
         <div>
-            <h3 data-i18n="footerCompanyName">BeyondStart Solutions</h3>
-            <p data-i18n="footerCompanyDetails">Directeur général : Zoltán Horváth <br> Siège social : Str. Parângului 10, Ap. 2, 440031, Satu Mare, Roumanie <br> Numéro de TVA : RO43923085 <br> Numéro d'immatriculation : J30/291/2021</p>
+          <h3 data-i18n="footerCompanyName">BeyondStart Solutions</h3>
+          <p data-i18n="footerCompanyDetails">
+            Directeur général : Zoltán Horváth <br />
+            Siège social : Str. Parângului 10, Ap. 2, 440031, Satu Mare, Roumanie <br />
+            Numéro de TVA : RO43923085 <br />
+            Numéro d'immatriculation : J30/291/2021
+          </p>
         </div>
         <div>
-            <h3 data-i18n="footerLegal">Documents juridiques</h3>
-            <ul>
-                <li><a href="/fr/impresszum.html" class="hover:underline" data-i18n="footerImprint">Mentions légales</a></li>
-                <li><a href="/fr/adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy">Politique de confidentialité</a></li>
-                <li><a href="/fr/cookie.html" class="hover:underline" data-i18n="footerCookies">Politique de cookies</a></li>
-                <li><a href="/fr/aszf.html" class="hover:underline" data-i18n="footerTerms">CGV</a></li>
-            </ul>
+          <h3 data-i18n="footerLegal">Documents juridiques</h3>
+          <ul>
+            <li>
+              <a href="/fr/impresszum.html" class="hover:underline" data-i18n="footerImprint"
+                >Mentions légales</a
+              >
+            </li>
+            <li>
+              <a href="/fr/adatvedelem.html" class="hover:underline" data-i18n="footerPrivacy"
+                >Politique de confidentialité</a
+              >
+            </li>
+            <li>
+              <a href="/fr/cookie.html" class="hover:underline" data-i18n="footerCookies"
+                >Politique de cookies</a
+              >
+            </li>
+            <li><a href="/fr/aszf.html" class="hover:underline" data-i18n="footerTerms">CGV</a></li>
+          </ul>
         </div>
         <div>
-            <h3 data-i18n="footerContact">Contact</h3>
-            <ul>
-                <li>
-                    <span data-i18n="footerEmail">E-mail :</span>
-                    <a href="mailto:zoltan@beyondstart.solutions" class="hover:underline">zoltan[at]beyondstart[dot]solutions</a>
-                </li>
-                <li>
-                    <span data-i18n="footerPhone">Téléphone :</span>
-                    <a href="tel:+36705084100" class="hover:underline">+36 70 508 4100</a>
-                </li>
-            </ul>
+          <h3 data-i18n="footerContact">Contact</h3>
+          <ul>
+            <li>
+              <span data-i18n="footerEmail">E-mail :</span>
+              <a href="mailto:zoltan@beyondstart.solutions" class="hover:underline"
+                >zoltan[at]beyondstart[dot]solutions</a
+              >
+            </li>
+            <li>
+              <span data-i18n="footerPhone">Téléphone :</span>
+              <a href="tel:+36705084100" class="hover:underline">+36 70 508 4100</a>
+            </li>
+          </ul>
         </div>
         <div>
-            <h3 data-i18n="footerNav">Navigation</h3>
-            <ul>
-                <li><a href="/fr/" class="hover:underline" data-i18n="footerNavHome">Accueil</a></li>
-                <li><a href="/fr/#services" class="hover:underline" data-i18n="footerNavServices">Services</a></li>
-                <li><a href="/fr/#references" class="hover:underline" data-i18n="footerNavReferences">Références</a></li>
-                <li><a href="/fr/#about" class="hover:underline" data-i18n="footerNavAbout">À propos</a></li>
-                <li><a href="/fr/#contact" class="hover:underline" data-i18n="footerNavContact" onclick="
-                tracking('footer_cta', 'CTA', 'Footer CTA', 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-');">Contact</a>
-                </li>
-            </ul>
+          <h3 data-i18n="footerNav">Navigation</h3>
+          <ul>
+            <li><a href="/fr/" class="hover:underline" data-i18n="footerNavHome">Accueil</a></li>
+            <li>
+              <a href="/fr/#services" class="hover:underline" data-i18n="footerNavServices"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a href="/fr/#references" class="hover:underline" data-i18n="footerNavReferences"
+                >Références</a
+              >
+            </li>
+            <li>
+              <a href="/fr/#about" class="hover:underline" data-i18n="footerNavAbout">À propos</a>
+            </li>
+            <li>
+              <a
+                href="/fr/#contact"
+                class="hover:underline"
+                data-i18n="footerNavContact"
+                onclick="
+                tracking('footer_cta', 'CTA', 'Footer CTA', 'AW-16905609495/d-8HCMS2mYAbEJfCnP0-');"
+                >Contact</a
+              >
+            </li>
+          </ul>
         </div>
-    </div>
-    <div class="footer-bottom" data-i18n="footerCopyright">© 2025 BeyondStart Solutions. Tous droits réservés.</div>
-</footer>
+      </div>
+      <div class="footer-bottom" data-i18n="footerCopyright">
+        © 2025 BeyondStart Solutions. Tous droits réservés.
+      </div>
+    </footer>
 
-<!-- Sticky CTA -->
-<a href="#contact" class="sticky-cta" data-i18n="stickyCTA" onclick="
-   tracking('sticky_cta', 'CTA', 'Sticky CTA', 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-');">Demander un devis</a>
+    <!-- Sticky CTA -->
+    <a
+      href="#contact"
+      class="sticky-cta"
+      data-i18n="stickyCTA"
+      onclick="
+   tracking('sticky_cta', 'CTA', 'Sticky CTA', 'AW-16905609495/V-zqCMrQrv4aEJfCnP0-');"
+      >Demander un devis</a
+    >
 
-<script src="/translations.min.js" defer=""></script>
-<script src="/script.min.js" defer=""></script>
-<script type="application/ld+json">
-    {
+    <script src="/translations.min.js" defer=""></script>
+    <script src="/script.min.js" defer=""></script>
+    <script type="application/ld+json">
+      {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "BeyondStart Solutions",
@@ -467,28 +836,24 @@
         "logo": "https://beyondstart.solutions/images/beyondstart_logo_sm.webp",
         "sameAs": [],
         "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+36 70 508 4100",
-            "contactType": "customer service",
-            "areaServed": "HU",
-            "availableLanguage": [
-                "Hungarian",
-                "English"
-            ]
+          "@type": "ContactPoint",
+          "telephone": "+36 70 508 4100",
+          "contactType": "customer service",
+          "areaServed": "HU",
+          "availableLanguage": ["Hungarian", "English"]
         }
-    }
-</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16905609495"></script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16882358510"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
+      }
+    </script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16905609495"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16882358510"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
         dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'AW-16905609495');
-    gtag('config', 'AW-16882358510');
-</script>
-
-
-</body></html>
+      }
+      gtag('js', new Date());
+      gtag('config', 'AW-16905609495');
+      gtag('config', 'AW-16882358510');
+    </script>
+  </body>
+</html>
