@@ -1,3 +1,8 @@
+![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Node.js >= 20](https://img.shields.io/badge/node-%3E=20.0.0-brightgreen.svg)
+![Issues](https://img.shields.io/github/issues/zolika42/beyond2)
+![Last Commit](https://img.shields.io/github/last-commit/zolika42/beyond2)
+
 # BeyondStart Solutions – Website
 
 This repository contains the source code of the official [BeyondStart Solutions](https://beyondstart.solutions/) website.  
