@@ -537,6 +537,21 @@ main {
     background-color: var(--color-bg-blue-dark);
 }
 
+.service-card.full-width {
+    grid-column: 1 / -1;
+    margin-bottom: 1rem;
+}
+
+.service-card.full-width .service-list li {
+    justify-content: center;
+}
+
+@media (width >= 768px) {
+    .service-card.full-width {
+        max-width: 100%;
+    }
+}
+
 /* References */
 
 .references-section {
